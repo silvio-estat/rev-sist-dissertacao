@@ -1,0 +1,18 @@
+[project]
+name = "rev-sist-dissertacao"
+version = "0.1.0"
+description = "Revisão sistemática (metodologia TEMAC) sobre arquiteturas de dados / Data Lakehouse aplicadas a Comando e Controle"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "google>=3.0.0",
+    "ipykernel>=7.2.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.10.8",
+    "networkx>=3.6.1",
+    "openpyxl>=3.1.5",
+    "pandas>=3.0.1",
+    "rapidfuzz>=3.14.5",
+    "seaborn>=0.13.2",
+    "unidecode>=1.4.0",
+]

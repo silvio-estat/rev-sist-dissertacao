@@ -1,0 +1,15 @@
+# Ambientes / gerados
+.venv/
+__pycache__/
+*.py[oc]
+.ipynb_checkpoints/
+.Rhistory
+Rplots.pdf
+.~lock.*#
+.crossnote/
+
+# Material mantido só nesta máquina (não versionado)
+_local/
+
+# Ramo RStudio abandonado — dumps regeneráveis, mantidos em disco para consulta
+04_bibliometria/dados/_rstudio_abandonado/
