@@ -15,11 +15,11 @@ Derivado de `consideracoes_banca/qualificacao/consideracoes_andrei.md`.
 | AN-03 | Resumo | Conferir tradução de "cenário operacional comum" → *Common Operational Picture* | `abstract.tex` | B | ✔️ **resolvido sem edição** — tradução correta; Silvio confirma ao Andrei |
 | AN-04 | 1 | Qual o contexto atual do Exército em arquitetura para subsidiar o C2? | `1_Introducao` | C | ⏸ depende de informação que só o Silvio tem |
 | AN-05 | 1 | Verificar as palavras com iniciais maiúsculas | 4 capítulos, 26 ocorrências | B | ✔️ **feito** — `a5ead34` |
-| AN-06 | 2 | Por que PRISMA **e** TEMAC? | `2_Metodologia:42, 44, 51` | B | ✅ pronto |
+| AN-06 | 2 | Por que PRISMA **e** TEMAC? | `2_Metodologia:42, 44` | B | ✔️ **feito** — `dc40778` |
 | AN-07 | 2 | Não se convenceu do descarte da IEEE Xplore (principal base de TI) | `2_Metodologia:53` | C | ✅ pronto — há material forte no repo |
 | AN-08 | 3 | Ajustar "monre" → "more" na definição de Dixon | `3_Referencial_Teorico:148` | A | ⚠️ **já está "more"** — confirmar com o Andrei |
 | AN-09 | 3 | *(achado novo)* citação do Dixon está incompleta | `3_Referencial_Teorico:148` | A | ✔️ **feito** — `6da3ee0` |
-| AN-10 | 4 | Por que uma *Landing Zone* a mais, se a *Bronze* não bastava? | `4_Proposta:8, 33, 35` | B | ✅ pronto |
+| AN-10 | 4 | Por que uma *Landing Zone* a mais, se a *Bronze* não bastava? | `4_Proposta:33` | **C** | ✔️ **feito** — `fea166c` |
 | AN-11 | 4 | Marcou "deduplicação avançada" — por que "avançada"? | `4_Proposta:212` | B | ✔️ **feito** — `9240982` |
 | AN-12 | 4 | Sugestão p/ a PoC: governança e linhagem em todas as camadas (auditoria) | cap. 5 | C | 🔒 capítulo 5 não está no repo |
 | AN-14 | 4 | *(achado novo)* "nomeada como denominada" — duplicação | `4_Proposta:230` | A | ✔️ **feito** — `fb3608c` |
@@ -104,8 +104,8 @@ não. Decisão de padrão — depois aplicar consistentemente nos 4 capítulos.
 
 | Situação | Itens |
 |---|---|
-| ✔️ Feitos (6 de 12) | AN-01, AN-02, AN-03, AN-05, AN-09, AN-11, AN-14 |
-| ✅ Prontos para trabalhar | AN-06, AN-10, AN-07 |
+| ✔️ Feitos (8 de 12) | AN-01, AN-02, AN-03, AN-05, AN-06, AN-09, AN-10, AN-11, AN-14 |
+| ✅ Resta trabalhar | **AN-07** (descarte da IEEE) |
 | ⏸ Novo, aguarda decisão | AN-15 (títulos de seção) |
 | 🔒 Bloqueados (falta arquivo) | AN-12 |
 | ⏸ Depende de informação do Silvio | AN-04 |
@@ -145,3 +145,37 @@ presentes: `triag_info_pesq`, `esquema_dw`, `esquema_dl`, `esquema_data_pond`,
 As duas últimas são justamente as que a Cláudia comenta — a 4.1 ("explicitar melhor o
 processo, sem esconder as zonas") e a 4.5 ("acho essa figura dispensável"). **Sem elas,
 os itens dela sobre figuras ficam bloqueados.**
+
+
+## AN-10 — por que virou tipo C
+
+A resposta que existia ("a Landing materializa a fronteira entre comunicações táticas e
+repositório analítico") não resistia: o Silvio observou que **a Bronze também poderia ser
+essa fronteira**. Não era caso de tornar visível uma resposta pronta, e sim de construí-la.
+
+O argumento adotado, centrado no que o domínio impõe:
+
+1. **A janela de oportunidade é irrepetível.** Pacote que chega por enlace HF/VHF não
+   se pede de novo. Logo a aplicação de *schema* não pode ser destrutiva: se a Bronze
+   for o primeiro pouso, parser errado ou tipo inesperado significa perda definitiva.
+2. **Reconstrutibilidade.** Preservado o original, a Bronze é regerável quantas vezes
+   for preciso.
+3. **Nem tudo vira tabela.** Áudio e imagem não admitem *schema*; a Bronze recebe
+   metadados extraídos, o artefato fica na Landing. Isso acomoda o caso sem obrigar o
+   Silvio a decidir agora o fluxo desses formatos.
+4. **A Bronze só é útil se tiver garantia única:** tudo o que está nela é estruturado e
+   consultável. A Landing é o que impede a Bronze de virar depósito.
+
+Respaldo já citado no próprio texto (`4_Proposta:8`): Giebler, Sharma e Zhao acrescentam
+a zona de aterrissagem antes da Bronze. O Medallion de três zonas é a simplificação de um
+fornecedor; os modelos de referência acadêmicos usam quatro.
+
+**Descartado como argumento:** "mais zonas dão flexibilidade para decidir depois".
+Intuição correta do Silvio, mas indefensável em banca — soa como indecisão.
+
+## Pendência de fechamento — marcações de cor
+
+Reescritas de parágrafo são marcadas com `\entrou{}` (azul) e `\saiu{}` (vermelho
+tachado), macros da própria classe UnB-CIC, para o Silvio fazer a revisão geral lendo o
+PDF. **Precisam ser retiradas antes da versão final.** Localizar com
+`grep -n "entrou{\|saiu{" *.tex`. Hoje: 1 ocorrência em `4_Proposta_Arquitetura.tex`.
