@@ -18,11 +18,11 @@ Derivado de `consideracoes_banca/qualificacao/consideracoes_andrei.md`.
 | AN-06 | 2 | Por que PRISMA **e** TEMAC? | `2_Metodologia:42, 44, 51` | B | ✅ pronto |
 | AN-07 | 2 | Não se convenceu do descarte da IEEE Xplore (principal base de TI) | `2_Metodologia:53` | C | ✅ pronto — há material forte no repo |
 | AN-08 | 3 | Ajustar "monre" → "more" na definição de Dixon | `3_Referencial_Teorico:148` | A | ⚠️ **já está "more"** — confirmar com o Andrei |
-| AN-09 | 3 | *(achado novo)* citação do Dixon está incompleta | `3_Referencial_Teorico:148` | A | ✅ pronto |
+| AN-09 | 3 | *(achado novo)* citação do Dixon está incompleta | `3_Referencial_Teorico:148` | A | ✔️ **feito** — `6da3ee0` |
 | AN-10 | 4 | Por que uma *Landing Zone* a mais, se a *Bronze* não bastava? | `4_Proposta:8, 33, 35` | B | ✅ pronto |
-| AN-11 | 4 | Marcou "deduplicação avançada" — por que "avançada"? | `4_Proposta:212` | B | ✅ pronto |
+| AN-11 | 4 | Marcou "deduplicação avançada" — por que "avançada"? | `4_Proposta:212` | B | ✔️ **feito** — `9240982` |
 | AN-12 | 4 | Sugestão p/ a PoC: governança e linhagem em todas as camadas (auditoria) | cap. 5 | C | 🔒 capítulo 5 não está no repo |
-| AN-14 | 4 | *(achado novo)* "nomeada como denominada" — duplicação | `4_Proposta:230` | A | ✅ pronto |
+| AN-14 | 4 | *(achado novo)* "nomeada como denominada" — duplicação | `4_Proposta:230` | A | ✔️ **feito** — `fb3608c` |
 | AN-13 | 4 | Erro de referenciação "Capítulo ??" na p.78 | `4_Proposta:280, 314, 372` | — | ❌ **não é erro** — ver abaixo |
 
 ## Notas por item
@@ -103,8 +103,26 @@ não. Decisão de padrão — depois aplicar consistentemente nos 4 capítulos.
 
 | Situação | Itens |
 |---|---|
-| ✅ Prontos para trabalhar | AN-01, AN-02, AN-03, AN-05, AN-06, AN-07, AN-09, AN-10, AN-11, AN-14 |
+| ✔️ Feitos | AN-09, AN-11, AN-14 |
+| ✅ Prontos para trabalhar | AN-01, AN-02, AN-03, AN-05, AN-06, AN-07, AN-10 |
 | 🔒 Bloqueados (falta arquivo) | AN-12 |
 | ⏸ Depende de informação do Silvio | AN-04 |
 | ⚠️ Confirmar premissa | AN-08 |
 | ❌ Não é erro | AN-13 |
+
+
+## Pendência aberta pelo Silvio (30/08/2026) — escopo real da PoC
+
+Ao decidir o AN-11, o Silvio levantou: *"eu explico essa diferença? vou conseguir fazer
+isso realmente?"* — porque pretende trazer a modelagem de dados do **FAC2FTER** e do
+**Pacificador** para refazer os dados sintéticos da Prova de Conceito.
+
+A dúvida não bloqueou o AN-11 (a opção adotada não promete técnica alguma), mas é a
+questão de fundo que a Cláudia levanta de frente: *"O que de fato será implementado
+como prova de conceito?"*. Tratar com os modelos reais em mãos, junto do AN-12.
+
+**Observação:** os modelos reais tendem a *ajudar*. Duas fontes que representam a mesma
+entidade com chaves e convenções distintas são, ao mesmo tempo:
+- o caso concreto de deduplicação entre fontes (AN-11);
+- o exemplo de harmonização semântica que a Cláudia pediu ("missão" × "tarefa");
+- a resposta ao "o que dá suporte à integração" da linha RD-1 (Cláudia, Tabela 4.1).
