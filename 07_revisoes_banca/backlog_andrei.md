@@ -17,14 +17,14 @@ Derivado de `consideracoes_banca/qualificacao/consideracoes_andrei.md`.
 | AN-05 | 1 | Verificar as palavras com iniciais maiúsculas | 4 capítulos, 26 ocorrências | B | ✔️ **feito** — `a5ead34` |
 | AN-06 | 2 | Por que PRISMA **e** TEMAC? | `2_Metodologia:42, 44` | B | ✔️ **feito** — `dc40778` |
 | AN-07 | 2 | Não se convenceu do descarte da IEEE Xplore (principal base de TI) | `2_Metodologia:53` | C | ✔️ **feito** — `6904783` |
-| AN-08 | 3 | Ajustar "monre" → "more" na definição de Dixon | `3_Referencial_Teorico:148` | A | ⚠️ **já está "more"** — confirmar com o Andrei |
+| AN-08 | 3 | Ajustar "monre" → "more" na definição de Dixon | `3_Referencial_Teorico:148` | A | ✔️ **encerrado** — o Silvio já havia corrigido à mão antes da revisão |
 | AN-09 | 3 | *(achado novo)* citação do Dixon está incompleta | `3_Referencial_Teorico:148` | A | ✔️ **feito** — `6da3ee0` |
 | AN-10 | 4 | Por que uma *Landing Zone* a mais, se a *Bronze* não bastava? | `4_Proposta:33` | **C** | ✔️ **feito** — `fea166c` |
 | AN-11 | 4 | Marcou "deduplicação avançada" — por que "avançada"? | `4_Proposta:212` | B | ✔️ **feito** — `9240982` |
-| AN-12 | 4 | Sugestão p/ a PoC: governança e linhagem em todas as camadas (auditoria) | cap. 5 | C | 🔒 capítulo 5 não está no repo |
+| AN-12 | 4 | Sugestão p/ a PoC: governança e linhagem em todas as camadas (auditoria) | cap. 5 | C | ⏳ **adiado** — tratar junto com o capítulo 5, quando for mexido |
 | AN-14 | 4 | *(achado novo)* "nomeada como denominada" — duplicação | `4_Proposta:230` | A | ✔️ **feito** — `fb3608c` |
 | AN-16 | 1 | *(nota do Silvio)* explicitar que atrás dos sistemas estrangeiros há um repositório analítico | `1_Introducao:38` | C | ✔️ **feito** — `732cfc9` |
-| AN-15 | todos | *(achado novo)* títulos de seção misturam *Title Case* e frase capitalizada | `\subsection{Governança de dados}` × `\subsubsection{Governança de Dados}` | B | ⏸ aguarda decisão |
+| AN-15 | todos | *(achado novo)* títulos de seção misturam *Title Case* e frase capitalizada | — | B | ⛔ **não fazer** — decisão do Silvio em 30/08/2026: deixar como está |
 | AN-13 | 4 | Erro de referenciação "Capítulo ??" na p.78 | `4_Proposta:280, 314, 372` | — | ❌ **não é erro** — ver abaixo |
 
 ## Notas por item
@@ -105,10 +105,13 @@ não. Decisão de padrão — depois aplicar consistentemente nos 4 capítulos.
 
 | Situação | Itens |
 |---|---|
-| ✔️ Feitos (12 de 15) | AN-01, AN-02, AN-03, AN-04, AN-05, AN-06, AN-07, AN-09, AN-10, AN-11, AN-14, AN-16 |
-| ⚠️ Confirmar com o Andrei | AN-08 (typo "monre" já não existe) |
-| ⏸ Decisão do Silvio | AN-15 (títulos de seção) |
-| 🔒 Bloqueado | AN-12 (PoC, capítulo 5 ausente) |
+| ✔️ Feitos (13) | AN-01 a AN-11, AN-14, AN-16 |
+| ⛔ Decidido não fazer (1) | AN-15 — títulos de seção ficam como estão |
+| ⏳ Adiado (1) | AN-12 — junto com o capítulo 5 |
+
+> **Andrei encerrado em 30/08/2026.** Todos os 15 itens têm destino definido: nenhum
+> pendente de decisão ou de trabalho meu. O que resta são as pendências do Silvio
+> (chaves do `.bib` e transferência para o Overleaf) e o AN-12, que espera o capítulo 5.
 | ⏸ Novo, aguarda decisão | AN-15 (títulos de seção) |
 | 🔒 Bloqueados (falta arquivo) | AN-12 |
 | ⏸ Depende de informação do Silvio | AN-04 |
@@ -250,3 +253,17 @@ Cinco chaves usadas nos trechos novos precisam existir no `.bib` da dissertaçã
 | `barros_operacao_2025` | exportar do Zotero |
 
 Até lá saem como `[?]` na compilação. Não trava nada — o texto está correto.
+
+
+## Achados para o backlog da Cláudia
+
+Dois tiques do texto, medidos, que alimentam a crítica dela de que o texto é
+"muito repetitivo, o que o torna cansativo":
+
+| Padrão | Ocorrências | Situação |
+|---|---|---|
+| `analítico` / `analiticamente` | **129**, em 14 colocações distintas (visões analíticas, repositório analítico, consulta analítica, formato analítico, dado analítico...) | Cláudia questionou em 3 pontos: "Engine de consulta analítica", "formato analítico colunar" e "interface de consulta analítica" (p.64) |
+| `Cabe [verbo]` | **15** (destacar 7, registrar 4, explicitar 2, ressaltar 1, distinguir 1) | Fórmula de anúncio quase sempre dispensável |
+
+Nenhum se resolve pontualmente: são decisões de padrão, como foi o critério de
+maiúsculas do AN-01/AN-05.
