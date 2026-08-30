@@ -16,7 +16,7 @@ Derivado de `consideracoes_banca/qualificacao/consideracoes_andrei.md`.
 | AN-04 | 1 | Qual o contexto atual do Exército em arquitetura para subsidiar o C2? | `1_Introducao` | C | ⏸ depende de informação que só o Silvio tem |
 | AN-05 | 1 | Verificar as palavras com iniciais maiúsculas | 4 capítulos, 26 ocorrências | B | ✔️ **feito** — `a5ead34` |
 | AN-06 | 2 | Por que PRISMA **e** TEMAC? | `2_Metodologia:42, 44` | B | ✔️ **feito** — `dc40778` |
-| AN-07 | 2 | Não se convenceu do descarte da IEEE Xplore (principal base de TI) | `2_Metodologia:53` | C | ✅ pronto — há material forte no repo |
+| AN-07 | 2 | Não se convenceu do descarte da IEEE Xplore (principal base de TI) | `2_Metodologia:53` | C | ✔️ **feito** — `6904783` |
 | AN-08 | 3 | Ajustar "monre" → "more" na definição de Dixon | `3_Referencial_Teorico:148` | A | ⚠️ **já está "more"** — confirmar com o Andrei |
 | AN-09 | 3 | *(achado novo)* citação do Dixon está incompleta | `3_Referencial_Teorico:148` | A | ✔️ **feito** — `6da3ee0` |
 | AN-10 | 4 | Por que uma *Landing Zone* a mais, se a *Bronze* não bastava? | `4_Proposta:33` | **C** | ✔️ **feito** — `fea166c` |
@@ -104,8 +104,8 @@ não. Decisão de padrão — depois aplicar consistentemente nos 4 capítulos.
 
 | Situação | Itens |
 |---|---|
-| ✔️ Feitos (8 de 12) | AN-01, AN-02, AN-03, AN-05, AN-06, AN-09, AN-10, AN-11, AN-14 |
-| ✅ Resta trabalhar | **AN-07** (descarte da IEEE) |
+| ✔️ Feitos (9 de 12) | AN-01, AN-02, AN-03, AN-05, AN-06, AN-07, AN-09, AN-10, AN-11, AN-14 |
+| ✅ Resta trabalhar | *(nenhum — todos os acionáveis fechados)* |
 | ⏸ Novo, aguarda decisão | AN-15 (títulos de seção) |
 | 🔒 Bloqueados (falta arquivo) | AN-12 |
 | ⏸ Depende de informação do Silvio | AN-04 |
@@ -179,3 +179,34 @@ Reescritas de parágrafo são marcadas com `\entrou{}` (azul) e `\saiu{}` (verme
 tachado), macros da própria classe UnB-CIC, para o Silvio fazer a revisão geral lendo o
 PDF. **Precisam ser retiradas antes da versão final.** Localizar com
 `grep -n "entrou{\|saiu{" *.tex`. Hoje: 1 ocorrência em `4_Proposta_Arquitetura.tex`.
+
+
+## AN-07 — números conferidos contra os dados
+
+Fonte: `06_triagem/analise_completude_scopus/completude_ieee_scopus_fontes.csv`
+(1.145 linhas), cruzado com `ext_list_Jul_2026.xlsx` (Scopus Source List).
+
+| | Indexadas na Scopus | Total | % |
+|---|---|---|---|
+| **Todas as fontes** | 1.023 | 1.145 | **89,3** |
+| Periódicos | 63 | 64 | 98,4 |
+| Anais de conferência | 960 | 1.081 | 88,8 |
+
+Casamento por ISBN (910), ISSN (92), título+ano (22). URL oficial verificada na fonte:
+<https://www.elsevier.com/products/scopus/content>, link "Download the Source title
+list", atualizada mensalmente pela Elsevier.
+
+Citada em **nota de rodapé**, a pedido do Silvio, em vez de entrada no `.bib`.
+
+## Nota sobre compilação nesta máquina
+
+`pdflatex` está instalado, mas **faltam três pacotes** que a classe UnB-CIC exige:
+`glossaries`, `tocstyle` e `ulem`. Sem eles o documento não compila aqui — e sem
+`ulem` a macro `\saiu{}` quebra.
+
+```
+sudo dnf install texlive-glossaries texlive-tocstyle texlive-ulem
+```
+
+A construção `\entrou{...\footnote{\url{...}}}` foi validada em compilação isolada,
+sem a classe.
