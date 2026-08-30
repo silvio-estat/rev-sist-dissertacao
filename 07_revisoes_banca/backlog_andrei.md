@@ -13,7 +13,7 @@ Derivado de `consideracoes_banca/qualificacao/consideracoes_andrei.md`.
 | AN-01 | Resumo | Rever se as palavras em maiúscula deveriam estar assim | `resumo.tex` | B | ✔️ **feito** — `a5ead34` (resumo já conforme) |
 | AN-02 | Resumo | Redação dava a entender que o projeto atacaria a restrição de *streaming* | `resumo.tex` + `abstract.tex` | B | ✔️ **feito** — `70ab91f` |
 | AN-03 | Resumo | Conferir tradução de "cenário operacional comum" → *Common Operational Picture* | `abstract.tex` | B | ✔️ **resolvido sem edição** — tradução correta; Silvio confirma ao Andrei |
-| AN-04 | 1 | Qual o contexto atual do Exército em arquitetura para subsidiar o C2? | `1_Introducao` | C | ⏸ depende de informação que só o Silvio tem |
+| AN-04 | 1 | Qual o contexto atual do Exército em arquitetura para subsidiar o C2? | `1_Introducao:30` | C | ✔️ **feito** — `2ed31f8` |
 | AN-05 | 1 | Verificar as palavras com iniciais maiúsculas | 4 capítulos, 26 ocorrências | B | ✔️ **feito** — `a5ead34` |
 | AN-06 | 2 | Por que PRISMA **e** TEMAC? | `2_Metodologia:42, 44` | B | ✔️ **feito** — `dc40778` |
 | AN-07 | 2 | Não se convenceu do descarte da IEEE Xplore (principal base de TI) | `2_Metodologia:53` | C | ✔️ **feito** — `6904783` |
@@ -23,6 +23,7 @@ Derivado de `consideracoes_banca/qualificacao/consideracoes_andrei.md`.
 | AN-11 | 4 | Marcou "deduplicação avançada" — por que "avançada"? | `4_Proposta:212` | B | ✔️ **feito** — `9240982` |
 | AN-12 | 4 | Sugestão p/ a PoC: governança e linhagem em todas as camadas (auditoria) | cap. 5 | C | 🔒 capítulo 5 não está no repo |
 | AN-14 | 4 | *(achado novo)* "nomeada como denominada" — duplicação | `4_Proposta:230` | A | ✔️ **feito** — `fb3608c` |
+| AN-16 | 1 | *(nota do Silvio)* explicitar que atrás dos sistemas estrangeiros há um repositório analítico | `1_Introducao:38` | C | ✔️ **feito** — `732cfc9` |
 | AN-15 | todos | *(achado novo)* títulos de seção misturam *Title Case* e frase capitalizada | `\subsection{Governança de dados}` × `\subsubsection{Governança de Dados}` | B | ⏸ aguarda decisão |
 | AN-13 | 4 | Erro de referenciação "Capítulo ??" na p.78 | `4_Proposta:280, 314, 372` | — | ❌ **não é erro** — ver abaixo |
 
@@ -104,8 +105,10 @@ não. Decisão de padrão — depois aplicar consistentemente nos 4 capítulos.
 
 | Situação | Itens |
 |---|---|
-| ✔️ Feitos (9 de 12) | AN-01, AN-02, AN-03, AN-05, AN-06, AN-07, AN-09, AN-10, AN-11, AN-14 |
-| ✅ Resta trabalhar | *(nenhum — todos os acionáveis fechados)* |
+| ✔️ Feitos (12 de 15) | AN-01, AN-02, AN-03, AN-04, AN-05, AN-06, AN-07, AN-09, AN-10, AN-11, AN-14, AN-16 |
+| ⚠️ Confirmar com o Andrei | AN-08 (typo "monre" já não existe) |
+| ⏸ Decisão do Silvio | AN-15 (títulos de seção) |
+| 🔒 Bloqueado | AN-12 (PoC, capítulo 5 ausente) |
 | ⏸ Novo, aguarda decisão | AN-15 (títulos de seção) |
 | 🔒 Bloqueados (falta arquivo) | AN-12 |
 | ⏸ Depende de informação do Silvio | AN-04 |
@@ -210,3 +213,40 @@ sudo dnf install texlive-glossaries texlive-tocstyle texlive-ulem
 
 A construção `\entrou{...\footnote{\url{...}}}` foi validada em compilação isolada,
 sem a classe.
+
+
+## AN-04 e AN-16 — material e origem
+
+Insumo fornecido pelo Silvio em 30/08/2026, com as chaves já no Zotero dele:
+
+| Sistema | Chave | Papel no texto |
+|---|---|---|
+| C2 em Combate (2002, 6ª versão) | `sousa_o_2018` | Mostra que o EB investe em C2 há duas décadas |
+| Pacificador (CDS) | `soares_o_2020` | Operações de GLO e grandes eventos |
+| FAC2FTer (Op. Atlas 2025) | `barros_operacao_2025` | Alfa/Bravo/Charlie; prevê análise de big data |
+
+O AN-16 é adaptado de `arquivos-dissertacao/sbc-template_sscad26.tex`, o artigo
+submetido ao SSCAD 2026 (versionado no repo como referência, inerte na compilação).
+
+**Bônus:** o material confirma que o "Alfa Bravo Charlie?" anotado pela Cláudia junto
+a "Sistemas subsidiários das Funções de Combate" refere-se aos três níveis da
+FAC2FTer. O item dela deixa de ser dúvida.
+
+**O AN-16 também é candidato à resposta da crítica mais séria da Cláudia** ("o
+diferencial científico não está claro"): o diferencial nomeado ali é a
+*materialização* aberta, reproduzível e soberana, não a escolha arquitetural.
+
+## Pendência — bibliografia
+
+Cinco chaves usadas nos trechos novos precisam existir no `.bib` da dissertação:
+
+| Chave | Situação |
+|---|---|
+| `peerdeman_architectural_2024` | ✅ já citada na dissertação |
+| `palantir_technologies_data_nodate` | está no `.bib` do artigo SSCAD — copiar |
+| `systematic_sitaware_nodate` | idem |
+| `sousa_o_2018` | exportar do Zotero |
+| `soares_o_2020` | exportar do Zotero |
+| `barros_operacao_2025` | exportar do Zotero |
+
+Até lá saem como `[?]` na compilação. Não trava nada — o texto está correto.
