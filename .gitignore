@@ -13,3 +13,7 @@ _local/
 
 # Ramo RStudio abandonado — dumps regeneráveis, mantidos em disco para consulta
 04_bibliometria/dados/_rstudio_abandonado/
+
+# Texto da dissertação (.tex) — trazido para cá para trabalho, nunca versionado
+# neste repo. A entrada abaixo cobre a pasta e tudo que estiver dentro dela.
+arquivos-dissertacao/
