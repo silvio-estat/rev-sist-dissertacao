@@ -14,6 +14,21 @@ Mesma classificação usada no backlog do Andrei:
 
 **37 itens.** 6 A · 16 B · 8 C · 7 D
 
+### Apoio cruzado
+
+Material achado ao trabalhar um item que serve de argumento em **outro**. Antes de
+abrir qualquer item, `grep -n "CL-XX\|AN-XX" backlog_claudia.md` — o apoio pode estar
+registrado longe do item a que pertence.
+
+| serve em | o quê | veio de |
+|---|---|---|
+| CL-11 | Inmon admite que o *application pond* é "notoriously unintegrated" | CL-10 |
+| CL-14 | Inmon: "data does not have to pass through the raw data pond" | CL-10 |
+| AN-10, CL-14 | Inmon manda esvaziar o *raw pond* — divergência a declarar | CL-10 |
+| CL-26, CL-33 | `analític*` em 102 usos, 14 colocações só no cap. 4 | leitura inicial |
+| CL-06, CL-34 | candidatos a diferencial científico (4 listados no CL-34) | AN-02, AN-16 |
+| CL-04 | o parágrafo do AN-04 provavelmente já responde | backlog Andrei |
+
 ---
 
 ## Capa e folha de rosto
@@ -80,20 +95,41 @@ Decisão de escopo, não de redação. Ligada ao CL-33.
 ### CL-09 — concordância "Giebler et al. destaca" · **A**
 `3_Referencial_Teorico.tex:220` → `destaca` → `destacam`. Confirmado.
 
-### CL-10 — "por seu formato" nos *data ponds* · **A**
-`3_Referencial_Teorico.tex:220`:
-> "Inmon propôs uma arquitetura que categoriza os dados **por seu formato** em
-> diferentes partições, denominadas *data ponds*."
+### CL-10 — "por seu formato" nos *data ponds* · **A** — FEITO
+`3_Referencial_Teorico.tex:220`. Ela apontou "por seu formato" e sugeriu "estrutura".
 
-Ela tem razão e o **próprio parágrafo se contradiz** duas frases depois: "os dados
-são armazenados de acordo com sua **natureza**". Os *ponds* separam por origem
-(analog = sensores, application, textual, archival = retenção), não por formato.
-Ela sugeriu "estrutura"; **"natureza"** é melhor — já é a palavra do texto.
+O Silvio trouxe o texto original do Inmon, que nomeia o critério: os dados vão a um
+dos três poços *"based on the **kind of data** entailed"* / *"the different **types of
+data**"*. Não é formato nem estrutura — é **natureza do dado**. Adotado "natureza"
+e não "tipo" porque em português, num texto de banco de dados, "tipo de dado" lê como
+*data type*. O parágrafo já usava "natureza" duas frases adiante, ou seja, o texto
+acertava no meio e errava no começo.
+
+Provável origem do erro: o Inmon usa "format" ao falar do *conditioning*
+("the information is not in a format which is easy... to study") — mas ali descreve o
+**resultado do condicionamento**, não o critério de partição.
+
+Aplicado também um segundo ajuste: o *archival data pond* estava pendurado na mesma
+lista com "e, finalmente", como se fosse um quarto tipo de dado. O Inmon o define como
+estágio final de ciclo de vida (*"In the final stages of the life cycle of data..."*).
+Separado em oração própria. Bônus: elimina a repetição de "natureza" em três frases,
+que alimentaria o CL-33.
+
+Sem marcação de cor (troca de palavra + ajuste de pontuação, não reescrita).
 
 ### CL-11 — "silos disjuntos" / "Será? Literatura marketeira?" · **C**
-`3_Referencial_Teorico.tex:224`. Sua posição registrada: não é o caso, Giebler
-publicou na IEEE. Opção de baixo custo: atribuir explicitamente a crítica à autora
-("na avaliação de Giebler et al., ...") em vez de afirmá-la em voz própria.
+`3_Referencial_Teorico.tex:224`.
+
+**Apoio cruzado** (achado ao trabalhar o CL-10) — defesa melhor que o prestígio da Giebler: o próprio Inmon documenta a
+fragmentação, descrevendo o *application data pond* — *"the data in the application
+pond is **notoriously unintegrated** ... there is a good chance that data in this pond
+comes from different applications. It's this multi-application origin of data that
+gives the analyst a hard time."*
+
+Ou seja, não é crítica de concorrente vendendo alternativa: é limitação reconhecida
+pelo autor do modelo. Isso desarma a suspeita de "literatura marketeira" de um jeito
+que "publicou na IEEE" não desarma. Opção de redação: atribuir a crítica e ancorá-la
+no próprio Inmon.
 
 ### CL-12 — "O que essa definição em zonas tem de diferente da ETL?" · **B**
 Sobre a Figura 3.4. Pergunta legítima: zonas persistem estados intermediários e
@@ -109,6 +145,13 @@ são consultáveis; ETL move dados entre pontos sem materializar os estágios.
 
 ### CL-14 — "Há dados que chegam direto na Bronze?" · **D**
 Ambiguidade visual da Fig. 4.1. O texto já resolve (RD-4). Depende da figura.
+
+**Apoio cruzado** (achado ao trabalhar o CL-10) — o Inmon admite explicitamente o desvio da zona de entrada —
+*"It is worthy of note that **data does not have to pass through the raw data pond**,
+although it almost always does. If the developer is sophisticated, it is possible to
+send the data directly into the analog, application or the textual pond."*
+O criador do modelo de *ponds* autoriza o bypass. Sustenta a resposta com autoridade,
+não com engenharia própria.
 
 ### CL-15 — Silver com dados prontos para consulta e visualização · **B**
 Ex.: mapas com posição de elementos. Conferir se a subseção da Silver já menciona
@@ -251,3 +294,21 @@ Autoriza tratar a Gold de forma ilustrativa na PoC. **Depende do capítulo 5.**
 **Capítulo 5 ausente** — trava CL-35, CL-36, CL-37 (e informa CL-05).
 
 **Resposta dela** — CL-02, CL-17, CL-19.
+
+---
+
+## Apoio cruzado — Landing (usar em AN-10 e CL-14)
+
+O Inmon recomenda que o dado **saia** do *raw pond*: *"once raw data passes from the
+raw data pond to the analog... pond, it is best to remove the source data from the raw
+data pond... One useful measure of quality for the raw data pond is how small it is and
+how quickly data passes out of the pond."*
+
+Se a *Landing* retém o pacote original, há divergência num ponto em que ele é explícito.
+**Não é erro** — decisão do Silvio, e justificada: proveniência para decisão militar não
+era o problema de negócio dele em 2016. Mas divergência explícita é argumento e
+divergência silenciosa parece descuido. Como a Cláudia pede justamente o diferencial
+(CL-34), contrariar o Inmon *com motivo declarado* trabalha a favor.
+
+Vale a distinção geral: no capítulo 3 há obrigação de fidelidade (está-se **descrevendo**
+a literatura); no capítulo 4, não (está-se **projetando**).
