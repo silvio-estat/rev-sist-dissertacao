@@ -92,8 +92,24 @@ paper do Delta Lake / consolidação dos *open table formats*.
 
 Decisão de escopo, não de redação. Ligada ao CL-33.
 
-### CL-09 — concordância "Giebler et al. destaca" · **A**
-`3_Referencial_Teorico.tex:220` → `destaca` → `destacam`. Confirmado.
+### CL-09 — concordância "Giebler et al. destaca" · **A** — FEITO
+`3_Referencial_Teorico.tex:220`. `destaca` → `destacam`.
+
+Não é critério, é lapso isolado: na linha 275 o mesmo sujeito e a mesma referência já
+aparecem no plural — "Giebler et al. \cite{giebler_data_2021} **argumentam** que os
+metadados...".
+
+Corrigido junto um defeito não apontado por ela na mesma oração: "com mais separações
+**contudo,** Giebler et al." anunciava contraste onde não há — a Giebler **concorda**
+com mais separações (diz que a segmentação, apesar de mais complexa, dá acesso mais
+eficiente), e a concessão já está no "embora... aumente a complexidade". O conectivo
+trabalhava contra o argumento.
+
+O Silvio recusou a solução com ponto e vírgula ("pontuação rebuscada, não é como
+escrevemos") e a construção com "como Giebler et al., que destacam que..." esbarra num
+"que... que". Solução adotada: ponto final, sem conectivo.
+
+Sem marcação de cor.
 
 ### CL-10 — "por seu formato" nos *data ponds* · **A** — FEITO
 `3_Referencial_Teorico.tex:220`. Ela apontou "por seu formato" e sugeriu "estrutura".
