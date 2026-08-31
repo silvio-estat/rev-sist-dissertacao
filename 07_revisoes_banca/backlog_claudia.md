@@ -12,7 +12,7 @@ Mesma classificação usada no backlog do Andrei:
 | **C** | argumentativo / de escopo | **não edito**; decisão é sua |
 | **D** | bloqueado | falta figura, capítulo 5 ou resposta dela |
 
-**37 itens.** 6 A · 16 B · 8 C · 7 D
+**38 itens.** 6 A · 16 B · 8 C · 7 D · 1 encerrado sem ação
 
 ### Apoio cruzado
 
@@ -28,6 +28,9 @@ registrado longe do item a que pertence.
 | CL-26, CL-33 | `analític*` em 102 usos, 14 colocações só no cap. 4 | leitura inicial |
 | CL-06, CL-34 | candidatos a diferencial científico (4 listados no CL-34) | AN-02, AN-16 |
 | CL-04 | o parágrafo do AN-04 provavelmente já responde | backlog Andrei |
+| CL-30 | auditoria: 23/23 referências à mão corretas, zero quebradas | CL-22 |
+| CL-34 | norma entrega o vocabulário-alvo legitimado, não os mapeamentos | CL-24 |
+| CL-35 | linhagem de coluna no OM exige SQL/API; decidido nível de tabela | CL-24 |
 
 ---
 
@@ -46,11 +49,42 @@ com outros trabalhos. **Perguntar ao orientador.**
 `qualificacao-ago2026`. Abril **é** a data da qualificação. A anotação
 ("abril → agosto") é ambígua. **Perguntar a ela** ou decidir qual data vai no depósito.
 
-### CL-03 — "Prof.ª Dr.ª" ou "Profa. Dra." · **B**
-`monografia.tex:27` → `\membrobanca{\prof[a] \dr[a] Maria Cláudia Cavalcanti}`.
-A classe (`UnB-CIC.cls:351,355`) renderiza **`Prof.a Dr.a`** — que não é nenhuma das
-duas formas pedidas. **A classe é intocável.** Saída: escrever literal no
-`monografia.tex`, sem os macros. Decidir qual das duas formas.
+### CL-03 — "Prof.ª Dr.ª" ou "Profa. Dra." · **B** — FEITO
+`monografia.tex:27`. Os macros da classe (`UnB-CIC.cls:351,355`,
+`\def\@prof@[#1]#2{Prof.a\ #2}`) geram **"Prof.a Dr.a"** — o `a` na linha de base,
+sem sobrescrito e sem ponto. Não é nenhuma das duas formas pedidas.
+
+Classe intocável, então os macros foram abandonados **nessa linha só**:
+
+```latex
+\membrobanca{Prof.\textsuperscript{a} Dr.\textsuperscript{a} Maria Cláudia Cavalcanti}...
+```
+
+Escolhida a forma **"Prof.ª Dr.ª"** por paralelismo: o orientador e o coordenador saem
+como "Prof. Dr." na mesma folha. "Profa. Dra." muda a estrutura da abreviatura e
+deixaria a professora com tratamento graficamente distinto dos dois homens da página.
+
+`\textsuperscript{a}` e não `\textordfeminine` porque este, na codificação T1 da classe,
+costuma vir com traço embaixo (ª). Seguro: o nome é guardado por `\def` e impresso em
+célula de tabular (`UnB-CIC.cls:677`), sem passar por metadados de PDF.
+
+Deixado comentário na linha explicando por que a classe não foi usada ali.
+
+### CL-38 — tratamento do Prof./Dr. Andrei · **ENCERRADO — decisão do Silvio**
+Levantado por mim ao trabalhar o CL-03, **não** pela banca. Hoje:
+`\membrobanca{\dr Andrei Lima Queiroz}` — só `\dr`, enquanto orientador e coordenador
+saem como "Prof. Dr.".
+
+Contexto: o Andrei deu aula no Programa, mas o cargo dele na UnB é técnico, na reitoria.
+
+**Decisão (31/08/2026): fica `\dr`.** Razão do Silvio: ninguém cobrou isso, e se alguém
+notar no futuro a troca é trivial. O risco também é assimétrico a favor dessa escolha —
+"Dr." em quem também é professor é omissão, não erro; "Prof." em quem tem cargo técnico
+seria afirmação incorreta em documento oficial.
+
+**Não reabrir** sem provocação externa. Se um dia for preciso: a autoridade é a
+portaria/ata de designação da banca, e um vínculo formal com o PPCA (professor
+colaborador ou credenciado) tornaria "Prof. Dr." correto independentemente do cargo.
 
 ---
 
@@ -196,16 +230,25 @@ pontual. **Mesmo ponto do CL-21 — tratar juntos.**
 **fidelidade lógica** (valores, nomenclatura, granularidade); a conversão é de
 **representação física** (linha → coluna). Nenhuma altera conteúdo.
 
-### CL-22 — erro de referência, p.60 · **A** — CONFIRMADO
-`4_Proposta_Arquitetura.tex:189`:
-> "...característica dos *open table formats* discutidos na
-> Subseção~`\ref{sec:arq-zonas}` do Capítulo~3"
+### CL-22 — erro de referência, p.60 · **A** — FEITO
+`4_Proposta_Arquitetura.tex:189`. Era:
+`discutidos na Subseção~\ref{sec:arq-zonas} do Capítulo~3,`
 
-`sec:arq-zonas` está **no capítulo 4**. O cap. 3 tem um único label:
-`sec:lakehouse` (`3_Referencial_Teorico.tex:308`), que é onde os *open table
-formats* são de fato discutidos (Delta Lake, Iceberg, Hudi, Paimon, Lance — linhas
-326-361). Correção: trocar por `\ref{sec:lakehouse}` e remover "do Capítulo~3"
-(o `\ref` já resolve).
+`sec:arq-zonas` é o label da `\section{Elementos da arquitetura}`, **no capítulo 4**
+(linha 163) — renderizava "Subseção 4.3 do Capítulo 3", exatamente a frase dela.
+
+Corrigido para `discutidos na Subseção~\ref{sec:lakehouse},` — sai o "do Capítulo~3",
+redundante porque o número já começa com 3. Renderiza "Subseção 3.1.3", que é onde os
+*open table formats* estão de fato (Delta Lake, Iceberg, Hudi, Paimon, Lance e a tabela
+comparativa, linhas 326-361 do capítulo 3).
+
+**Nota técnica:** `sec:lakehouse` está após `\subsubsection{Data Lakehouse}`, e a classe
+herda o `report`, que numera só até `subsection` (`secnumdepth=2`). Sem número, o
+`\label` não captura o `subsubsection`: pega o último contador numerado, a subseção
+3.1.3. Ou seja, resolve para o alvo certo **por efeito colateral**, não por desenho.
+Funciona enquanto a classe não mudar — e ela é intocável (ver `CLAUDE.md`).
+
+Sem marcação de cor.
 
 ### CL-23 — RT-6: "Como isso se dá? Flexibilidade de schema?" · **B**
 Pede o **mecanismo**, não a alegação de conformidade. Resposta: *schema evolution*
@@ -213,13 +256,62 @@ nativo do open table format — campo novo, removido ou de tipo alterado é acom
 sem quebrar a leitura do que já foi persistido. Dizer como convive com a validação
 estrutural da ingestão.
 
-### CL-24 — Silver: exemplo concreto de harmonização semântica · **B**
-Ela testa com um par real do PPCOT — **"missão" e "tarefa"** — e pede que o texto
-mostre como o esquema classe/propriedade/representação da IR 14-06 reconcilia
-divergências entre sistemas finalísticos. Hoje está inteiramente abstrato.
+### CL-24 — Silver: exemplo concreto de harmonização semântica · **B** — FEITO
+### CL-25 — "referência comum" × "categorias canônicas" · **A** — FEITO
+Tratados juntos: a nomenclatura só fecha depois de decidir *o que* o modelo é.
 
-### CL-25 — "referência comum" × "categorias canônicas" · **A**
-Usados como equivalentes sem definição. Uniformizar o termo.
+**Diagnóstico do CL-25 — ela achou dois nomes, havia seis** para o alvo da conformação:
+`modelo comum da brigada` (1x), `modelo unificado da brigada` (2x), `referência comum`
+(1x), `categorias canônicas` (1x), `categorias de referência` (1x). Não eram seis
+conceitos: eram **dois** (alvo estrutural e alvo semântico) com três nomes cada.
+
+Unificados em dois nomes da mesma família — responde direto ao "Ex? comum? canônico?"
+da margem dela, e "modelo canônico" nomeia um padrão reconhecido de integração, o que
+ancora a proposta em literatura estabelecida (serve ao CL-34):
+
+| virou | ocorrências |
+|---|---|
+| `modelo canônico da brigada` | 2x |
+| `termos canônicos` | 3x |
+
+**CL-24 — o que ela estava realmente testando.** *missão* e *tarefa* são doutrinariamente
+distintas; ela escolheu o par para perguntar **como o esquema evita colapsar duas coisas
+diferentes**. O texto afirmava que "entidades equivalentes podem ser representadas de
+formas distintas" sem dizer nunca como se sabe que são equivalentes.
+
+**O Silvio derrubou a primeira resposta**, e com razão: ela assumia que o rótulo de
+origem é confiável. Se o sistema não segue a IR 14-06, um campo `tarefa` pode ser, de
+fato, uma `missão` — caso que o próprio texto já admite na linha 210 ("a própria IR 14-06
+admite exceções à regra de unicidade de nomes, decorrentes de sistemas legados") e nunca
+fechava.
+
+**Resposta adotada:** a norma define o espaço de **chegada**, não o de partida. No espaço
+de chegada `MISSÃO` e `TAREFA` são classes distintas e nada as funde; a correspondência
+a partir de fontes não aderentes não se deduz do nome — é decidida e registrada. E o
+lugar onde ela é registrada é o argumento: por ser declarativa e residir na governança,
+pode ser revista sem tocar nos fluxos.
+
+**Emenda "fonte única"** (levantada pelo Silvio): sem ela, nada no texto impede que o
+YAML lido pelo Spark e o glossário do catálogo divirjam. Três palavras que proíbem o
+descasamento no plano da arquitetura.
+
+Parágrafo novo (~100 palavras) inserido após a dimensão semântica, em `\entrou{}`.
+Deliberadamente **não** promete linhagem em nível de coluna: o texto da governança só
+promete "vinculação aos **conjuntos** de origem" (nível de tabela) + documentação das
+regras, e subir a promessa aumentaria a superfície de cobrança no CL-35.
+
+**Apoio cruzado gerado para o CL-34** — formulação mais precisa do candidato (iii) a
+diferencial científico: a norma institucional entrega o **vocabulário-alvo já legitimado**
+(o que quem constrói do zero não tem), mas **não entrega os mapeamentos**, que seguem
+sendo trabalho de administração de dados. Afirmação defensável, diferente de "usamos uma
+norma existente".
+
+**Nota para o capítulo 5 (CL-35):** o OpenMetadata não infere linhagem de coluna a partir
+de `withColumnRenamed` em PySpark — só de SQL, dbt, API ou UI. Três saídas: (i) empurrar
+pela API a partir do mesmo YAML; (ii) gerar SQL a partir do YAML, e aí o catálogo deriva
+sozinho; (iii) aceitar linhagem em nível de tabela + vocabulário no catálogo.
+**Decisão do Silvio: (iii)**, a mais simples e a única que o texto já promete.
+Não verificado na instalação dele — conferir junto ao `infra-dissertacao`.
 
 ### CL-26 — "interface de consulta analítica" (p.64) com "?" · **B**
 Explicar melhor ou retirar. **Ver CL-15** — ali ela parece querer o contrário.
@@ -240,9 +332,24 @@ Circularidade: o C2 aparece como uma entre seis Funções, mas é a função int
 e os produtos da Gold (PPCOT, PITCIC, COC) são produtos de C2. Ligado ao CL-28.
 
 ### CL-30 — erros de referência, p.73, 74 e 78 · **NÃO É ERRO**
-São os três `\ref{cap:poc}` do capítulo 4. Viraram `??` no PDF apenas porque o build
-da qualificação não incluía o capítulo 5. **O fonte está correto — nada a fazer.**
-Confirmar isso a ela.
+São os três `\ref{cap:poc}` do capítulo 4. Viraram `??` no PDF apenas porque o build da
+qualificação não incluía o capítulo 5. **O fonte está correto.**
+
+**Apoio cruzado** (achado ao trabalhar o CL-22) — auditoria completa das referências
+cruzadas dos capítulos 1 a 4: as **23 referências numéricas escritas à mão** resolvem
+todas para a seção certa, mais os `Capítulo 1/2/3/4`. Zero quebradas.
+
+| exemplos | aponta para |
+|---|---|
+| `3:396` → 3.1.2 | Data Warehouse |
+| `4:37` → 3.3.3 | Restrições de comunicações táticas |
+| `4:51` → 3.2.3 | Qualidade, proveniência e apoio à decisão em C2 |
+| `4:29` → 3.3.1 e 3.3.2 | Função de Combate / Processos formais |
+
+A única referência errada do texto era a do CL-22 — e era justamente a que usava `\ref`,
+por apontar para o label trocado. Serve para responder a ela com números: um erro
+localizado, não um sintoma. `cap:poc` é o único `\ref` órfão que resta, e some quando o
+capítulo 5 entrar no build.
 
 ### CL-31 — "O que garante isso?" (4.5.3, hierarquia de C2) · **B**
 Nada no modelo descreve *enforcement*; controle de acesso está fora do escopo.
@@ -310,6 +417,8 @@ Autoriza tratar a Gold de forma ilustrativa na PoC. **Depende do capítulo 5.**
 **Capítulo 5 ausente** — trava CL-35, CL-36, CL-37 (e informa CL-05).
 
 **Resposta dela** — CL-02, CL-17, CL-19.
+
+**Secretaria do PPCA** — CL-01.
 
 ---
 
