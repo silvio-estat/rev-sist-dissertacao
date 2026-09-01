@@ -14,7 +14,7 @@ Mesma classificação usada no backlog do Andrei:
 
 **38 itens.** 8 A · 16 B · 8 C · 4 D · 2 encerrados sem ação
 
-18 feitos: CL-02, 03, 07, 09, 10, 11, 12, 15, 18, 20, 21, 22, 23, 24, 25, 26, 31, 32. CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-30 confirmado como não-erro (falta comunicar a ela).
+19 feitos: CL-02, 03, 07, 09, 10, 11, 12, 15, 18, 20, 21, 22, 23, 24, 25, 26, 27, 31, 32. CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-30 confirmado como não-erro (falta comunicar a ela).
 
 ### Apoio cruzado
 
@@ -499,10 +499,57 @@ que a tabela não tem.
 (ulem) tem histórico de conflito com `glossaries`, e o trecho será apagado de todo modo.
 No `\entrou{}` o `\gls{EM}` está normal.
 
-### CL-27 — tabela consolidada zonas × características × requisitos · **B (grande)**
+### CL-27 — tabela consolidada zonas × características × requisitos · **B (grande)** — FEITO
 Substituir/complementar os parágrafos de fechamento de cada zona por uma matriz de
 rastreabilidade. Resolve parte do CL-33 e demonstra que nenhum requisito ficou órfão.
 **Boa ideia dela.** Decidir se substitui ou complementa a prosa.
+
+**Achado colateral, corrigido a pedido do Silvio (01/09/2026):** `4_Proposta:375`
+chamava de "Quadro" a única tabela do capítulo assim tratada, enquanto as outras quatro
+são chamadas de "Tabela" - e todas usam a mesma macro `\tabela`, que gera legenda
+"Tabela". A legenda diria "Tabela 4.5" e o texto "Quadro 4.5". Trocado para
+"A Tabela~\ref{tab:mapeamento}". Sem marcação de cor: correção mecânica. Era a única
+ocorrência de "Quadro" em todos os capítulos.
+
+**Decisão: substitui.** Os quatro fechamentos de zona (antigas linhas 182, 201, 227 e
+252 - `Landing`, `Bronze`, `Silver`, `Gold`) foram marcados em `\saiu{}`. Somavam **595
+palavras**, todos abrindo com a mesma frase ("Em sua finalidade arquitetural, a zona X
+responde a ... conjuntos de exigências") e repetindo treze vezes o conectivo "Atende
+[...], ao [verbo]". O conteúdo factual deles era só o par zona -> requisito; as
+justificativas já estavam ditas no corpo de cada subseção. O fechamento da **Governança**
+ficou: é ancoragem doutrinária, não segue a fórmula.
+
+**Onde entrou:** subseção nova **4.3.6 "Síntese da cobertura dos requisitos"**
+(`sec:arq-sintese-requisitos`), no fim da Seção 4.3, antes da Vista funcional por
+camadas. Padrão espelhado da 4.5.4 "Síntese do mapeamento", que já existia para hospedar
+o `tab:mapeamento`.
+
+**Desenho da tabela (`tab:cobertura`):** 3 colunas - Elemento | Patamar do dado |
+Requisitos atendidos - e 6 linhas, com `\newline` separando os grupos RD / RO / RT para
+permitir comparação vertical entre zonas. **Sem coluna de prosa, de propósito:** o
+`tab:mapeamento` já tem as mesmas cinco linhas com descrição em prosa, e duas tabelas
+paralelas piorariam justamente o CL-33.
+
+**Achado ao montar a matriz (01/09/2026): o RD-5 era o único requisito órfão.**
+De 16 requisitos (RD-1..5, RO-1..5, RT-1..6), o RD-5 aparecia só na própria linha da
+tabela (85) e na glosa (90) - nenhuma zona, camada ou a governança o reivindicava.
+
+**Descartada a fusão com o RD-4**, proposta pelo assistente e recusada pelo Silvio com
+razão: os dois citam manuais diferentes (MC 3.11-10 x EB70-MC-10.205) e são
+independentes - RD-4 é regime de chegada (comunicações), RD-5 é topologia (estrutura de
+comando). Se o enlace fosse contínuo, RD-4 se dissolveria e RD-5 continuaria inteiro.
+Fundir apagaria distinção real para fechar tabela.
+
+**Decisão: opção (d) - manter os cinco e atribuir o RD-5 ao nível da arquitetura**, não
+a uma zona. Diagnóstico: o RD-5 é restrição, não função; os fechamentos de zona listam
+funções, por isso nenhum o reivindicava. O buraco era da contabilidade, não do
+requisito. Mecanismo já escrito no CL-31 (4_Proposta:348).
+
+Escrito em dois pontos, ambos marcados: a glosa da linha 90 passa a dizer que o RD-5
+não se satisfaz dentro de uma zona e remete à Subseção 4.5.3; e o bloco do CL-31, em
+348, passa a nomear o RD-5 explicitamente. **Consequência para a matriz: ela precisa de
+dois níveis de atribuição** - o que se resolve por zona e o que se resolve pela
+arquitetura como um todo.
 
 **Apoio cruzado (vindo do CL-18)**: o amarre RD-1 -> *Silver*/*Gold* já foi escrito em
 4_Proposta:90 como remissão pontual. É uma parcela adiantada desta matriz - quando ela
@@ -572,6 +619,14 @@ já usado no CL-21 e no CL-23 (ver CL-33).
 ## Observações gerais
 
 ### CL-33 — "texto bem escrito mas muito repetitivo, o que o torna cansativo" · **C**
+
+**Apoio cruzado (vindo do CL-27) - maior mordida já dada neste item:** os quatro
+fechamentos de zona saíram, **595 palavras**, sem perder conteúdo. Restam neste item: a
+redução de `analític*` (58 no cap. 4, ~20 colocações) e os `Cabe [verbo]` (4 no cap. 4,
+7 no cap. 3). A quarta frente - a estrutura argumentativa repetida a cada zona - o
+assistente recomenda **não mexer**: paralelismo entre zonas é escolha expositiva
+legítima, e a `tab:cobertura` agora torna esse paralelismo visível sem repeti-lo em
+prosa.
 Evidência medida no texto atual:
 
 | | cap. 1 | cap. 2 | cap. 3 | cap. 4 | total |
