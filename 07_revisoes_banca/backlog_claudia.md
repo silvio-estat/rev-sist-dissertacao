@@ -14,7 +14,7 @@ Mesma classificação usada no backlog do Andrei:
 
 **38 itens.** 8 A · 16 B · 8 C · 4 D · 2 encerrados sem ação
 
-15 feitos: CL-02, 03, 09, 10, 15, 18, 20, 21, 22, 23, 24, 25, 26, 31, 32. CL-01 e CL-38 encerrados sem ação. CL-30 confirmado como não-erro (falta comunicar a ela).
+16 feitos: CL-02, 03, 09, 10, 12, 15, 18, 20, 21, 22, 23, 24, 25, 26, 31, 32. CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-30 confirmado como não-erro (falta comunicar a ela).
 
 ### Apoio cruzado
 
@@ -35,6 +35,8 @@ registrado longe do item a que pertence.
 | CL-35 | linhagem de coluna no OM exige SQL/API; decidido nível de tabela | CL-24 |
 | CL-33 | `analític*` no cap. 4: 63 -> 54 vivas, após CL-20/21/26 | CL-20 |
 | CL-27 | amarre RD-1 -> *Silver*/*Gold* já escrito como remissão | CL-18 |
+| CL-11 | zona x ETL: diferença mecânica, não terminológica | CL-12 |
+| CL-34 | materializar o bruto: conveniência civil, necessidade militar | CL-12 |
 
 ---
 
@@ -133,10 +135,26 @@ paper do Delta Lake / consolidação dos *open table formats*.
 
 ## Capítulo 3 — Referencial Teórico
 
-### CL-08 — enxugar detalhamentos · **C**
+### CL-08 — enxugar detalhamentos · **ENCERRADO — decisão do Silvio (01/09/2026)**
 > "poderia rever c/ base no que realmente precisa p/ entender a minha proposta."
 
-Decisão de escopo, não de redação. Ligada ao CL-33.
+**Decisão: não cortar conteúdo do cap. 3.** Justificativa do Silvio: nenhum outro
+membro da banca levantou o ponto.
+
+Justificativa adicional a usar se ela retomar na defesa: a amplitude do cap. 3 é
+resultado do protocolo TEMAC declarado no cap. 2, não de escolha estilística - podar
+tópicos por sensação de excesso quebraria a coerência com a metodologia declarada. E
+há posição acadêmica publicada dos dois lados (Boote & Beile 2005 defendem revisão
+ampla como demonstração de domínio do campo; Webster & Watson 2002 defendem revisão
+*concept-centric*). **Conferir essas referências antes de citar.**
+
+**Sobre a evidência, para o registro:** este é o único item de toda a lista dela sem
+página e sem frase entre aspas. É fala relatada, provavelmente oral. A sentença
+"acho que falei demais, expliquei demais" nas considerações é **do Silvio**, não dela
+- não confundir uma coisa com a outra ao reabrir este item.
+
+Não confundir com o CL-33: aquele é sobre **repetição** e tem evidência escrita e
+verificável no texto. Continua aberto.
 
 ### CL-09 — concordância "Giebler et al. destaca" · **A** — FEITO
 `3_Referencial_Teorico.tex:220`. `destaca` → `destacam`.
@@ -180,6 +198,12 @@ que alimentaria o CL-33.
 Sem marcação de cor (troca de palavra + ajuste de pontuação, não reescrita).
 
 ### CL-11 — "silos disjuntos" / "Será? Literatura marketeira?" · **C**
+
+**Apoio cruzado (vindo do CL-12)**: a melhor defesa contra "marketeira" é a diferença
+**mecânica**, não terminológica, entre zona e ETL - já escrita em 3_Referencial:230.
+Zona materializa e mantém consultável cada estágio; ETL descarta o intermediário. Isso
+mostra que a arquitetura por zonas propõe algo verificável, não renomeia o que já
+existia.
 `3_Referencial_Teorico.tex:224`.
 
 **Apoio cruzado** (achado ao trabalhar o CL-10) — defesa melhor que o prestígio da Giebler: o próprio Inmon documenta a
@@ -193,9 +217,21 @@ pelo autor do modelo. Isso desarma a suspeita de "literatura marketeira" de um j
 que "publicou na IEEE" não desarma. Opção de redação: atribuir a crítica e ancorá-la
 no próprio Inmon.
 
-### CL-12 — "O que essa definição em zonas tem de diferente da ETL?" · **B**
+### CL-12 — "O que essa definição em zonas tem de diferente da ETL?" · **B** — FEITO
 Sobre a Figura 3.4. Pergunta legítima: zonas persistem estados intermediários e
 são consultáveis; ETL move dados entre pontos sem materializar os estágios.
+
+Fechado em 3_Referencial:230, parágrafo novo em `\entrou{}` inserido **antes** da
+Figura 3.4 - o leitor chega ao diagrama já sabendo que zona não é ETL. Três
+consequências nomeadas: reprocessamento sem nova extração na fonte, consumidores
+próprios em cada zona, e conformação ao *schema* como estágio interno em vez de
+condição de entrada. Fecha com "o ETL não desaparece - deixa de ser a fronteira de
+entrada e passa a operar entre zonas".
+
+Citação: uma só, `laurent_use_2020`, que já ancorava o *schema-on-read* na linha 224.
+A distinção zona x ETL é articulação do autor, não atribuída a ninguém.
+
+**Apoio cruzado depositado**: ver CL-11 e CL-34.
 
 ---
 
@@ -514,6 +550,15 @@ diferentes — a raiz provável do "?" dela no CL-26.
 CL-27 resolve outra parte (os fechamentos de zona repetidos em prosa).
 
 ### CL-34 — "o diferencial científico não está claro" · **C** — CRÍTICA MAIS SÉRIA
+
+**Apoio cruzado (vindo do CL-12) - candidato forte:** materializar o dado bruto é, na
+literatura civil, conveniência de projeto (evita nova extração na fonte quando uma
+regra muda). No domínio militar isso vira **necessidade**: o pacote chega por janela de
+oportunidade e **não pode ser pedido de novo**. O argumento já está escrito no cap. 4,
+na justificativa da *Landing* (4_Proposta:35, "caráter irrepetível da transmissão"), e
+agora tem o contraponto teórico no cap. 3 (3_Referencial:230). Ou seja: o regime de
+chegada militar torna obrigatória uma propriedade que a literatura trata como opcional.
+Isso é tese, não engenharia.
 Aplicar um padrão consagrado a um domínio novo é engenharia, não ciência. Precisa
 **elevar a tese**: o que o domínio militar impõe que a literatura não resolve.
 Candidatos já no material:
