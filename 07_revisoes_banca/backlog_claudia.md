@@ -281,11 +281,33 @@ Funciona enquanto a classe não mudar — e ela é intocável (ver `CLAUDE.md`).
 
 Sem marcação de cor.
 
-### CL-23 — RT-6: "Como isso se dá? Flexibilidade de schema?" · **B**
-Pede o **mecanismo**, não a alegação de conformidade. Resposta: *schema evolution*
-nativo do open table format — campo novo, removido ou de tipo alterado é acomodado
-sem quebrar a leitura do que já foi persistido. Dizer como convive com a validação
-estrutural da ingestão.
+### CL-23 — RT-6: "Como isso se dá? Flexibilidade de schema?" · **B** — FEITO
+**O texto declarava conformidade repetindo o requisito.** O fechamento da *Bronze* dizia
+"ao acomodar alterações nas estruturas das fontes finalísticas ao longo do tempo sem
+comprometer a integridade do repositório nem interromper a continuidade da ingestão" — e
+a definição do RT-6 na tabela de requisitos diz **a mesma coisa** com outras palavras. Ela
+pediu o mecanismo e recebeu o eco.
+
+**A segunda pergunta dela era a mais afiada.** "Flexibilidade de schema?" testava se não
+se tratava, na verdade, de *schemaless* — o que contradiria a própria *Bronze*, que
+**aplica** *schema* e **valida** conformidade.
+
+**Mecanismo adotado, em duas metades:** (i) o *open table format* absorve o compatível —
+campo novo, campo descontinuado, tipo ampliado; o *schema* declarado evolui e os dados já
+persistidos seguem legíveis sob a versão anterior, sem reescrita; (ii) a validação
+estrutural, já descrita como segunda função derivada, contém o incompatível e o isola para
+inspeção. Sem a metade (ii) seria exatamente a "flexibilidade" que ela desconfiou.
+Com as duas, é evolução **controlada** — a palavra da própria definição do RT-6.
+Ancorado no capítulo 3, linhas 326 e 361.
+
+Parágrafo novo (~85 palavras) em `\entrou{}`.
+
+**Duas decisões de projeto:** (a) não nomear Delta Lake nem Iceberg — o capítulo 4 é
+arquitetura e a escolha de formato é instanciação (linha 374); seguido o precedente do
+próprio texto, "o *open table format* adotado"; (b) posicionar o parágrafo **junto das
+funções derivadas**, e não no fechamento onde ela escreveu, porque o CL-27 propõe
+substituir os fechamentos por uma tabela de rastreabilidade — engordar o fechamento agora
+seria escrever para jogar fora.
 
 ### CL-24 — Silver: exemplo concreto de harmonização semântica · **B** — FEITO
 ### CL-25 — "referência comum" × "categorias canônicas" · **A** — FEITO
