@@ -14,7 +14,7 @@ Mesma classificação usada no backlog do Andrei:
 
 **38 itens.** 8 A · 16 B · 8 C · 4 D · 2 encerrados sem ação
 
-17 feitos: CL-02, 03, 09, 10, 11, 12, 15, 18, 20, 21, 22, 23, 24, 25, 26, 31, 32. CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-30 confirmado como não-erro (falta comunicar a ela).
+18 feitos: CL-02, 03, 07, 09, 10, 11, 12, 15, 18, 20, 21, 22, 23, 24, 25, 26, 31, 32. CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-30 confirmado como não-erro (falta comunicar a ela).
 
 ### Apoio cruzado
 
@@ -37,6 +37,7 @@ registrado longe do item a que pertence.
 | CL-27 | amarre RD-1 -> *Silver*/*Gold* já escrito como remissão | CL-18 |
 | ~~CL-11~~ | zona x ETL: diferença mecânica, não terminológica | CL-12 — não usado |
 | CL-34 | materializar o bruto: conveniência civil, necessidade militar | CL-12 |
+| CL-06, CL-34 | cocitação recuperou seminais fora da janela: método, não conveniência | CL-07 |
 
 ---
 
@@ -114,6 +115,11 @@ Sobre "Integração com sistemas legados específicos do EB". Pede critério de
 validação. Amarra com CL-35 (escopo da PoC).
 
 ### CL-06 — justificativa acadêmica · **C**
+
+**Apoio cruzado (vindo do CL-07)**: ver o achado registrado no CL-34 - a seleção do
+portfólio veio de procedimento bibliométrico verificável (cocitação recuperando
+seminais fora da janela), não de escolha por conveniência. É material para a
+justificativa **acadêmica**, que é exatamente o que ela cobrou aqui.
 > "o fato de não haver uma solução específica para o EB não chega a caracterizar
 > uma contribuição acadêmica."
 
@@ -124,12 +130,31 @@ resposta não apareceu. Tratar os dois juntos.
 
 ## Capítulo 2 — Metodologia
 
-### CL-07 — corte temporal de 2016 · **B**
+### CL-07 — corte temporal de 2016 · **B** — FEITO
 > "Trabalhos anteriores a 2016 não contemplam as abordagens que representam o
 > estado da arte atual" → ela: *"no que se refere a? melhorar a justific."*
 
-Falta dizer **em qual disciplina** o corte vale. Candidato: a publicação do
-paper do Delta Lake / consolidação dos *open table formats*.
+Falta dizer **em qual disciplina** o corte vale. ~~Candidato: a publicação do
+paper do Delta Lake / consolidação dos *open table formats*.~~ **Candidato descartado:**
+o paper do Delta Lake é de 2020 (VLDB) e o Lakehouse é de 2021 (CIDR) - nenhuma das
+duas datas justifica um corte em 2016. O Silvio derrubou a justificativa tecnológica
+inteira: HDFS é de 2006, o conceito de *data lake* é de 2010, Iceberg é de 2017 e Hudi
+começou em 2016. As tecnologias **não** são recentes.
+
+Fechado em 2_Metodologia:55 com a v3, que troca de eixo - sai "as tecnologias são
+novas" (frágil) e entra justificativa **metodológica + bibliométrica**:
+
+1. **TEMAC recomenda 5 a 10 anos** (`01_protocolo/TEMAC_artigo.md:183`, verbatim:
+   *"Atualmente, os estudos tendem a realizar buscas em espaços de tempo de 5 a 10
+   anos."*). 2016-2026 são exatamente dez - o limite superior do próprio método.
+2. **2016 é onde começa a produção dos autores-âncora** que a própria bibliometria
+   apontou (`05_resultados/REL_FINAL/relatorio_bibliometrico_temac.md`, §2.2.2: *"Fase 1
+   (2016-2018) - Estabelecimento de Fundamentos [...] HAI RH, com trabalhos
+   fundamentais publicados a partir de 2016"*), com Constance e GEMMS, ambos 2016.
+3. **A janela filtra o que é buscado, não o que é encontrado** - ver achado abaixo.
+
+Também retirada a menção ao Lakehouse: citar um marco de 2020/2021 para defender um
+corte de 2016 era o que convidava a pergunta dela.
 
 ---
 
@@ -562,6 +587,21 @@ CL-27 resolve outra parte (os fechamentos de zona repetidos em prosa).
 
 ### CL-34 — "o diferencial científico não está claro" · **C** — CRÍTICA MAIS SÉRIA
 
+**Apoio cruzado (vindo do CL-07) - a revisão foi conduzida pelo método, não por
+conveniência.** Verificado na evidência congelada: Fang (`fang_managing_2015`), a
+referência mais citada pelo corpus (42 citações), **não é documento do corpus** - está
+em `05_resultados/SCOPUS/analise_vs1/top_cited_documents_global.csv`, que lista
+referências mais citadas, não documentos. Ele entrou por **cocitação**. Confirmado que
+`main_info.csv` registra `Timespan: 2016-2026` para o corpus analisado, enquanto os
+exports brutos contêm material anterior (97 registros pré-2016 num export de 1.522,
+136 num de 1.702) - o filtro foi aplicado na consolidação.
+
+Ou seja: a janela temporal delimita o que é **buscado e analisado**, e obras seminais
+anteriores emergem pelo mecanismo previsto no próprio TEMAC. Isso é argumento contra a
+leitura de que o trabalho é "só engenharia": o portfólio de leitura foi determinado por
+um procedimento bibliométrico verificável, não por escolha do autor. Serve igualmente
+no CL-06.
+
 **Apoio cruzado (vindo do CL-12) - candidato forte:** materializar o dado bruto é, na
 literatura civil, conveniência de projeto (evita nova extração na fonte quando uma
 regra muda). No domínio militar isso vira **necessidade**: o pacote chega por janela de
@@ -610,6 +650,20 @@ Autoriza tratar a Gold de forma ilustrativa na PoC. **Depende do capítulo 5.**
 **Resposta dela** — CL-17 ("Alfa Bravo Charlie?") e CL-19 ("Genesis? Astros?").
 CL-01 e CL-02 saíram desta lista: o primeiro foi verificado pelo Silvio, o segundo
 resolvido com a data real da qualificação (13/08/2026).
+
+**`.bib` não está neste repo** (vive no Overleaf) — trava duas conferências de data,
+achadas ao trabalhar o CL-07, nenhuma apontada pela banca:
+
+1. **Fang: 2015 ou 2016?** O Quadro do cap. 2 exibe "Fang (2016)" com a chave
+   `fang_managing_2015`. A evidência congelada dá 2015 (`scopus_export_...ba78f0cf.csv`:
+   `Year: 2015`, `IEEE-CYBER 2015`, DOI `10.1109/CYBER.2015.7288049`). O gerador de
+   citação da IEEE devolve 2016 porque os anais saíram depois - foi daí que veio a
+   divergência. **Recomendação: alinhar em 2015**, que é o que a base registrou; o
+   risco é a lista de referências e a tabela discordarem no mesmo documento. Conferir o
+   campo `year` no `.bib` antes de mexer.
+2. **Quando emergiu o Lakehouse** — os documentos discordam entre si: o `.tex` dizia "a
+   partir de 2020", o relatório bibliométrico diz "2019-2020", e a citação é o paper de
+   2021 (CIDR). A menção saiu do cap. 2 com o CL-07; resta alinhar no cap. 3.
 
 
 ---
