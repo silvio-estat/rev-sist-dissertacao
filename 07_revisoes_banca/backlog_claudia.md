@@ -14,7 +14,7 @@ Mesma classificação usada no backlog do Andrei:
 
 **38 itens.** 8 A · 16 B · 8 C · 4 D · 2 encerrados sem ação
 
-16 feitos: CL-02, 03, 09, 10, 12, 15, 18, 20, 21, 22, 23, 24, 25, 26, 31, 32. CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-30 confirmado como não-erro (falta comunicar a ela).
+17 feitos: CL-02, 03, 09, 10, 11, 12, 15, 18, 20, 21, 22, 23, 24, 25, 26, 31, 32. CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-30 confirmado como não-erro (falta comunicar a ela).
 
 ### Apoio cruzado
 
@@ -24,7 +24,7 @@ registrado longe do item a que pertence.
 
 | serve em | o quê | veio de |
 |---|---|---|
-| CL-11 | Inmon admite que o *application pond* é "notoriously unintegrated" | CL-10 |
+| ~~CL-11~~ | Inmon admite que o *application pond* é "notoriously unintegrated" | CL-10 — consumido |
 | CL-14 | Inmon: "data does not have to pass through the raw data pond" | CL-10 |
 | AN-10, CL-14 | Inmon manda esvaziar o *raw pond* — divergência a declarar | CL-10 |
 | CL-26, CL-33 | `analític*` em 102 usos, 14 colocações só no cap. 4 | leitura inicial |
@@ -35,7 +35,7 @@ registrado longe do item a que pertence.
 | CL-35 | linhagem de coluna no OM exige SQL/API; decidido nível de tabela | CL-24 |
 | CL-33 | `analític*` no cap. 4: 63 -> 54 vivas, após CL-20/21/26 | CL-20 |
 | CL-27 | amarre RD-1 -> *Silver*/*Gold* já escrito como remissão | CL-18 |
-| CL-11 | zona x ETL: diferença mecânica, não terminológica | CL-12 |
+| ~~CL-11~~ | zona x ETL: diferença mecânica, não terminológica | CL-12 — não usado |
 | CL-34 | materializar o bruto: conveniência civil, necessidade militar | CL-12 |
 
 ---
@@ -197,7 +197,18 @@ que alimentaria o CL-33.
 
 Sem marcação de cor (troca de palavra + ajuste de pontuação, não reescrita).
 
-### CL-11 — "silos disjuntos" / "Será? Literatura marketeira?" · **C**
+### CL-11 — "silos disjuntos" / "Será? Literatura marketeira?" · **C** — FEITO
+
+**Fechado em 3_Referencial:224** com a opção (b): ancorar no Inmon. Três mudanças
+além da âncora - a crítica passa a ser **atribuída** a Giebler et al. em vez de
+enunciada como fato, "inviabilizando" vira "limitando", e a expressão que ela circulou
+("silos disjuntos") sai, substituída pela descrição do mecanismo.
+
+Descartado o argumento de autoridade ("autora de renome, publicou na IEEE"): ela não
+duvidava do veículo. "Marketeira" mirava o fato de a crítica ao *data pond* partir de
+quem propõe a alternativa. Contra isso, prestígio não serve - só corroboração
+independente serve, e a de Inmon é a melhor possível, por ser do próprio autor do
+modelo criticado.
 
 **Apoio cruzado (vindo do CL-12)**: a melhor defesa contra "marketeira" é a diferença
 **mecânica**, não terminológica, entre zona e ETL - já escrita em 3_Referencial:230.
