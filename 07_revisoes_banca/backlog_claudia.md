@@ -14,6 +14,8 @@ Mesma classificação usada no backlog do Andrei:
 
 **38 itens.** 8 A · 16 B · 8 C · 4 D · 2 encerrados sem ação
 
+14 feitos: CL-02, 03, 09, 10, 15, 20, 21, 22, 23, 24, 25, 26, 31, 32. CL-01 e CL-38 encerrados sem ação. CL-30 confirmado como não-erro (falta comunicar a ela).
+
 ### Apoio cruzado
 
 Material achado ao trabalhar um item que serve de argumento em **outro**. Antes de
@@ -446,14 +448,34 @@ por apontar para o label trocado. Serve para responder a ela com números: um er
 localizado, não um sintoma. `cap:poc` é o único `\ref` órfão que resta, e some quando o
 capítulo 5 entrar no build.
 
-### CL-31 — "O que garante isso?" (4.5.3, hierarquia de C2) · **B**
+### CL-31 — "O que garante isso?" (4.5.3, hierarquia de C2) · **B** — FEITO
 Nada no modelo descreve *enforcement*; controle de acesso está fora do escopo.
 Saída: dizer que a arquitetura **acomoda** o fluxo hierárquico — recebe o que os
 batalhões transmitem pelos enlaces táticos — em vez de afirmar que o garante.
 
-### CL-32 — "Como?" (preserva a cadeia de responsabilização) · **B**
+Fechado em 4_Proposta:348 com `\saiu{}`/`\entrou{}`. Duas mudanças: (1) "respeita a
+hierarquia" -> "acomoda o fluxo vertical sem impô-lo", alinhando a 4.5.3 ao que a
+linha 88 já dizia sobre o RD-5 ("permanece **compatível** com a estrutura
+hierárquica"); (2) no lugar da garantia, dois mecanismos que o texto já tinha e não
+articulava - a *Landing* como ponto de entrada único (linha 173) e o registro do
+batalhão de origem e do momento da recepção no catálogo (linha 179). Não garante,
+mas não abre caminho paralelo e deixa a origem verificável.
+
+### CL-32 — "Como?" (preserva a cadeia de responsabilização) · **B** — FEITO
 O texto diz o que o sistema **não** faz, não o mecanismo. Articular: linhagem
 registrada no catálogo, ausência de automação decisória, rastreabilidade auditável.
+
+Fechado em 4_Proposta:352 com `\saiu{}`/`\entrou{}`. Os três elementos entraram
+nomeados: ausência de automação decisória (a *Gold* entrega visões, não conclusões),
+linhagem no catálogo reconstituindo quais fontes sustentaram cada visão, e metadados
+de proveniência da *Landing* (batalhão transmissor, momento da recepção).
+
+**Apoio cruzado consumido**: a decisão do CL-24/CL-35 (linhagem de nível de tabela,
+não de coluna) limitou a redação - o texto promete reconstituir *quais fontes*
+sustentaram a visão, nunca *qual campo virou qual*.
+
+Evitado de propósito o fecho "é nesse sentido que..." / "é desse par que decorre...",
+já usado no CL-21 e no CL-23 (ver CL-33).
 
 ---
 
