@@ -31,6 +31,7 @@ registrado longe do item a que pertence.
 | CL-30 | auditoria: 23/23 referências à mão corretas, zero quebradas | CL-22 |
 | CL-34 | norma entrega o vocabulário-alvo legitimado, não os mapeamentos | CL-24 |
 | CL-35 | linhagem de coluna no OM exige SQL/API; decidido nível de tabela | CL-24 |
+| CL-33 | `analític*` no cap. 4: 63 -> 54 vivas, após CL-20/21/26 | CL-20 |
 
 ---
 
@@ -203,9 +204,9 @@ send the data directly into the analog, application or the textual pond."*
 O criador do modelo de *ponds* autoriza o bypass. Sustenta a resposta com autoridade,
 não com engenharia própria.
 
-### CL-15 — Silver com dados prontos para consulta e visualização · **B**
-Ex.: mapas com posição de elementos. Conferir se a subseção da Silver já menciona
-a interface de consulta própria dela. **Cuidado: colide com CL-26.**
+### CL-15 — Silver com dados prontos para consulta e visualização · **B** — FEITO
+Tratado junto com o CL-26: são o mesmo ponto visto por dois lados, e por isso pareciam
+pedidos opostos.
 
 ### CL-16 — saída da Gold "não necessariamente visão analítica" · **B**
 BI, API e relatórios também consomem a Gold. Rotular a saída de forma mais ampla.
@@ -221,14 +222,44 @@ pela conformação entre Funções de Combate. Cabe na própria célula ou por r
 ### CL-19 — "Alfa Bravo?", "Genesis?", "Astros?" · **D**
 Quais sistemas do EB entrariam na integração. **Perguntar novamente a ela.**
 
-### CL-20 — conversão colunar nem sempre necessária · **B**
-`4_Proposta_Arquitetura.tex:189`. Nem todo consumo é analítico/agregado; há consulta
-pontual. **Mesmo ponto do CL-21 — tratar juntos.**
+### CL-20 — conversão colunar nem sempre necessária · **B** — FEITO
+### CL-21 — "mas se preserva, pra que a conversão?" · **B** — FEITO
+Tratados juntos: são o mesmo ponto por dois lados.
 
-### CL-21 — "mas se preserva, pra que a conversão?" · **B**
-`4_Proposta_Arquitetura.tex:191`. Contradição aparente. Resposta: a preservação é de
-**fidelidade lógica** (valores, nomenclatura, granularidade); a conversão é de
-**representação física** (linha → coluna). Nenhuma altera conteúdo.
+**CL-21 — a contradição existia e o texto nunca a reconciliava.** Dizia que a *Bronze*
+"preserva os dados tal como vieram [...] mantendo a granularidade, a nomenclatura e a
+estrutura de cada fonte" e, três parágrafos antes, que os converte para colunar.
+Resposta: **preservação é lógica, conversão é física**. A terceira função derivada foi
+reescrita (`\saiu`/`\entrou`) e agora termina nomeando a contradição para dissolvê-la:
+"A conversão altera apenas a forma de armazenamento - de orientação por linha para
+orientação por coluna -, sem afetar valores, nomenclatura ou granularidade: é nesse
+sentido que a *Bronze* converte sem deixar de preservar."
+
+**CL-20 era sobre-afirmação, e sumiu ao ser removida.** O texto justificava o colunar
+**pela análise** ("formato adequado à análise", "otimizada para leitura analítica"), e
+contra isso ela tinha razão: nem todo consumo para decisão é analítico. Mas essa não é a
+razão real — o parágrafo de fechamento da zona já declara a certa: "Atende ao requisito
+técnico de paradigma *Lakehouse* com transações ACID (RT-1), ao adotar *open table
+format*". O colunar está lá por ser **o formato do repositório**, não porque a decisão
+exija análise. Retirada a justificativa errada, a objeção deixa de existir — sem
+contra-argumento e sem parágrafo novo (que só alongaria um capítulo que ela achou longo).
+
+Trocas sem cor: `formato analítico colunar` → `formato colunar` (3x vivas),
+`formato adequado à análise` → `formato adequado à consulta`.
+
+**Achado colateral corrigido junto** — a linha 193, na *Bronze*, tinha **palavra por
+palavra** o mesmo defeito do CL-26: "expõe uma interface de consulta analítica diretamente
+acessível à camada transversal de governança". Ela marcou só a da *Silver*. Corrigir uma e
+deixar a outra tornaria o capítulo incoerente diante de uma leitora que já demonstrou
+reparar nisso. Reescrita com cor, saindo também o "quando isso for analiticamente
+relevante", redundante com os exemplos seguintes.
+
+**Efeito no CL-33:** `analític*` no capítulo 4 caiu de **63 para 54** ocorrências vivas
+(60 no arquivo, 6 dentro de `\saiu{}` e que somem na limpeza).
+
+**Pendência para a leitura geral do Silvio:** a subseção ainda abre com "a zona de
+primeira persistência **analítica** da arquitetura". Não mexi — é frase definidora do
+papel da zona, e a decisão é dele ao ler o texto completo.
 
 ### CL-22 — erro de referência, p.60 · **A** — FEITO
 `4_Proposta_Arquitetura.tex:189`. Era:
@@ -313,9 +344,43 @@ sozinho; (iii) aceitar linhagem em nível de tabela + vocabulário no catálogo.
 **Decisão do Silvio: (iii)**, a mais simples e a única que o texto já promete.
 Não verificado na instalação dele — conferir junto ao `infra-dissertacao`.
 
-### CL-26 — "interface de consulta analítica" (p.64) com "?" · **B**
-Explicar melhor ou retirar. **Ver CL-15** — ali ela parece querer o contrário.
-Provável raiz: o termo "analítica" está sobrecarregado (ver CL-33).
+### CL-26 — "interface de consulta analítica" (p.64) com "?" · **B** — FEITO
+`4_Proposta_Arquitetura.tex:220`. A frase tinha **dois** defeitos:
+
+**1. A palavra contradizia a própria escala do texto.** O fechamento da *Silver* diz que
+ela constitui "o patamar de **dado consolidado** distinto do dado bruto e do **dado
+analítico**". Chamar a interface dela de "consulta analítica" desfaz essa distinção. É a
+colisão do CL-33 (`analític*`, 102 usos, 14 colocações) num lugar onde faz estrago — e
+provavelmente a razão de ela pôr "?" ali e não nos outros 62 "analíticos" do capítulo.
+
+**2. O destinatário estava errado, e o próprio texto diz isso adiante.** A frase dizia
+"acessível à camada transversal de governança". A linha 275 distingue os mecanismos de
+governança "da *engine* de consulta analítica, que cumpre **função de acesso, não de
+governança**", e a 277 gasta um parágrafo inteiro justificando por que a *engine* aparece
+naquela seção sem ferir o RT-5. A frase da *Silver* cometia exatamente o erro que esses
+dois parágrafos existem para evitar.
+
+**CL-15 encaixou aqui:** a capacidade que ela sugeriu **já estava declarada** na tabela de
+camadas — o Consumo provê acesso "às visões da *Gold* - e, **exploratoriamente, às demais
+zonas**". Não era capacidade nova; a prosa da *Silver* é que nomeava errado.
+
+Redação final (escolha do Silvio: "camada funcional relacionada a consumo", para amarrar
+na Vista funcional por camadas em vez de criar nome novo):
+
+> A *Silver* é também acessível diretamente pela camada funcional relacionada a consumo,
+> viabilizando que o EM interrogue a base consolidada de forma exploratória - ou a utilize
+> em visualizações que não dependam das agregações da *Gold*, como a plotagem da posição
+> corrente dos elementos - antes mesmo de as visões da *Gold* estarem organizadas.
+
+Marcado com `\saiu{}` + `\entrou{}`.
+
+**Nomenclatura conferida:** a tabela nomeia a **camada** como `Consumo`; `acesso` é a
+**função** que ela exerce (linhas 275/277). "Acesso" como nome de camada inventaria uma
+que a tabela não tem.
+
+**Nota técnica:** dentro do `\saiu{}` o `\gls{EM}` foi trocado por `EM` puro — `\sout`
+(ulem) tem histórico de conflito com `glossaries`, e o trecho será apagado de todo modo.
+No `\entrou{}` o `\gls{EM}` está normal.
 
 ### CL-27 — tabela consolidada zonas × características × requisitos · **B (grande)**
 Substituir/complementar os parágrafos de fechamento de cada zona por uma matriz de
