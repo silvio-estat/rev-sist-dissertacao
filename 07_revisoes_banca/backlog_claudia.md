@@ -14,7 +14,7 @@ Mesma classificação usada no backlog do Andrei:
 
 **38 itens.** 8 A · 16 B · 8 C · 4 D · 2 encerrados sem ação
 
-14 feitos: CL-02, 03, 09, 10, 15, 20, 21, 22, 23, 24, 25, 26, 31, 32. CL-01 e CL-38 encerrados sem ação. CL-30 confirmado como não-erro (falta comunicar a ela).
+15 feitos: CL-02, 03, 09, 10, 15, 18, 20, 21, 22, 23, 24, 25, 26, 31, 32. CL-01 e CL-38 encerrados sem ação. CL-30 confirmado como não-erro (falta comunicar a ela).
 
 ### Apoio cruzado
 
@@ -34,6 +34,7 @@ registrado longe do item a que pertence.
 | CL-34 | norma entrega o vocabulário-alvo legitimado, não os mapeamentos | CL-24 |
 | CL-35 | linhagem de coluna no OM exige SQL/API; decidido nível de tabela | CL-24 |
 | CL-33 | `analític*` no cap. 4: 63 -> 54 vivas, após CL-20/21/26 | CL-20 |
+| CL-27 | amarre RD-1 -> *Silver*/*Gold* já escrito como remissão | CL-18 |
 
 ---
 
@@ -225,9 +226,21 @@ BI, API e relatórios também consomem a Gold. Rotular a saída de forma mais am
 Junto a "Sistemas subsidiários das Funções de Combate". Hipótese: hierarquia do
 FAC2FTer (Charlie = ponta, Bravo = intermediária, Alpha = comando). **Confirmar com ela.**
 
-### CL-18 — Tabela 4.1, RD-1: "o que dá o suporte à 'integração'" · **B**
+### CL-18 — Tabela 4.1, RD-1: "o que dá o suporte à 'integração'" · **B** — FEITO
 Explicitar qual elemento arquitetural materializa a função integradora — a Silver,
 pela conformação entre Funções de Combate. Cabe na própria célula ou por remissão.
+
+Não era lacuna de conteúdo: a abertura da *Silver* (4_Proposta:206) já diz que ali se
+dá início à materialização da função integradora, "materialização que se completa nas
+visões da *Gold*". Era distância de leitura - tabela na p.50, resposta na p.63.
+
+Fechado **por remissão**, em 4_Proposta:90, no parágrafo que glosa RD-1 a RD-5 logo
+abaixo da tabela. Recusada a alternativa de escrever a solução dentro da célula: a
+Tab. 4.1 é de *requisitos*, e requisito que descreve a solução deixa de sustentar o
+argumento de que os requisitos foram extraídos da doutrina, não desenhados para caber
+na arquitetura.
+
+**Apoio cruzado consumido**: usa `modelo canônico`, o termo unificado no CL-25.
 
 ### CL-19 — "Alfa Bravo?", "Genesis?", "Astros?" · **D**
 Quais sistemas do EB entrariam na integração. **Perguntar novamente a ela.**
@@ -418,6 +431,11 @@ No `\entrou{}` o `\gls{EM}` está normal.
 Substituir/complementar os parágrafos de fechamento de cada zona por uma matriz de
 rastreabilidade. Resolve parte do CL-33 e demonstra que nenhum requisito ficou órfão.
 **Boa ideia dela.** Decidir se substitui ou complementa a prosa.
+
+**Apoio cruzado (vindo do CL-18)**: o amarre RD-1 -> *Silver*/*Gold* já foi escrito em
+4_Proposta:90 como remissão pontual. É uma parcela adiantada desta matriz - quando ela
+for construída, conferir se a remissão do CL-18 vira redundância a remover ou fica como
+ponteiro para a tabela.
 
 ### CL-28 — Figura 4.5 "dispensável" · **C**
 Sua leitura: pela contundência, ela quer remoção. Três saídas: (a) remover;
