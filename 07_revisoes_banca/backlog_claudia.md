@@ -1,7 +1,7 @@
 # Backlog — Prof.ª Dr.ª Maria Cláudia Cavalcanti (IME)
 
 Fonte: `consideracoes_banca/qualificacao/consideracoes_claudia.md`.
-Qualificação em 21/04/2026; considerações recebidas em agosto/2026.
+Qualificação em 13/08/2026; considerações recebidas na sequência, ainda em agosto/2026.
 
 Mesma classificação usada no backlog do Andrei:
 
@@ -12,7 +12,7 @@ Mesma classificação usada no backlog do Andrei:
 | **C** | argumentativo / de escopo | **não edito**; decisão é sua |
 | **D** | bloqueado | falta figura, capítulo 5 ou resposta dela |
 
-**38 itens.** 6 A · 16 B · 8 C · 7 D · 1 encerrado sem ação
+**38 itens.** 8 A · 16 B · 8 C · 4 D · 2 encerrados sem ação
 
 ### Apoio cruzado
 
@@ -37,18 +37,26 @@ registrado longe do item a que pertence.
 
 ## Capa e folha de rosto
 
-### CL-01 — texto do objetivo na capa · **D**
+### CL-01 — texto do objetivo na capa · **ENCERRADO — sem ação**
 > "Checar como outros colegas colocaram na qualificação."
 
-Verificado: a classe já gera `Mestrado Profissional` e
-`apresentada como requisito parcial para qualificação do` (`UnB-CIC.cls:67,627-628`).
-O texto no fonte está correto. Provável não-problema — mas ela pediu comparação
-com outros trabalhos. **Perguntar ao orientador.**
+O texto não é do Silvio: é gerado pela classe (`UnB-CIC.cls:627-628`), e está correto —
+inclusive "Mestrado **Profissional**" (`UnB-CIC.cls:67`), que na transcrição das
+considerações havia saído como "Professional".
 
-### CL-02 — data da capa · **D**
-`monografia.tex:25` → `\diamesano{21}{abril}{2026}`, inalterado desde a tag
-`qualificacao-ago2026`. Abril **é** a data da qualificação. A anotação
-("abril → agosto") é ambígua. **Perguntar a ela** ou decidir qual data vai no depósito.
+**Verificado pelo Silvio em 31/08/2026: está correto.** Nada a fazer.
+
+### CL-02 — data da capa · **A** — FEITO
+`monografia.tex:25` trazia `\diamesano{21}{abril}{2026}`, inalterado desde a tag
+`qualificacao-ago2026`.
+
+**A qualificação foi em 13/08/2026** (confirmado pelo Silvio em 31/08/2026). A data da
+capa estava, portanto, errada — e a anotação dela ("totalmente em desacordo") era literal,
+não ambígua. A ambiguidade era minha: eu havia registrado abril como data da qualificação.
+
+Corrigido para `\diamesano{13}{agosto}{2026}`.
+
+**Nota:** na versão de depósito essa data muda de novo, para a data da defesa.
 
 ### CL-03 — "Prof.ª Dr.ª" ou "Profa. Dra." · **B** — FEITO
 `monografia.tex:27`. Os macros da classe (`UnB-CIC.cls:351,355`,
@@ -503,9 +511,10 @@ Autoriza tratar a Gold de forma ilustrativa na PoC. **Depende do capítulo 5.**
 
 **Capítulo 5 ausente** — trava CL-35, CL-36, CL-37 (e informa CL-05).
 
-**Resposta dela** — CL-02, CL-17, CL-19.
+**Resposta dela** — CL-17 ("Alfa Bravo Charlie?") e CL-19 ("Genesis? Astros?").
+CL-01 e CL-02 saíram desta lista: o primeiro foi verificado pelo Silvio, o segundo
+resolvido com a data real da qualificação (13/08/2026).
 
-**Secretaria do PPCA** — CL-01.
 
 ---
 
