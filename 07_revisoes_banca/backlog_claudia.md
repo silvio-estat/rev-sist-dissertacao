@@ -14,7 +14,7 @@ Mesma classificação usada no backlog do Andrei:
 
 **38 itens.** 8 A · 16 B · 8 C · 4 D · 2 encerrados sem ação
 
-19 feitos: CL-02, 03, 07, 09, 10, 11, 12, 15, 18, 20, 21, 22, 23, 24, 25, 26, 27, 31, 32. CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-30 confirmado como não-erro (falta comunicar a ela).
+19 feitos: CL-02, 03, 07, 09, 10, 11, 12, 15, 18, 20, 21, 22, 23, 24, 25, 26, 27, 31, 32. CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-06 e CL-34 encerrados como pacificados (04/09/2026). CL-30 confirmado como não-erro (falta comunicar a ela).
 
 ### Apoio cruzado
 
@@ -114,7 +114,10 @@ ou se falta remissão a partir da delimitação de escopo.
 Sobre "Integração com sistemas legados específicos do EB". Pede critério de
 validação. Amarra com CL-35 (escopo da PoC).
 
-### CL-06 — justificativa acadêmica · **C**
+### CL-06 — justificativa acadêmica · **C** — ENCERRADO: PACIFICADO (04/09/2026)
+
+Mesma pacificação do CL-34: mestrado profissional e conversa do orientador com ela na
+qualificação. Sem edição no texto.
 
 **Apoio cruzado (vindo do CL-07)**: ver o achado registrado no CL-34 - a seleção do
 portfólio veio de procedimento bibliométrico verificável (cocitação recuperando
@@ -640,7 +643,13 @@ continuidade analítica, valor analítico...). É a mesma palavra cobrindo senti
 diferentes — a raiz provável do "?" dela no CL-26.
 CL-27 resolve outra parte (os fechamentos de zona repetidos em prosa).
 
-### CL-34 — "o diferencial científico não está claro" · **C** — CRÍTICA MAIS SÉRIA
+### CL-34 — "o diferencial científico não está claro" · **C** — ENCERRADO: PACIFICADO (04/09/2026)
+
+**Decisão do Silvio, 04/09/2026: sem edição no texto.** O mestrado é **profissional** e o
+orientador tratou o ponto diretamente com a professora no dia da qualificação (13/08/2026).
+A cobrança está pacificada fora do texto; a Seção "Contribuições da Pesquisa"
+(`1_Introducao:108`) permanece como está. O material abaixo fica como registro - serve à
+defesa e, eventualmente, ao capítulo 5.
 
 **Apoio cruzado (vindo do CL-07) - a revisão foi conduzida pelo método, não por
 conveniência.** Verificado na evidência congelada: Fang (`fang_managing_2015`), a
@@ -665,9 +674,16 @@ na justificativa da *Landing* (4_Proposta:35, "caráter irrepetível da transmis
 agora tem o contraponto teórico no cap. 3 (3_Referencial:230). Ou seja: o regime de
 chegada militar torna obrigatória uma propriedade que a literatura trata como opcional.
 Isso é tese, não engenharia.
-Aplicar um padrão consagrado a um domínio novo é engenharia, não ciência. Precisa
-**elevar a tese**: o que o domínio militar impõe que a literatura não resolve.
-Candidatos já no material:
+~~Aplicar um padrão consagrado a um domínio novo é engenharia, não ciência. Precisa
+**elevar a tese**: o que o domínio militar impõe que a literatura não resolve.~~
+
+**Enquadramento corrigido pelo Silvio em 04/09/2026.** A frase riscada é falsa como
+absoluto - levada a sério, invalidaria a própria DSR, em que o artefato *é* a
+contribuição (`dresch_design_2015` está no `.bib`, nunca citado; o cap. 2 declara
+Estudo de Caso, e é assim que fica). Desenvolver a partir de revisão sistemática é
+pesquisa. Não reabrir o item por essa via.
+
+Candidatos levantados, mantidos como registro:
 1. **regime de chegada intermitente** por janelas de oportunidade, que quebra a
    premissa de ingestão contínua das arquiteturas correntes (AN-02, AN-16);
 2. **proveniência como requisito operacional** de confiança para decisão sob
@@ -706,19 +722,40 @@ Autoriza tratar a Gold de forma ilustrativa na PoC. **Depende do capítulo 5.**
 CL-01 e CL-02 saíram desta lista: o primeiro foi verificado pelo Silvio, o segundo
 resolvido com a data real da qualificação (13/08/2026).
 
-**`.bib` não está neste repo** (vive no Overleaf) — trava duas conferências de data,
-achadas ao trabalhar o CL-07, nenhuma apontada pela banca:
+**`.bib` chegou ao repo em 04/09/2026** (`bibliografia.bib`, trazido do Overleaf junto com a
+revisão geral). As duas conferências de data que estavam travadas, achadas ao trabalhar o
+CL-07 e nenhuma apontada pela banca, foram fechadas:
 
 1. **Fang: 2015 ou 2016?** O Quadro do cap. 2 exibe "Fang (2016)" com a chave
    `fang_managing_2015`. A evidência congelada dá 2015 (`scopus_export_...ba78f0cf.csv`:
    `Year: 2015`, `IEEE-CYBER 2015`, DOI `10.1109/CYBER.2015.7288049`). O gerador de
    citação da IEEE devolve 2016 porque os anais saíram depois - foi daí que veio a
    divergência. **Recomendação: alinhar em 2015**, que é o que a base registrou; o
-   risco é a lista de referências e a tabela discordarem no mesmo documento. Conferir o
-   campo `year` no `.bib` antes de mexer.
+   risco é a lista de referências e a tabela discordarem no mesmo documento.
+   **RESOLVIDO (04/09/2026):** o `.bib` registra `year = {2015}`. `2_Metodologia:79` alinhado
+   para "Fang (2015)".
 2. **Quando emergiu o Lakehouse** — os documentos discordam entre si: o `.tex` dizia "a
    partir de 2020", o relatório bibliométrico diz "2019-2020", e a citação é o paper de
-   2021 (CIDR). A menção saiu do cap. 2 com o CL-07; resta alinhar no cap. 3.
+   2021 (CIDR). A menção saiu do cap. 2 com o CL-07.
+   **RESOLVIDO (04/09/2026):** nada a alinhar - o cap. 3 (`3_Referencial:318`) atribui o
+   paradigma ao paper de 2021, coerente com o "cunhado em 2021" que o Silvio escreveu no
+   cap. 2 na revisão geral. Não sobrou nenhum "a partir de 2020".
+
+**Auditoria completa do `.bib` (04/09/2026).** 149 entradas, 95 chaves citadas no texto vivo,
+todas resolvem; nenhuma chave duplicada. Registros para não se perderem:
+
+- `fogarty_story_2002` e `inmon_building_1992` não existem no `.bib`, mas só aparecem em
+  **linhas comentadas** (`3_Referencial:82,86`) - não compilam, não avisam. O vizinho vivo do
+  segundo é `inmon_building_2002`.
+- **Chaves do Zotero com sobrenome do editor dos anais, não do autor - estão CORRETAS, não
+  "consertar":** `song_handle_2020` é Eichler et al. (HANDLE), `ordonez_leveraging_2019` e
+  `laender_modeling_2019` são Giebler et al. Conferidos autor e ano de todos os rótulos
+  "Autor (ano)~\cite{}" do texto: a única divergência real era o Fang.
+- `apache_software_foundation_apache_2026-1` é o **Iceberg** (o sem sufixo é Hudi, o `-2` é
+  Paimon). O estilo da classe é `babunsrt`, numérico, então as três entradas "Apache Software
+  Foundation 2026" não colidem.
+- **Siglas seguem inverificáveis aqui:** 27 chaves `\gls{}` em uso e nenhum `\sigla{}`
+  definido nos arquivos presentes - as definições ficaram no Overleaf, como as figuras.
 
 
 ---
