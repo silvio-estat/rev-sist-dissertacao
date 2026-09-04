@@ -14,7 +14,7 @@ Mesma classificação usada no backlog do Andrei:
 
 **38 itens.** 8 A · 16 B · 8 C · 4 D · 2 encerrados sem ação
 
-19 feitos: CL-02, 03, 07, 09, 10, 11, 12, 15, 18, 20, 21, 22, 23, 24, 25, 26, 27, 31, 32. CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-06 e CL-34 encerrados como pacificados (04/09/2026). CL-30 confirmado como não-erro (falta comunicar a ela).
+23 feitos: CL-02, 03, 04, 07, 09, 10, 11, 12, 15, 16, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32. CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-06 e CL-34 encerrados como pacificados (04/09/2026). CL-30 confirmado como não-erro (falta comunicar a ela).
 
 ### Apoio cruzado
 
@@ -37,6 +37,7 @@ registrado longe do item a que pertence.
 | CL-27 | amarre RD-1 -> *Silver*/*Gold* já escrito como remissão | CL-18 |
 | ~~CL-11~~ | zona x ETL: diferença mecânica, não terminológica | CL-12 — não usado |
 | CL-34 | materializar o bruto: conveniência civil, necessidade militar | CL-12 |
+| CL-33 | `analític*` nomeia a *Bronze* (`:27`) e a *Gold* (`:274`) no mesmo cap. | CL-29 |
 | CL-06, CL-34 | cocitação recuperou seminais fora da janela: método, não conveniência | CL-07 |
 
 ---
@@ -105,10 +106,28 @@ colaborador ou credenciado) tornaria "Prof. Dr." correto independentemente do ca
 
 ## Capítulo 1 — Introdução
 
-### CL-04 — "Alguma investigação sobre os sistemas e dados reais envolvidos?" · **B**
+### CL-04 — "Alguma investigação sobre os sistemas e dados reais envolvidos?" · **B** — FEITO
 Delimitação de escopo. **Provavelmente já resolvido** pelo AN-04 (parágrafo sobre
 Pacificador, C2 em Combate e FAC2FTer). Conferir se o texto novo alcança este ponto
 ou se falta remissão a partir da delimitação de escopo.
+
+**Conferido em 04/09/2026: a investigação existe e a remissão faltava.** `1_Introducao:30`
+caracteriza os três sistemas reais com fonte - C2 em Combate (2002, integrado ao SISFRON),
+Pacificador (GLO) e FAC2FTer (Operação Atlas 2025) - e `:32` fecha com a lacuna: *"cada um
+produz e armazena seus próprios dados, sob esquemas e convenções próprios [...] Não há entre
+eles uma camada que os consolide"*. Onde ela perguntou, porém, liam-se duas negativas
+seguidas ("sem acoplamento a sistemas finalísticos em produção", "exclusivamente dados
+sintéticos") sem nada apontando para essa caracterização.
+
+Acrescentada remissão em `\entrou{}` no terceiro item do "O que não será feito"
+(`1_Introducao:101`): os sistemas em operação e o regime de chegada foram caracterizados na
+justificativa; o que se exclui é o acoplamento da PoC a eles, não o seu conhecimento.
+
+**Nota de mecânica:** o capítulo 1 não tem nenhum `\label{}` nem `\ref{}`. A remissão ficou
+em prosa ("na justificativa deste capítulo") para não criar âncora isolada num capítulo que
+não usa referência cruzada. Se um dia o capítulo ganhar labels, esta é candidata a virar `\ref`.
+
+**Apoio cruzado gerado para o CL-17:** o mesmo parágrafo define Alfa/Bravo/Charlie - ver lá.
 
 ### CL-05 — "Mas como demonstrar que a solução proposta é útil?" · **C**
 Sobre "Integração com sistemas legados específicos do EB". Pede critério de
@@ -294,12 +313,39 @@ não com engenharia própria.
 Tratado junto com o CL-26: são o mesmo ponto visto por dois lados, e por isso pareciam
 pedidos opostos.
 
-### CL-16 — saída da Gold "não necessariamente visão analítica" · **B**
+### CL-16 — saída da Gold "não necessariamente visão analítica" · **B** — FEITO
 BI, API e relatórios também consomem a Gold. Rotular a saída de forma mais ampla.
+
+**Achado ao abrir o item:** o parágrafo da *Gold* (`4_Proposta:246`) era o **último resíduo**
+da ideia antiga de consumo restrito à *Gold* e mediado pela governança - a *Bronze* (`:194`) e
+a *Silver* (`:218`) já tinham sido corrigidas no CL-15/CL-26, e a `tab:camadas` (`:325`) já
+atribui o acesso às visões à camada **Consumo**. Varrido o resto do capítulo: `:41` e `:49`
+estão coerentes (o `:276` explica que a *engine* é apresentada na seção de governança por
+transversalidade, não por confusão de função). Nada mais a corrigir.
+
+**Redação aplicada** em `\saiu{}`/`\entrou{}`: a saída expõe as visões à camada funcional de
+consumo; o dado sai em formato aberto e catalogado, **sem que a arquitetura prescreva a
+aplicação que o consome** - painéis, ferramentas de consulta, relatórios ou interfaces
+programáticas. É a neutralidade da interface que responde a ela, não uma lista de produtos.
+
+**Definição da zona, dada pelo Silvio em 04/09/2026 (ver CL-29):** a frase final diz a
+*característica principal* da *Gold* - a proximidade com o uso, o dado já organizado segundo o
+processo doutrinário que o utilizará, ao alcance do CMTE e do EM. Formulação positiva por
+pedido dele: dizer "não tem mais qualidade que a *Silver*" engessa o texto.
 
 ### CL-17 — "Alfa Bravo Charlie?" · **D**
 Junto a "Sistemas subsidiários das Funções de Combate". Hipótese: hierarquia do
 FAC2FTer (Charlie = ponta, Bravo = intermediária, Alpha = comando). **Confirmar com ela.**
+
+**Apoio cruzado (vindo do CL-04, 04/09/2026) - a hipótese está confirmada pelo próprio
+texto da dissertação.** `1_Introducao:30` já define os três níveis, com citação:
+*"a Família de Aplicativos de Comando e Controle da Força Terrestre (FAC2FTer),
+demonstrado na Operação Atlas 2025, articula três níveis de emprego: Alfa, nos escalões
+superiores; Bravo, embarcado em viaturas; e Charlie, para frações a pé"*
+\cite{barros_operacao_2025}. Ou seja: não é preciso perguntar a ela o que ela quis dizer -
+basta responder. **O item continua D** por outro motivo: "sistemas subsidiários" não
+aparece em nenhum `.tex`, logo a anotação está sobre a Figura 4.1, ausente. Quando a figura
+chegar, a saída provável é uma remissão ao parágrafo do cap. 1, não texto novo.
 
 ### CL-18 — Tabela 4.1, RD-1: "o que dá o suporte à 'integração'" · **B** — FEITO
 Explicitar qual elemento arquitetural materializa a função integradora — a Silver,
@@ -559,14 +605,94 @@ arquitetura como um todo.
 for construída, conferir se a remissão do CL-18 vira redundância a remover ou fica como
 ponteiro para a tabela.
 
-### CL-28 — Figura 4.5 "dispensável" · **C**
+### CL-28 — Figura 4.5 "dispensável" · **C** — FEITO
 Sua leitura: pela contundência, ela quer remoção. Três saídas: (a) remover;
 (b) redesenhar com as seis Funções convergindo na Silver; (c) fundir com o CL-27.
 **Depende da figura**, que falta (`diagrama5_modelo_gold_medal`).
 
-### CL-29 — célula "dado analítico" em C2 × Gold · **C**
+**Decisão do Silvio (04/09/2026): saída (a) — remover.** A anotação dela é literal:
+*"Acho essa figura dispensável, não acrescenta muito ao entendimento do processo"*
+(`consideracoes_claudia.md:45`). Não foi preciso ver a figura para executar: a decisão
+era de remoção, não de redesenho, e o que ela tocava no fonte estava todo localizável.
+
+**Levantamento antes de mexer.** A figura era chamada uma única vez
+(`4_Proposta:270`) e referenciada uma única vez (`\refFig` em `:268`). Era a **última
+figura do capítulo 4**, então a remoção não renumera nenhuma outra. Nenhuma menção
+manual a "Figura 4.5" no texto (`grep` em todos os `.tex`: zero).
+
+**Aplicado:** a linha `\figura{}` foi **comentada**, não apagada — mesma convenção do
+resto do capítulo para texto fora do build —, com nota do item logo acima. A frase de
+`:268` que a chamava saiu em `\saiu{}`/`\entrou{}`: o conteúdo que a legenda carregava
+não se perdeu, virou prosa (a entidade da Inteligência percorrendo as quatro zonas sem
+deixar a Função de origem, e a convergência das demais Funções na *Silver*, "na
+consolidação que materializa a função integradora do C2").
+
+**Armadilha encontrada e evitada:** `\saiu{}` é `\textcolor{red}{\sout{#1}}` — ele
+**compõe** o argumento. Deixar o `\refFig{diagrama5_modelo_gold_medal}` original dentro
+do `\saiu{}` faria o PDF de revisão exibir `Figura ??` em vermelho, exatamente o sintoma
+que o `CLAUDE.md` manda não produzir. O trecho tachado traz, por isso, "A Figura 4.5"
+como texto literal.
+
+**Consequência para o CL-29 — ele não morre com a figura.** A célula circulada some,
+mas a circularidade que ela apontou está também em **prosa**: `4_Proposta:266` e `:345`
+listam o C2 como uma das seis Funções ("Comando e Controle, Inteligência, Fogos, Manobra,
+Proteção e Sustentação"), enquanto `:29`, `:90` e `:204` o tratam como função integradora
+materializada pela *Silver* e completada na *Gold*. O texto já faz a distinção; o que
+faltava era dizê-la. O CL-29 segue aberto e agora é **item de prosa**, com o argumento
+pronto (ver o apoio cruzado vindo do CL-16).
+
+**Inventário:** as pendências de referência sem destino caem de 13 para 12 —
+`diagrama5_modelo_gold_medal` sai da lista de figuras faltantes do
+`arquivos-dissertacao/CLAUDE.md`.
+
+### CL-29 — célula "dado analítico" em C2 × Gold · **C** — FEITO
 Circularidade: o C2 aparece como uma entre seis Funções, mas é a função integradora,
 e os produtos da Gold (PPCOT, PITCIC, COC) são produtos de C2. Ligado ao CL-28.
+
+**Apoio cruzado (vindo do CL-16, 04/09/2026) - aprovado pelo Silvio.** A circularidade se
+desfaz pela definição da *Gold*: as visões **não são uma Função de Combate**, são os produtos
+do **processo** que consome as seis. O Silvio formulou o eixo assim: até a *Silver* a
+progressão é de qualidade; da *Silver* para a *Gold* o que muda é a **proximidade com o uso** -
+mesma qualidade, menos esforço para quem consulta. Dois conceitos somados: a viagem por marcos
+do medallion e a organização por processo doutrinário (COC, PITCIC, PPCOT, Avaliação), no lugar
+que o *data mart* ocupa no DW clássico, para CMTE e EM encontrarem o dado na forma em que já
+pensam. Ele mesmo já escreveu a semente disso no parágrafo novo da *Silver*
+(granularidade que "pode exigir conhecimento técnico"), e a `tab:cobertura` do CL-27 diz
+"Dado organizado segundo o processo de C2 que o consumirá".
+
+**Ataca o item sem depender da Figura 4.5** - que, desde o CL-28 (04/09/2026), foi
+**removida**. A célula circulada não existe mais, mas o item permanece: a circularidade
+está também em prosa (`4_Proposta:266` e `:345` listam o C2 entre as seis Funções; `:29`,
+`:90` e `:204` o tratam como integradora). O CL-29 é agora item de prosa pura, e a redação
+cabe no mesmo parágrafo de `:268` que o CL-28 acabou de mexer.
+
+**Correção do alvo (04/09/2026): não é `:268`, é `4_Proposta:351`.** Ao abrir o item,
+a Subseção~\ref{sec:arq-map-funcoes} ("Funções de Combate e os elementos da arquitetura")
+já traz **metade da resposta escrita**:
+
+> "A arquitetura é agnóstica quanto à Função de Combate produtora: os dados de todas elas
+> são tratados de forma uniforme ao longo das zonas, sendo essa uniformidade - e não um
+> tratamento especializado por Função - o mecanismo de combate aos silos. **A função
+> integradora cabe ao Comando e Controle**, conforme o EB70-MC-10.205, **e é materializada
+> tecnicamente na consolidação e harmonização realizada pela *Silver* e na integração e
+> disponibilização organizada da *Gold*.**"
+
+Ou seja: o texto **já distingue** o C2-produtor (uma das seis, tratamento uniforme) do
+C2-integrador (materializado nas zonas). O que falta é o passo seguinte, que é exatamente
+o que o "?" dela pedia: dizer que as visões da *Gold* **não são o acervo de uma sétima
+Função**, são os produtos do processo que consome as seis.
+
+**O Silvio já tinha marcado esse parágrafo.** A linha `4_Proposta:349` traz
+`% \revisar{Melhorar o parágrafo abaixo - }` - comentada e com a frase inacabada. O
+parágrafo que o CL-29 precisa completar é o mesmo que ele próprio sinalizou para melhorar.
+Vale perguntar o que ele tinha em mente antes de escrever por cima.
+
+**Aplicado em 04/09/2026, saída (a) escolhida pelo Silvio:** acréscimo em `\entrou{}` ao fim de `4_Proposta:351`, para ele reescrever na revisão do PDF. O argumento: como **produtora**, o C2 é uma das seis Funções e ocupa uma área de negócio no catálogo como as demais; como **integradora**, não é mais uma área de negócio, e sim o processo que consome as seis. As quatro visões da *Gold* são produtos desse processo, não o acervo de uma sétima Função - por isso se organizam pelas fases doutrinárias, e não pela Função que originou o dado.
+
+**Nada foi removido**, logo não há `\saiu{}`: o parágrafo já estava correto, faltava a conclusão. O `% \revisar{}` de `:349` **continua lá**, de propósito - a marcação é dele e o que ele queria melhorar pode ir além do que o CL-29 pedia.
+
+**Decisão do Silvio (04/09/2026):** *não* mexer em "qualidade progressiva" (`:390`) nem na
+"progressão de qualidade" (`:392`) - a imprecisão não é problemática o bastante para virar item.
 
 ### CL-30 — erros de referência, p.73, 74 e 78 · **NÃO É ERRO**
 São os três `\ref{cap:poc}` do capítulo 4. Viraram `??` no PDF apenas porque o build da
@@ -641,6 +767,34 @@ No cap. 4, `analític*` aparece em 14 colocações distintas (consulta analític
 formato analítico, dado analítico, repositório analítico, elemento analítico,
 continuidade analítica, valor analítico...). É a mesma palavra cobrindo sentidos
 diferentes — a raiz provável do "?" dela no CL-26.
+
+**Remedido em 04/09/2026**, depois do CL-27 e da revisão geral do Silvio no Overleaf
+(texto vivo, linhas comentadas fora):
+
+| | cap. 1 | cap. 2 | cap. 3 | cap. 4 | total |
+|---|---:|---:|---:|---:|---:|
+| `analític*` | 6 | 2 | 24 | **50** | **82** |
+| `Cabe <verbo>` | 2 | 2 | 3 | **6** | 13 |
+
+A tabela anterior (102 no total) está superada e media diferente - o cap. 1 dá 6, não 9.
+No cap. 4 o `analític*` caiu de 58 para 50 na revisão geral, e o `Cabe` subiu de 4 para 6.
+As colocações no cap. 4 são 18: *visões analíticas* (8), *consulta analítica* (7),
+*repositório analítico* (6), *disponibilização analítica* (4), e a cauda vaga
+(*continuidade*, *elemento*, *persistência*, *exploração analítica*).
+
+**Apoio cruzado (vindo do CL-29, 04/09/2026) - registro, não reabertura.** O uso mais
+confuso de `analític*` no capítulo: `4_Proposta:27` chama a saída da *Bronze* de "**dado
+analítico inicial**", enquanto `:274` fixa os patamares como "(bruto, estruturado,
+consolidado, **analítico**)" - nessa lista, *analítico* é a *Gold*. A mesma palavra nomeia
+a *Bronze* e a *Gold* em dois pontos do mesmo capítulo. Fica registrado para o caso de a
+Cláudia apontar o trecho; não vira frente ativa.
+
+**PARADO POR DECISÃO DO SILVIO (04/09/2026).** Não mexer no `Cabe` nem no `analític*`:
+*"ela nao reclamou disso de forma precisa e eu gosto de usar o 'cabe' mesmo que fique
+repetitivo. isso é uma característica minha nao sua"*. O item segue aberto, mas sem frente
+ativa: a mordida grande já foi dada pelo CL-27 (595 palavras) e pela revisão geral, e o
+paralelismo entre zonas continua recomendado como **não mexer**. Reabrir só se ela apontar
+trecho com precisão.
 CL-27 resolve outra parte (os fechamentos de zona repetidos em prosa).
 
 ### CL-34 — "o diferencial científico não está claro" · **C** — ENCERRADO: PACIFICADO (04/09/2026)
@@ -711,7 +865,8 @@ Autoriza tratar a Gold de forma ilustrativa na PoC. **Depende do capítulo 5.**
 
 ## Bloqueios
 
-**Figuras ausentes** — travam CL-13, CL-14, CL-28, CL-29:
+**Figuras ausentes** — travam CL-13 e CL-14 (CL-28 e CL-29 resolvidos em 04/09/2026,
+com a remoção da Figura 4.5):
 `diagrama1_projeto` (Fig. 4.1) e `diagrama5_modelo_gold_medal` (Fig. 4.5), além de
 `triag_info_pesq`, `esquema_dw`, `esquema_dl`, `esquema_data_pond`,
 `esquema_zonas_camadas_dl`.
