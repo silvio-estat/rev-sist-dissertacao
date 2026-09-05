@@ -12,7 +12,8 @@ Mesma classificação usada no backlog do Andrei:
 | **C** | argumentativo / de escopo | **não edito**; decisão é sua |
 | **D** | bloqueado | falta figura, capítulo 5 ou resposta dela |
 
-**38 itens.** 8 A · 16 B · 8 C · 4 D · 2 encerrados sem ação
+**38 itens** (classificação atual, após as reclassificações do percurso): 5 A · 15 B · 7 C · 7 D · 4 sem tipo (CL-01, 08, 30, 38).
+**Abertos: 9** - CL-05 e CL-33 (C) · CL-13, CL-14, CL-17, CL-19, CL-35, CL-36, CL-37 (D).
 
 23 feitos: CL-02, 03, 04, 07, 09, 10, 11, 12, 15, 16, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32. CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-06 e CL-34 encerrados como pacificados (04/09/2026). CL-30 confirmado como não-erro (falta comunicar a ela).
 
@@ -295,12 +296,69 @@ A distinção zona x ETL é articulação do autor, não atribuída a ninguém.
 
 ## Capítulo 4 — Proposta de Arquitetura
 
-### CL-13 — Figura 4.1: explicitar as zonas · **D**
+### CL-13 — Figura 4.1: explicitar as zonas · **D → B** — REDESENHO PRONTO (04/09/2026)
 "Engine de processamento (orquestrado por pipelines)" esconde as zonas.
-**Falta o arquivo da figura** (`diagrama1_projeto`).
+~~**Falta o arquivo da figura**~~ — o bloqueio caiu, ver abaixo.
 
-### CL-14 — "Há dados que chegam direto na Bronze?" · **D**
+**O bloqueio era falso.** A figura nunca foi arquivo de imagem de origem: o Silvio
+escreve o diagrama em **TikZ**, renderiza num projeto LaTeX à parte, tira um print e
+carrega o PNG no Overleaf. Por isso a `Figura 4.1` no PDF é um bitmap 512x541 a 116 ppi
+e não havia fonte em `~/Projetos`. O fonte existe - é código, e ele o forneceu.
+
+**Ela desenhou o substituto.** A margem esquerda da p.50 do PDF anotado traz o redesenho
+dela, e é específico: os **processos** viram caixas nomeadas na espinha vertical
+(Ingestão -> Padronização -> Conformação + harmonização -> Integração + organização) e
+cada **zona** vira um cilindro ao lado do processo que a produz, ligado por seta
+bidirecional. É a leitura literal da anotação: *"Sugestão de melhoria p/ explicitar o
+processo e sem esconder as zonas de dados"*.
+
+**Feito:** TikZ reescrito conforme o esboço, compilado e conferido visualmente.
+Código em `_local/diagrama1_projeto_CL-13.tex`, prévia em
+`_local/diagrama1_projeto_CL-13_preview.png`. **Pendente do Silvio:** renderizar no
+projeto à parte e subir a imagem ao Overleaf, mantendo o `\figura{diagrama1_projeto}`
+de `4_Proposta:24` como está - fluxo confirmado por ele em 04/09/2026.
+
+**Decisão do Silvio (04/09/2026): as três zonas consumíveis entram na figura.** Ele
+perguntou se ligava só a *Gold* (para não poluir) ou também *Bronze* e *Silver*. O texto
+já decidia: `:192` diz que "a *Bronze* permanece **acessível à camada funcional de
+consumo**" e `:214` que "assim como na camada *Bronze*, a *Silver* é também **acessível
+diretamente pela camada funcional relacionada a consumo**". Ligar só a *Gold* faria a
+figura contradizer o texto corrigido pelo CL-15 e pelo CL-26 - e devolveria sem resposta
+a anotação *"A zona S pode ter dados já prontos p/ consulta e visualização"*, que ela
+escreveu **nesta figura**.
+
+A poluição foi resolvida por **hierarquia de linha**, não por omissão: *Gold* em linha
+cheia e grossa (caminho projetado), *Bronze* e *Silver* em linha fina tracejada, com a
+legenda "acesso exploratório". A **Landing não entra** - `:186` diz que a *Bronze* é a
+"zona de **primeira** persistência analítica", logo a *Landing* não é consumível. A figura
+passa a marcar essa fronteira, que antes não aparecia.
+
+**Mudança colateral a conferir:** para as linhas não se cruzarem, a *engine* de consulta
+foi para a **esquerda** da faixa de governança (perto das zonas) e o catálogo para a
+**direita** (perto dos processos). Com isso o catálogo passou a ser alimentado pelos
+**processos**, e não pelas zonas como na figura original - é o que ela desenhou no esboço,
+e casa com o *goldMEDAL*, que trata o *process* como entidade de primeira classe ao lado
+da *data entity*. **Custo:** o desenho deixa de mostrar que o catálogo também registra os
+conjuntos de dados. O texto (`:260`-`:268`) cobre isso, mas se o Silvio preferir o
+contrário, é reverter os dois destinos.
+
+**Exige no preâmbulo do projeto de renderização:** as bibliotecas `positioning`, `calc`,
+`arrows.meta` e `shapes.geometric` (o cilindro), mais as 8 cores `\definecolor` - nenhuma
+delas existe no `monografia.tex`, que carrega só `shapes.geometric`. O bloco vai
+comentado no topo do arquivo.
+
+### CL-14 — "Há dados que chegam direto na Bronze?" · **D** — RESOLVIDO PELO CL-13
 Ambiguidade visual da Fig. 4.1. O texto já resolve (RD-4). Depende da figura.
+
+**Morre junto com o redesenho (04/09/2026).** A pergunta nascia da *"Engine de
+processamento"*, que ficava fora da espinha com setas entrando em *Bronze*, *Silver* e
+*Gold* - eram essas entradas laterais que sugeriam desvio da *Landing*. No layout da
+Cláudia a engine se dissolve nas quatro etapas nomeadas e o fluxo fica estritamente
+sequencial: a ambiguidade some por construção, sem precisar de texto novo.
+
+O apoio do Inmon (*"data does not have to pass through the raw data pond"*) **não foi
+consumido** e fica de reserva, caso ela reformule a pergunta no mérito - se a arquitetura
+*deveria* admitir o desvio - em vez de no desenho.
 
 **Apoio cruzado** (achado ao trabalhar o CL-10) — o Inmon admite explicitamente o desvio da zona de entrada —
 *"It is worthy of note that **data does not have to pass through the raw data pond**,
