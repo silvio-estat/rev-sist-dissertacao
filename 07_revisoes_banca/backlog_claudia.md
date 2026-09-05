@@ -14,6 +14,8 @@ Mesma classificação usada no backlog do Andrei:
 
 **38 itens** (classificação atual, após as reclassificações do percurso): 5 A · 15 B · 7 C · 7 D · 4 sem tipo (CL-01, 08, 30, 38).
 **Abertos: 4** - CL-05 (C) · CL-35, CL-36, CL-37 (D, dependem do cap. 5).
+**CL-17 fechado com pendência** - a remissão ao cap. 1, que é a resposta à anotação
+dela, não entrou na reescrita do Overleaf. Duas orações a inserir em `4_Proposta:27`.
 
 25 feitos: CL-02, 03, 04, 07, 09, 10, 11, 12, 13, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32 (o CL-14 morreu junto com o CL-13). CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-06 e CL-34 encerrados como pacificados (04/09/2026). CL-19 e CL-33 encerrados por decisão do Silvio (05/09/2026). CL-30 confirmado como não-erro.
 
@@ -406,7 +408,7 @@ programáticas. É a neutralidade da interface que responde a ela, não uma list
 processo doutrinário que o utilizará, ao alcance do CMTE e do EM. Formulação positiva por
 pedido dele: dizer "não tem mais qualidade que a *Silver*" engessa o texto.
 
-### CL-17 — "Alfa Bravo Charlie?" · **D → B** — FEITO (05/09/2026)
+### CL-17 — "Alfa Bravo Charlie?" · **D → B** — FEITO COM PENDÊNCIA (05/09/2026)
 Junto a "Sistemas subsidiários das Funções de Combate". Hipótese: hierarquia do
 FAC2FTer (Charlie = ponta, Bravo = intermediária, Alpha = comando). **Confirmar com ela.**
 
@@ -462,6 +464,20 @@ upload no Overleaf, e o rótulo não estava errado, estava incompleto.
 **Cuidado registrado:** a primeira versão da frase remetia por `\ref{cap:introducao}`, que
 **não existe** - o cap. 1 não tem `\label`. Teria virado um `??` real, do tipo que o CL-30
 declarou inexistente. As remissões ao cap. 1 são escritas à mão (`:45`), e é assim que ficou.
+
+**Estado real no texto, conferido em 05/09/2026 - a remissão não entrou.** O Silvio
+reescreveu a frase no Overleaf e, na reescrita, a oração "caracterizados no Capítulo 1"
+ficou de fora. O texto hoje diz **o que** a caixa superior da Figura 4.1 reúne, mas não
+aponta onde os sistemas estão caracterizados - que era justamente a resposta ao "Alfa
+Bravo Charlie?". Decisão dele: **commitar assim por enquanto.**
+
+Pendências de texto neste item, ambas de uma oração, em `4_Proposta:27`:
+
+- inserir "caracterizados no Capítulo 1" após "sistemas finalísticos";
+- "chegam ao repositório **da** \textit{Landing}" -> "**pela** \textit{Landing}" (a
+  *Landing* é zona do repositório, não repositório próprio).
+
+Enquanto não entrarem, o item **descreve a figura mas não responde à anotação dela**.
 
 ### CL-18 — Tabela 4.1, RD-1: "o que dá o suporte à 'integração'" · **B** — FEITO
 Explicitar qual elemento arquitetural materializa a função integradora — a Silver,
@@ -826,7 +842,17 @@ Vale perguntar o que ele tinha em mente antes de escrever por cima.
 
 **Aplicado em 04/09/2026, saída (a) escolhida pelo Silvio:** acréscimo em `\entrou{}` ao fim de `4_Proposta:351`, para ele reescrever na revisão do PDF. O argumento: como **produtora**, o C2 é uma das seis Funções e ocupa uma área de negócio no catálogo como as demais; como **integradora**, não é mais uma área de negócio, e sim o processo que consome as seis. As quatro visões da *Gold* são produtos desse processo, não o acervo de uma sétima Função - por isso se organizam pelas fases doutrinárias, e não pela Função que originou o dado.
 
-**Nada foi removido**, logo não há `\saiu{}`: o parágrafo já estava correto, faltava a conclusão. O `% \revisar{}` de `:349` **continua lá**, de propósito - a marcação é dele e o que ele queria melhorar pode ir além do que o CL-29 pedia.
+**Reescrito em 05/09/2026, na revisão do PDF.** O `\entrou{}` longo virou duas frases, a
+pedido do Silvio ("de forma mais simples"). Duas coisas saíram. A menção ao C2-produtor
+ocupar área de negócio no catálogo, hoje coberta pelo `:266` afrouxado; e a expressão
+**"não o acervo de uma sétima Função"**, que era construção minha e defendia contra uma
+objeção que o leitor não levanta - ele perguntou duas vezes o que ela queria dizer, o que
+já é o veredito. Junto saiu um erro: a versão antiga dizia que as visões se organizam
+"pelas fases doutrinárias do processo", verdadeiro só para a *Gold-PITCIC* e a
+*Gold-PPCOT*; a *Gold-COC* organiza-se por um produto e a *Gold-Avaliação* é ela própria
+uma fase (`:358`). Ficou "segundo os processos formais de C2", generalização do `:358`.
+
+**Nada foi removido** na aplicação original, logo não havia `\saiu{}`: o parágrafo já estava correto, faltava a conclusão. O `% \revisar{}` de `:349` **continua lá**, de propósito - a marcação é dele e o que ele queria melhorar pode ir além do que o CL-29 pedia.
 
 **Decisão do Silvio (04/09/2026):** *não* mexer em "qualidade progressiva" (`:390`) nem na
 "progressão de qualidade" (`:392`) - a imprecisão não é problemática o bastante para virar item.
