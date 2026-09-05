@@ -13,9 +13,19 @@ Mesma classificação usada no backlog do Andrei:
 | **D** | bloqueado | falta figura, capítulo 5 ou resposta dela |
 
 **38 itens** (classificação atual, após as reclassificações do percurso): 5 A · 15 B · 7 C · 7 D · 4 sem tipo (CL-01, 08, 30, 38).
-**Abertos: 9** - CL-05 e CL-33 (C) · CL-13, CL-14, CL-17, CL-19, CL-35, CL-36, CL-37 (D).
+**Abertos: 4** - CL-05 (C) · CL-35, CL-36, CL-37 (D, dependem do cap. 5).
 
-23 feitos: CL-02, 03, 04, 07, 09, 10, 11, 12, 15, 16, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32. CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-06 e CL-34 encerrados como pacificados (04/09/2026). CL-30 confirmado como não-erro (falta comunicar a ela).
+25 feitos: CL-02, 03, 04, 07, 09, 10, 11, 12, 13, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 31, 32 (o CL-14 morreu junto com o CL-13). CL-01, CL-08 e CL-38 encerrados por decisão do Silvio. CL-06 e CL-34 encerrados como pacificados (04/09/2026). CL-19 e CL-33 encerrados por decisão do Silvio (05/09/2026). CL-30 confirmado como não-erro.
+
+### Pendências de comunicação com a banca
+
+Itens **encerrados no texto** que ainda exigem uma fala do Silvio à Prof.ª Cláudia. Não
+geram edição; geram resposta. Trazer à tona antes de fechar cada bloco de trabalho.
+
+| item | o que dizer a ela |
+|---|---|
+| **CL-30** | os `??` das p.73/74/78 **não são erro**: são os três `\ref{cap:poc}` do cap. 4, que o build da qualificação não resolvia por não incluir o cap. 5. Auditoria completa junto: 23/23 referências à mão corretas, zero quebradas. |
+| **CL-19** | quais sistemas entram na integração **não vai por escrito**; a identificação é feita na fala do seminário de acompanhamento. O texto descreve as fontes por perfil. |
 
 ### Apoio cruzado
 
@@ -296,7 +306,12 @@ A distinção zona x ETL é articulação do autor, não atribuída a ninguém.
 
 ## Capítulo 4 — Proposta de Arquitetura
 
-### CL-13 — Figura 4.1: explicitar as zonas · **D → B** — REDESENHO PRONTO (04/09/2026)
+### CL-13 — Figura 4.1: explicitar as zonas · **D → B** — FEITO (05/09/2026)
+
+**Fechado.** O Silvio renderizou o TikZ no projeto à parte, printou e substituiu a
+figura diretamente no Overleaf - não passa por este repo nem por `arquivos-dissertacao/`,
+então não há commit de texto correspondente. O fonte do diagrama fica em
+`_local/diagrama1_projeto_CL-13.tex` (não versionado). Com ele cai o CL-14.
 "Engine de processamento (orquestrado por pipelines)" esconde as zonas.
 ~~**Falta o arquivo da figura**~~ — o bloqueio caiu, ver abaixo.
 
@@ -391,7 +406,7 @@ programáticas. É a neutralidade da interface que responde a ela, não uma list
 processo doutrinário que o utilizará, ao alcance do CMTE e do EM. Formulação positiva por
 pedido dele: dizer "não tem mais qualidade que a *Silver*" engessa o texto.
 
-### CL-17 — "Alfa Bravo Charlie?" · **D**
+### CL-17 — "Alfa Bravo Charlie?" · **D → B** — FEITO (05/09/2026)
 Junto a "Sistemas subsidiários das Funções de Combate". Hipótese: hierarquia do
 FAC2FTer (Charlie = ponta, Bravo = intermediária, Alpha = comando). **Confirmar com ela.**
 
@@ -404,6 +419,49 @@ superiores; Bravo, embarcado em viaturas; e Charlie, para frações a pé"*
 basta responder. **O item continua D** por outro motivo: "sistemas subsidiários" não
 aparece em nenhum `.tex`, logo a anotação está sobre a Figura 4.1, ausente. Quando a figura
 chegar, a saída provável é uma remissão ao parágrafo do cap. 1, não texto novo.
+
+**Desbloqueado (05/09/2026): a figura chegou e o rótulo sobreviveu.** O redesenho do
+CL-13 manteve a caixa `Sistemas subsidiários das Funções de Combate` e já decidiu, em
+comentário no fonte, que "a remissão aos níveis Alfa/Bravo/Charlie é feita no texto, não
+no rótulo da caixa". Essa remissão **ainda não foi escrita**: não há "Alfa" em nenhum
+ponto do cap. 4. Âncora: `4_Proposta:27`, o parágrafo que apresenta a figura. **Passa a B.**
+
+**Correção ao apoio cruzado acima - a hipótese não se confirma como estava escrita.** O
+cap. 1 confirma **o que são** Alfa/Bravo/Charlie (níveis de emprego de *um* sistema, da
+própria Função C2), não que a caixa da figura *seja* isso. A caixa reúne as fontes que
+alimentam a arquitetura, e os níveis de emprego de um sistema não são fontes distintas.
+Responder "sim, é isso" seria responder errado.
+
+**Intenção do desenho, dita pelo Silvio (05/09/2026):** a caixa reúne **duas naturezas de
+fonte**, não uma. De um lado os **sistemas computacionais** finalísticos que se ligam ao
+repositório; de outro, o que **não vem de sistema** - mensagem de áudio, documento,
+imagem produzidos no curso da operação. É essa segunda natureza que o rótulo atual
+esconde, e é provavelmente por isso que a anotação dela caiu justo ali: a caixa promete
+menos do que a arquitetura entrega.
+
+**Estado do texto quanto a essa segunda natureza:** `4_Proposta:35` já diz que a
+*Landing* "acomoda ainda os formatos que não admitem estruturação tabular direta, como
+**áudio e imagem**"; `:318` lista os não estruturados no requisito de armazenamento
+(imagens e vídeos de drones, fotografias). **`documento` não aparece em lugar nenhum do
+cap. 4** - se entra, é decisão do Silvio.
+
+**Restrição do CL-19 aplicada aqui:** a remissão vai por **classe de fonte**, sem nomear
+sistema. O cap. 1 já nomeia; o cap. 4 remete. Ver o CL-19.
+
+**Feito (05/09/2026).** Duas edições, ambas marcadas com `\entrou{}`:
+
+- `4_Proposta:27` - frase nova no parágrafo que apresenta a figura, declarando as duas
+  naturezas de fonte que a caixa superior reúne, com remissão ao cap. 1 e ao RD-4. Responde
+  ao "Alfa Bravo Charlie?" sem repetir os nomes no cap. 4.
+- `4_Proposta:35` - "como áudio e imagem" -> "como áudio, imagem e documentos", para a
+  *Landing* não contradizer a frase nova. `documento` não existia no cap. 4.
+
+**Rótulo da caixa mantido** como está: resolver no texto não custa novo render nem novo
+upload no Overleaf, e o rótulo não estava errado, estava incompleto.
+
+**Cuidado registrado:** a primeira versão da frase remetia por `\ref{cap:introducao}`, que
+**não existe** - o cap. 1 não tem `\label`. Teria virado um `??` real, do tipo que o CL-30
+declarou inexistente. As remissões ao cap. 1 são escritas à mão (`:45`), e é assim que ficou.
 
 ### CL-18 — Tabela 4.1, RD-1: "o que dá o suporte à 'integração'" · **B** — FEITO
 Explicitar qual elemento arquitetural materializa a função integradora — a Silver,
@@ -421,8 +479,29 @@ na arquitetura.
 
 **Apoio cruzado consumido**: usa `modelo canônico`, o termo unificado no CL-25.
 
-### CL-19 — "Alfa Bravo?", "Genesis?", "Astros?" · **D**
-Quais sistemas do EB entrariam na integração. **Perguntar novamente a ela.**
+### CL-19 — "Alfa Bravo?", "Genesis?", "Astros?" · **D** — ENCERRADO: decisão do Silvio (05/09/2026)
+Quais sistemas do EB entrariam na integração.
+
+**Não vai por escrito.** A pergunta dela é legítima e tem resposta, mas a resposta é
+**falada**, no seminário de acompanhamento - não registrada na dissertação. A PoC vai
+simular fontes com o perfil dos sistemas em operação; o texto as descreve **por perfil**
+(regime de chegada do dado, escalão de emprego, natureza da operação), sem dizer de qual
+sistema cada uma é o análogo.
+
+**O texto já sustenta isso**, e não é contorno improvisado: `1_Introducao:101` delimita o
+escopo dizendo que "a PoC adota interfaces genéricas e padronizadas, **sem acoplamento a
+sistemas finalísticos em produção**". Descrever a fonte por perfil é a leitura fiel dessa
+delimitação, não um recuo diante da pergunta.
+
+**Cuidado a manter no cap. 5:** a caracterização do cenário no cap. 1 (`:30`) **continua
+nomeando** C2 em Combate, Pacificador e FAC2FTer - com citação de fonte pública aberta, e
+é dela que o CL-17 tira a confirmação do Alfa/Bravo/Charlie. Nomear o cenário é uma coisa;
+declarar de qual sistema a fonte simulada é o espelho é outra. **A primeira fica, a
+segunda não entra.** Não escrever, no cap. 5, frase que ligue uma fonte da PoC a um
+sistema nomeado.
+
+**Encerra também o "Genesis?" e o "Astros?"** - nomes que ela anotou como candidatos: não
+entram, pela mesma regra.
 
 ### CL-20 — conversão colunar nem sempre necessária · **B** — FEITO
 ### CL-21 — "mas se preserva, pra que a conversão?" · **B** — FEITO
@@ -805,7 +884,12 @@ já usado no CL-21 e no CL-23 (ver CL-33).
 
 ## Observações gerais
 
-### CL-33 — "texto bem escrito mas muito repetitivo, o que o torna cansativo" · **C**
+### CL-33 — "texto bem escrito mas muito repetitivo, o que o torna cansativo" · **C** — ENCERRADO: sem ação (05/09/2026)
+
+**Decisão do Silvio (05/09/2026): não mexer.** O item fica como está; o texto segue
+cansativo e isso é aceito. O que já saiu saiu como **efeito colateral** de outros itens -
+sobretudo os 595 palavras dos fechamentos de zona no CL-27 - não como campanha própria.
+Nada do apoio acumulado abaixo será executado.
 
 **Apoio cruzado (vindo do CL-27) - maior mordida já dada neste item:** os quatro
 fechamentos de zona saíram, **595 palavras**, sem perder conteúdo. Restam neste item: a
