@@ -17,3 +17,14 @@ _local/
 # Texto da dissertação (.tex) — trazido para cá para trabalho, nunca versionado
 # neste repo. A entrada abaixo cobre a pasta e tudo que estiver dentro dela.
 arquivos-dissertacao/
+
+# Gravações de seminário/banca — vídeo e áudio nunca vão para o git
+07_revisoes_banca/**/audio/
+07_revisoes_banca/**/video/
+*.mp4
+*.mkv
+*.webm
+*.mov
+*.wav
+*.m4a
+*.mp3
