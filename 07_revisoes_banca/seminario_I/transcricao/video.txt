@@ -1,0 +1,1567 @@
+da apresentação. Então vamos lá, senhores, dando continuidade ao trabalho do Silvio Ferreira Gomes Júnior,
+aluno do mestrado do PPCA, hoje nós vamos fazer o seminário 1 do trabalho, cujo título é
+Uma Proposta de Arquitetura de Lake House para o Exército Brasileiro no Contexto de Comando e Controle.
+Então hoje é 18 de novembro, são 4 minutos para as 3 horas.
+Então, mais uma vez, agradeço a colaboração dos professores,
+as dicas estão sendo muito boas, o Silvio está evoluindo o trabalho.
+O objetivo da reunião é basicamente isso, é o Silvio apresentar as sugestões,
+como é que elas estão sendo implementadas e o que falta para a próxima etapa até a defesa.
+Tem mais o seminário 2 e a defesa. Então ele vai dar um andamento, como é que foram feitas as alterações
+e o trabalho futuro para concluir o trabalho.
+Silvio, abre a apresentação aí, você tem 20 minutos para fazer a apresentação.
+Ok, todo mundo está conseguindo ver a apresentação direitinho?
+Perfeito, chegou. Eu vou fechar a minha câmera também para melhorar o streaming aqui, tá?
+Pode, deixa eu pegar meu celular aqui, aí tu tem de 20 a 25 minutos, tá certo?
+Só um momento, peraí, se tem como segurar um pouquinho, deu um problema aqui,
+é que eu estou usando o Linux, aí deu ruim aqui, desculpa.
+Vai, peraí.
+Só um momentinho, só porque agora deu problema.
+Eu vou parar um pouquinho aqui.
+Peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí.
+Aqui deu um problema aqui, vou evitar de novo.
+Peraí.
+Ah, não, é que eu...
+A janela, ah, foi aqui, esse aqui é melhor.
+Esse aqui.
+Melhor agora, né? Deixa eu ver.
+Tá carregando, carregou.
+Carregou.
+Tá em condições?
+Volta, não, só um instinto para eu ver de novo.
+Desculpa, pronto.
+Tá, deu certinho aí?
+Tá, pode botar aqui o cronômetro?
+Pode sim.
+Tá certo, então contando.
+Pode ir.
+Pode ir? Ok.
+Então, boa tarde a todos, professor Márcio, professora Baira Cláudia, professor Andrei.
+Obrigado pela presença, né?
+Esse é o nosso primeiro seminário, depois de nossa qualificação.
+E eu dividi em duas partes.
+Primeiro eu vou mostrar rapidamente como as recomendações da banca foram incorporadas ao texto.
+E depois eu vou apresentar o que é de novo, né?
+E como que é o caso estudo, a criação de dados sintéticos e o nosso modelo canônico.
+O roteiro vai ter...
+Tem cinco partes, né?
+Então a primeira é curta, temos dois slides com as considerações da qualificação
+e onde cada uma foi atendida.
+Em seguida, situo o caso dentro da nossa proposição de pesquisa,
+apresento o cenário e as fontes das sintéticas e no bloco principal,
+que é o que está destacado em dourado, né?
+O nosso modelo canônico.
+E vou fechar com os próximos passos até defesa.
+Então, começo então com as considerações do professor Andrei.
+Então, a primeira foi...
+Sobre o contexto atual do exército em termos de arquitetura para o C2, né?
+Incluindo a justificativa dos sistemas que nós já temos em uso,
+que é o C2 de combate, o pacificador e agora a FAC-2-FTR com seus níveis Alpha, Bravo e Charlie, né?
+Então, são...
+Todas são aplicações finalísticas e cada um produz e guarda os próprios dados
+e não existe uma camada que os consolide.
+E é esse espaço que a nossa arquitetura proposta ocupa, né?
+Sobre o uso do T-MAC e do Prisma,
+a razão é a natureza de cada eixo,
+pois a análise de constatação do T-MAC, né?
+Ela exige uma lista de referências de cada trabalho
+e a literatura de comando e controle é, em grande parte, cinzenta, não indexada,
+não temos um vaso de dados para isso.
+Então, é isso.
+Então, e sobre o descarte do I3-XPOR, que o senhor questionou,
+cruzei as 1.145 fontes recuperadas do I3-E com a fonte oficial das COPOS
+e disso pude perceber que aproximadamente 90%
+já estavam indexadas e entre os periódicos esse número chega a 98%.
+Tem um realmente grande desbalanço entre periódico e esses anais, etc.
+Ou seja, a perda de cobertura parece ser pequena.
+Sobre a zona landing, há três razões para separá-la da bronze.
+Então, temos que a transmissão por janela de oportunidade, ela não se repete.
+Então, o pacote precisa ser guardado exatamente como chegou.
+Assim, os binários ficam preservados, né?
+Assim, os binários ficam preservados, né?
+Assim, os binários ficam preservados, né?
+Mas é uma nova extração quando é ferramenta evoluir e a bronze passa a
+conter apenas o que eu posso consultar desses dados.
+Por fim, né?
+A linhagem para auditoria que o senhor sugeriu para prova de conceito,
+ela ficou registrada em dois níveis, seja entre tabelas e colunas,
+no nosso catálogo, seja registro a registro da Gold, das tabelas da Gold,
+até o arquivo recebido fazendo um rastreio via hash.
+Aí também tem as
+revisões textuais que foram
+devidamente realizadas.
+Agora, as recomendações da professora
+Cláudia. Só um parêntese aqui.
+Foram várias recomendações, eu fiz só,
+eu botei só algumas como exemplo,
+mas eu
+acatei 99%
+delas. Então,
+considerações, né? Primeiro,
+o diferencial sentido. Como eu
+e o professor Márcio já colocamos a qualificação,
+que por se tratar de um mestrado profissional,
+o diferencial está no artefato,
+que é uma arquitetura construída
+a partir de uma necessidade de rado à força,
+fundamentada na pesquisa biográfica
+sobre o tempo. Então,
+sistemas reais e utilidade.
+Os sistemas de uso estão agora caracterizados
+no certificativo, como eu já falei
+com relação ao professor Andrei.
+O que fica de fora é o escopo
+e o que fica de fora
+do escopo é só o acoplamento
+da prova de conceito a esses sistemas.
+Em relação a como mostrar
+a utilidade, a resposta estará
+no capítulo 5. Além disso,
+as fontes sintéticas reproduzem
+a forma dos documentos reais
+e como o cenário é conhecido,
+cada resultado pode ser conferido
+depois.
+Diferença entre zonas e ETL.
+No diferencial, eu estabeleci
+a diferença entre zonas e ETL.
+No ETL, só o resultado final
+é gravado. Já nas zonas,
+cada etapa pode ficar gravada
+e pode ser consultada, o que permite
+reprocessar sem nova ingestão.
+Integração
+e aquela diferença entre
+missão e tarefa.
+No capítulo 4, eu deixei
+explícito que a camada
+Silva faz essa integração.
+Além disso, se eu entendi direito,
+a marcação da professora, o exemplo
+de missão e tarefa, a diferença
+entre os dois, como esse artefato
+ajuda esse tipo de coisa.
+Eu expliquei como esse artefato
+vai conseguir fazer essa distinção.
+Bronze
+preserva
+e converte.
+Esclareci que a bronze
+não interpreta o conteúdo,
+apenas guarda o envelope de proveniência
+e que a evolução
+do esquema vem do próprio formato
+de tabela, que aceita campos novos
+sem precisar reescrever o que já foi gravado.
+Hierarquia
+e responsabilização.
+Também expliquei que a arquitetura respeita
+a hierarquia porque tudo entra por um único
+ponto, que é a nossa lente.
+E o catálogo registra de qual
+batalhão veio cada pacote e quando
+cada chegou. E ele ainda
+contribui para preservar a...
+a responsabilização por três meios.
+Então, um, não há
+automação decisória,
+a linhagem fica registrada no catálogo
+e a proveniência fica registrada
+na landing com seus metadados
+disponíveis no seu sidecar.
+Então, os demais ajustes de justificativa
+e de forma também foram feitos
+e estão indicados no texto.
+E já a pergunta sobre o que
+de fato será implementado é respondida
+pelo restante dessa apresentação.
+Então,
+agora eu entro na parte nova, né?
+Então, eu vou iniciar retomando a proposição
+P1, que está na nossa introdução.
+Então, vamos lá. A arquitetura
+centralizada na brigada
+e construída com tecnologias open source
+é capaz de ingerir, organizar
+e disponibilizar dados heterogêneos
+que chegam dos batalhões.
+Então, cada um desses
+três verbos orienta a produção
+de evidências. Então, ingerir
+é receber os dados de naturezas distintas
+sem exigir que cheguem já
+modelados. Organizar,
+é conformá-los ao modelo canônico
+único. E é isso que esse capítulo
+prepara. Já disponibilizar
+é entregá-los ao Estado-Maior
+para ajudar nas tomadas de decisões.
+As evidências dos três verbos virão
+no próximo capítulo, sendo conferidas
+contra os requisitos do
+capítulo 4, de forma que também
+atinge os objetivos elencados na nossa introdução.
+Em relação
+à metodologia,
+cabe lembrar que a estratégia de pesquisa
+é um estudo de casa e, por isso,
+a prova de conceito não é um experimento
+e não compara a alternativas.
+Ela produz registros observáveis.
+E, como o cenário é
+conhecido de antemão, cada valor
+produzido pela arquitetura pode ser
+conferido com o fato que o
+originou. Então, vamos lá.
+O caso que estamos
+estudando é o fluxo de informações
+que chega no Estado-Maior de uma brigada
+durante a operação. Também como referência
+à Operação Perseu de 24,
+que foi um exercício real e de divulgação
+pública, realizado entre
+25 de novembro e 5
+de dezembro de 2024
+no Vale do Paraíba.
+Dele, eu vou aproveitar só o nome,
+as datas e região, porque está uma moldura
+mais verossímil, sem expor nada
+que não seja público.
+Depois disso, todo o resto é sintético,
+porque os sistemas
+de C2 e seus dados não são acessíveis
+à pesquisa e são classificados.
+Mas aqui, sintético não
+quer dizer arbitrário. Aqui, cada
+gerador reproduz
+os campos, as abreviaturas e os problemas
+tipos de um documento real.
+A organização militar
+fictícia que conduz a operação do cenário
+é uma brigada, que eu chamei de
+51 Brigadas de Infantaria Motorizada.
+E ela tem sete organizações
+militares subordinadas, com
+16 subunidades,
+53 frações, totalizando
+77 subunidades.
+Essa estrutura fica guardada
+em uma tabela, que eu chamei
+de refunidade,
+que diz aos geradores
+quem pode relatar e diz
+a arquitetura de quem se espera
+o relatório periódico.
+E é isso que permite detectar, por exemplo,
+se uma subunidade deixou de remeter
+um relatório de algum turno,
+se for por turno.
+Esse cenário,
+ela reúne cinco fontes,
+cada uma no formato que enxergaria na prática.
+Da esquerda para a direita, cresce o esforço
+para transformar o conteúdo em dado
+utilizável. Por exemplo, o C2A
+é um aplicativo que exporta
+em JSON a posição das frações
+e as medidas desenhadas no mapa,
+e é a fonte mais simples.
+Já o C2B também exporta
+em JSON, mas o conteúdo principal
+é um relato em texto livre, às vezes
+com foto. Nesse caso,
+o tipo de fato precisa ser inferido
+do texto, e o local pode vir
+os metadados, por exemplo, da fotografia.
+Já a fonte Helper,
+que é o nome que eu dei para relatório periódico
+pessoal material, é enviado duas vezes por dia
+por cada OM. A dificuldade
+é que cada OM preenche de um jeito
+e algumas mandam planilhas,
+peças, outros escaneados, o que elimina
+a estrutura desses dados.
+Já a fonte Fogos
+segue o relatório de bombardeio, oriundo
+de um manual doutrinário, e chega só
+com uma imagem, cheia de siglas,
+condenadas e outros dados.
+Por fim, a fonte Voz é composta
+por 150 mensagens de rádio
+gravadas que precisam ser transcritas.
+Usam codinomes
+e chegam bem degradadas, tentando
+simular a realidade. Destaco aqui
+não pretendo reproduzir os documentos específicos
+de sistemas de uso. São fontes plausíveis,
+e diferentes entre si, justamente
+para representar essa heterogeneidade.
+E como esse cenário é montado?
+O ponto de partida é uma lista
+de fatos. Um fato é algo que
+acontece no terreno, em um instante
+e em um lugar determinado.
+Por exemplo, uma viatura inimiga
+avistada perto de uma ponte,
+uma cratera que interrompe uma via.
+Cada fato é gerado
+a partir de sequências de sorteios.
+Primeiro, o tipo do fato,
+qual foi o elemento envolvido,
+o lugar dentro da fonte.
+da faixa, da UEM, que é desse
+elemento que aconteceu, e por fim
+o dia, a hora e a prioridade.
+A demonstração só
+existe que todos os tipos ocorram
+e que parte dos fatos
+cheguem por mais de uma fonte.
+No cenário
+padrão, são 60 fatos
+que ocorrem durante os 11 dias da operação,
+de seis tipos ligados
+a três funções de combate.
+O que torna essa lista útil
+é a decisão sobre quem
+relata cada fato.
+Então, a primeira fonte
+vai relatar sempre.
+Se ela caiu para relatar, ela vai relatar.
+As demais, elas
+vão relatar com uma probabilidade.
+Aqui eu escolhi 55%,
+para ser um pouco mais do que uma moedinha
+sendo atirada aqui.
+Assim, então, 31
+fatos chegam por mais de uma fonte.
+São eles que permitem testar a integração,
+porque a arquitetura precisa reconhecer
+que relatos de fontes diferentes
+falam do mesmo acontecimento.
+Se cada fato chegasse por uma única
+fonte, não haveria nada para juntar.
+Por exemplo, esse fato
+F043,
+ele chega pelas três,
+com uma medida no C2A, com um incidente
+com foto no C2B,
+e pelo rádio.
+Mas aqui, nem todo dado nasce de um fato.
+Por exemplo,
+as posições do C2A
+chegam de hora em hora,
+e o réu P,
+que é o nosso relatório, duas vezes por dia.
+E como saber que quando esses dados
+deveriam chegar? Porque os outros,
+você não espera, eles chegam.
+Mas o réu P, você consegue saber,
+porque você já espera que
+chegue duas vezes por dia.
+Então, nesse caso, dá para perceber
+quando algum dado falta.
+Esse slide, ele apresenta
+os três tipos, desculpa,
+os três princípios comuns
+entre todos os geradores.
+O primeiro, o sidecar,
+que é aquele carrinho que fica na motinha.
+Então, todo arquivo binário chega acompanhado
+de um JSON de mesmo nome, com
+operação, o momento de envio,
+e a unidade de origem. Sem ele,
+o áudio ou um PDF clineado
+não diria de onde veio.
+Segundo, a verdade do cenário.
+Os geradores gravam os
+arquivos de fatos, defeitos
+e o nosso gabarito, que servem somente para avaliar
+a prova de conceito. Lembrando que a nossa
+arquitetura nunca vai ler esse gabarito.
+Terceiro,
+a reprodutibilidade.
+Então, aqui a semente é fixa. Então, o mesmo cenário
+é gerado em qualquer execução.
+Além disso, plantei
+65 defeitos de propósito, para que
+cada camada de governança tenha o que detectar.
+No C2A, por exemplo,
+há um lote truncado por interrupção
+de transmissão. No C2B,
+21 fotos sem localização.
+E no Helper,
+nesse relatório, 18 turnos
+que não foram remitidos. Então, dessa forma,
+temos tantos problemas relacionados
+ao que chegou à solução, quanto
+remessas que deveriam ter chegado e não chegaram.
+Então, chegamos ao nosso modelo canônico.
+As cinco fontes trazem
+dois problemas diferentes.
+O primeiro é extrair informação de cada uma.
+O segundo é representar
+as fontes distintas, de forma comum.
+Ou seja, o mesmo obstáculo
+pode aparecer com uma medida desenhada no mapa
+ou um incidente com foto
+ou com uma mensagem rádio.
+E para saber que é o mesmo
+fato, o tipo, o estante
+e esse local, precisam estar padronizados.
+Esse segundo problema é clássico na integração
+de dados. No slide,
+na parte da esquerda, está o que acontece
+em um modelo comum. Cada visão precisa
+se ler e interpretar cada fonte.
+Robin Wolf,
+de 2003, propõe um modelo
+canônico, um modelo
+independente para o qual cada
+fonte traduz os seus dados com apenas
+o necessário a integração.
+Além disso, o Dama,
+considera o padrão justificável
+quando mais de três sistemas
+trocam dados.
+Eu adaptei
+o padrão em dois pontos.
+Aqui, as fontes
+não trocam dados entre si.
+Eles convergem para um destino comum.
+E o modelo canônico não é transitório.
+Ele fica gravado na silver,
+na camada silver,
+com o seu bruto preservado na bronze,
+o que permite refazer
+a tradução quantas vezes forem necessárias.
+E a consequência prática é que
+se o formato de uma fonte
+mudar, ajusta-se somente a receita
+dela e as visões continuam iguais.
+Então, para colocar o modelo
+em prática, eu criei um único arquivo,
+que é o nosso modelo canônico
+YALM. E ele
+tem cinco blocos. O primeiro bloco
+são os metadados com a versão
+e as notas de cada exceção de modelagem.
+O segundo são os três
+domínios de valores aceitos.
+O terceiro são as 18 tabelas das três camadas.
+A quarta, as oito
+receitas com as cinco fontes
+e os parâmetros
+das cinco
+visões da GOLD.
+Apesar do nome, o arquivo
+define as tabelas das três camadas.
+O modelo canônico propriamente dito
+são as sete tabelas da minha camada
+da Silvia. Foi realmente onde tudo
+junta. Nesse arquivo,
+que também chamam de artefato
+canônico, é a fonte única
+da verdade. E ele é lido pelos programas
+que criam as tabelas, transformam os dados,
+compõem as visões e montam as instruções
+enviadas ao
+modelo de YALM.
+Com isso, uma fonte nova
+em um formato já conhecido como
+JSON, ele não vai exigir uma nova programação.
+Basta acrescentar uma receita.
+Por fim,
+escolhi esse YALM por três motivos.
+Ele é elegível
+para quem admite os dados, sem precisar
+escrever código.
+Ele aceita comentários de forma nativa
+para que seja possível escrever
+justificativo em cada definição.
+E permite estruturas alinhadas como o JSON
+como um domínio
+com seus valores.
+Agora vou falar sobre as receitas
+que são a tradução propriamente dita.
+Para cada tipo de registro de uma fonte,
+a receita diz de qual campo
+de origem vem cada coluna canônica.
+E como
+e com que transformação.
+Aqui são três tipos.
+O primeiro, o valor copiado direto.
+O segundo, a consulta
+a algum domínio ou uma tabela de referência.
+E terceiro,
+uma necessidade de cálculo.
+Por exemplo, converter datas
+em um único fuso, ou data
+de um formato para um outro formato, etc.
+Com isso, a receita
+atende o que o domain
+bokeh exige em um mapeamento de fontes
+e destinos. Ela informa
+o formato da origem do destino,
+registra as etapas intermediárias
+e mostra como cada atributo
+é preenchido e se o valor
+precisa ser transformado.
+Já o vocabulário controlado
+tem dois instrumentos,
+no próprio artefato YALM
+que ficam os nossos domínios.
+Cada valor tem o seu código,
+o seu rótulo, o seu sinônimo
+e, quando é o caso, o critério de uso.
+E em arquivos CSV
+que ficam as listas mais extensas,
+umas 4.400 abreviaturas
+extraídas do nosso manual de abreviatura
+do Ministério da Defesa.
+E também
+temos um CSV com a estrutura
+da Brigada.
+Os dois arquivos, que é o YALM e o CSV,
+seguem a mesma regra. Ou seja,
+o valor de origem só é aceito
+se corresponder a um código ou
+a um sinônimo. Se não corresponder,
+a coluna fica nula
+e o caso é contado. Nunca vai ser preenchido
+com valor incerto.
+Agora em relação à extração.
+Parte das fontes tem conteúdo
+desestruturado, como o texto livre,
+documentos escaneados e voz.
+E exigem modelos que inferem e, por isso,
+podem errar. O modelo canônico
+participa dessa extração em dois momentos.
+O primeiro, antes da extração
+em si, na parte da preparação
+e depois da extração.
+Antes, ele diz o que
+procurar. Por exemplo, o
+transcritor da voz,
+que usei o FastWhisper,
+recebe os condinomes e os nomes dos lugares
+da operação em seu prompt inicial.
+A IA, no caso que eu usei o
+em, vai receber esses valores possíveis
+de cada campo. E quando precisa
+classificar um relato escrito em
+texto livre, recebe também o critério
+de quando cada
+valor se aplica, porque
+não basta reconhecer somente o
+reconheceu do termo.
+Depois, a resposta
+passa pela mesma receita das outras
+fontes. E o valor fora da lista
+vai ficar nulo e vai ser contado.
+Ou seja, a IA só escolhe
+entre valores já previstos.
+Não vai criar novos.
+Para auditoria, toda a extração
+fica registrada em tabela.
+No caso, eu chamei de extração. E o prompt
+e os seus parâmetros ficam versionados
+em uma outra tabela, que eu chamo de
+ajuste de extração. Além disso,
+eu calculo uma espécie de impressão digital
+do pedido. No caso
+o prompt mudar sem que
+uma nova versão seja declarada,
+a extração vai parar.
+Ele sabe que não otimizou os prompts para acertar
+mais e os erros ficam
+identificados e não entram na silva como
+corretos.
+Para sintetizar, o nosso capítulo 5
+entrega 1. Um cenário
+sintético com a verdade conhecida,
+com os fatos, as fontes e os defeitos
+plantados. 2. Um modelo
+canônico declarado num único
+artefato versionado. 3.
+As receitas e vocabulários que tornam cada
+tradição auditável. 4.
+E o uso da IA
+restrita a escolher valores previstos.
+Então, o próximo passo é a nossa
+prova de conceito.
+Primeiro vou selecionar as tecnologias open source
+para cada camada funcional, de acordo com os
+requisitos e capacidades do capítulo 4.
+Depois vou implementar a ingestão, extração,
+transformação e disponibilização dos dados.
+E por fim, vou demonstrar os três
+verbos da proposição que eu falei
+no início da apresentação.
+Dentro dessa operação percebo
+mostrando a taxa de acertos, extrações
+e como cada
+defeito foi tratado.
+Muito obrigado.
+Estou abrindo aqui, minha rede está lenta
+hoje.
+Vamos lá.
+Eu saí da apresentação sem querer.
+Minha rede está dando pico aqui.
+Estou na UnB, estou com um probleminha aqui.
+Qualquer coisa eu entro pelo celular.
+Se eu cair, podem continuar a reunião.
+Eu entro pelo celular e a gente finaliza.
+Dando continuidade ao
+processo de Seminário 1,
+o Silvio fez a apresentação dele.
+Agora os
+membros da banca foram só as observações.
+Começamos pela professora
+Maria Cláudia, que é a mais externa.
+Vou ter que fechar a minha câmera,
+minha rede está dando pico aqui.
+Estou caindo e voltando.
+Está certo, mas eu estou acompanhando.
+Pode ir, professora.
+Primeiro,
+parabéns pela evolução, Silvio.
+Acho que ficou bem bacana
+todo esse
+estudo de casos que você andou fazendo.
+Muito detalhado.
+Difícil a gente
+acompanhar todos os detalhes, mas
+achei muito interessante, inclusive,
+a questão do registro da proveniência,
+dos promptes e tal,
+que eu ouvi agora mais no final.
+Você pode
+compartilhar
+de novo a sua
+apresentação?
+Eu queria voltar em alguns pontos.
+Enquanto você procura...
+Eu sei que
+eu mencionei ali aquela história de missão
+e tarefa por um motivo
+real, que a gente tem
+trabalhado aqui nessa distinção.
+Dentro do teu trabalho, se você
+puder botar lá nas minhas
+observações primeiro,
+para a gente ir
+na...
+Eu prometo não demorar,
+tá, Andrei?
+Não, tranquilo.
+Está certinho essa aqui, professora?
+Isso aí.
+A primeira observação...
+Deixa eu ver se consigo enxergar aqui.
+Cancela.
+Espera aí.
+Claro.
+Então, tem ali
+zonas versus ETL,
+o ETL...
+Essa coisa que você falou,
+que o ETL só durava no final,
+isso não é exatamente verdade,
+tá?
+A literatura é muito variada
+nesse sentido. Tem algumas arquiteturas
+que falam de um ODS,
+por exemplo. Antigamente,
+o Lake House era muito
+chamado de ODS,
+que era onde você armazenava...
+Claro que o Lake House tem
+mais, vamos dizer assim,
+uma estrutura melhor,
+mais bem pensada nessa questão
+de receber dados de todos os tipos
+e tal, né?
+E essa arquitetura que você
+está usando,
+não sei se é exatamente para onde
+você está usando,
+que é essa
+da silva, bronze
+e gold, né?
+Pode falar, pode
+me interromper, se eu tiver...
+A senhora está falando certinho. Aqui é um bate-papo.
+É isso.
+Então, bom,
+só queria corrigir um pouco
+você, para não cair
+nessa armadilha de algumas publicações
+e tal, que dizem que
+o ETL só grava no final.
+Eu acho que não, acho até que
+tem
+uma correspondência com essa
+arquitetura em três
+camadas, né?
+Que pode ser feita melhor, mas
+assim, eu não acho que você tenha que fazer
+isso a fundo, não, tá? É só
+procurar não se
+apegar
+a essa coisa de que grava
+só no final, tá?
+Bom,
+outra coisa que eu tinha botado
+ali, integração e missão-tarefa,
+né? Aí, assim, o modelo
+canônico no silver,
+né, dá suporte à integração
+e tal, parará. Então, quando
+você fala, né, que você
+criou ali aquelas formas,
+aquelas receitas, né? A gente
+chama de depara também, né? Mas, assim,
+É depara, o famoso depara.
+É, o famoso depara. Então,
+assim, tudo bem, receita de tradição
+para ficar mais elegante,
+então, assim, ficou bacana. Mas, assim,
+é uma visão
+um pouco simplista que eu estou
+querendo dizer, né? Porque para aquele
+estudo de casa, você fez ali
+um conjunto de receitas,
+né? E é legal que você pense nesse
+modelo canônico ao invés de
+par a par, né? Porque
+é isso que você quis argumentar
+ali quando você botou aquelas duas
+coisas, né? Em que, se você
+tem um canônico, a cada
+fonte nova, você vai
+mapear verticalmente, ou seja,
+da fonte para esse
+modelo canônico, né?
+Então, isso é bacana e tal,
+mas, assim, não houve
+exatamente, assim,
+esses deparas, né?
+Para você chegar no modelo
+canônico, no entendimento
+único e tal, entre
+fontes diversas, e aí eu estou
+falando, assim, se fosse mais amplo, né?
+Aí, dentro
+do contexto e do estudo
+de caso, é mais simples
+você chegar nesse modelo canônico,
+né? Mas,
+em situações
+assim, mais complexas, né? A gente
+vê que não é
+assim. E, claro, tem todo um estudo,
+né? E aí eu vou
+puxar a sardinha para o meu lado, né?
+De modelagem conceitual
+e tal, que vai ser
+custoso chegar nesse
+modelo canônico, né?
+Então, só queria ressalvar isso,
+né? Que você
+coloque, né? Talvez
+seja
+esse tipo de
+acordo, né? O de modelo canônico tem
+que ser feito previamente,
+né? Envolvendo todas
+as unidades, vamos dizer,
+envolvidas no...
+Não numa operação, mas
+em termos
+arquiteturais, né? Você não está
+só fazendo arquitetura para uma
+operação, né? Você está
+fazendo arquitetura para outras
+operações, outras interações,
+não é isso? Então, assim,
+ah, de repente eu tenho
+operações conjuntas, por exemplo, eu vou ter que
+alinhar coisas com a marinha,
+né? Vou ter que alinhar coisas com
+a força aérea e tal.
+Então,
+por que que eu estou falando isso? Eu tenho
+um trabalho agora que
+eu já tinha... Não sei se eu já tinha falado
+isso para você, né? Que
+é o
+Tenente Adnet que está fazendo.
+Adnet é Adnet Alves.
+Não sei se... Eu acho que eu cheguei a falar
+isso para você, não falei? Você conhece o
+Alves do CDS
+que trabalha no Rio e tal?
+Não. Não.
+O que eu conheço é
+só o Bredas.
+O Breda, né?
+O Breda trabalha
+com ele. Então,
+trabalha com ele. Só que o
+Adnet Alves, ele...
+Eu estou chamando assim de dois nomes porque ele era
+Tenente Adnet e agora Tenente Alves. Eu não
+consigo passar
+para o Alves mais.
+Então, assim, ele está fazendo mestrado
+lá no IME com a gente, né? Justamente
+no mapeamento de operações,
+né? Ele é de C2,
+né? Ele está na equipe do
+pessoal de comando e controle, tá?
+Só que lá no
+CDS. E ele saiu
+para fazer o mestrado. Então, ele já está terminando
+agora. Ele está no segundo ano, né?
+Então, talvez por isso eu não tenha
+interagido exatamente com ele,
+né? Mas ele tem acesso aos sistemas,
+temas e tal, né?
+E aí, a gente começou a modelar
+essa questão da ordem de operação.
+Então, é um momento prévio
+ao que você está pensando. Você
+entende que você está focando
+na execução da operação.
+Certo?
+Então, assim, todos os dados que estão
+vindo são dados
+que
+alguém falou no...
+Alguém respondeu, fez um relatório,
+alguém falou alguma coisa,
+né? Teve, tem tido
+algumas práticas. Tudo é
+na execução da operação, né?
+Mas o planejamento
+e a
+preparação de uma
+ordem de operação,
+né? Eu estou imaginando
+que você não está cobrindo, é isso?
+Não, não estou.
+Tá, porque seria um documento
+a mais para entrar aí no seu
+lake house, né? Que era interessante
+também distrair e tal.
+Então, assim, eu achei muito interessante
+como a gente está numa coisa complementar.
+Entendeu?
+De trabalho e tal. Aí,
+bom, falando
+sobre isso, né? Uma perspectiva
+futura seria
+isso. Você cobrir com o seu lake house
+também outras fontes, até
+pegando essa parte
+de planejamento
+e
+emissão da ordem de operação.
+Por que que eu fui
+longe assim para buscar? Porque ali
+na ordem de operação você tem a distinção
+entre o que é a missão
+que é uma coisa mais ampla
+e como ela se desdobra em
+tarefas, né?
+E essas tarefas vão virar
+missão para outros,
+né? Certo.
+Então, eu
+estou
+eu estou vendo assim
+uma perspectiva de
+complemento, né? Então, assim que você
+tiver o seu trabalho e tal, eu vou tentar
+passar para o Adnet, né?
+E tal, se a gente puder
+passar alguma coisa,
+né? Se tiver alguma coisa escrita
+que eu possa passar, né? Aí vocês
+me dizem. E a outra coisa
+também que eu queria passar
+para você é o artigo que a gente
+publicou, né?
+Sobre essa distinção de missão
+e tarefa. Ali tem só um núcleozinho
+da ontologia, mas a gente
+chega inclusive na parte de
+delegação e tal. Então,
+eu acho
+que é uma coisa que vale a pena
+dar uma olhada, tá?
+E aí, de repente, você assim, no
+na conclusão do seu trabalho,
+você poder, de repente,
+citar ou mostrar, né?
+Demonstrar, porque dentro do exército
+você está dentro lá, né? E o teu trabalho
+vai ser lido ali. Isso mostra
+uma, uma,
+vamos dizer assim, uma possibilidade
+de interação, de
+para a própria força,
+né? Falar assim, olha, tá vendo? O trabalho
+estava sendo lá na UNB, mas tem aqui
+também no IME, tem, né?
+Um...
+Esse tipo de
+cooperação surgindo,
+possivelmente até
+posteriormente a defesa da
+tese, né? A defesa da dissertação.
+Tá certo? Perfeito, perfeito.
+E aí, pode até motivar
+outros elementos lá da equipe
+a querem fazer outro
+mestrado profissional, ou então
+um mestrado no IME, algo assim
+que pudesse dar continuidade
+a essas ideias, né?
+Então, bom...
+É...
+Eu acho que...
+Vou voltar? Não sei se teve mais alguma
+coisa, deixa eu dar... Ah!
+Espera aí. Ali são as fontes,
+né? Deixa eu voltar aí.
+Onde estavam as fontes
+ali que você tinha botado?
+A fonte. Então, esses dados,
+pois é. Outra coisa que eu queria
+saber é se eu posso usar esses
+seus dados sintéticos.
+Claro que pode, professora.
+Aqui é tudo, tudo nosso.
+Então, eu até
+anotei ali que era a operação
+Perseu, né? Eu dei uma...
+capturada aí dessa...
+Perseu de mentirinha?
+É, Perseu de mentirinha, né?
+A gente chama de alfa nossa.
+Ah, é?
+É, tem...
+Bom, enfim, tinha pássaro
+negro e tal, a gente vai
+tentando. Eu achei que
+essa Perseu, de fato, existiu,
+né? Mas assim, tem um outro nome, é isso?
+Não, ela existiu,
+aconteceu em 2024
+no Vale do Paraíba.
+Isso aí aconteceu, ponto.
+Tá, mas os dados dela
+aqui são todos...
+É, tudo eu inventei, tudo inventado.
+Pois é, eu achei muito
+criativo, assim, muito
+interessante toda essa
+descrição, né? Então,
+isso pra nós ia ser super legal.
+Só pra finalizar,
+né? O nosso estudo de caso tá
+sendo numa interação entre
+o Exército e a PM, tá?
+Ah, que legal. Então, assim,
+é uma operação conjunta, né?
+E a gente precisa, com
+as ordens de operação da PM,
+a ordem de operação do Exército,
+né? Saber, por exemplo,
+quais são as missões e tarefas, e aí
+você poder, numa gestão conjunta,
+né? Observar
+quais são as tarefas,
+responsabilidades de quem e tal. Mas
+a gente para aí, a gente não vai pra execução,
+entendeu?
+Porque seria um passo a mais bem
+complicado. Então, por enquanto,
+né? A gente tá nessa coisa.
+Então, fica aí o
+a expectativa,
+né? De um possível
+desdobramento aí do trabalho.
+E também dar os parabéns, porque eu acho que
+você tá num caminho bom
+e vai tá
+terminando aí com um resultado
+bem interessante, concreto
+e tal. Na verdade, professora,
+eu nem imagino que isso aqui
+seja uma solução
+fechada. Longe, muito longe disso.
+Mas, assim, o que eu puder inspirar,
+tipo assim, o pessoal tá
+construindo um negócio lá no
+DDS3, a parte de C2 lá.
+Poxa, ah, o módulo
+canônico. Eu posso,
+tipo, ó, eu fiz dessa forma. Será que dá pra
+vocês? É nesse sentido.
+Pedacinhos que as pessoas
+consigam tirar da dissertação
+que eles possam tentar encaixar
+e ver se conseguem,
+né? Criar valor sobre aquilo.
+Eu não imagino isso aqui.
+Ah, isso aqui vai ser uma solução fechada.
+Não é bala de prata.
+Longe disso, professora. Longe disso.
+A gente sabe.
+Mas é isso que a gente quer, né?
+A gente quer poder estudar um pouco
+do nosso lado, né? E poder
+contribuir de alguma forma pra
+que a coisa, o produto,
+né, que vai ser desenvolvido
+seja melhorado, seja
+aprimorado, né? Então, é
+muito mesmo nesse sentido, tá?
+Parabéns aí pelo trabalho, tá?
+Eu confesso que eu fiquei curiosa
+pra ver os detalhes, mas
+a gente vai ter que esperar pra leitura, né?
+Tá bom? Sem problema.
+E no dia lá da dissertação,
+eu abro meu VS Code
+e aí eu te mostro também qual é a coisa também.
+Se a senhora quiser, lógico.
+Não, aí tem que passar
+pro meu aluno lá, mas
+vamos devagar, vamos devagar,
+tá bom?
+É isso. Obrigada, Vitorino,
+pela oportunidade, tá?
+Enfim, tá falado.
+Obrigado, professora. Seria interessante
+depois o Silvio vai pegar o contato
+do seu aluno.
+Aí, Silvio, faz uma reunião, nem que seja
+pra entender o escopo do trabalho dele
+mas facilita no corpo do teu trabalho,
+esse trabalho tá lá no IME,
+porque facilita a integração depois.
+Em algum momento a gente tenta citar esse trabalho
+como se fosse, por exemplo, o nosso escopo
+é a execução. No entanto, está sendo desenvolvido
+no IME, no trabalho, sobre o planejamento
+de operações, coisa e tal, entendeu?
+Então, passando essa corrida de final de ano,
+o Silvio entra em contato com teu aluno,
+tenta fazer pelo menos uma videoconferência
+pra saber como é que a gente pode deixar bem claro
+essa potencial integração. É bem interessante fazer essa.
+Tá bom, ótimo.
+Oi?
+Tenente Paes.
+Não, é Adinê, sei lá como é que é.
+Adinê Alves.
+Ah, Tenente Adinê,
+pessoalmente.
+Com E no acento
+no final, e Alves.
+Tá.
+Eu falo com o Breda qualquer coisa também.
+Isso, já tenta uma videoconferência, vê onde é que vocês podem,
+mesmo que não integre,
+porque não vai dar tempo, mas deixa o link
+lá no corpo do trabalho, dizendo
+ó, já tem iniciativa, depois você desce e vê o trabalho.
+Vira uma operação mesmo,
+uma missão lá do CDS.
+Beleza? Top, deixa comigo.
+Falou. Obrigado, professora.
+Vamos lá, Andrei, pode fazer tuas observações.
+Eu vou fechar, pessoal, que tá toda hora aqui.
+Fecha a câmera por causa da rede, coisa e tal.
+Beleza.
+Então, beleza, Silvio.
+Eu gostei da evolução do seu trabalho,
+gostei da forma como que você apresentou.
+Você relembrou a gente
+o que a gente tinha sugerido,
+interessante.
+Eu queria pedir pra você
+colocar lá no final,
+lá no último slide.
+Tá?
+Por favor.
+O que o capítulo 5 entrega.
+Não foi o resumo desse
+Seminário 1, não, né?
+Você colocou um quadrinho lá chamado
+O que o capítulo 5 entrega.
+Aqui?
+Não, não,
+é no último mesmo, só que eu,
+depois eu falo dos próximos passos.
+Mas é melhor a gente começar a falar sobre
+o que foi feito agora no Seminário.
+Tá bom.
+Então, eu tinha pedido pra você,
+acho que o mais importante, né?
+Era contextualizar
+em alguma operação do
+Exército ou
+alguma situação real, né?
+Então, você trouxe uma situação aí que
+apesar dos dados
+não serem públicos,
+é uma situação real
+de utilização do sistema.
+E que deixou mais claro
+como é que esse sistema
+vai ser utilizado, né?
+Então, eu tinha solicitado também que você
+falasse sobre
+a integração desses dados
+heterogêneos, né?
+Então, você mostrou que chegam dados
+JSON, PDFs,
+fotos e
+o que mais?
+Áudio, né?
+Isso aí.
+Esse é o motivo da
+sua proposição de uma
+arquitetura do tipo Data Lake, né?
+Você vai trabalhar com dados heterogêneos, né?
+Então, trazendo esse contexto
+que você trouxe,
+demonstra a real necessidade
+dessa arquitetura Data Lake.
+Tá? Mas,
+a especificação da
+camada que você
+chamou de Lending, né? Que é a primeira camada.
+Isso.
+Beleza. Então,
+faz mais sentido agora pra quem
+vai ler o seu
+trabalho, tá? Ficou bem
+contextualizado. Era nesse
+sentido que as
+sugestões tinham sido dadas, né?
+E você trouxe isso.
+Com relação
+à governança.
+A governança dos
+dados, tá?
+Você citou
+que vai ter
+uma forma de fazer esse
+link do dado bruto
+ao dado final, né?
+Você não chegou a falar da
+última camada, que é a camada Gold.
+Então, a camada Gold
+é só entre a gente aqui,
+é a mais sem graça.
+Porque a parte,
+o grande
+diferencial, tô brincando aqui,
+vai até a Silver, né?
+E agora são só visões.
+São visões que a gente espera
+que possa ajudar
+o Estado maior com
+suas atividades
+militares, né?
+Então, assim, eu propus
+aquelas cinco visões
+de forma a ficar fácil
+para um militar identificar assim,
+poxa, esses dados aqui eu posso
+ajudar a fazer lá
+o processo de integração, etc.
+O que o pessoal chama de PIT-seq, né?
+Ah, esses dados aqui eu já consigo
+me ajudar no PP-Código,
+planejamento de operações.
+Poxa, esses aqui eu já consigo fazer
+uma visão
+do cenário.
+Entende?
+Essa parte de visão é a parte mais doutrinária
+para vender, digamos assim,
+a nossa arquitetura
+para um militar,
+né? Porque, poxa,
+por que é importante isso aqui?
+Olha só, porque de todos esses
+documentos heterogêneos, etc, etc,
+eu consegui criar
+um monte de informação que vai te ajudar
+a fazer o PIT-seq,
+vai te ajudar a fazer o PP-Código.
+Entende? Por isso que eu fico brincando.
+Na vida, a GOLD é a parte mais
+chata, né? Entre a gente
+que é da área de TI. Mas
+é por conta disso. Mas mais legal
+o professor, que eu tentei
+ter o cuidado de falar assim, ó,
+na GOLD tem essa informação. Essa informação
+veio dos arquivos
+tais, tais, tais, tais
+com os hashes. Então eu consigo chegar
+no áudio. Eu vou andando assim,
+esse arquivo aqui é esse áudio.
+Aí dou play no áudio.
+Ciência de operações. Aqui é
+tordilho.
+Cinco cavalos
+passando pela...
+Opa, entendi.
+Ah, eu consigo voltar
+ali falando num relatório de bombardeio.
+Tá aqui o relatório.
+Porque eu vou ter um
+hash de recepção desses arquivos.
+Eu sei qual é o arquivo. Então
+eu tive cuidado de falar assim,
+poxa, apesar de eu ter
+uma IA me ajudando
+a estruturar esses dados no meio do caminho,
+eu consigo confirmar esses dados.
+Um por um.
+Ah, mas
+você fala que consegue confirmar
+e
+escrever o que consegue. Mas
+você vai fazer um POC?
+Vou fazer um POC.
+Vou fazer um POC.
+Porque no momento não tem ainda.
+Ou você já testou as ferramentas?
+Estou testando.
+Já estou testando.
+Mas estou fazendo devagar.
+Mas já estou testando e já está bem interessante.
+Por isso que eu falei com o senhor.
+Eu não decidi tudo, mas eu tenho uma ideia de quais
+ferramentas que eu vou usar já para o próximo capítulo.
+Em relação à governança,
+a gente usa um catálogo de dados
+que ele é muito legal.
+E que tem como mostrar muita coisa.
+Que é o Open Metadata.
+Não sei se o senhor já ouviu falar.
+Ele é sensacional.
+Ele é um catálogo. Eu consigo fazer toda a parte de
+linhagem de colunas e
+tabelas. Ele tem uma ferramenta de linhagem.
+As versões mais novas tem até
+a parte de grafo e conhecimento.
+O senhor vai testar ele. O grafo ele é mais
+para...
+Ele não cuida do
+valor do dado. Ele é mais da estrutura.
+Ele não mexe no dado.
+No...
+Semântica. A semântica do dado.
+Mais da estrutura.
+Essa tabela está ligada a esse esquema.
+Que está ligada a esse não sei o que.
+Ele é mais desse jeito.
+Por isso que eu não quis mexer com ele agora.
+Mas tem. Tem a parte de glossário.
+Tem como fazer...
+Tem a parte de ontologia. Nossa, é bem completo.
+Só que também ele é muito complexo.
+Então aumenta muito a complexidade.
+Beleza, Silvio.
+Então, aproveitando o gap,
+para o seminário 2,
+trazer essa ideia mais materializada
+dessa governança, dessa linhagem
+do dado, do catálogo do dado.
+Saber que você realmente tem
+um domínio sobre esse dado
+em todas as fases que ele passa.
+Da camada
+crua até a camada
+final. Beleza?
+E é como você disse mesmo. A camada
+gold é
+o dado pronto para fazer um relatório,
+para fazer um dashboard, alguma coisa assim.
+E todo o trabalho
+vem nesse processamento dessa...
+Entre as camadas.
+E você trouxe algumas ferramentas
+que você vai possivelmente testar.
+O LLM, o Dockling.
+O modelo
+de tradução
+de áudio para texto.
+Isso, o Test Whisper.
+Eu acho que essa parte técnica
+seria muito interessante
+você pensar em uma publicação
+nessa parte.
+De como fazer essa transformação
+desses dados até uma camada prata
+ou até a camada gold.
+Utilizando esse ferramental.
+Seria bem interessante, talvez, se você pudesse
+pensar nisso.
+E aproveitando também
+o que a professora Maria Cláudia
+comentou.
+Como é que a gente faz para utilizar...
+Você tem uma resposta que
+eu queria ajustar um pouco a sua resposta.
+Porque me pareceu
+que você está tentando resolver um problema
+do Exército, que não é um problema pequeno.
+Mas a gente tem que pensar um pouco mais
+no trabalho como algo que possa ser utilizado
+por outras áreas.
+Nem que seja
+marinha aeronáutica.
+Ou uma forma de estender
+as suas ideias, a sua arquitetura.
+Nem que seja uma parte
+de toda essa arquitetura.
+Que você possa estender, que possa ser extensível
+para outro tipo de uso.
+Não só para o trabalho
+em si do Exército e o trabalho
+que você quer resolver.
+Mas que a gente pense em expandir
+essa ideia.
+Uma pequena ideia em algum
+ponto do seu trabalho, você tem que
+expandir.
+Isso pode ser utilizado não só
+para o Exército, mas para a Aeronáutica.
+Não só para a Aeronáutica, mas para o Governo Federal.
+Entende?
+Algo que possa ser utilizado.
+Só para você colocar
+um pouco...
+Assim, você tendo essa
+ideia de expandir mais o seu trabalho,
+ele dá mais volume ao seu trabalho
+e mais importância para ele.
+Mais ou menos essa ideia.
+Perfeito.
+Eram essas ponderações
+e a gente fica na expectativa do
+Seminário 2.
+Parabéns pelo trabalho
+feito até agora.
+Muito obrigado aí pela colaboração.
+Então, Silvio, anota as demandas
+já para o Seminário 2.
+Professor,
+desculpa, eu não consegui
+pegar...
+Eu parti do princípio, então eu até peço desculpas
+de antemão.
+O senhor vai gravar esse...
+Está sendo gravado. Depois eu te faço.
+Isso, por gentileza.
+Depois eu te passo o vídeo.
+Eu vou fechar agora.
+Mas aí a gente já sabe as demandas
+para o Seminário 2.
+Depois a gente vai tentar arranjar uma data.
+Então, Silvio, muito obrigado aos professores.
+Silvio, você retira aí e acompanha no WhatsApp aí.
+Eu estou aqui já entrando. Assim que a gente terminar
+a conversa, eu te chamo. Aí tudo bem rápido.
+Tá bom, então. Valeu.
+Pode sair.
+Então, senhores, é só um praxe,
+a gente dá continuidade ao trabalho,
+tudo certo, os senhores concordam.
+Tudo certo.
+Deixa eu só compartilhar aqui rapidamente.
+Acho que ele já ia defender
+em pouco tempo.
+Ainda tem um outro seminário.
+Tem um em dezembro.
+São dois seminários.
+O Andrei também orienta o pessoal lá do PPC.
+Uma celuladeira inventou isso.
+Aí está dando mais trabalho
+que qualquer outra coisa.
+Só uma dúvida.
+A gente faz seminário também,
+mas a gente faz seminário interno.
+Interno.
+Primeiro era assim,
+todo mundo apresentava os trabalhos.
+Eu acho que um seminário era suficiente
+entre a qualificação e a defesa.
+Só que são dois.
+Aí fica pesado.
+Andrei, deixa eu te passar
+o número do processo aqui rapidinho.
+Deixa eu ver aqui.
+Eu acho que eu tenho ele aqui, Márcio.
+Eu só vou adicionar
+assim que você fizer as coisas aí,
+eu adiciono ele na minha.
+Para assinar.
+Deixa eu aqui.
+Professor, para você,
+eu já mando só um minuto
+pela aprovação, então.
+Só para ter continuidade,
+na verdade, porque ainda tem
+outros passos.
+Deixa eu assinar aqui.
+Mas ele é muito bom aluno.
+Não, ele é desenrolado.
+Ele só
+é um pouco ansioso.
+Mas é toda universidade.
+Então qualquer coisa
+ele já quer adiantar.
+Então,
+é, só uma dúvida.
+Professor e Andrei,
+de 14 a 18 dezembro, vocês estão disponíveis
+ou já estão desligados?
+Olha...
+Dezembro?
+É dezembro.
+Ah não, vamos...
+Daqui a um mês.
+Eu tenho algumas bancas, mas
+a gente pode mandar.
+A professora ainda está ativa ou já está recolhida?
+É.
+Bom, eu tenho duas possibilidades.
+Uma,
+é que eu tenho umas provas
+que a minha filha está fazendo, que são para São Paulo.
+Então eu posso ter que fazer
+remotamente de São Paulo.
+Então eu não sei ainda.
+E a outra coisa
+é que
+também estou em processo de
+aposentadoria. Ainda não sei quando é que vai
+sair, né?
+Mas eu não vou parar, então também não é
+um...
+Não é um problema. É só assim que
+provavelmente eu posso...
+Posso ter que estar em viagem.
+Não, tudo bem. É só para ser uma reunião
+como essa.
+Ainda é Seminário 2, né? Não é Defesa Final não.
+É só para mostrar mais uma evolução
+e o que fica pendente para a Defesa.
+Acho que tranquilo.
+Eu mando um e-mail para os senhores, aí vocês
+veem as datas. A gente tenta conciliar uma data entre
+14 e 18. É só para mostrar mais um passo
+de evolução e o trabalho final
+para a Defesa. Aí a Defesa a gente vê uma data mais apropriada
+mesmo. Aí eu não tenho pressa não. É só para
+já fechar tudo e ficar faltando só a Defesa para o ano que vem.
+Aí a gente vê a melhor data ano que vem. Beleza?
+Depois eu mando um e-mail. De 14 a 18 eu mando um e-mail.
+Beleza, André? Aí também tu responde lá e a gente vê.
+Beleza. Tá certo.
+Então eu vou chamar ele de volta aqui. Deixa eu chamar ele de volta.
+Deixa eu mandar o joinha meu para a professora
+aqui. Só para...
+Formulário
+e tal. Eu mandei um e-mail para vocês.
+Deixa eu ver
+aqui.
+Aqui eu acho que já tem o seu cadastro. Deixa eu ver aqui.
+Deixa eu chamar ele aqui de volta.
+Eu vi meu nome aí no cisterninho.
+É, não tem. Já tem aqui
+da outra vez eu mandei. Deixa eu ver
+aqui. Já vai ter meu e-mail direto.
+É...
+Deixa eu fechar aqui.
+Ó, gerenciar a administração
+estrutural externa. Tá aqui.
+Da unidade...
+É...
+Maria...
+Cláudia, né?
+Isso.
+Maria Cláudia...
+Silvio, tudo aprovado, tá, Silvio?
+Oba!
+É, foi...
+Tem chance.
+Deixa eu só fechar aqui.
+É Reis Cavalcante daqui.
+É Maria...
+Cláudia...
+Reis...
+Cavalcante.
+É, não tá aparecendo aqui.
+Maria Cláudia... Deixa eu ver se tá Cavalcante
+direto.
+O que eu mandei da outra vez?
+Ó, tá. Maria Cláudia Cavalcante.
+Ah, eu recebi aqui o primeiro chefe.
+É... Marioco, né?
+gmail.com, né? Não, isso é outra coisa.
+Isso. Isso aqui é...
+É porque tá...
+O e-mail. Tá certo.
+É que tá Maria Cláudia Cavalcante só.
+Ah, tá.
+O Reis não tá.
+Tá certo. Tranquilo.
+Tá aqui. Deixa eu ver aqui.
+Aí, você deve receber um e-mail.
+Aí é só assinar.
+Aí, depois eu mando e-mail pra todo mundo
+pra gente tentar acertar uma data.
+Hein, Silvio?
+Tu vai correr aí com a demanda do André e da professora.
+Já tenta ver se consegue. Pelo menos, o André...
+Eu mando um contato inicial com o aluno dela
+pra já dar pra ela, assim, o que que você
+consegue fazer de deixar...
+Se não integrar, pelo menos deixar explícito
+o que que seria o trabalho lá de integração, beleza?
+Aí, então, tu tem um mês aí pra trabalhar.
+Eu vou mandar e-mail e a próxima reunião vai ser de 14 a 18 dezembro.
+A gente vai procurar melhor data
+que concilie os quatro.
+Mas aí, a gente já tem a demanda do André, né? Que ele já te passou aí.
+E a professora Maria Cláudia, o principal seria
+essa integração aí, pra gente ver como é que a gente consegue
+fazer um trabalho mais...
+integrado, beleza?
+E continuaremos aí na briga, beleza?
+A gente tem um processo, né?
+Pode, pode.
+Professor, quando o senhor puder,
+o mais rápido possível,
+o vídeo, a transcrição do vídeo...
+Pode ser só a transcrição mesmo?
+Tá, não. Ele vai salvar aqui no final do dia.
+Me manda o e-mail, que no final do dia a gente manda aqui.
+É só o tempo da Microsoft salvar.
+Deixa comigo. Perfeito.
+Sem erro, não. Tá certo?
+Certo. Muito obrigado, professores.
+Obrigado pela gentileza e pela...
+Obrigado.

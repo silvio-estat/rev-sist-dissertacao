@@ -1,0 +1,1567 @@
+[00:00:01 - 00:00:07] Victorino: da apresentação. Então vamos lá, senhores, dando continuidade ao trabalho do Silvio Ferreira Gomes Júnior,
+[00:00:07 - 00:00:13] Victorino: aluno do mestrado do PPCA, hoje nós vamos fazer o seminário 1 do trabalho, cujo título é
+[00:00:13 - 00:00:19] Victorino: Uma Proposta de Arquitetura de Lake House para o Exército Brasileiro no Contexto de Comando e Controle.
+[00:00:19 - 00:00:24] Victorino: Então hoje é 18 de novembro, são 4 minutos para as 3 horas.
+[00:00:25 - 00:00:30] Victorino: Então, mais uma vez, agradeço a colaboração dos professores,
+[00:00:30 - 00:00:33] Victorino: as dicas estão sendo muito boas, o Silvio está evoluindo o trabalho.
+[00:00:33 - 00:00:37] Victorino: O objetivo da reunião é basicamente isso, é o Silvio apresentar as sugestões,
+[00:00:37 - 00:00:43] Victorino: como é que elas estão sendo implementadas e o que falta para a próxima etapa até a defesa.
+[00:00:43 - 00:00:49] Victorino: Tem mais o seminário 2 e a defesa. Então ele vai dar um andamento, como é que foram feitas as alterações
+[00:00:49 - 00:00:51] Victorino: e o trabalho futuro para concluir o trabalho.
+[00:00:52 - 00:00:56] Victorino: Silvio, abre a apresentação aí, você tem 20 minutos para fazer a apresentação.
+[00:00:56 - 00:00:59] Silvio: Ok, todo mundo está conseguindo ver a apresentação direitinho?
+[00:01:00 - 00:01:03] Victorino: Perfeito, chegou. Eu vou fechar a minha câmera também para melhorar o streaming aqui, tá?
+[00:01:04 - 00:01:08] Victorino: Pode, deixa eu pegar meu celular aqui, aí tu tem de 20 a 25 minutos, tá certo?
+[00:01:09 - 00:01:12] Silvio: Só um momento, peraí, se tem como segurar um pouquinho, deu um problema aqui,
+[00:01:12 - 00:01:15] Silvio: é que eu estou usando o Linux, aí deu ruim aqui, desculpa.
+[00:01:15 - 00:01:16] Silvio: Vai, peraí.
+[00:01:16 - 00:01:19] Silvio: Só um momentinho, só porque agora deu problema.
+[00:01:20 - 00:01:21] Silvio: Eu vou parar um pouquinho aqui.
+[00:01:21 - 00:01:30] Silvio: Peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí.
+[00:01:31 - 00:01:33] Silvio: Aqui deu um problema aqui, vou evitar de novo.
+[00:01:34 - 00:01:35] Silvio: Peraí.
+[00:01:39 - 00:01:42] Silvio: Ah, não, é que eu...
+[00:01:42 - 00:01:43] Silvio: A janela, ah, foi aqui, esse aqui é melhor.
+[00:01:47 - 00:01:48] Silvio: Esse aqui.
+[00:01:49 - 00:01:50] Silvio: Melhor agora, né? Deixa eu ver.
+[00:01:52 - 00:01:53] Maria Cláudia: Tá carregando, carregou.
+[00:01:53 - 00:01:54] Maria Cláudia: Carregou.
+[00:01:57 - 00:01:58] Silvio: Tá em condições?
+[00:01:58 - 00:02:00] Silvio: Volta, não, só um instinto para eu ver de novo.
+[00:02:01 - 00:02:02] Silvio: Desculpa, pronto.
+[00:02:02 - 00:02:03] Victorino: Tá, deu certinho aí?
+[00:02:03 - 00:02:05] Victorino: Tá, pode botar aqui o cronômetro?
+[00:02:06 - 00:02:07] Victorino: Pode sim.
+[00:02:07 - 00:02:08] Victorino: Tá certo, então contando.
+[00:02:09 - 00:02:10] Victorino: Pode ir.
+[00:02:09 - 00:02:10] Victorino: Pode ir? Ok.
+[00:02:11 - 00:02:16] Silvio: Então, boa tarde a todos, professor Márcio, professora Baira Cláudia, professor Andrei.
+[00:02:17 - 00:02:18] Silvio: Obrigado pela presença, né?
+[00:02:18 - 00:02:21] Silvio: Esse é o nosso primeiro seminário, depois de nossa qualificação.
+[00:02:22 - 00:02:24] Silvio: E eu dividi em duas partes.
+[00:02:24 - 00:02:29] Silvio: Primeiro eu vou mostrar rapidamente como as recomendações da banca foram incorporadas ao texto.
+[00:02:29 - 00:02:32] Silvio: E depois eu vou apresentar o que é de novo, né?
+[00:02:32 - 00:02:37] Silvio: E como que é o caso estudo, a criação de dados sintéticos e o nosso modelo canônico.
+[00:02:38 - 00:02:39] Silvio: O roteiro vai ter...
+[00:02:39 - 00:02:40] Silvio: Tem cinco partes, né?
+[00:02:40 - 00:02:44] Silvio: Então a primeira é curta, temos dois slides com as considerações da qualificação
+[00:02:44 - 00:02:46] Silvio: e onde cada uma foi atendida.
+[00:02:47 - 00:02:51] Silvio: Em seguida, situo o caso dentro da nossa proposição de pesquisa,
+[00:02:52 - 00:02:55] Silvio: apresento o cenário e as fontes das sintéticas e no bloco principal,
+[00:02:55 - 00:02:57] Silvio: que é o que está destacado em dourado, né?
+[00:02:57 - 00:02:59] Silvio: O nosso modelo canônico.
+[00:02:59 - 00:03:02] Silvio: E vou fechar com os próximos passos até defesa.
+[00:03:02 - 00:03:07] Silvio: Então, começo então com as considerações do professor Andrei.
+[00:03:07 - 00:03:09] Silvio: Então, a primeira foi...
+[00:03:09 - 00:03:12] Silvio: Sobre o contexto atual do exército em termos de arquitetura para o C2, né?
+[00:03:13 - 00:03:17] Silvio: Incluindo a justificativa dos sistemas que nós já temos em uso,
+[00:03:17 - 00:03:25] Silvio: que é o C2 de combate, o pacificador e agora a FAC-2-FTR com seus níveis Alpha, Bravo e Charlie, né?
+[00:03:25 - 00:03:26] Silvio: Então, são...
+[00:03:26 - 00:03:30] Silvio: Todas são aplicações finalísticas e cada um produz e guarda os próprios dados
+[00:03:30 - 00:03:32] Silvio: e não existe uma camada que os consolide.
+[00:03:32 - 00:03:35] Silvio: E é esse espaço que a nossa arquitetura proposta ocupa, né?
+[00:03:36 - 00:03:39] Silvio: Sobre o uso do T-MAC e do Prisma,
+[00:03:39 - 00:03:41] Silvio: a razão é a natureza de cada eixo,
+[00:03:41 - 00:03:44] Silvio: pois a análise de constatação do T-MAC, né?
+[00:03:44 - 00:03:47] Silvio: Ela exige uma lista de referências de cada trabalho
+[00:03:47 - 00:03:51] Silvio: e a literatura de comando e controle é, em grande parte, cinzenta, não indexada,
+[00:03:51 - 00:03:53] Silvio: não temos um vaso de dados para isso.
+[00:03:54 - 00:03:55] Silvio: Então, é isso.
+[00:03:55 - 00:03:58] Silvio: Então, e sobre o descarte do I3-XPOR, que o senhor questionou,
+[00:03:59 - 00:04:05] Silvio: cruzei as 1.145 fontes recuperadas do I3-E com a fonte oficial das COPOS
+[00:04:05 - 00:04:08] Silvio: e disso pude perceber que aproximadamente 90%
+[00:04:09 - 00:04:16] Silvio: já estavam indexadas e entre os periódicos esse número chega a 98%.
+[00:04:16 - 00:04:20] Silvio: Tem um realmente grande desbalanço entre periódico e esses anais, etc.
+[00:04:20 - 00:04:23] Silvio: Ou seja, a perda de cobertura parece ser pequena.
+[00:04:23 - 00:04:28] Silvio: Sobre a zona landing, há três razões para separá-la da bronze.
+[00:04:28 - 00:04:33] Silvio: Então, temos que a transmissão por janela de oportunidade, ela não se repete.
+[00:04:33 - 00:04:36] Silvio: Então, o pacote precisa ser guardado exatamente como chegou.
+[00:04:36 - 00:04:37] Silvio: Assim, os binários ficam preservados, né?
+[00:04:37 - 00:04:38] Silvio: Assim, os binários ficam preservados, né?
+[00:04:38 - 00:04:39] Silvio: Assim, os binários ficam preservados, né?
+[00:04:39 - 00:04:42] Silvio: Mas é uma nova extração quando é ferramenta evoluir e a bronze passa a
+[00:04:42 - 00:04:46] Silvio: conter apenas o que eu posso consultar desses dados.
+[00:04:48 - 00:04:49] Silvio: Por fim, né?
+[00:04:49 - 00:04:52] Silvio: A linhagem para auditoria que o senhor sugeriu para prova de conceito,
+[00:04:53 - 00:04:57] Silvio: ela ficou registrada em dois níveis, seja entre tabelas e colunas,
+[00:04:58 - 00:05:03] Silvio: no nosso catálogo, seja registro a registro da Gold, das tabelas da Gold,
+[00:05:03 - 00:05:07] Silvio: até o arquivo recebido fazendo um rastreio via hash.
+[00:05:08 - 00:05:09] Silvio: Aí também tem as
+[00:05:09 - 00:05:10] Silvio: revisões textuais que foram
+[00:05:10 - 00:05:12] Silvio: devidamente realizadas.
+[00:05:14 - 00:05:15] Silvio: Agora, as recomendações da professora
+[00:05:15 - 00:05:17] Silvio: Cláudia. Só um parêntese aqui.
+[00:05:17 - 00:05:19] Silvio: Foram várias recomendações, eu fiz só,
+[00:05:19 - 00:05:20] Silvio: eu botei só algumas como exemplo,
+[00:05:21 - 00:05:23] Silvio: mas eu
+[00:05:23 - 00:05:25] Silvio: acatei 99%
+[00:05:25 - 00:05:26] Silvio: delas. Então,
+[00:05:27 - 00:05:28] Silvio: considerações, né? Primeiro,
+[00:05:29 - 00:05:31] Silvio: o diferencial sentido. Como eu
+[00:05:31 - 00:05:33] Silvio: e o professor Márcio já colocamos a qualificação,
+[00:05:33 - 00:05:35] Silvio: que por se tratar de um mestrado profissional,
+[00:05:35 - 00:05:37] Silvio: o diferencial está no artefato,
+[00:05:37 - 00:05:39] Silvio: que é uma arquitetura construída
+[00:05:39 - 00:05:40] Silvio: a partir de uma necessidade de rado à força,
+[00:05:41 - 00:05:43] Silvio: fundamentada na pesquisa biográfica
+[00:05:43 - 00:05:44] Silvio: sobre o tempo. Então,
+[00:05:45 - 00:05:46] Silvio: sistemas reais e utilidade.
+[00:05:47 - 00:05:49] Silvio: Os sistemas de uso estão agora caracterizados
+[00:05:49 - 00:05:50] Silvio: no certificativo, como eu já falei
+[00:05:50 - 00:05:52] Silvio: com relação ao professor Andrei.
+[00:05:53 - 00:05:55] Silvio: O que fica de fora é o escopo
+[00:05:55 - 00:05:57] Silvio: e o que fica de fora
+[00:05:57 - 00:05:59] Silvio: do escopo é só o acoplamento
+[00:05:59 - 00:06:01] Silvio: da prova de conceito a esses sistemas.
+[00:06:02 - 00:06:03] Silvio: Em relação a como mostrar
+[00:06:03 - 00:06:05] Silvio: a utilidade, a resposta estará
+[00:06:05 - 00:06:07] Silvio: no capítulo 5. Além disso,
+[00:06:07 - 00:06:09] Silvio: as fontes sintéticas reproduzem
+[00:06:09 - 00:06:11] Silvio: a forma dos documentos reais
+[00:06:11 - 00:06:13] Silvio: e como o cenário é conhecido,
+[00:06:13 - 00:06:15] Silvio: cada resultado pode ser conferido
+[00:06:15 - 00:06:16] Silvio: depois.
+[00:06:17 - 00:06:19] Silvio: Diferença entre zonas e ETL.
+[00:06:19 - 00:06:21] Silvio: No diferencial, eu estabeleci
+[00:06:21 - 00:06:23] Silvio: a diferença entre zonas e ETL.
+[00:06:23 - 00:06:25] Silvio: No ETL, só o resultado final
+[00:06:25 - 00:06:27] Silvio: é gravado. Já nas zonas,
+[00:06:27 - 00:06:29] Silvio: cada etapa pode ficar gravada
+[00:06:29 - 00:06:31] Silvio: e pode ser consultada, o que permite
+[00:06:31 - 00:06:32] Silvio: reprocessar sem nova ingestão.
+[00:06:34 - 00:06:35] Silvio: Integração
+[00:06:35 - 00:06:37] Silvio: e aquela diferença entre
+[00:06:37 - 00:06:38] Silvio: missão e tarefa.
+[00:06:38 - 00:06:41] Silvio: No capítulo 4, eu deixei
+[00:06:41 - 00:06:43] Silvio: explícito que a camada
+[00:06:43 - 00:06:44] Silvio: Silva faz essa integração.
+[00:06:45 - 00:06:46] Silvio: Além disso, se eu entendi direito,
+[00:06:46 - 00:06:49] Silvio: a marcação da professora, o exemplo
+[00:06:49 - 00:06:51] Silvio: de missão e tarefa, a diferença
+[00:06:51 - 00:06:53] Silvio: entre os dois, como esse artefato
+[00:06:53 - 00:06:54] Silvio: ajuda esse tipo de coisa.
+[00:06:54 - 00:06:57] Silvio: Eu expliquei como esse artefato
+[00:06:57 - 00:06:59] Silvio: vai conseguir fazer essa distinção.
+[00:07:01 - 00:07:02] Silvio: Bronze
+[00:07:01 - 00:07:03] Silvio: preserva
+[00:07:03 - 00:07:04] Silvio: e converte.
+[00:07:05 - 00:07:07] Silvio: Esclareci que a bronze
+[00:07:07 - 00:07:09] Silvio: não interpreta o conteúdo,
+[00:07:09 - 00:07:11] Silvio: apenas guarda o envelope de proveniência
+[00:07:11 - 00:07:13] Silvio: e que a evolução
+[00:07:13 - 00:07:15] Silvio: do esquema vem do próprio formato
+[00:07:15 - 00:07:17] Silvio: de tabela, que aceita campos novos
+[00:07:17 - 00:07:19] Silvio: sem precisar reescrever o que já foi gravado.
+[00:07:20 - 00:07:21] Silvio: Hierarquia
+[00:07:21 - 00:07:22] Silvio: e responsabilização.
+[00:07:23 - 00:07:25] Silvio: Também expliquei que a arquitetura respeita
+[00:07:25 - 00:07:27] Silvio: a hierarquia porque tudo entra por um único
+[00:07:27 - 00:07:29] Silvio: ponto, que é a nossa lente.
+[00:07:29 - 00:07:31] Silvio: E o catálogo registra de qual
+[00:07:31 - 00:07:33] Silvio: batalhão veio cada pacote e quando
+[00:07:33 - 00:07:35] Silvio: cada chegou. E ele ainda
+[00:07:35 - 00:07:37] Silvio: contribui para preservar a...
+[00:07:37 - 00:07:39] Silvio: a responsabilização por três meios.
+[00:07:39 - 00:07:41] Silvio: Então, um, não há
+[00:07:41 - 00:07:42] Silvio: automação decisória,
+[00:07:43 - 00:07:45] Silvio: a linhagem fica registrada no catálogo
+[00:07:45 - 00:07:47] Silvio: e a proveniência fica registrada
+[00:07:47 - 00:07:49] Silvio: na landing com seus metadados
+[00:07:49 - 00:07:51] Silvio: disponíveis no seu sidecar.
+[00:07:51 - 00:07:53] Silvio: Então, os demais ajustes de justificativa
+[00:07:53 - 00:07:55] Silvio: e de forma também foram feitos
+[00:07:55 - 00:07:57] Silvio: e estão indicados no texto.
+[00:07:58 - 00:07:59] Silvio: E já a pergunta sobre o que
+[00:07:59 - 00:08:01] Silvio: de fato será implementado é respondida
+[00:08:01 - 00:08:03] Silvio: pelo restante dessa apresentação.
+[00:08:05 - 00:08:06] Silvio: Então,
+[00:08:07 - 00:08:08] Silvio: agora eu entro na parte nova, né?
+[00:08:09 - 00:08:11] Silvio: Então, eu vou iniciar retomando a proposição
+[00:08:11 - 00:08:13] Silvio: P1, que está na nossa introdução.
+[00:08:13 - 00:08:15] Silvio: Então, vamos lá. A arquitetura
+[00:08:15 - 00:08:17] Silvio: centralizada na brigada
+[00:08:17 - 00:08:19] Silvio: e construída com tecnologias open source
+[00:08:19 - 00:08:21] Silvio: é capaz de ingerir, organizar
+[00:08:21 - 00:08:23] Silvio: e disponibilizar dados heterogêneos
+[00:08:23 - 00:08:25] Silvio: que chegam dos batalhões.
+[00:08:25 - 00:08:27] Silvio: Então, cada um desses
+[00:08:27 - 00:08:29] Silvio: três verbos orienta a produção
+[00:08:29 - 00:08:31] Silvio: de evidências. Então, ingerir
+[00:08:31 - 00:08:33] Silvio: é receber os dados de naturezas distintas
+[00:08:33 - 00:08:35] Silvio: sem exigir que cheguem já
+[00:08:35 - 00:08:37] Silvio: modelados. Organizar,
+[00:08:37 - 00:08:39] Silvio: é conformá-los ao modelo canônico
+[00:08:39 - 00:08:41] Silvio: único. E é isso que esse capítulo
+[00:08:41 - 00:08:43] Silvio: prepara. Já disponibilizar
+[00:08:43 - 00:08:45] Silvio: é entregá-los ao Estado-Maior
+[00:08:45 - 00:08:46] Silvio: para ajudar nas tomadas de decisões.
+[00:08:47 - 00:08:49] Silvio: As evidências dos três verbos virão
+[00:08:49 - 00:08:51] Silvio: no próximo capítulo, sendo conferidas
+[00:08:51 - 00:08:53] Silvio: contra os requisitos do
+[00:08:53 - 00:08:55] Silvio: capítulo 4, de forma que também
+[00:08:55 - 00:08:57] Silvio: atinge os objetivos elencados na nossa introdução.
+[00:08:58 - 00:08:59] Silvio: Em relação
+[00:08:59 - 00:09:00] Silvio: à metodologia,
+[00:09:01 - 00:09:03] Silvio: cabe lembrar que a estratégia de pesquisa
+[00:09:03 - 00:09:05] Silvio: é um estudo de casa e, por isso,
+[00:09:05 - 00:09:07] Silvio: a prova de conceito não é um experimento
+[00:09:07 - 00:09:09] Silvio: e não compara a alternativas.
+[00:09:09 - 00:09:11] Silvio: Ela produz registros observáveis.
+[00:09:11 - 00:09:13] Silvio: E, como o cenário é
+[00:09:13 - 00:09:15] Silvio: conhecido de antemão, cada valor
+[00:09:15 - 00:09:17] Silvio: produzido pela arquitetura pode ser
+[00:09:17 - 00:09:19] Silvio: conferido com o fato que o
+[00:09:19 - 00:09:20] Silvio: originou. Então, vamos lá.
+[00:09:22 - 00:09:23] Silvio: O caso que estamos
+[00:09:23 - 00:09:25] Silvio: estudando é o fluxo de informações
+[00:09:25 - 00:09:27] Silvio: que chega no Estado-Maior de uma brigada
+[00:09:27 - 00:09:29] Silvio: durante a operação. Também como referência
+[00:09:29 - 00:09:30] Silvio: à Operação Perseu de 24,
+[00:09:31 - 00:09:33] Silvio: que foi um exercício real e de divulgação
+[00:09:33 - 00:09:34] Silvio: pública, realizado entre
+[00:09:34 - 00:09:36] Silvio: 25 de novembro e 5
+[00:09:36 - 00:09:38] Silvio: de dezembro de 2024
+[00:09:38 - 00:09:40] Silvio: no Vale do Paraíba.
+[00:09:40 - 00:09:42] Silvio: Dele, eu vou aproveitar só o nome,
+[00:09:42 - 00:09:45] Silvio: as datas e região, porque está uma moldura
+[00:09:45 - 00:09:46] Silvio: mais verossímil, sem expor nada
+[00:09:46 - 00:09:47] Silvio: que não seja público.
+[00:09:48 - 00:09:51] Silvio: Depois disso, todo o resto é sintético,
+[00:09:51 - 00:09:53] Silvio: porque os sistemas
+[00:09:53 - 00:09:55] Silvio: de C2 e seus dados não são acessíveis
+[00:09:55 - 00:09:56] Silvio: à pesquisa e são classificados.
+[00:09:57 - 00:09:58] Silvio: Mas aqui, sintético não
+[00:09:58 - 00:10:00] Silvio: quer dizer arbitrário. Aqui, cada
+[00:10:00 - 00:10:02] Silvio: gerador reproduz
+[00:10:02 - 00:10:04] Silvio: os campos, as abreviaturas e os problemas
+[00:10:04 - 00:10:06] Silvio: tipos de um documento real.
+[00:10:06 - 00:10:08] Silvio: A organização militar
+[00:10:08 - 00:10:10] Silvio: fictícia que conduz a operação do cenário
+[00:10:10 - 00:10:12] Silvio: é uma brigada, que eu chamei de
+[00:10:12 - 00:10:14] Silvio: 51 Brigadas de Infantaria Motorizada.
+[00:10:15 - 00:10:16] Silvio: E ela tem sete organizações
+[00:10:16 - 00:10:18] Silvio: militares subordinadas, com
+[00:10:18 - 00:10:19] Silvio: 16 subunidades,
+[00:10:20 - 00:10:22] Silvio: 53 frações, totalizando
+[00:10:22 - 00:10:24] Silvio: 77 subunidades.
+[00:10:25 - 00:10:27] Silvio: Essa estrutura fica guardada
+[00:10:27 - 00:10:30] Silvio: em uma tabela, que eu chamei
+[00:10:30 - 00:10:31] Silvio: de refunidade,
+[00:10:31 - 00:10:32] Silvio: que diz aos geradores
+[00:10:32 - 00:10:34] Silvio: quem pode relatar e diz
+[00:10:34 - 00:10:36] Silvio: a arquitetura de quem se espera
+[00:10:36 - 00:10:38] Silvio: o relatório periódico.
+[00:10:39 - 00:10:41] Silvio: E é isso que permite detectar, por exemplo,
+[00:10:41 - 00:10:43] Silvio: se uma subunidade deixou de remeter
+[00:10:43 - 00:10:45] Silvio: um relatório de algum turno,
+[00:10:45 - 00:10:46] Silvio: se for por turno.
+[00:10:49 - 00:10:50] Silvio: Esse cenário,
+[00:10:50 - 00:10:52] Silvio: ela reúne cinco fontes,
+[00:10:52 - 00:10:54] Silvio: cada uma no formato que enxergaria na prática.
+[00:10:55 - 00:10:57] Silvio: Da esquerda para a direita, cresce o esforço
+[00:10:57 - 00:10:59] Silvio: para transformar o conteúdo em dado
+[00:10:59 - 00:11:01] Silvio: utilizável. Por exemplo, o C2A
+[00:11:01 - 00:11:03] Silvio: é um aplicativo que exporta
+[00:11:03 - 00:11:05] Silvio: em JSON a posição das frações
+[00:11:05 - 00:11:06] Silvio: e as medidas desenhadas no mapa,
+[00:11:06 - 00:11:08] Silvio: e é a fonte mais simples.
+[00:11:09 - 00:11:11] Silvio: Já o C2B também exporta
+[00:11:11 - 00:11:12] Silvio: em JSON, mas o conteúdo principal
+[00:11:12 - 00:11:15] Silvio: é um relato em texto livre, às vezes
+[00:11:15 - 00:11:17] Silvio: com foto. Nesse caso,
+[00:11:17 - 00:11:18] Silvio: o tipo de fato precisa ser inferido
+[00:11:18 - 00:11:20] Silvio: do texto, e o local pode vir
+[00:11:20 - 00:11:23] Silvio: os metadados, por exemplo, da fotografia.
+[00:11:25 - 00:11:26] Silvio: Já a fonte Helper,
+[00:11:27 - 00:11:28] Silvio: que é o nome que eu dei para relatório periódico
+[00:11:28 - 00:11:31] Silvio: pessoal material, é enviado duas vezes por dia
+[00:11:31 - 00:11:33] Silvio: por cada OM. A dificuldade
+[00:11:33 - 00:11:35] Silvio: é que cada OM preenche de um jeito
+[00:11:35 - 00:11:36] Silvio: e algumas mandam planilhas,
+[00:11:36 - 00:11:39] Silvio: peças, outros escaneados, o que elimina
+[00:11:39 - 00:11:40] Silvio: a estrutura desses dados.
+[00:11:41 - 00:11:42] Silvio: Já a fonte Fogos
+[00:11:42 - 00:11:45] Silvio: segue o relatório de bombardeio, oriundo
+[00:11:45 - 00:11:47] Silvio: de um manual doutrinário, e chega só
+[00:11:47 - 00:11:48] Silvio: com uma imagem, cheia de siglas,
+[00:11:49 - 00:11:50] Silvio: condenadas e outros dados.
+[00:11:51 - 00:11:53] Silvio: Por fim, a fonte Voz é composta
+[00:11:53 - 00:11:54] Silvio: por 150 mensagens de rádio
+[00:11:54 - 00:11:57] Silvio: gravadas que precisam ser transcritas.
+[00:11:57 - 00:11:58] Silvio: Usam codinomes
+[00:11:58 - 00:12:00] Silvio: e chegam bem degradadas, tentando
+[00:12:00 - 00:12:02] Silvio: simular a realidade. Destaco aqui
+[00:12:02 - 00:12:04] Silvio: não pretendo reproduzir os documentos específicos
+[00:12:04 - 00:12:06] Silvio: de sistemas de uso. São fontes plausíveis,
+[00:12:06 - 00:12:08] Silvio: e diferentes entre si, justamente
+[00:12:08 - 00:12:10] Silvio: para representar essa heterogeneidade.
+[00:12:10 - 00:12:14] Silvio: E como esse cenário é montado?
+[00:12:14 - 00:12:16] Silvio: O ponto de partida é uma lista
+[00:12:16 - 00:12:18] Silvio: de fatos. Um fato é algo que
+[00:12:18 - 00:12:20] Silvio: acontece no terreno, em um instante
+[00:12:20 - 00:12:22] Silvio: e em um lugar determinado.
+[00:12:22 - 00:12:24] Silvio: Por exemplo, uma viatura inimiga
+[00:12:24 - 00:12:26] Silvio: avistada perto de uma ponte,
+[00:12:26 - 00:12:28] Silvio: uma cratera que interrompe uma via.
+[00:12:28 - 00:12:30] Silvio: Cada fato é gerado
+[00:12:30 - 00:12:32] Silvio: a partir de sequências de sorteios.
+[00:12:32 - 00:12:34] Silvio: Primeiro, o tipo do fato,
+[00:12:34 - 00:12:36] Silvio: qual foi o elemento envolvido,
+[00:12:36 - 00:12:38] Silvio: o lugar dentro da fonte.
+[00:12:38 - 00:12:40] Silvio: da faixa, da UEM, que é desse
+[00:12:40 - 00:12:42] Silvio: elemento que aconteceu, e por fim
+[00:12:42 - 00:12:44] Silvio: o dia, a hora e a prioridade.
+[00:12:45 - 00:12:46] Silvio: A demonstração só
+[00:12:46 - 00:12:48] Silvio: existe que todos os tipos ocorram
+[00:12:48 - 00:12:50] Silvio: e que parte dos fatos
+[00:12:50 - 00:12:51] Silvio: cheguem por mais de uma fonte.
+[00:12:53 - 00:12:54] Silvio: No cenário
+[00:12:54 - 00:12:56] Silvio: padrão, são 60 fatos
+[00:12:56 - 00:12:58] Silvio: que ocorrem durante os 11 dias da operação,
+[00:12:59 - 00:13:00] Silvio: de seis tipos ligados
+[00:13:00 - 00:13:01] Silvio: a três funções de combate.
+[00:13:02 - 00:13:03] Silvio: O que torna essa lista útil
+[00:13:03 - 00:13:06] Silvio: é a decisão sobre quem
+[00:13:06 - 00:13:07] Silvio: relata cada fato.
+[00:13:07 - 00:13:09] Silvio: Então, a primeira fonte
+[00:13:09 - 00:13:10] Silvio: vai relatar sempre.
+[00:13:10 - 00:13:13] Silvio: Se ela caiu para relatar, ela vai relatar.
+[00:13:13 - 00:13:15] Silvio: As demais, elas
+[00:13:15 - 00:13:17] Silvio: vão relatar com uma probabilidade.
+[00:13:17 - 00:13:19] Silvio: Aqui eu escolhi 55%,
+[00:13:19 - 00:13:21] Silvio: para ser um pouco mais do que uma moedinha
+[00:13:21 - 00:13:23] Silvio: sendo atirada aqui.
+[00:13:24 - 00:13:25] Silvio: Assim, então, 31
+[00:13:25 - 00:13:27] Silvio: fatos chegam por mais de uma fonte.
+[00:13:27 - 00:13:29] Silvio: São eles que permitem testar a integração,
+[00:13:29 - 00:13:31] Silvio: porque a arquitetura precisa reconhecer
+[00:13:31 - 00:13:33] Silvio: que relatos de fontes diferentes
+[00:13:33 - 00:13:35] Silvio: falam do mesmo acontecimento.
+[00:13:35 - 00:13:37] Silvio: Se cada fato chegasse por uma única
+[00:13:37 - 00:13:39] Silvio: fonte, não haveria nada para juntar.
+[00:13:39 - 00:13:40] Silvio: Por exemplo, esse fato
+[00:13:40 - 00:13:42] Silvio: F043,
+[00:13:43 - 00:13:45] Silvio: ele chega pelas três,
+[00:13:45 - 00:13:47] Silvio: com uma medida no C2A, com um incidente
+[00:13:47 - 00:13:48] Silvio: com foto no C2B,
+[00:13:49 - 00:13:50] Silvio: e pelo rádio.
+[00:13:51 - 00:13:53] Silvio: Mas aqui, nem todo dado nasce de um fato.
+[00:13:54 - 00:13:55] Silvio: Por exemplo,
+[00:13:55 - 00:13:56] Silvio: as posições do C2A
+[00:13:56 - 00:13:59] Silvio: chegam de hora em hora,
+[00:13:59 - 00:14:00] Silvio: e o réu P,
+[00:14:01 - 00:14:03] Silvio: que é o nosso relatório, duas vezes por dia.
+[00:14:03 - 00:14:05] Silvio: E como saber que quando esses dados
+[00:14:05 - 00:14:07] Silvio: deveriam chegar? Porque os outros,
+[00:14:07 - 00:14:09] Silvio: você não espera, eles chegam.
+[00:14:09 - 00:14:11] Silvio: Mas o réu P, você consegue saber,
+[00:14:11 - 00:14:13] Silvio: porque você já espera que
+[00:14:13 - 00:14:15] Silvio: chegue duas vezes por dia.
+[00:14:15 - 00:14:17] Silvio: Então, nesse caso, dá para perceber
+[00:14:17 - 00:14:19] Silvio: quando algum dado falta.
+[00:14:19 - 00:14:21] Silvio: Esse slide, ele apresenta
+[00:14:21 - 00:14:23] Silvio: os três tipos, desculpa,
+[00:14:23 - 00:14:25] Silvio: os três princípios comuns
+[00:14:25 - 00:14:27] Silvio: entre todos os geradores.
+[00:14:27 - 00:14:29] Silvio: O primeiro, o sidecar,
+[00:14:29 - 00:14:31] Silvio: que é aquele carrinho que fica na motinha.
+[00:14:31 - 00:14:33] Silvio: Então, todo arquivo binário chega acompanhado
+[00:14:33 - 00:14:35] Silvio: de um JSON de mesmo nome, com
+[00:14:35 - 00:14:37] Silvio: operação, o momento de envio,
+[00:14:37 - 00:14:39] Silvio: e a unidade de origem. Sem ele,
+[00:14:39 - 00:14:41] Silvio: o áudio ou um PDF clineado
+[00:14:41 - 00:14:43] Silvio: não diria de onde veio.
+[00:14:43 - 00:14:45] Silvio: Segundo, a verdade do cenário.
+[00:14:45 - 00:14:47] Silvio: Os geradores gravam os
+[00:14:47 - 00:14:49] Silvio: arquivos de fatos, defeitos
+[00:14:49 - 00:14:51] Silvio: e o nosso gabarito, que servem somente para avaliar
+[00:14:51 - 00:14:53] Silvio: a prova de conceito. Lembrando que a nossa
+[00:14:53 - 00:14:55] Silvio: arquitetura nunca vai ler esse gabarito.
+[00:14:55 - 00:14:57] Silvio: Terceiro,
+[00:14:57 - 00:14:59] Silvio: a reprodutibilidade.
+[00:14:59 - 00:15:01] Silvio: Então, aqui a semente é fixa. Então, o mesmo cenário
+[00:15:01 - 00:15:03] Silvio: é gerado em qualquer execução.
+[00:15:03 - 00:15:05] Silvio: Além disso, plantei
+[00:15:05 - 00:15:07] Silvio: 65 defeitos de propósito, para que
+[00:15:07 - 00:15:09] Silvio: cada camada de governança tenha o que detectar.
+[00:15:09 - 00:15:11] Silvio: No C2A, por exemplo,
+[00:15:11 - 00:15:13] Silvio: há um lote truncado por interrupção
+[00:15:13 - 00:15:15] Silvio: de transmissão. No C2B,
+[00:15:15 - 00:15:17] Silvio: 21 fotos sem localização.
+[00:15:17 - 00:15:19] Silvio: E no Helper,
+[00:15:19 - 00:15:21] Silvio: nesse relatório, 18 turnos
+[00:15:21 - 00:15:23] Silvio: que não foram remitidos. Então, dessa forma,
+[00:15:23 - 00:15:25] Silvio: temos tantos problemas relacionados
+[00:15:25 - 00:15:27] Silvio: ao que chegou à solução, quanto
+[00:15:27 - 00:15:29] Silvio: remessas que deveriam ter chegado e não chegaram.
+[00:15:29 - 00:15:32] Silvio: Então, chegamos ao nosso modelo canônico.
+[00:15:34 - 00:15:36] Silvio: As cinco fontes trazem
+[00:15:36 - 00:15:38] Silvio: dois problemas diferentes.
+[00:15:38 - 00:15:40] Silvio: O primeiro é extrair informação de cada uma.
+[00:15:40 - 00:15:42] Silvio: O segundo é representar
+[00:15:42 - 00:15:44] Silvio: as fontes distintas, de forma comum.
+[00:15:44 - 00:15:46] Silvio: Ou seja, o mesmo obstáculo
+[00:15:46 - 00:15:48] Silvio: pode aparecer com uma medida desenhada no mapa
+[00:15:48 - 00:15:50] Silvio: ou um incidente com foto
+[00:15:50 - 00:15:52] Silvio: ou com uma mensagem rádio.
+[00:15:52 - 00:15:54] Silvio: E para saber que é o mesmo
+[00:15:54 - 00:15:56] Silvio: fato, o tipo, o estante
+[00:15:56 - 00:15:58] Silvio: e esse local, precisam estar padronizados.
+[00:16:00 - 00:16:02] Silvio: Esse segundo problema é clássico na integração
+[00:16:02 - 00:16:04] Silvio: de dados. No slide,
+[00:16:04 - 00:16:06] Silvio: na parte da esquerda, está o que acontece
+[00:16:06 - 00:16:08] Silvio: em um modelo comum. Cada visão precisa
+[00:16:08 - 00:16:10] Silvio: se ler e interpretar cada fonte.
+[00:16:10 - 00:16:12] Silvio: Robin Wolf,
+[00:16:12 - 00:16:14] Silvio: de 2003, propõe um modelo
+[00:16:14 - 00:16:16] Silvio: canônico, um modelo
+[00:16:16 - 00:16:18] Silvio: independente para o qual cada
+[00:16:18 - 00:16:20] Silvio: fonte traduz os seus dados com apenas
+[00:16:20 - 00:16:22] Silvio: o necessário a integração.
+[00:16:22 - 00:16:24] Silvio: Além disso, o Dama,
+[00:16:24 - 00:16:26] Silvio: considera o padrão justificável
+[00:16:26 - 00:16:28] Silvio: quando mais de três sistemas
+[00:16:28 - 00:16:30] Silvio: trocam dados.
+[00:16:30 - 00:16:32] Silvio: Eu adaptei
+[00:16:32 - 00:16:34] Silvio: o padrão em dois pontos.
+[00:16:34 - 00:16:36] Silvio: Aqui, as fontes
+[00:16:36 - 00:16:38] Silvio: não trocam dados entre si.
+[00:16:38 - 00:16:40] Silvio: Eles convergem para um destino comum.
+[00:16:40 - 00:16:42] Silvio: E o modelo canônico não é transitório.
+[00:16:42 - 00:16:44] Silvio: Ele fica gravado na silver,
+[00:16:44 - 00:16:46] Silvio: na camada silver,
+[00:16:46 - 00:16:48] Silvio: com o seu bruto preservado na bronze,
+[00:16:48 - 00:16:50] Silvio: o que permite refazer
+[00:16:50 - 00:16:52] Silvio: a tradução quantas vezes forem necessárias.
+[00:16:52 - 00:16:54] Silvio: E a consequência prática é que
+[00:16:54 - 00:16:56] Silvio: se o formato de uma fonte
+[00:16:56 - 00:16:58] Silvio: mudar, ajusta-se somente a receita
+[00:16:58 - 00:17:00] Silvio: dela e as visões continuam iguais.
+[00:17:00 - 00:17:04] Silvio: Então, para colocar o modelo
+[00:17:04 - 00:17:06] Silvio: em prática, eu criei um único arquivo,
+[00:17:06 - 00:17:08] Silvio: que é o nosso modelo canônico
+[00:17:08 - 00:17:10] Silvio: YALM. E ele
+[00:17:10 - 00:17:12] Silvio: tem cinco blocos. O primeiro bloco
+[00:17:12 - 00:17:14] Silvio: são os metadados com a versão
+[00:17:14 - 00:17:16] Silvio: e as notas de cada exceção de modelagem.
+[00:17:16 - 00:17:18] Silvio: O segundo são os três
+[00:17:18 - 00:17:20] Silvio: domínios de valores aceitos.
+[00:17:20 - 00:17:22] Silvio: O terceiro são as 18 tabelas das três camadas.
+[00:17:22 - 00:17:24] Silvio: A quarta, as oito
+[00:17:24 - 00:17:26] Silvio: receitas com as cinco fontes
+[00:17:26 - 00:17:28] Silvio: e os parâmetros
+[00:17:28 - 00:17:30] Silvio: das cinco
+[00:17:30 - 00:17:32] Silvio: visões da GOLD.
+[00:17:32 - 00:17:34] Silvio: Apesar do nome, o arquivo
+[00:17:34 - 00:17:36] Silvio: define as tabelas das três camadas.
+[00:17:36 - 00:17:38] Silvio: O modelo canônico propriamente dito
+[00:17:38 - 00:17:40] Silvio: são as sete tabelas da minha camada
+[00:17:40 - 00:17:42] Silvio: da Silvia. Foi realmente onde tudo
+[00:17:42 - 00:17:44] Silvio: junta. Nesse arquivo,
+[00:17:44 - 00:17:46] Silvio: que também chamam de artefato
+[00:17:46 - 00:17:48] Silvio: canônico, é a fonte única
+[00:17:48 - 00:17:50] Silvio: da verdade. E ele é lido pelos programas
+[00:17:50 - 00:17:52] Silvio: que criam as tabelas, transformam os dados,
+[00:17:52 - 00:17:54] Silvio: compõem as visões e montam as instruções
+[00:17:54 - 00:17:56] Silvio: enviadas ao
+[00:17:56 - 00:17:58] Silvio: modelo de YALM.
+[00:17:58 - 00:18:00] Silvio: Com isso, uma fonte nova
+[00:18:00 - 00:18:02] Silvio: em um formato já conhecido como
+[00:18:02 - 00:18:04] Silvio: JSON, ele não vai exigir uma nova programação.
+[00:18:04 - 00:18:06] Silvio: Basta acrescentar uma receita.
+[00:18:06 - 00:18:08] Silvio: Por fim,
+[00:18:08 - 00:18:10] Silvio: escolhi esse YALM por três motivos.
+[00:18:10 - 00:18:12] Silvio: Ele é elegível
+[00:18:12 - 00:18:14] Silvio: para quem admite os dados, sem precisar
+[00:18:14 - 00:18:16] Silvio: escrever código.
+[00:18:16 - 00:18:18] Silvio: Ele aceita comentários de forma nativa
+[00:18:18 - 00:18:20] Silvio: para que seja possível escrever
+[00:18:20 - 00:18:22] Silvio: justificativo em cada definição.
+[00:18:22 - 00:18:24] Silvio: E permite estruturas alinhadas como o JSON
+[00:18:24 - 00:18:26] Silvio: como um domínio
+[00:18:26 - 00:18:30] Silvio: com seus valores.
+[00:18:30 - 00:18:32] Silvio: Agora vou falar sobre as receitas
+[00:18:32 - 00:18:34] Silvio: que são a tradução propriamente dita.
+[00:18:34 - 00:18:36] Silvio: Para cada tipo de registro de uma fonte,
+[00:18:36 - 00:18:38] Silvio: a receita diz de qual campo
+[00:18:38 - 00:18:40] Silvio: de origem vem cada coluna canônica.
+[00:18:40 - 00:18:42] Silvio: E como
+[00:18:42 - 00:18:44] Silvio: e com que transformação.
+[00:18:44 - 00:18:46] Silvio: Aqui são três tipos.
+[00:18:46 - 00:18:48] Silvio: O primeiro, o valor copiado direto.
+[00:18:48 - 00:18:50] Silvio: O segundo, a consulta
+[00:18:50 - 00:18:52] Silvio: a algum domínio ou uma tabela de referência.
+[00:18:52 - 00:18:54] Silvio: E terceiro,
+[00:18:54 - 00:18:56] Silvio: uma necessidade de cálculo.
+[00:18:56 - 00:18:58] Silvio: Por exemplo, converter datas
+[00:18:58 - 00:19:00] Silvio: em um único fuso, ou data
+[00:19:00 - 00:19:02] Silvio: de um formato para um outro formato, etc.
+[00:19:02 - 00:19:04] Silvio: Com isso, a receita
+[00:19:04 - 00:19:06] Silvio: atende o que o domain
+[00:19:06 - 00:19:08] Silvio: bokeh exige em um mapeamento de fontes
+[00:19:08 - 00:19:10] Silvio: e destinos. Ela informa
+[00:19:10 - 00:19:12] Silvio: o formato da origem do destino,
+[00:19:12 - 00:19:14] Silvio: registra as etapas intermediárias
+[00:19:14 - 00:19:16] Silvio: e mostra como cada atributo
+[00:19:16 - 00:19:18] Silvio: é preenchido e se o valor
+[00:19:18 - 00:19:20] Silvio: precisa ser transformado.
+[00:19:20 - 00:19:22] Silvio: Já o vocabulário controlado
+[00:19:22 - 00:19:24] Silvio: tem dois instrumentos,
+[00:19:24 - 00:19:26] Silvio: no próprio artefato YALM
+[00:19:26 - 00:19:28] Silvio: que ficam os nossos domínios.
+[00:19:28 - 00:19:30] Silvio: Cada valor tem o seu código,
+[00:19:30 - 00:19:32] Silvio: o seu rótulo, o seu sinônimo
+[00:19:32 - 00:19:34] Silvio: e, quando é o caso, o critério de uso.
+[00:19:34 - 00:19:36] Silvio: E em arquivos CSV
+[00:19:36 - 00:19:38] Silvio: que ficam as listas mais extensas,
+[00:19:38 - 00:19:40] Silvio: umas 4.400 abreviaturas
+[00:19:40 - 00:19:42] Silvio: extraídas do nosso manual de abreviatura
+[00:19:42 - 00:19:44] Silvio: do Ministério da Defesa.
+[00:19:44 - 00:19:46] Silvio: E também
+[00:19:46 - 00:19:48] Silvio: temos um CSV com a estrutura
+[00:19:48 - 00:19:50] Silvio: da Brigada.
+[00:19:50 - 00:19:52] Silvio: Os dois arquivos, que é o YALM e o CSV,
+[00:19:52 - 00:19:54] Silvio: seguem a mesma regra. Ou seja,
+[00:19:54 - 00:19:56] Silvio: o valor de origem só é aceito
+[00:19:56 - 00:19:58] Silvio: se corresponder a um código ou
+[00:19:58 - 00:20:00] Silvio: a um sinônimo. Se não corresponder,
+[00:20:00 - 00:20:02] Silvio: a coluna fica nula
+[00:20:02 - 00:20:04] Silvio: e o caso é contado. Nunca vai ser preenchido
+[00:20:04 - 00:20:07] Silvio: com valor incerto.
+[00:20:07 - 00:20:09] Silvio: Agora em relação à extração.
+[00:20:09 - 00:20:11] Silvio: Parte das fontes tem conteúdo
+[00:20:11 - 00:20:13] Silvio: desestruturado, como o texto livre,
+[00:20:13 - 00:20:15] Silvio: documentos escaneados e voz.
+[00:20:15 - 00:20:17] Silvio: E exigem modelos que inferem e, por isso,
+[00:20:17 - 00:20:19] Silvio: podem errar. O modelo canônico
+[00:20:19 - 00:20:21] Silvio: participa dessa extração em dois momentos.
+[00:20:21 - 00:20:23] Silvio: O primeiro, antes da extração
+[00:20:23 - 00:20:25] Silvio: em si, na parte da preparação
+[00:20:25 - 00:20:27] Silvio: e depois da extração.
+[00:20:27 - 00:20:29] Silvio: Antes, ele diz o que
+[00:20:29 - 00:20:31] Silvio: procurar. Por exemplo, o
+[00:20:31 - 00:20:33] Silvio: transcritor da voz,
+[00:20:33 - 00:20:35] Silvio: que usei o FastWhisper,
+[00:20:35 - 00:20:37] Silvio: recebe os condinomes e os nomes dos lugares
+[00:20:37 - 00:20:39] Silvio: da operação em seu prompt inicial.
+[00:20:39 - 00:20:41] Silvio: A IA, no caso que eu usei o
+[00:20:41 - 00:20:43] Silvio: em, vai receber esses valores possíveis
+[00:20:43 - 00:20:45] Silvio: de cada campo. E quando precisa
+[00:20:45 - 00:20:47] Silvio: classificar um relato escrito em
+[00:20:47 - 00:20:49] Silvio: texto livre, recebe também o critério
+[00:20:49 - 00:20:51] Silvio: de quando cada
+[00:20:51 - 00:20:53] Silvio: valor se aplica, porque
+[00:20:53 - 00:20:55] Silvio: não basta reconhecer somente o
+[00:20:55 - 00:20:57] Silvio: reconheceu do termo.
+[00:20:57 - 00:20:59] Silvio: Depois, a resposta
+[00:20:59 - 00:21:01] Silvio: passa pela mesma receita das outras
+[00:21:01 - 00:21:03] Silvio: fontes. E o valor fora da lista
+[00:21:03 - 00:21:05] Silvio: vai ficar nulo e vai ser contado.
+[00:21:05 - 00:21:07] Silvio: Ou seja, a IA só escolhe
+[00:21:07 - 00:21:09] Silvio: entre valores já previstos.
+[00:21:09 - 00:21:11] Silvio: Não vai criar novos.
+[00:21:11 - 00:21:13] Silvio: Para auditoria, toda a extração
+[00:21:13 - 00:21:15] Silvio: fica registrada em tabela.
+[00:21:15 - 00:21:17] Silvio: No caso, eu chamei de extração. E o prompt
+[00:21:17 - 00:21:19] Silvio: e os seus parâmetros ficam versionados
+[00:21:19 - 00:21:21] Silvio: em uma outra tabela, que eu chamo de
+[00:21:21 - 00:21:23] Silvio: ajuste de extração. Além disso,
+[00:21:23 - 00:21:25] Silvio: eu calculo uma espécie de impressão digital
+[00:21:25 - 00:21:27] Silvio: do pedido. No caso
+[00:21:27 - 00:21:29] Silvio: o prompt mudar sem que
+[00:21:29 - 00:21:31] Silvio: uma nova versão seja declarada,
+[00:21:31 - 00:21:33] Silvio: a extração vai parar.
+[00:21:33 - 00:21:35] Silvio: Ele sabe que não otimizou os prompts para acertar
+[00:21:35 - 00:21:37] Silvio: mais e os erros ficam
+[00:21:37 - 00:21:39] Silvio: identificados e não entram na silva como
+[00:21:39 - 00:21:41] Silvio: corretos.
+[00:21:41 - 00:21:43] Silvio: Para sintetizar, o nosso capítulo 5
+[00:21:43 - 00:21:45] Silvio: entrega 1. Um cenário
+[00:21:45 - 00:21:47] Silvio: sintético com a verdade conhecida,
+[00:21:47 - 00:21:49] Silvio: com os fatos, as fontes e os defeitos
+[00:21:49 - 00:21:51] Silvio: plantados. 2. Um modelo
+[00:21:51 - 00:21:53] Silvio: canônico declarado num único
+[00:21:53 - 00:21:55] Silvio: artefato versionado. 3.
+[00:21:55 - 00:21:57] Silvio: As receitas e vocabulários que tornam cada
+[00:21:57 - 00:21:59] Silvio: tradição auditável. 4.
+[00:21:59 - 00:22:01] Silvio: E o uso da IA
+[00:22:01 - 00:22:03] Silvio: restrita a escolher valores previstos.
+[00:22:03 - 00:22:05] Silvio: Então, o próximo passo é a nossa
+[00:22:05 - 00:22:07] Silvio: prova de conceito.
+[00:22:07 - 00:22:09] Silvio: Primeiro vou selecionar as tecnologias open source
+[00:22:09 - 00:22:11] Silvio: para cada camada funcional, de acordo com os
+[00:22:11 - 00:22:13] Silvio: requisitos e capacidades do capítulo 4.
+[00:22:13 - 00:22:15] Silvio: Depois vou implementar a ingestão, extração,
+[00:22:15 - 00:22:17] Silvio: transformação e disponibilização dos dados.
+[00:22:17 - 00:22:19] Silvio: E por fim, vou demonstrar os três
+[00:22:19 - 00:22:21] Silvio: verbos da proposição que eu falei
+[00:22:21 - 00:22:23] Silvio: no início da apresentação.
+[00:22:23 - 00:22:25] Silvio: Dentro dessa operação percebo
+[00:22:25 - 00:22:27] Silvio: mostrando a taxa de acertos, extrações
+[00:22:27 - 00:22:29] Silvio: e como cada
+[00:22:29 - 00:22:31] Silvio: defeito foi tratado.
+[00:22:31 - 00:22:33] Silvio: Muito obrigado.
+[00:22:33 - 00:22:41] Victorino: Estou abrindo aqui, minha rede está lenta
+[00:22:41 - 00:22:43] Victorino: hoje.
+[00:22:43 - 00:22:45] Silvio: Vamos lá.
+[00:22:45 - 00:22:47] Silvio: Eu saí da apresentação sem querer.
+[00:22:47 - 00:22:49] Victorino: Minha rede está dando pico aqui.
+[00:22:49 - 00:22:51] Victorino: Estou na UnB, estou com um probleminha aqui.
+[00:22:51 - 00:22:53] Victorino: Qualquer coisa eu entro pelo celular.
+[00:22:53 - 00:22:55] Victorino: Se eu cair, podem continuar a reunião.
+[00:22:55 - 00:22:57] Victorino: Eu entro pelo celular e a gente finaliza.
+[00:22:57 - 00:22:59] Victorino: Dando continuidade ao
+[00:22:59 - 00:23:01] Victorino: processo de Seminário 1,
+[00:23:01 - 00:23:03] Victorino: o Silvio fez a apresentação dele.
+[00:23:03 - 00:23:05] Victorino: Agora os
+[00:23:05 - 00:23:07] Victorino: membros da banca foram só as observações.
+[00:23:07 - 00:23:09] Victorino: Começamos pela professora
+[00:23:09 - 00:23:11] Victorino: Maria Cláudia, que é a mais externa.
+[00:23:11 - 00:23:13] Victorino: Vou ter que fechar a minha câmera,
+[00:23:13 - 00:23:15] Victorino: minha rede está dando pico aqui.
+[00:23:15 - 00:23:17] Victorino: Estou caindo e voltando.
+[00:23:17 - 00:23:19] Victorino: Está certo, mas eu estou acompanhando.
+[00:23:19 - 00:23:21] Maria Cláudia: Pode ir, professora.
+[00:23:21 - 00:23:23] Maria Cláudia: Primeiro,
+[00:23:23 - 00:23:25] Maria Cláudia: parabéns pela evolução, Silvio.
+[00:23:25 - 00:23:27] Maria Cláudia: Acho que ficou bem bacana
+[00:23:27 - 00:23:29] Maria Cláudia: todo esse
+[00:23:29 - 00:23:31] Maria Cláudia: estudo de casos que você andou fazendo.
+[00:23:31 - 00:23:33] Maria Cláudia: Muito detalhado.
+[00:23:33 - 00:23:35] Maria Cláudia: Difícil a gente
+[00:23:35 - 00:23:37] Maria Cláudia: acompanhar todos os detalhes, mas
+[00:23:37 - 00:23:39] Maria Cláudia: achei muito interessante, inclusive,
+[00:23:39 - 00:23:41] Maria Cláudia: a questão do registro da proveniência,
+[00:23:41 - 00:23:43] Maria Cláudia: dos promptes e tal,
+[00:23:43 - 00:23:45] Maria Cláudia: que eu ouvi agora mais no final.
+[00:23:45 - 00:23:47] Maria Cláudia: Você pode
+[00:23:47 - 00:23:49] Maria Cláudia: compartilhar
+[00:23:49 - 00:23:51] Maria Cláudia: de novo a sua
+[00:23:51 - 00:23:53] Maria Cláudia: apresentação?
+[00:23:53 - 00:23:55] Maria Cláudia: Eu queria voltar em alguns pontos.
+[00:23:59 - 00:24:01] Maria Cláudia: Enquanto você procura...
+[00:24:01 - 00:24:03] Maria Cláudia: Eu sei que
+[00:24:03 - 00:24:05] Maria Cláudia: eu mencionei ali aquela história de missão
+[00:24:05 - 00:24:07] Maria Cláudia: e tarefa por um motivo
+[00:24:07 - 00:24:09] Maria Cláudia: real, que a gente tem
+[00:24:09 - 00:24:11] Maria Cláudia: trabalhado aqui nessa distinção.
+[00:24:15 - 00:24:17] Maria Cláudia: Dentro do teu trabalho, se você
+[00:24:17 - 00:24:19] Maria Cláudia: puder botar lá nas minhas
+[00:24:19 - 00:24:21] Maria Cláudia: observações primeiro,
+[00:24:21 - 00:24:23] Maria Cláudia: para a gente ir
+[00:24:23 - 00:24:25] Maria Cláudia: na...
+[00:24:25 - 00:24:27] Maria Cláudia: Eu prometo não demorar,
+[00:24:27 - 00:24:29] Maria Cláudia: tá, Andrei?
+[00:24:29 - 00:24:31] Silvio: Não, tranquilo.
+[00:24:31 - 00:24:33] Silvio: Está certinho essa aqui, professora?
+[00:24:33 - 00:24:35] Maria Cláudia: Isso aí.
+[00:24:35 - 00:24:37] Maria Cláudia: A primeira observação...
+[00:24:37 - 00:24:39] Maria Cláudia: Deixa eu ver se consigo enxergar aqui.
+[00:24:39 - 00:24:41] Maria Cláudia: Cancela.
+[00:24:41 - 00:24:43] Maria Cláudia: Espera aí.
+[00:24:43 - 00:24:45] Maria Cláudia: Claro.
+[00:24:45 - 00:24:47] Maria Cláudia: Então, tem ali
+[00:24:47 - 00:24:49] Maria Cláudia: zonas versus ETL,
+[00:24:49 - 00:24:51] Maria Cláudia: o ETL...
+[00:24:51 - 00:24:53] Maria Cláudia: Essa coisa que você falou,
+[00:24:53 - 00:24:55] Maria Cláudia: que o ETL só durava no final,
+[00:24:55 - 00:24:57] Maria Cláudia: isso não é exatamente verdade,
+[00:24:57 - 00:24:59] Maria Cláudia: tá?
+[00:24:59 - 00:25:01] Maria Cláudia: A literatura é muito variada
+[00:25:01 - 00:25:03] Maria Cláudia: nesse sentido. Tem algumas arquiteturas
+[00:25:03 - 00:25:05] Maria Cláudia: que falam de um ODS,
+[00:25:05 - 00:25:07] Maria Cláudia: por exemplo. Antigamente,
+[00:25:07 - 00:25:09] Maria Cláudia: o Lake House era muito
+[00:25:09 - 00:25:11] Maria Cláudia: chamado de ODS,
+[00:25:11 - 00:25:13] Maria Cláudia: que era onde você armazenava...
+[00:25:13 - 00:25:15] Maria Cláudia: Claro que o Lake House tem
+[00:25:15 - 00:25:17] Maria Cláudia: mais, vamos dizer assim,
+[00:25:17 - 00:25:19] Maria Cláudia: uma estrutura melhor,
+[00:25:19 - 00:25:21] Maria Cláudia: mais bem pensada nessa questão
+[00:25:21 - 00:25:23] Maria Cláudia: de receber dados de todos os tipos
+[00:25:23 - 00:25:25] Maria Cláudia: e tal, né?
+[00:25:25 - 00:25:27] Maria Cláudia: E essa arquitetura que você
+[00:25:27 - 00:25:29] Maria Cláudia: está usando,
+[00:25:29 - 00:25:31] Maria Cláudia: não sei se é exatamente para onde
+[00:25:31 - 00:25:33] Maria Cláudia: você está usando,
+[00:25:33 - 00:25:35] Maria Cláudia: que é essa
+[00:25:35 - 00:25:37] Maria Cláudia: da silva, bronze
+[00:25:37 - 00:25:39] Maria Cláudia: e gold, né?
+[00:25:39 - 00:25:41] Maria Cláudia: Pode falar, pode
+[00:25:41 - 00:25:43] Maria Cláudia: me interromper, se eu tiver...
+[00:25:43 - 00:25:45] Maria Cláudia: A senhora está falando certinho. Aqui é um bate-papo.
+[00:25:45 - 00:25:47] Silvio: É isso.
+[00:25:47 - 00:25:49] Maria Cláudia: Então, bom,
+[00:25:49 - 00:25:51] Maria Cláudia: só queria corrigir um pouco
+[00:25:51 - 00:25:53] Maria Cláudia: você, para não cair
+[00:25:53 - 00:25:55] Maria Cláudia: nessa armadilha de algumas publicações
+[00:25:55 - 00:25:57] Maria Cláudia: e tal, que dizem que
+[00:25:57 - 00:25:59] Maria Cláudia: o ETL só grava no final.
+[00:25:59 - 00:26:01] Maria Cláudia: Eu acho que não, acho até que
+[00:26:01 - 00:26:03] Maria Cláudia: tem
+[00:26:03 - 00:26:05] Maria Cláudia: uma correspondência com essa
+[00:26:05 - 00:26:07] Maria Cláudia: arquitetura em três
+[00:26:07 - 00:26:09] Maria Cláudia: camadas, né?
+[00:26:09 - 00:26:11] Maria Cláudia: Que pode ser feita melhor, mas
+[00:26:11 - 00:26:13] Maria Cláudia: assim, eu não acho que você tenha que fazer
+[00:26:13 - 00:26:15] Maria Cláudia: isso a fundo, não, tá? É só
+[00:26:15 - 00:26:17] Maria Cláudia: procurar não se
+[00:26:17 - 00:26:19] Maria Cláudia: apegar
+[00:26:19 - 00:26:21] Maria Cláudia: a essa coisa de que grava
+[00:26:21 - 00:26:23] Maria Cláudia: só no final, tá?
+[00:26:23 - 00:26:25] Maria Cláudia: Bom,
+[00:26:25 - 00:26:27] Maria Cláudia: outra coisa que eu tinha botado
+[00:26:27 - 00:26:29] Maria Cláudia: ali, integração e missão-tarefa,
+[00:26:29 - 00:26:31] Maria Cláudia: né? Aí, assim, o modelo
+[00:26:31 - 00:26:33] Maria Cláudia: canônico no silver,
+[00:26:33 - 00:26:35] Maria Cláudia: né, dá suporte à integração
+[00:26:35 - 00:26:37] Maria Cláudia: e tal, parará. Então, quando
+[00:26:37 - 00:26:39] Maria Cláudia: você fala, né, que você
+[00:26:39 - 00:26:41] Maria Cláudia: criou ali aquelas formas,
+[00:26:41 - 00:26:43] Maria Cláudia: aquelas receitas, né? A gente
+[00:26:43 - 00:26:45] Maria Cláudia: chama de depara também, né? Mas, assim,
+[00:26:45 - 00:26:47] Silvio: É depara, o famoso depara.
+[00:26:47 - 00:26:49] Maria Cláudia: É, o famoso depara. Então,
+[00:26:49 - 00:26:51] Maria Cláudia: assim, tudo bem, receita de tradição
+[00:26:51 - 00:26:53] Maria Cláudia: para ficar mais elegante,
+[00:26:53 - 00:26:55] Maria Cláudia: então, assim, ficou bacana. Mas, assim,
+[00:26:55 - 00:26:57] Maria Cláudia: é uma visão
+[00:26:57 - 00:26:59] Maria Cláudia: um pouco simplista que eu estou
+[00:26:59 - 00:27:01] Maria Cláudia: querendo dizer, né? Porque para aquele
+[00:27:01 - 00:27:03] Maria Cláudia: estudo de casa, você fez ali
+[00:27:03 - 00:27:05] Maria Cláudia: um conjunto de receitas,
+[00:27:05 - 00:27:07] Maria Cláudia: né? E é legal que você pense nesse
+[00:27:07 - 00:27:09] Maria Cláudia: modelo canônico ao invés de
+[00:27:09 - 00:27:11] Maria Cláudia: par a par, né? Porque
+[00:27:11 - 00:27:13] Maria Cláudia: é isso que você quis argumentar
+[00:27:13 - 00:27:15] Maria Cláudia: ali quando você botou aquelas duas
+[00:27:15 - 00:27:17] Maria Cláudia: coisas, né? Em que, se você
+[00:27:17 - 00:27:19] Maria Cláudia: tem um canônico, a cada
+[00:27:19 - 00:27:21] Maria Cláudia: fonte nova, você vai
+[00:27:21 - 00:27:23] Maria Cláudia: mapear verticalmente, ou seja,
+[00:27:23 - 00:27:25] Maria Cláudia: da fonte para esse
+[00:27:25 - 00:27:27] Maria Cláudia: modelo canônico, né?
+[00:27:27 - 00:27:29] Maria Cláudia: Então, isso é bacana e tal,
+[00:27:29 - 00:27:31] Maria Cláudia: mas, assim, não houve
+[00:27:31 - 00:27:33] Maria Cláudia: exatamente, assim,
+[00:27:33 - 00:27:35] Maria Cláudia: esses deparas, né?
+[00:27:35 - 00:27:37] Maria Cláudia: Para você chegar no modelo
+[00:27:37 - 00:27:39] Maria Cláudia: canônico, no entendimento
+[00:27:39 - 00:27:41] Maria Cláudia: único e tal, entre
+[00:27:41 - 00:27:43] Maria Cláudia: fontes diversas, e aí eu estou
+[00:27:43 - 00:27:45] Maria Cláudia: falando, assim, se fosse mais amplo, né?
+[00:27:45 - 00:27:47] Maria Cláudia: Aí, dentro
+[00:27:47 - 00:27:49] Maria Cláudia: do contexto e do estudo
+[00:27:49 - 00:27:51] Maria Cláudia: de caso, é mais simples
+[00:27:51 - 00:27:53] Maria Cláudia: você chegar nesse modelo canônico,
+[00:27:53 - 00:27:55] Maria Cláudia: né? Mas,
+[00:27:55 - 00:27:57] Maria Cláudia: em situações
+[00:27:57 - 00:27:59] Maria Cláudia: assim, mais complexas, né? A gente
+[00:27:59 - 00:28:01] Maria Cláudia: vê que não é
+[00:28:01 - 00:28:03] Maria Cláudia: assim. E, claro, tem todo um estudo,
+[00:28:03 - 00:28:05] Maria Cláudia: né? E aí eu vou
+[00:28:05 - 00:28:07] Maria Cláudia: puxar a sardinha para o meu lado, né?
+[00:28:07 - 00:28:09] Maria Cláudia: De modelagem conceitual
+[00:28:09 - 00:28:11] Maria Cláudia: e tal, que vai ser
+[00:28:11 - 00:28:13] Maria Cláudia: custoso chegar nesse
+[00:28:13 - 00:28:15] Maria Cláudia: modelo canônico, né?
+[00:28:15 - 00:28:17] Maria Cláudia: Então, só queria ressalvar isso,
+[00:28:17 - 00:28:19] Maria Cláudia: né? Que você
+[00:28:19 - 00:28:21] Maria Cláudia: coloque, né? Talvez
+[00:28:21 - 00:28:23] Maria Cláudia: seja
+[00:28:23 - 00:28:25] Maria Cláudia: esse tipo de
+[00:28:25 - 00:28:27] Maria Cláudia: acordo, né? O de modelo canônico tem
+[00:28:27 - 00:28:29] Maria Cláudia: que ser feito previamente,
+[00:28:29 - 00:28:31] Maria Cláudia: né? Envolvendo todas
+[00:28:31 - 00:28:33] Maria Cláudia: as unidades, vamos dizer,
+[00:28:33 - 00:28:35] Maria Cláudia: envolvidas no...
+[00:28:35 - 00:28:37] Maria Cláudia: Não numa operação, mas
+[00:28:37 - 00:28:39] Maria Cláudia: em termos
+[00:28:39 - 00:28:41] Maria Cláudia: arquiteturais, né? Você não está
+[00:28:41 - 00:28:43] Maria Cláudia: só fazendo arquitetura para uma
+[00:28:43 - 00:28:45] Maria Cláudia: operação, né? Você está
+[00:28:45 - 00:28:47] Maria Cláudia: fazendo arquitetura para outras
+[00:28:47 - 00:28:49] Maria Cláudia: operações, outras interações,
+[00:28:49 - 00:28:51] Maria Cláudia: não é isso? Então, assim,
+[00:28:51 - 00:28:53] Maria Cláudia: ah, de repente eu tenho
+[00:28:53 - 00:28:55] Maria Cláudia: operações conjuntas, por exemplo, eu vou ter que
+[00:28:55 - 00:28:57] Maria Cláudia: alinhar coisas com a marinha,
+[00:28:57 - 00:28:59] Maria Cláudia: né? Vou ter que alinhar coisas com
+[00:28:59 - 00:29:01] Maria Cláudia: a força aérea e tal.
+[00:29:01 - 00:29:03] Maria Cláudia: Então,
+[00:29:03 - 00:29:05] Maria Cláudia: por que que eu estou falando isso? Eu tenho
+[00:29:05 - 00:29:07] Maria Cláudia: um trabalho agora que
+[00:29:07 - 00:29:09] Maria Cláudia: eu já tinha... Não sei se eu já tinha falado
+[00:29:09 - 00:29:11] Maria Cláudia: isso para você, né? Que
+[00:29:11 - 00:29:13] Maria Cláudia: é o
+[00:29:13 - 00:29:15] Maria Cláudia: Tenente Adnet que está fazendo.
+[00:29:15 - 00:29:17] Maria Cláudia: Adnet é Adnet Alves.
+[00:29:17 - 00:29:19] Maria Cláudia: Não sei se... Eu acho que eu cheguei a falar
+[00:29:19 - 00:29:21] Maria Cláudia: isso para você, não falei? Você conhece o
+[00:29:21 - 00:29:23] Maria Cláudia: Alves do CDS
+[00:29:23 - 00:29:25] Maria Cláudia: que trabalha no Rio e tal?
+[00:29:25 - 00:29:27] Maria Cláudia: Não. Não.
+[00:29:27 - 00:29:29] Silvio: O que eu conheço é
+[00:29:29 - 00:29:31] Silvio: só o Bredas.
+[00:29:31 - 00:29:33] Maria Cláudia: O Breda, né?
+[00:29:33 - 00:29:35] Maria Cláudia: O Breda trabalha
+[00:29:35 - 00:29:37] Maria Cláudia: com ele. Então,
+[00:29:37 - 00:29:39] Maria Cláudia: trabalha com ele. Só que o
+[00:29:39 - 00:29:41] Maria Cláudia: Adnet Alves, ele...
+[00:29:41 - 00:29:43] Maria Cláudia: Eu estou chamando assim de dois nomes porque ele era
+[00:29:43 - 00:29:45] Maria Cláudia: Tenente Adnet e agora Tenente Alves. Eu não
+[00:29:45 - 00:29:47] Maria Cláudia: consigo passar
+[00:29:47 - 00:29:49] Maria Cláudia: para o Alves mais.
+[00:29:49 - 00:29:51] Maria Cláudia: Então, assim, ele está fazendo mestrado
+[00:29:51 - 00:29:53] Maria Cláudia: lá no IME com a gente, né? Justamente
+[00:29:53 - 00:29:55] Maria Cláudia: no mapeamento de operações,
+[00:29:55 - 00:29:57] Maria Cláudia: né? Ele é de C2,
+[00:29:57 - 00:29:59] Maria Cláudia: né? Ele está na equipe do
+[00:29:59 - 00:30:01] Maria Cláudia: pessoal de comando e controle, tá?
+[00:30:01 - 00:30:03] Maria Cláudia: Só que lá no
+[00:30:03 - 00:30:05] Maria Cláudia: CDS. E ele saiu
+[00:30:05 - 00:30:07] Maria Cláudia: para fazer o mestrado. Então, ele já está terminando
+[00:30:07 - 00:30:09] Maria Cláudia: agora. Ele está no segundo ano, né?
+[00:30:09 - 00:30:11] Maria Cláudia: Então, talvez por isso eu não tenha
+[00:30:11 - 00:30:13] Maria Cláudia: interagido exatamente com ele,
+[00:30:13 - 00:30:15] Maria Cláudia: né? Mas ele tem acesso aos sistemas,
+[00:30:15 - 00:30:17] Maria Cláudia: temas e tal, né?
+[00:30:17 - 00:30:19] Maria Cláudia: E aí, a gente começou a modelar
+[00:30:19 - 00:30:21] Maria Cláudia: essa questão da ordem de operação.
+[00:30:21 - 00:30:23] Maria Cláudia: Então, é um momento prévio
+[00:30:23 - 00:30:25] Maria Cláudia: ao que você está pensando. Você
+[00:30:25 - 00:30:27] Maria Cláudia: entende que você está focando
+[00:30:27 - 00:30:29] Maria Cláudia: na execução da operação.
+[00:30:29 - 00:30:31] Maria Cláudia: Certo?
+[00:30:31 - 00:30:33] Maria Cláudia: Então, assim, todos os dados que estão
+[00:30:33 - 00:30:35] Maria Cláudia: vindo são dados
+[00:30:35 - 00:30:37] Maria Cláudia: que
+[00:30:37 - 00:30:39] Maria Cláudia: alguém falou no...
+[00:30:39 - 00:30:41] Maria Cláudia: Alguém respondeu, fez um relatório,
+[00:30:41 - 00:30:43] Maria Cláudia: alguém falou alguma coisa,
+[00:30:43 - 00:30:45] Maria Cláudia: né? Teve, tem tido
+[00:30:45 - 00:30:47] Maria Cláudia: algumas práticas. Tudo é
+[00:30:47 - 00:30:49] Maria Cláudia: na execução da operação, né?
+[00:30:49 - 00:30:51] Maria Cláudia: Mas o planejamento
+[00:30:51 - 00:30:53] Maria Cláudia: e a
+[00:30:53 - 00:30:55] Maria Cláudia: preparação de uma
+[00:30:55 - 00:30:57] Maria Cláudia: ordem de operação,
+[00:30:57 - 00:30:59] Maria Cláudia: né? Eu estou imaginando
+[00:30:59 - 00:31:01] Maria Cláudia: que você não está cobrindo, é isso?
+[00:31:01 - 00:31:03] Silvio: Não, não estou.
+[00:31:03 - 00:31:05] Maria Cláudia: Tá, porque seria um documento
+[00:31:05 - 00:31:07] Maria Cláudia: a mais para entrar aí no seu
+[00:31:07 - 00:31:09] Maria Cláudia: lake house, né? Que era interessante
+[00:31:09 - 00:31:11] Maria Cláudia: também distrair e tal.
+[00:31:11 - 00:31:13] Maria Cláudia: Então, assim, eu achei muito interessante
+[00:31:13 - 00:31:15] Maria Cláudia: como a gente está numa coisa complementar.
+[00:31:15 - 00:31:17] Maria Cláudia: Entendeu?
+[00:31:17 - 00:31:19] Maria Cláudia: De trabalho e tal. Aí,
+[00:31:19 - 00:31:21] Maria Cláudia: bom, falando
+[00:31:21 - 00:31:23] Maria Cláudia: sobre isso, né? Uma perspectiva
+[00:31:23 - 00:31:25] Maria Cláudia: futura seria
+[00:31:25 - 00:31:27] Maria Cláudia: isso. Você cobrir com o seu lake house
+[00:31:27 - 00:31:29] Maria Cláudia: também outras fontes, até
+[00:31:29 - 00:31:31] Maria Cláudia: pegando essa parte
+[00:31:31 - 00:31:33] Maria Cláudia: de planejamento
+[00:31:33 - 00:31:35] Maria Cláudia: e
+[00:31:35 - 00:31:37] Maria Cláudia: emissão da ordem de operação.
+[00:31:37 - 00:31:39] Maria Cláudia: Por que que eu fui
+[00:31:39 - 00:31:41] Maria Cláudia: longe assim para buscar? Porque ali
+[00:31:41 - 00:31:43] Maria Cláudia: na ordem de operação você tem a distinção
+[00:31:43 - 00:31:45] Maria Cláudia: entre o que é a missão
+[00:31:45 - 00:31:47] Maria Cláudia: que é uma coisa mais ampla
+[00:31:47 - 00:31:49] Maria Cláudia: e como ela se desdobra em
+[00:31:49 - 00:31:51] Maria Cláudia: tarefas, né?
+[00:31:51 - 00:31:53] Maria Cláudia: E essas tarefas vão virar
+[00:31:53 - 00:31:55] Maria Cláudia: missão para outros,
+[00:31:55 - 00:31:57] Maria Cláudia: né? Certo.
+[00:31:57 - 00:31:59] Maria Cláudia: Então, eu
+[00:31:59 - 00:32:01] Maria Cláudia: estou
+[00:32:01 - 00:32:03] Maria Cláudia: eu estou vendo assim
+[00:32:03 - 00:32:05] Maria Cláudia: uma perspectiva de
+[00:32:05 - 00:32:07] Maria Cláudia: complemento, né? Então, assim que você
+[00:32:07 - 00:32:09] Maria Cláudia: tiver o seu trabalho e tal, eu vou tentar
+[00:32:09 - 00:32:11] Maria Cláudia: passar para o Adnet, né?
+[00:32:11 - 00:32:13] Maria Cláudia: E tal, se a gente puder
+[00:32:13 - 00:32:15] Maria Cláudia: passar alguma coisa,
+[00:32:15 - 00:32:17] Maria Cláudia: né? Se tiver alguma coisa escrita
+[00:32:17 - 00:32:19] Maria Cláudia: que eu possa passar, né? Aí vocês
+[00:32:19 - 00:32:21] Maria Cláudia: me dizem. E a outra coisa
+[00:32:21 - 00:32:23] Maria Cláudia: também que eu queria passar
+[00:32:23 - 00:32:25] Maria Cláudia: para você é o artigo que a gente
+[00:32:25 - 00:32:27] Maria Cláudia: publicou, né?
+[00:32:27 - 00:32:29] Maria Cláudia: Sobre essa distinção de missão
+[00:32:29 - 00:32:31] Maria Cláudia: e tarefa. Ali tem só um núcleozinho
+[00:32:31 - 00:32:33] Maria Cláudia: da ontologia, mas a gente
+[00:32:33 - 00:32:35] Maria Cláudia: chega inclusive na parte de
+[00:32:35 - 00:32:37] Maria Cláudia: delegação e tal. Então,
+[00:32:37 - 00:32:39] Maria Cláudia: eu acho
+[00:32:39 - 00:32:41] Maria Cláudia: que é uma coisa que vale a pena
+[00:32:41 - 00:32:43] Maria Cláudia: dar uma olhada, tá?
+[00:32:43 - 00:32:45] Maria Cláudia: E aí, de repente, você assim, no
+[00:32:45 - 00:32:47] Maria Cláudia: na conclusão do seu trabalho,
+[00:32:47 - 00:32:49] Maria Cláudia: você poder, de repente,
+[00:32:49 - 00:32:51] Maria Cláudia: citar ou mostrar, né?
+[00:32:51 - 00:32:53] Maria Cláudia: Demonstrar, porque dentro do exército
+[00:32:53 - 00:32:55] Maria Cláudia: você está dentro lá, né? E o teu trabalho
+[00:32:55 - 00:32:57] Maria Cláudia: vai ser lido ali. Isso mostra
+[00:32:57 - 00:32:59] Maria Cláudia: uma, uma,
+[00:32:59 - 00:33:01] Maria Cláudia: vamos dizer assim, uma possibilidade
+[00:33:01 - 00:33:03] Maria Cláudia: de interação, de
+[00:33:03 - 00:33:05] Maria Cláudia: para a própria força,
+[00:33:05 - 00:33:07] Maria Cláudia: né? Falar assim, olha, tá vendo? O trabalho
+[00:33:07 - 00:33:09] Maria Cláudia: estava sendo lá na UNB, mas tem aqui
+[00:33:09 - 00:33:11] Maria Cláudia: também no IME, tem, né?
+[00:33:11 - 00:33:13] Maria Cláudia: Um...
+[00:33:13 - 00:33:15] Maria Cláudia: Esse tipo de
+[00:33:15 - 00:33:17] Maria Cláudia: cooperação surgindo,
+[00:33:17 - 00:33:19] Maria Cláudia: possivelmente até
+[00:33:19 - 00:33:21] Maria Cláudia: posteriormente a defesa da
+[00:33:21 - 00:33:23] Maria Cláudia: tese, né? A defesa da dissertação.
+[00:33:23 - 00:33:25] Maria Cláudia: Tá certo? Perfeito, perfeito.
+[00:33:25 - 00:33:27] Maria Cláudia: E aí, pode até motivar
+[00:33:27 - 00:33:29] Maria Cláudia: outros elementos lá da equipe
+[00:33:29 - 00:33:31] Maria Cláudia: a querem fazer outro
+[00:33:31 - 00:33:33] Maria Cláudia: mestrado profissional, ou então
+[00:33:33 - 00:33:35] Maria Cláudia: um mestrado no IME, algo assim
+[00:33:35 - 00:33:37] Maria Cláudia: que pudesse dar continuidade
+[00:33:37 - 00:33:39] Maria Cláudia: a essas ideias, né?
+[00:33:39 - 00:33:41] Maria Cláudia: Então, bom...
+[00:33:41 - 00:33:43] Maria Cláudia: É...
+[00:33:43 - 00:33:45] Maria Cláudia: Eu acho que...
+[00:33:45 - 00:33:47] Maria Cláudia: Vou voltar? Não sei se teve mais alguma
+[00:33:47 - 00:33:49] Maria Cláudia: coisa, deixa eu dar... Ah!
+[00:33:49 - 00:33:51] Maria Cláudia: Espera aí. Ali são as fontes,
+[00:33:51 - 00:33:53] Maria Cláudia: né? Deixa eu voltar aí.
+[00:33:53 - 00:33:55] Maria Cláudia: Onde estavam as fontes
+[00:33:55 - 00:33:57] Maria Cláudia: ali que você tinha botado?
+[00:33:57 - 00:33:59] Maria Cláudia: A fonte. Então, esses dados,
+[00:33:59 - 00:34:01] Maria Cláudia: pois é. Outra coisa que eu queria
+[00:34:01 - 00:34:03] Maria Cláudia: saber é se eu posso usar esses
+[00:34:03 - 00:34:05] Maria Cláudia: seus dados sintéticos.
+[00:34:05 - 00:34:07] Silvio: Claro que pode, professora.
+[00:34:07 - 00:34:09] Silvio: Aqui é tudo, tudo nosso.
+[00:34:09 - 00:34:11] Maria Cláudia: Então, eu até
+[00:34:11 - 00:34:13] Maria Cláudia: anotei ali que era a operação
+[00:34:13 - 00:34:15] Maria Cláudia: Perseu, né? Eu dei uma...
+[00:34:15 - 00:34:17] Silvio: capturada aí dessa...
+[00:34:17 - 00:34:19] Silvio: Perseu de mentirinha?
+[00:34:19 - 00:34:21] Maria Cláudia: É, Perseu de mentirinha, né?
+[00:34:21 - 00:34:23] Maria Cláudia: A gente chama de alfa nossa.
+[00:34:23 - 00:34:25] Silvio: Ah, é?
+[00:34:25 - 00:34:27] Maria Cláudia: É, tem...
+[00:34:27 - 00:34:29] Maria Cláudia: Bom, enfim, tinha pássaro
+[00:34:29 - 00:34:31] Maria Cláudia: negro e tal, a gente vai
+[00:34:31 - 00:34:33] Maria Cláudia: tentando. Eu achei que
+[00:34:33 - 00:34:35] Maria Cláudia: essa Perseu, de fato, existiu,
+[00:34:35 - 00:34:37] Maria Cláudia: né? Mas assim, tem um outro nome, é isso?
+[00:34:37 - 00:34:39] Silvio: Não, ela existiu,
+[00:34:39 - 00:34:41] Silvio: aconteceu em 2024
+[00:34:41 - 00:34:43] Silvio: no Vale do Paraíba.
+[00:34:43 - 00:34:45] Silvio: Isso aí aconteceu, ponto.
+[00:34:45 - 00:34:47] Silvio: Tá, mas os dados dela
+[00:34:47 - 00:34:49] Silvio: aqui são todos...
+[00:34:49 - 00:34:51] Silvio: É, tudo eu inventei, tudo inventado.
+[00:34:51 - 00:34:53] Maria Cláudia: Pois é, eu achei muito
+[00:34:53 - 00:34:55] Maria Cláudia: criativo, assim, muito
+[00:34:55 - 00:34:57] Maria Cláudia: interessante toda essa
+[00:34:57 - 00:34:59] Maria Cláudia: descrição, né? Então,
+[00:34:59 - 00:35:01] Maria Cláudia: isso pra nós ia ser super legal.
+[00:35:01 - 00:35:03] Maria Cláudia: Só pra finalizar,
+[00:35:03 - 00:35:05] Maria Cláudia: né? O nosso estudo de caso tá
+[00:35:05 - 00:35:07] Maria Cláudia: sendo numa interação entre
+[00:35:07 - 00:35:09] Maria Cláudia: o Exército e a PM, tá?
+[00:35:09 - 00:35:11] Maria Cláudia: Ah, que legal. Então, assim,
+[00:35:11 - 00:35:13] Maria Cláudia: é uma operação conjunta, né?
+[00:35:13 - 00:35:15] Maria Cláudia: E a gente precisa, com
+[00:35:15 - 00:35:17] Maria Cláudia: as ordens de operação da PM,
+[00:35:17 - 00:35:19] Maria Cláudia: a ordem de operação do Exército,
+[00:35:19 - 00:35:21] Maria Cláudia: né? Saber, por exemplo,
+[00:35:21 - 00:35:23] Maria Cláudia: quais são as missões e tarefas, e aí
+[00:35:23 - 00:35:25] Maria Cláudia: você poder, numa gestão conjunta,
+[00:35:25 - 00:35:27] Maria Cláudia: né? Observar
+[00:35:27 - 00:35:29] Maria Cláudia: quais são as tarefas,
+[00:35:29 - 00:35:31] Maria Cláudia: responsabilidades de quem e tal. Mas
+[00:35:31 - 00:35:33] Maria Cláudia: a gente para aí, a gente não vai pra execução,
+[00:35:33 - 00:35:35] Maria Cláudia: entendeu?
+[00:35:35 - 00:35:37] Maria Cláudia: Porque seria um passo a mais bem
+[00:35:37 - 00:35:39] Maria Cláudia: complicado. Então, por enquanto,
+[00:35:39 - 00:35:41] Maria Cláudia: né? A gente tá nessa coisa.
+[00:35:41 - 00:35:43] Maria Cláudia: Então, fica aí o
+[00:35:43 - 00:35:45] Maria Cláudia: a expectativa,
+[00:35:45 - 00:35:47] Maria Cláudia: né? De um possível
+[00:35:47 - 00:35:49] Maria Cláudia: desdobramento aí do trabalho.
+[00:35:49 - 00:35:51] Maria Cláudia: E também dar os parabéns, porque eu acho que
+[00:35:51 - 00:35:53] Maria Cláudia: você tá num caminho bom
+[00:35:53 - 00:35:55] Maria Cláudia: e vai tá
+[00:35:55 - 00:35:57] Maria Cláudia: terminando aí com um resultado
+[00:35:57 - 00:35:59] Maria Cláudia: bem interessante, concreto
+[00:35:59 - 00:36:01] Silvio: e tal. Na verdade, professora,
+[00:36:01 - 00:36:03] Silvio: eu nem imagino que isso aqui
+[00:36:03 - 00:36:05] Silvio: seja uma solução
+[00:36:05 - 00:36:07] Silvio: fechada. Longe, muito longe disso.
+[00:36:07 - 00:36:09] Silvio: Mas, assim, o que eu puder inspirar,
+[00:36:09 - 00:36:11] Silvio: tipo assim, o pessoal tá
+[00:36:11 - 00:36:13] Silvio: construindo um negócio lá no
+[00:36:13 - 00:36:15] Silvio: DDS3, a parte de C2 lá.
+[00:36:15 - 00:36:17] Silvio: Poxa, ah, o módulo
+[00:36:17 - 00:36:19] Silvio: canônico. Eu posso,
+[00:36:19 - 00:36:21] Silvio: tipo, ó, eu fiz dessa forma. Será que dá pra
+[00:36:21 - 00:36:23] Silvio: vocês? É nesse sentido.
+[00:36:23 - 00:36:25] Silvio: Pedacinhos que as pessoas
+[00:36:25 - 00:36:27] Silvio: consigam tirar da dissertação
+[00:36:27 - 00:36:29] Silvio: que eles possam tentar encaixar
+[00:36:29 - 00:36:31] Silvio: e ver se conseguem,
+[00:36:31 - 00:36:33] Silvio: né? Criar valor sobre aquilo.
+[00:36:33 - 00:36:35] Silvio: Eu não imagino isso aqui.
+[00:36:35 - 00:36:37] Silvio: Ah, isso aqui vai ser uma solução fechada.
+[00:36:37 - 00:36:39] Maria Cláudia: Não é bala de prata.
+[00:36:39 - 00:36:41] Silvio: Longe disso, professora. Longe disso.
+[00:36:41 - 00:36:43] Maria Cláudia: A gente sabe.
+[00:36:43 - 00:36:45] Maria Cláudia: Mas é isso que a gente quer, né?
+[00:36:45 - 00:36:47] Maria Cláudia: A gente quer poder estudar um pouco
+[00:36:47 - 00:36:49] Maria Cláudia: do nosso lado, né? E poder
+[00:36:49 - 00:36:51] Maria Cláudia: contribuir de alguma forma pra
+[00:36:51 - 00:36:53] Maria Cláudia: que a coisa, o produto,
+[00:36:53 - 00:36:55] Maria Cláudia: né, que vai ser desenvolvido
+[00:36:55 - 00:36:57] Maria Cláudia: seja melhorado, seja
+[00:36:57 - 00:36:59] Maria Cláudia: aprimorado, né? Então, é
+[00:36:59 - 00:37:01] Maria Cláudia: muito mesmo nesse sentido, tá?
+[00:37:01 - 00:37:03] Maria Cláudia: Parabéns aí pelo trabalho, tá?
+[00:37:03 - 00:37:05] Maria Cláudia: Eu confesso que eu fiquei curiosa
+[00:37:05 - 00:37:07] Maria Cláudia: pra ver os detalhes, mas
+[00:37:07 - 00:37:09] Maria Cláudia: a gente vai ter que esperar pra leitura, né?
+[00:37:09 - 00:37:11] Silvio: Tá bom? Sem problema.
+[00:37:11 - 00:37:13] Silvio: E no dia lá da dissertação,
+[00:37:13 - 00:37:15] Silvio: eu abro meu VS Code
+[00:37:15 - 00:37:17] Silvio: e aí eu te mostro também qual é a coisa também.
+[00:37:17 - 00:37:19] Silvio: Se a senhora quiser, lógico.
+[00:37:19 - 00:37:21] Maria Cláudia: Não, aí tem que passar
+[00:37:21 - 00:37:23] Maria Cláudia: pro meu aluno lá, mas
+[00:37:23 - 00:37:25] Maria Cláudia: vamos devagar, vamos devagar,
+[00:37:25 - 00:37:27] Maria Cláudia: tá bom?
+[00:37:27 - 00:37:29] Maria Cláudia: É isso. Obrigada, Vitorino,
+[00:37:29 - 00:37:31] Maria Cláudia: pela oportunidade, tá?
+[00:37:31 - 00:37:33] Maria Cláudia: Enfim, tá falado.
+[00:37:33 - 00:37:35] Victorino: Obrigado, professora. Seria interessante
+[00:37:35 - 00:37:37] Victorino: depois o Silvio vai pegar o contato
+[00:37:37 - 00:37:39] Victorino: do seu aluno.
+[00:37:39 - 00:37:41] Victorino: Aí, Silvio, faz uma reunião, nem que seja
+[00:37:41 - 00:37:43] Victorino: pra entender o escopo do trabalho dele
+[00:37:43 - 00:37:45] Victorino: mas facilita no corpo do teu trabalho,
+[00:37:45 - 00:37:47] Victorino: esse trabalho tá lá no IME,
+[00:37:47 - 00:37:49] Victorino: porque facilita a integração depois.
+[00:37:49 - 00:37:51] Victorino: Em algum momento a gente tenta citar esse trabalho
+[00:37:51 - 00:37:53] Victorino: como se fosse, por exemplo, o nosso escopo
+[00:37:53 - 00:37:55] Victorino: é a execução. No entanto, está sendo desenvolvido
+[00:37:55 - 00:37:57] Victorino: no IME, no trabalho, sobre o planejamento
+[00:37:57 - 00:37:59] Victorino: de operações, coisa e tal, entendeu?
+[00:37:59 - 00:38:01] Victorino: Então, passando essa corrida de final de ano,
+[00:38:01 - 00:38:03] Victorino: o Silvio entra em contato com teu aluno,
+[00:38:03 - 00:38:05] Victorino: tenta fazer pelo menos uma videoconferência
+[00:38:05 - 00:38:07] Victorino: pra saber como é que a gente pode deixar bem claro
+[00:38:07 - 00:38:09] Victorino: essa potencial integração. É bem interessante fazer essa.
+[00:38:09 - 00:38:11] Silvio: Tá bom, ótimo.
+[00:38:11 - 00:38:13] Maria Cláudia: Oi?
+[00:38:13 - 00:38:15] Silvio: Tenente Paes.
+[00:38:15 - 00:38:17] Silvio: Não, é Adinê, sei lá como é que é.
+[00:38:17 - 00:38:19] Maria Cláudia: Adinê Alves.
+[00:38:19 - 00:38:21] Silvio: Ah, Tenente Adinê,
+[00:38:21 - 00:38:23] Silvio: pessoalmente.
+[00:38:23 - 00:38:25] Maria Cláudia: Com E no acento
+[00:38:25 - 00:38:27] Maria Cláudia: no final, e Alves.
+[00:38:27 - 00:38:29] Maria Cláudia: Tá.
+[00:38:29 - 00:38:31] Silvio: Eu falo com o Breda qualquer coisa também.
+[00:38:31 - 00:38:33] Victorino: Isso, já tenta uma videoconferência, vê onde é que vocês podem,
+[00:38:33 - 00:38:35] Victorino: mesmo que não integre,
+[00:38:35 - 00:38:37] Victorino: porque não vai dar tempo, mas deixa o link
+[00:38:37 - 00:38:39] Victorino: lá no corpo do trabalho, dizendo
+[00:38:39 - 00:38:41] Victorino: ó, já tem iniciativa, depois você desce e vê o trabalho.
+[00:38:41 - 00:38:43] Victorino: Vira uma operação mesmo,
+[00:38:43 - 00:38:45] Victorino: uma missão lá do CDS.
+[00:38:45 - 00:38:47] Victorino: Beleza? Top, deixa comigo.
+[00:38:47 - 00:38:49] Victorino: Falou. Obrigado, professora.
+[00:38:49 - 00:38:51] Victorino: Vamos lá, Andrei, pode fazer tuas observações.
+[00:38:51 - 00:38:53] Victorino: Eu vou fechar, pessoal, que tá toda hora aqui.
+[00:38:53 - 00:38:55] Victorino: Fecha a câmera por causa da rede, coisa e tal.
+[00:38:55 - 00:38:57] Victorino: Beleza.
+[00:38:57 - 00:38:59] Andrei: Então, beleza, Silvio.
+[00:38:59 - 00:39:01] Andrei: Eu gostei da evolução do seu trabalho,
+[00:39:01 - 00:39:03] Andrei: gostei da forma como que você apresentou.
+[00:39:03 - 00:39:05] Andrei: Você relembrou a gente
+[00:39:05 - 00:39:07] Andrei: o que a gente tinha sugerido,
+[00:39:07 - 00:39:09] Andrei: interessante.
+[00:39:09 - 00:39:11] Andrei: Eu queria pedir pra você
+[00:39:11 - 00:39:13] Andrei: colocar lá no final,
+[00:39:13 - 00:39:15] Andrei: lá no último slide.
+[00:39:15 - 00:39:17] Andrei: Tá?
+[00:39:17 - 00:39:19] Andrei: Por favor.
+[00:39:23 - 00:39:25] Andrei: O que o capítulo 5 entrega.
+[00:39:25 - 00:39:27] Andrei: Não foi o resumo desse
+[00:39:27 - 00:39:29] Andrei: Seminário 1, não, né?
+[00:39:29 - 00:39:31] Andrei: Você colocou um quadrinho lá chamado
+[00:39:31 - 00:39:33] Andrei: O que o capítulo 5 entrega.
+[00:39:33 - 00:39:35] Silvio: Aqui?
+[00:39:35 - 00:39:37] Andrei: Não, não,
+[00:39:37 - 00:39:39] Andrei: é no último mesmo, só que eu,
+[00:39:39 - 00:39:41] Andrei: depois eu falo dos próximos passos.
+[00:39:41 - 00:39:43] Andrei: Mas é melhor a gente começar a falar sobre
+[00:39:43 - 00:39:45] Andrei: o que foi feito agora no Seminário.
+[00:39:45 - 00:39:47] Andrei: Tá bom.
+[00:39:47 - 00:39:49] Andrei: Então, eu tinha pedido pra você,
+[00:39:49 - 00:39:51] Andrei: acho que o mais importante, né?
+[00:39:51 - 00:39:53] Andrei: Era contextualizar
+[00:39:53 - 00:39:55] Andrei: em alguma operação do
+[00:39:55 - 00:39:57] Andrei: Exército ou
+[00:39:57 - 00:39:59] Andrei: alguma situação real, né?
+[00:39:59 - 00:40:01] Andrei: Então, você trouxe uma situação aí que
+[00:40:01 - 00:40:03] Andrei: apesar dos dados
+[00:40:03 - 00:40:05] Andrei: não serem públicos,
+[00:40:05 - 00:40:07] Andrei: é uma situação real
+[00:40:07 - 00:40:09] Andrei: de utilização do sistema.
+[00:40:09 - 00:40:11] Andrei: E que deixou mais claro
+[00:40:11 - 00:40:13] Andrei: como é que esse sistema
+[00:40:13 - 00:40:15] Andrei: vai ser utilizado, né?
+[00:40:15 - 00:40:17] Andrei: Então, eu tinha solicitado também que você
+[00:40:17 - 00:40:19] Andrei: falasse sobre
+[00:40:19 - 00:40:21] Andrei: a integração desses dados
+[00:40:21 - 00:40:23] Andrei: heterogêneos, né?
+[00:40:23 - 00:40:25] Andrei: Então, você mostrou que chegam dados
+[00:40:25 - 00:40:27] Andrei: JSON, PDFs,
+[00:40:27 - 00:40:29] Andrei: fotos e
+[00:40:29 - 00:40:31] Andrei: o que mais?
+[00:40:31 - 00:40:33] Silvio: Áudio, né?
+[00:40:33 - 00:40:35] Andrei: Isso aí.
+[00:40:35 - 00:40:37] Andrei: Esse é o motivo da
+[00:40:37 - 00:40:39] Andrei: sua proposição de uma
+[00:40:39 - 00:40:41] Andrei: arquitetura do tipo Data Lake, né?
+[00:40:41 - 00:40:43] Andrei: Você vai trabalhar com dados heterogêneos, né?
+[00:40:43 - 00:40:45] Andrei: Então, trazendo esse contexto
+[00:40:45 - 00:40:47] Andrei: que você trouxe,
+[00:40:47 - 00:40:49] Andrei: demonstra a real necessidade
+[00:40:49 - 00:40:51] Andrei: dessa arquitetura Data Lake.
+[00:40:51 - 00:40:53] Andrei: Tá? Mas,
+[00:40:53 - 00:40:55] Andrei: a especificação da
+[00:40:55 - 00:40:57] Andrei: camada que você
+[00:40:57 - 00:40:59] Andrei: chamou de Lending, né? Que é a primeira camada.
+[00:40:59 - 00:41:01] Andrei: Isso.
+[00:41:01 - 00:41:03] Andrei: Beleza. Então,
+[00:41:03 - 00:41:05] Andrei: faz mais sentido agora pra quem
+[00:41:05 - 00:41:07] Andrei: vai ler o seu
+[00:41:07 - 00:41:09] Andrei: trabalho, tá? Ficou bem
+[00:41:09 - 00:41:11] Andrei: contextualizado. Era nesse
+[00:41:11 - 00:41:13] Andrei: sentido que as
+[00:41:13 - 00:41:15] Andrei: sugestões tinham sido dadas, né?
+[00:41:15 - 00:41:17] Andrei: E você trouxe isso.
+[00:41:17 - 00:41:19] Andrei: Com relação
+[00:41:19 - 00:41:21] Andrei: à governança.
+[00:41:21 - 00:41:23] Andrei: A governança dos
+[00:41:23 - 00:41:25] Andrei: dados, tá?
+[00:41:25 - 00:41:27] Andrei: Você citou
+[00:41:27 - 00:41:29] Andrei: que vai ter
+[00:41:29 - 00:41:31] Andrei: uma forma de fazer esse
+[00:41:31 - 00:41:33] Andrei: link do dado bruto
+[00:41:33 - 00:41:35] Andrei: ao dado final, né?
+[00:41:35 - 00:41:37] Andrei: Você não chegou a falar da
+[00:41:37 - 00:41:39] Andrei: última camada, que é a camada Gold.
+[00:41:39 - 00:41:41] Silvio: Então, a camada Gold
+[00:41:41 - 00:41:43] Silvio: é só entre a gente aqui,
+[00:41:43 - 00:41:45] Silvio: é a mais sem graça.
+[00:41:45 - 00:41:47] Silvio: Porque a parte,
+[00:41:47 - 00:41:49] Silvio: o grande
+[00:41:49 - 00:41:51] Silvio: diferencial, tô brincando aqui,
+[00:41:51 - 00:41:53] Silvio: vai até a Silver, né?
+[00:41:53 - 00:41:55] Silvio: E agora são só visões.
+[00:41:55 - 00:41:57] Silvio: São visões que a gente espera
+[00:41:57 - 00:41:59] Silvio: que possa ajudar
+[00:41:59 - 00:42:01] Silvio: o Estado maior com
+[00:42:01 - 00:42:03] Silvio: suas atividades
+[00:42:03 - 00:42:05] Silvio: militares, né?
+[00:42:05 - 00:42:07] Silvio: Então, assim, eu propus
+[00:42:07 - 00:42:09] Silvio: aquelas cinco visões
+[00:42:09 - 00:42:11] Silvio: de forma a ficar fácil
+[00:42:11 - 00:42:13] Silvio: para um militar identificar assim,
+[00:42:13 - 00:42:15] Silvio: poxa, esses dados aqui eu posso
+[00:42:15 - 00:42:17] Silvio: ajudar a fazer lá
+[00:42:17 - 00:42:19] Silvio: o processo de integração, etc.
+[00:42:19 - 00:42:21] Silvio: O que o pessoal chama de PIT-seq, né?
+[00:42:21 - 00:42:23] Silvio: Ah, esses dados aqui eu já consigo
+[00:42:23 - 00:42:25] Silvio: me ajudar no PP-Código,
+[00:42:25 - 00:42:27] Silvio: planejamento de operações.
+[00:42:27 - 00:42:29] Silvio: Poxa, esses aqui eu já consigo fazer
+[00:42:29 - 00:42:31] Silvio: uma visão
+[00:42:31 - 00:42:33] Silvio: do cenário.
+[00:42:33 - 00:42:35] Silvio: Entende?
+[00:42:35 - 00:42:37] Silvio: Essa parte de visão é a parte mais doutrinária
+[00:42:37 - 00:42:39] Silvio: para vender, digamos assim,
+[00:42:39 - 00:42:41] Silvio: a nossa arquitetura
+[00:42:41 - 00:42:43] Silvio: para um militar,
+[00:42:43 - 00:42:45] Silvio: né? Porque, poxa,
+[00:42:45 - 00:42:47] Silvio: por que é importante isso aqui?
+[00:42:47 - 00:42:49] Silvio: Olha só, porque de todos esses
+[00:42:49 - 00:42:51] Silvio: documentos heterogêneos, etc, etc,
+[00:42:51 - 00:42:53] Silvio: eu consegui criar
+[00:42:53 - 00:42:55] Silvio: um monte de informação que vai te ajudar
+[00:42:55 - 00:42:57] Silvio: a fazer o PIT-seq,
+[00:42:57 - 00:42:59] Silvio: vai te ajudar a fazer o PP-Código.
+[00:42:59 - 00:43:01] Silvio: Entende? Por isso que eu fico brincando.
+[00:43:01 - 00:43:03] Silvio: Na vida, a GOLD é a parte mais
+[00:43:03 - 00:43:05] Silvio: chata, né? Entre a gente
+[00:43:05 - 00:43:07] Silvio: que é da área de TI. Mas
+[00:43:07 - 00:43:09] Silvio: é por conta disso. Mas mais legal
+[00:43:09 - 00:43:11] Silvio: o professor, que eu tentei
+[00:43:11 - 00:43:13] Silvio: ter o cuidado de falar assim, ó,
+[00:43:13 - 00:43:15] Silvio: na GOLD tem essa informação. Essa informação
+[00:43:15 - 00:43:17] Silvio: veio dos arquivos
+[00:43:17 - 00:43:19] Silvio: tais, tais, tais, tais
+[00:43:19 - 00:43:21] Silvio: com os hashes. Então eu consigo chegar
+[00:43:21 - 00:43:23] Silvio: no áudio. Eu vou andando assim,
+[00:43:23 - 00:43:25] Silvio: esse arquivo aqui é esse áudio.
+[00:43:25 - 00:43:27] Silvio: Aí dou play no áudio.
+[00:43:27 - 00:43:29] Silvio: Ciência de operações. Aqui é
+[00:43:29 - 00:43:31] Silvio: tordilho.
+[00:43:31 - 00:43:33] Silvio: Cinco cavalos
+[00:43:33 - 00:43:35] Silvio: passando pela...
+[00:43:35 - 00:43:37] Silvio: Opa, entendi.
+[00:43:37 - 00:43:39] Silvio: Ah, eu consigo voltar
+[00:43:39 - 00:43:41] Silvio: ali falando num relatório de bombardeio.
+[00:43:41 - 00:43:43] Silvio: Tá aqui o relatório.
+[00:43:43 - 00:43:45] Silvio: Porque eu vou ter um
+[00:43:45 - 00:43:47] Silvio: hash de recepção desses arquivos.
+[00:43:47 - 00:43:49] Silvio: Eu sei qual é o arquivo. Então
+[00:43:49 - 00:43:51] Silvio: eu tive cuidado de falar assim,
+[00:43:51 - 00:43:53] Silvio: poxa, apesar de eu ter
+[00:43:53 - 00:43:55] Silvio: uma IA me ajudando
+[00:43:55 - 00:43:57] Silvio: a estruturar esses dados no meio do caminho,
+[00:43:57 - 00:43:59] Silvio: eu consigo confirmar esses dados.
+[00:43:59 - 00:44:01] Silvio: Um por um.
+[00:44:01 - 00:44:03] Andrei: Ah, mas
+[00:44:03 - 00:44:05] Andrei: você fala que consegue confirmar
+[00:44:05 - 00:44:07] Andrei: e
+[00:44:07 - 00:44:09] Andrei: escrever o que consegue. Mas
+[00:44:09 - 00:44:11] Andrei: você vai fazer um POC?
+[00:44:11 - 00:44:13] Andrei: Vou fazer um POC.
+[00:44:13 - 00:44:15] Andrei: Vou fazer um POC.
+[00:44:15 - 00:44:17] Andrei: Porque no momento não tem ainda.
+[00:44:17 - 00:44:19] Andrei: Ou você já testou as ferramentas?
+[00:44:19 - 00:44:21] Andrei: Estou testando.
+[00:44:21 - 00:44:23] Silvio: Já estou testando.
+[00:44:23 - 00:44:25] Silvio: Mas estou fazendo devagar.
+[00:44:25 - 00:44:27] Silvio: Mas já estou testando e já está bem interessante.
+[00:44:27 - 00:44:29] Silvio: Por isso que eu falei com o senhor.
+[00:44:29 - 00:44:31] Silvio: Eu não decidi tudo, mas eu tenho uma ideia de quais
+[00:44:31 - 00:44:33] Silvio: ferramentas que eu vou usar já para o próximo capítulo.
+[00:44:33 - 00:44:35] Silvio: Em relação à governança,
+[00:44:35 - 00:44:37] Silvio: a gente usa um catálogo de dados
+[00:44:37 - 00:44:39] Silvio: que ele é muito legal.
+[00:44:39 - 00:44:41] Silvio: E que tem como mostrar muita coisa.
+[00:44:41 - 00:44:43] Silvio: Que é o Open Metadata.
+[00:44:43 - 00:44:45] Silvio: Não sei se o senhor já ouviu falar.
+[00:44:45 - 00:44:47] Silvio: Ele é sensacional.
+[00:44:47 - 00:44:49] Silvio: Ele é um catálogo. Eu consigo fazer toda a parte de
+[00:44:49 - 00:44:51] Silvio: linhagem de colunas e
+[00:44:51 - 00:44:53] Silvio: tabelas. Ele tem uma ferramenta de linhagem.
+[00:44:53 - 00:44:55] Silvio: As versões mais novas tem até
+[00:44:55 - 00:44:57] Silvio: a parte de grafo e conhecimento.
+[00:44:57 - 00:44:59] Silvio: O senhor vai testar ele. O grafo ele é mais
+[00:44:59 - 00:45:01] Silvio: para...
+[00:45:01 - 00:45:03] Silvio: Ele não cuida do
+[00:45:03 - 00:45:05] Silvio: valor do dado. Ele é mais da estrutura.
+[00:45:05 - 00:45:07] Silvio: Ele não mexe no dado.
+[00:45:07 - 00:45:09] Silvio: No...
+[00:45:09 - 00:45:11] Silvio: Semântica. A semântica do dado.
+[00:45:11 - 00:45:13] Silvio: Mais da estrutura.
+[00:45:13 - 00:45:15] Silvio: Essa tabela está ligada a esse esquema.
+[00:45:15 - 00:45:17] Silvio: Que está ligada a esse não sei o que.
+[00:45:17 - 00:45:19] Silvio: Ele é mais desse jeito.
+[00:45:19 - 00:45:21] Silvio: Por isso que eu não quis mexer com ele agora.
+[00:45:21 - 00:45:23] Silvio: Mas tem. Tem a parte de glossário.
+[00:45:23 - 00:45:25] Silvio: Tem como fazer...
+[00:45:25 - 00:45:27] Silvio: Tem a parte de ontologia. Nossa, é bem completo.
+[00:45:27 - 00:45:29] Silvio: Só que também ele é muito complexo.
+[00:45:29 - 00:45:31] Silvio: Então aumenta muito a complexidade.
+[00:45:33 - 00:45:35] Andrei: Beleza, Silvio.
+[00:45:35 - 00:45:37] Andrei: Então, aproveitando o gap,
+[00:45:37 - 00:45:39] Andrei: para o seminário 2,
+[00:45:39 - 00:45:41] Andrei: trazer essa ideia mais materializada
+[00:45:41 - 00:45:43] Andrei: dessa governança, dessa linhagem
+[00:45:43 - 00:45:45] Andrei: do dado, do catálogo do dado.
+[00:45:45 - 00:45:47] Andrei: Saber que você realmente tem
+[00:45:47 - 00:45:49] Andrei: um domínio sobre esse dado
+[00:45:49 - 00:45:51] Andrei: em todas as fases que ele passa.
+[00:45:51 - 00:45:53] Andrei: Da camada
+[00:45:53 - 00:45:55] Andrei: crua até a camada
+[00:45:55 - 00:45:57] Andrei: final. Beleza?
+[00:45:57 - 00:45:59] Andrei: E é como você disse mesmo. A camada
+[00:45:59 - 00:46:01] Andrei: gold é
+[00:46:01 - 00:46:03] Andrei: o dado pronto para fazer um relatório,
+[00:46:03 - 00:46:05] Andrei: para fazer um dashboard, alguma coisa assim.
+[00:46:05 - 00:46:07] Andrei: E todo o trabalho
+[00:46:07 - 00:46:09] Andrei: vem nesse processamento dessa...
+[00:46:09 - 00:46:11] Andrei: Entre as camadas.
+[00:46:11 - 00:46:13] Andrei: E você trouxe algumas ferramentas
+[00:46:13 - 00:46:15] Andrei: que você vai possivelmente testar.
+[00:46:15 - 00:46:17] Andrei: O LLM, o Dockling.
+[00:46:17 - 00:46:19] Andrei: O modelo
+[00:46:19 - 00:46:21] Andrei: de tradução
+[00:46:21 - 00:46:23] Andrei: de áudio para texto.
+[00:46:23 - 00:46:25] Silvio: Isso, o Test Whisper.
+[00:46:25 - 00:46:27] Andrei: Eu acho que essa parte técnica
+[00:46:27 - 00:46:30] Andrei: seria muito interessante
+[00:46:30 - 00:46:32] Andrei: você pensar em uma publicação
+[00:46:32 - 00:46:34] Andrei: nessa parte.
+[00:46:34 - 00:46:36] Andrei: De como fazer essa transformação
+[00:46:36 - 00:46:38] Andrei: desses dados até uma camada prata
+[00:46:38 - 00:46:40] Andrei: ou até a camada gold.
+[00:46:40 - 00:46:42] Andrei: Utilizando esse ferramental.
+[00:46:42 - 00:46:44] Andrei: Seria bem interessante, talvez, se você pudesse
+[00:46:44 - 00:46:46] Andrei: pensar nisso.
+[00:46:46 - 00:46:48] Andrei: E aproveitando também
+[00:46:48 - 00:46:50] Andrei: o que a professora Maria Cláudia
+[00:46:50 - 00:46:52] Andrei: comentou.
+[00:46:52 - 00:46:54] Andrei: Como é que a gente faz para utilizar...
+[00:46:54 - 00:46:56] Andrei: Você tem uma resposta que
+[00:46:56 - 00:46:58] Andrei: eu queria ajustar um pouco a sua resposta.
+[00:46:58 - 00:47:00] Andrei: Porque me pareceu
+[00:47:00 - 00:47:02] Andrei: que você está tentando resolver um problema
+[00:47:02 - 00:47:04] Andrei: do Exército, que não é um problema pequeno.
+[00:47:04 - 00:47:06] Andrei: Mas a gente tem que pensar um pouco mais
+[00:47:06 - 00:47:08] Andrei: no trabalho como algo que possa ser utilizado
+[00:47:08 - 00:47:10] Andrei: por outras áreas.
+[00:47:10 - 00:47:12] Andrei: Nem que seja
+[00:47:12 - 00:47:14] Andrei: marinha aeronáutica.
+[00:47:14 - 00:47:16] Andrei: Ou uma forma de estender
+[00:47:16 - 00:47:18] Andrei: as suas ideias, a sua arquitetura.
+[00:47:18 - 00:47:20] Andrei: Nem que seja uma parte
+[00:47:20 - 00:47:22] Andrei: de toda essa arquitetura.
+[00:47:22 - 00:47:24] Andrei: Que você possa estender, que possa ser extensível
+[00:47:24 - 00:47:26] Andrei: para outro tipo de uso.
+[00:47:26 - 00:47:28] Andrei: Não só para o trabalho
+[00:47:28 - 00:47:30] Andrei: em si do Exército e o trabalho
+[00:47:30 - 00:47:32] Andrei: que você quer resolver.
+[00:47:32 - 00:47:34] Andrei: Mas que a gente pense em expandir
+[00:47:34 - 00:47:36] Andrei: essa ideia.
+[00:47:36 - 00:47:38] Andrei: Uma pequena ideia em algum
+[00:47:38 - 00:47:40] Andrei: ponto do seu trabalho, você tem que
+[00:47:40 - 00:47:42] Andrei: expandir.
+[00:47:42 - 00:47:44] Andrei: Isso pode ser utilizado não só
+[00:47:44 - 00:47:46] Andrei: para o Exército, mas para a Aeronáutica.
+[00:47:46 - 00:47:48] Andrei: Não só para a Aeronáutica, mas para o Governo Federal.
+[00:47:48 - 00:47:50] Andrei: Entende?
+[00:47:50 - 00:47:52] Andrei: Algo que possa ser utilizado.
+[00:47:52 - 00:47:54] Andrei: Só para você colocar
+[00:47:54 - 00:47:56] Andrei: um pouco...
+[00:47:56 - 00:47:58] Andrei: Assim, você tendo essa
+[00:47:58 - 00:48:00] Andrei: ideia de expandir mais o seu trabalho,
+[00:48:00 - 00:48:02] Andrei: ele dá mais volume ao seu trabalho
+[00:48:02 - 00:48:04] Andrei: e mais importância para ele.
+[00:48:04 - 00:48:06] Andrei: Mais ou menos essa ideia.
+[00:48:06 - 00:48:08] Andrei: Perfeito.
+[00:48:08 - 00:48:10] Andrei: Eram essas ponderações
+[00:48:10 - 00:48:12] Andrei: e a gente fica na expectativa do
+[00:48:12 - 00:48:14] Andrei: Seminário 2.
+[00:48:14 - 00:48:16] Silvio: Parabéns pelo trabalho
+[00:48:16 - 00:48:18] Andrei: feito até agora.
+[00:48:18 - 00:48:20] Victorino: Muito obrigado aí pela colaboração.
+[00:48:20 - 00:48:22] Victorino: Então, Silvio, anota as demandas
+[00:48:22 - 00:48:24] Victorino: já para o Seminário 2.
+[00:48:24 - 00:48:26] Victorino: Professor,
+[00:48:26 - 00:48:28] Silvio: desculpa, eu não consegui
+[00:48:28 - 00:48:30] Silvio: pegar...
+[00:48:30 - 00:48:32] Silvio: Eu parti do princípio, então eu até peço desculpas
+[00:48:32 - 00:48:34] Silvio: de antemão.
+[00:48:34 - 00:48:36] Silvio: O senhor vai gravar esse...
+[00:48:36 - 00:48:38] Victorino: Está sendo gravado. Depois eu te faço.
+[00:48:38 - 00:48:40] Silvio: Isso, por gentileza.
+[00:48:40 - 00:48:42] Victorino: Depois eu te passo o vídeo.
+[00:48:42 - 00:48:44] Victorino: Eu vou fechar agora.
+[00:48:44 - 00:48:46] Victorino: Mas aí a gente já sabe as demandas
+[00:48:46 - 00:48:48] Victorino: para o Seminário 2.
+[00:48:48 - 00:48:50] Victorino: Depois a gente vai tentar arranjar uma data.
+[00:48:50 - 00:48:52] Victorino: Então, Silvio, muito obrigado aos professores.
+[00:48:52 - 00:48:54] Victorino: Silvio, você retira aí e acompanha no WhatsApp aí.
+[00:48:54 - 00:48:56] Victorino: Eu estou aqui já entrando. Assim que a gente terminar
+[00:48:56 - 00:48:58] Victorino: a conversa, eu te chamo. Aí tudo bem rápido.
+[00:48:58 - 00:49:00] Silvio: Tá bom, então. Valeu.
+[00:49:00 - 00:49:04] Victorino: Pode sair.
+[00:49:04 - 00:49:06] Victorino: Então, senhores, é só um praxe,
+[00:49:06 - 00:49:08] Victorino: a gente dá continuidade ao trabalho,
+[00:49:08 - 00:49:10] Victorino: tudo certo, os senhores concordam.
+[00:49:10 - 00:49:12] Victorino: Tudo certo.
+[00:49:12 - 00:49:14] Victorino: Deixa eu só compartilhar aqui rapidamente.
+[00:49:14 - 00:49:16] Victorino: Acho que ele já ia defender
+[00:49:16 - 00:49:18] Maria Cláudia: em pouco tempo.
+[00:49:18 - 00:49:20] Maria Cláudia: Ainda tem um outro seminário.
+[00:49:20 - 00:49:22] Victorino: Tem um em dezembro.
+[00:49:22 - 00:49:24] Victorino: São dois seminários.
+[00:49:24 - 00:49:26] Victorino: O Andrei também orienta o pessoal lá do PPC.
+[00:49:26 - 00:49:28] Victorino: Uma celuladeira inventou isso.
+[00:49:28 - 00:49:30] Victorino: Aí está dando mais trabalho
+[00:49:30 - 00:49:32] Victorino: que qualquer outra coisa.
+[00:49:32 - 00:49:34] Victorino: Só uma dúvida.
+[00:49:34 - 00:49:36] Victorino: A gente faz seminário também,
+[00:49:36 - 00:49:38] Maria Cláudia: mas a gente faz seminário interno.
+[00:49:38 - 00:49:40] Victorino: Interno.
+[00:49:40 - 00:49:42] Victorino: Primeiro era assim,
+[00:49:42 - 00:49:44] Victorino: todo mundo apresentava os trabalhos.
+[00:49:44 - 00:49:46] Victorino: Eu acho que um seminário era suficiente
+[00:49:46 - 00:49:48] Victorino: entre a qualificação e a defesa.
+[00:49:48 - 00:49:50] Victorino: Só que são dois.
+[00:49:50 - 00:49:52] Victorino: Aí fica pesado.
+[00:49:52 - 00:49:54] Victorino: Andrei, deixa eu te passar
+[00:49:54 - 00:49:56] Victorino: o número do processo aqui rapidinho.
+[00:49:56 - 00:49:58] Victorino: Deixa eu ver aqui.
+[00:49:58 - 00:50:00] Andrei: Eu acho que eu tenho ele aqui, Márcio.
+[00:50:00 - 00:50:02] Andrei: Eu só vou adicionar
+[00:50:02 - 00:50:04] Andrei: assim que você fizer as coisas aí,
+[00:50:04 - 00:50:06] Andrei: eu adiciono ele na minha.
+[00:50:06 - 00:50:08] Andrei: Para assinar.
+[00:50:08 - 00:50:10] Andrei: Deixa eu aqui.
+[00:50:10 - 00:50:12] Maria Cláudia: Professor, para você,
+[00:50:12 - 00:50:14] Victorino: eu já mando só um minuto
+[00:50:14 - 00:50:16] Victorino: pela aprovação, então.
+[00:50:16 - 00:50:18] Victorino: Só para ter continuidade,
+[00:50:18 - 00:50:20] Victorino: na verdade, porque ainda tem
+[00:50:20 - 00:50:22] Victorino: outros passos.
+[00:50:22 - 00:50:24] Victorino: Deixa eu assinar aqui.
+[00:50:24 - 00:50:26] Maria Cláudia: Mas ele é muito bom aluno.
+[00:50:26 - 00:50:28] Victorino: Não, ele é desenrolado.
+[00:50:28 - 00:50:30] Victorino: Ele só
+[00:50:30 - 00:50:32] Victorino: é um pouco ansioso.
+[00:50:32 - 00:50:34] Victorino: Mas é toda universidade.
+[00:50:34 - 00:50:36] Victorino: Então qualquer coisa
+[00:50:36 - 00:50:38] Victorino: ele já quer adiantar.
+[00:50:38 - 00:50:40] Victorino: Então,
+[00:50:40 - 00:50:42] Victorino: é, só uma dúvida.
+[00:50:42 - 00:50:44] Victorino: Professor e Andrei,
+[00:50:44 - 00:50:46] Victorino: de 14 a 18 dezembro, vocês estão disponíveis
+[00:50:46 - 00:50:48] Victorino: ou já estão desligados?
+[00:50:48 - 00:50:50] Victorino: Olha...
+[00:50:50 - 00:50:52] Victorino: Dezembro?
+[00:50:52 - 00:50:54] Victorino: É dezembro.
+[00:50:54 - 00:50:56] Andrei: Ah não, vamos...
+[00:50:56 - 00:50:58] Andrei: Daqui a um mês.
+[00:50:58 - 00:51:00] Andrei: Eu tenho algumas bancas, mas
+[00:51:00 - 00:51:02] Victorino: a gente pode mandar.
+[00:51:02 - 00:51:04] Victorino: A professora ainda está ativa ou já está recolhida?
+[00:51:04 - 00:51:06] Maria Cláudia: É.
+[00:51:06 - 00:51:08] Maria Cláudia: Bom, eu tenho duas possibilidades.
+[00:51:08 - 00:51:10] Maria Cláudia: Uma,
+[00:51:10 - 00:51:12] Maria Cláudia: é que eu tenho umas provas
+[00:51:12 - 00:51:14] Maria Cláudia: que a minha filha está fazendo, que são para São Paulo.
+[00:51:14 - 00:51:16] Maria Cláudia: Então eu posso ter que fazer
+[00:51:16 - 00:51:18] Maria Cláudia: remotamente de São Paulo.
+[00:51:18 - 00:51:20] Maria Cláudia: Então eu não sei ainda.
+[00:51:20 - 00:51:22] Maria Cláudia: E a outra coisa
+[00:51:22 - 00:51:24] Maria Cláudia: é que
+[00:51:24 - 00:51:26] Maria Cláudia: também estou em processo de
+[00:51:26 - 00:51:28] Maria Cláudia: aposentadoria. Ainda não sei quando é que vai
+[00:51:28 - 00:51:30] Maria Cláudia: sair, né?
+[00:51:30 - 00:51:32] Maria Cláudia: Mas eu não vou parar, então também não é
+[00:51:32 - 00:51:34] Maria Cláudia: um...
+[00:51:34 - 00:51:36] Maria Cláudia: Não é um problema. É só assim que
+[00:51:36 - 00:51:38] Maria Cláudia: provavelmente eu posso...
+[00:51:38 - 00:51:40] Maria Cláudia: Posso ter que estar em viagem.
+[00:51:40 - 00:51:42] Maria Cláudia: Não, tudo bem. É só para ser uma reunião
+[00:51:42 - 00:51:44] Maria Cláudia: como essa.
+[00:51:44 - 00:51:46] Victorino: Ainda é Seminário 2, né? Não é Defesa Final não.
+[00:51:46 - 00:51:48] Victorino: É só para mostrar mais uma evolução
+[00:51:48 - 00:51:50] Victorino: e o que fica pendente para a Defesa.
+[00:51:50 - 00:51:52] Maria Cláudia: Acho que tranquilo.
+[00:51:52 - 00:51:54] Victorino: Eu mando um e-mail para os senhores, aí vocês
+[00:51:54 - 00:51:56] Victorino: veem as datas. A gente tenta conciliar uma data entre
+[00:51:56 - 00:51:58] Victorino: 14 e 18. É só para mostrar mais um passo
+[00:51:58 - 00:52:00] Victorino: de evolução e o trabalho final
+[00:52:00 - 00:52:02] Victorino: para a Defesa. Aí a Defesa a gente vê uma data mais apropriada
+[00:52:02 - 00:52:04] Victorino: mesmo. Aí eu não tenho pressa não. É só para
+[00:52:04 - 00:52:06] Victorino: já fechar tudo e ficar faltando só a Defesa para o ano que vem.
+[00:52:06 - 00:52:08] Victorino: Aí a gente vê a melhor data ano que vem. Beleza?
+[00:52:08 - 00:52:10] Victorino: Depois eu mando um e-mail. De 14 a 18 eu mando um e-mail.
+[00:52:10 - 00:52:12] Victorino: Beleza, André? Aí também tu responde lá e a gente vê.
+[00:52:12 - 00:52:14] Victorino: Beleza. Tá certo.
+[00:52:14 - 00:52:16] Victorino: Então eu vou chamar ele de volta aqui. Deixa eu chamar ele de volta.
+[00:52:16 - 00:52:25] Silvio: Deixa eu mandar o joinha meu para a professora
+[00:52:25 - 00:52:27] Victorino: aqui. Só para...
+[00:52:27 - 00:52:29] Victorino: Formulário
+[00:52:29 - 00:52:31] Victorino: e tal. Eu mandei um e-mail para vocês.
+[00:52:31 - 00:52:33] Maria Cláudia: Deixa eu ver
+[00:52:33 - 00:52:35] Victorino: aqui.
+[00:52:35 - 00:52:37] Victorino: Aqui eu acho que já tem o seu cadastro. Deixa eu ver aqui.
+[00:52:37 - 00:52:39] Victorino: Deixa eu chamar ele aqui de volta.
+[00:52:39 - 00:52:41] Maria Cláudia: Eu vi meu nome aí no cisterninho.
+[00:52:41 - 00:52:43] Victorino: É, não tem. Já tem aqui
+[00:52:43 - 00:52:45] Victorino: da outra vez eu mandei. Deixa eu ver
+[00:52:45 - 00:52:47] Victorino: aqui. Já vai ter meu e-mail direto.
+[00:52:47 - 00:52:49] Victorino: É...
+[00:52:49 - 00:52:51] Victorino: Deixa eu fechar aqui.
+[00:52:51 - 00:52:53] Victorino: Ó, gerenciar a administração
+[00:52:53 - 00:52:55] Victorino: estrutural externa. Tá aqui.
+[00:52:55 - 00:52:57] Victorino: Da unidade...
+[00:52:57 - 00:53:01] Victorino: É...
+[00:53:01 - 00:53:03] Victorino: Maria...
+[00:53:03 - 00:53:05] Victorino: Cláudia, né?
+[00:53:05 - 00:53:07] Maria Cláudia: Isso.
+[00:53:07 - 00:53:09] Victorino: Maria Cláudia...
+[00:53:09 - 00:53:11] Maria Cláudia: Silvio, tudo aprovado, tá, Silvio?
+[00:53:11 - 00:53:13] Maria Cláudia: Oba!
+[00:53:13 - 00:53:15] Victorino: É, foi...
+[00:53:15 - 00:53:17] Victorino: Tem chance.
+[00:53:17 - 00:53:19] Victorino: Deixa eu só fechar aqui.
+[00:53:19 - 00:53:21] Victorino: É Reis Cavalcante daqui.
+[00:53:21 - 00:53:23] Victorino: É Maria...
+[00:53:23 - 00:53:25] Maria Cláudia: Cláudia...
+[00:53:25 - 00:53:27] Victorino: Reis...
+[00:53:27 - 00:53:31] Maria Cláudia: Cavalcante.
+[00:53:31 - 00:53:33] Victorino: É, não tá aparecendo aqui.
+[00:53:33 - 00:53:35] Victorino: Maria Cláudia... Deixa eu ver se tá Cavalcante
+[00:53:35 - 00:53:37] Victorino: direto.
+[00:53:37 - 00:53:39] Victorino: O que eu mandei da outra vez?
+[00:53:39 - 00:53:41] Victorino: Ó, tá. Maria Cláudia Cavalcante.
+[00:53:41 - 00:53:43] Maria Cláudia: Ah, eu recebi aqui o primeiro chefe.
+[00:53:43 - 00:53:45] Victorino: É... Marioco, né?
+[00:53:45 - 00:53:47] Victorino: gmail.com, né? Não, isso é outra coisa.
+[00:53:47 - 00:53:49] Victorino: Isso. Isso aqui é...
+[00:53:49 - 00:53:51] Victorino: É porque tá...
+[00:53:51 - 00:53:53] Victorino: O e-mail. Tá certo.
+[00:53:53 - 00:53:55] Victorino: É que tá Maria Cláudia Cavalcante só.
+[00:53:55 - 00:53:57] Maria Cláudia: Ah, tá.
+[00:53:57 - 00:53:59] Maria Cláudia: O Reis não tá.
+[00:53:59 - 00:54:01] Maria Cláudia: Tá certo. Tranquilo.
+[00:54:01 - 00:54:03] Victorino: Tá aqui. Deixa eu ver aqui.
+[00:54:03 - 00:54:05] Victorino: Aí, você deve receber um e-mail.
+[00:54:05 - 00:54:07] Victorino: Aí é só assinar.
+[00:54:07 - 00:54:09] Victorino: Aí, depois eu mando e-mail pra todo mundo
+[00:54:09 - 00:54:11] Victorino: pra gente tentar acertar uma data.
+[00:54:11 - 00:54:13] Victorino: Hein, Silvio?
+[00:54:13 - 00:54:15] Victorino: Tu vai correr aí com a demanda do André e da professora.
+[00:54:15 - 00:54:17] Victorino: Já tenta ver se consegue. Pelo menos, o André...
+[00:54:17 - 00:54:19] Victorino: Eu mando um contato inicial com o aluno dela
+[00:54:19 - 00:54:21] Victorino: pra já dar pra ela, assim, o que que você
+[00:54:21 - 00:54:23] Victorino: consegue fazer de deixar...
+[00:54:23 - 00:54:25] Victorino: Se não integrar, pelo menos deixar explícito
+[00:54:25 - 00:54:27] Victorino: o que que seria o trabalho lá de integração, beleza?
+[00:54:27 - 00:54:29] Victorino: Aí, então, tu tem um mês aí pra trabalhar.
+[00:54:29 - 00:54:31] Victorino: Eu vou mandar e-mail e a próxima reunião vai ser de 14 a 18 dezembro.
+[00:54:31 - 00:54:33] Victorino: A gente vai procurar melhor data
+[00:54:33 - 00:54:35] Victorino: que concilie os quatro.
+[00:54:35 - 00:54:37] Victorino: Mas aí, a gente já tem a demanda do André, né? Que ele já te passou aí.
+[00:54:37 - 00:54:39] Victorino: E a professora Maria Cláudia, o principal seria
+[00:54:39 - 00:54:41] Victorino: essa integração aí, pra gente ver como é que a gente consegue
+[00:54:41 - 00:54:43] Victorino: fazer um trabalho mais...
+[00:54:43 - 00:54:45] Victorino: integrado, beleza?
+[00:54:45 - 00:54:47] Victorino: E continuaremos aí na briga, beleza?
+[00:54:47 - 00:54:49] Victorino: A gente tem um processo, né?
+[00:54:49 - 00:54:51] Silvio: Pode, pode.
+[00:54:51 - 00:54:53] Silvio: Professor, quando o senhor puder,
+[00:54:53 - 00:54:55] Silvio: o mais rápido possível,
+[00:54:55 - 00:54:57] Silvio: o vídeo, a transcrição do vídeo...
+[00:54:57 - 00:54:59] Silvio: Pode ser só a transcrição mesmo?
+[00:54:59 - 00:55:01] Victorino: Tá, não. Ele vai salvar aqui no final do dia.
+[00:55:01 - 00:55:03] Victorino: Me manda o e-mail, que no final do dia a gente manda aqui.
+[00:55:03 - 00:55:05] Victorino: É só o tempo da Microsoft salvar.
+[00:55:05 - 00:55:07] Victorino: Deixa comigo. Perfeito.
+[00:55:07 - 00:55:09] Victorino: Sem erro, não. Tá certo?
+[00:55:09 - 00:55:11] Victorino: Certo. Muito obrigado, professores.
+[00:55:11 - 00:55:13] Victorino: Obrigado pela gentileza e pela...
+[00:55:13 - 00:55:15] Silvio: Obrigado.

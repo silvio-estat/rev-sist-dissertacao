@@ -1,0 +1,1567 @@
+[00:00:01 - 00:00:07] da apresentação. Então vamos lá, senhores, dando continuidade ao trabalho do Silvio Ferreira Gomes Júnior,
+[00:00:07 - 00:00:13] aluno do mestrado do PPCA, hoje nós vamos fazer o seminário 1 do trabalho, cujo título é
+[00:00:13 - 00:00:19] Uma Proposta de Arquitetura de Lake House para o Exército Brasileiro no Contexto de Comando e Controle.
+[00:00:19 - 00:00:24] Então hoje é 18 de novembro, são 4 minutos para as 3 horas.
+[00:00:25 - 00:00:30] Então, mais uma vez, agradeço a colaboração dos professores,
+[00:00:30 - 00:00:33] as dicas estão sendo muito boas, o Silvio está evoluindo o trabalho.
+[00:00:33 - 00:00:37] O objetivo da reunião é basicamente isso, é o Silvio apresentar as sugestões,
+[00:00:37 - 00:00:43] como é que elas estão sendo implementadas e o que falta para a próxima etapa até a defesa.
+[00:00:43 - 00:00:49] Tem mais o seminário 2 e a defesa. Então ele vai dar um andamento, como é que foram feitas as alterações
+[00:00:49 - 00:00:51] e o trabalho futuro para concluir o trabalho.
+[00:00:52 - 00:00:56] Silvio, abre a apresentação aí, você tem 20 minutos para fazer a apresentação.
+[00:00:56 - 00:00:59] Ok, todo mundo está conseguindo ver a apresentação direitinho?
+[00:01:00 - 00:01:03] Perfeito, chegou. Eu vou fechar a minha câmera também para melhorar o streaming aqui, tá?
+[00:01:04 - 00:01:08] Pode, deixa eu pegar meu celular aqui, aí tu tem de 20 a 25 minutos, tá certo?
+[00:01:09 - 00:01:12] Só um momento, peraí, se tem como segurar um pouquinho, deu um problema aqui,
+[00:01:12 - 00:01:15] é que eu estou usando o Linux, aí deu ruim aqui, desculpa.
+[00:01:15 - 00:01:16] Vai, peraí.
+[00:01:16 - 00:01:19] Só um momentinho, só porque agora deu problema.
+[00:01:20 - 00:01:21] Eu vou parar um pouquinho aqui.
+[00:01:21 - 00:01:30] Peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí, peraí.
+[00:01:31 - 00:01:33] Aqui deu um problema aqui, vou evitar de novo.
+[00:01:34 - 00:01:35] Peraí.
+[00:01:39 - 00:01:42] Ah, não, é que eu...
+[00:01:42 - 00:01:43] A janela, ah, foi aqui, esse aqui é melhor.
+[00:01:47 - 00:01:48] Esse aqui.
+[00:01:49 - 00:01:50] Melhor agora, né? Deixa eu ver.
+[00:01:52 - 00:01:53] Tá carregando, carregou.
+[00:01:53 - 00:01:54] Carregou.
+[00:01:57 - 00:01:58] Tá em condições?
+[00:01:58 - 00:02:00] Volta, não, só um instinto para eu ver de novo.
+[00:02:01 - 00:02:01] Desculpa, pronto.
+[00:02:02 - 00:02:03] Tá, deu certinho aí?
+[00:02:03 - 00:02:05] Tá, pode botar aqui o cronômetro?
+[00:02:06 - 00:02:06] Pode sim.
+[00:02:07 - 00:02:08] Tá certo, então contando.
+[00:02:09 - 00:02:09] Pode ir.
+[00:02:09 - 00:02:10] Pode ir? Ok.
+[00:02:11 - 00:02:16] Então, boa tarde a todos, professor Márcio, professora Baira Cláudia, professor Andrei.
+[00:02:17 - 00:02:18] Obrigado pela presença, né?
+[00:02:18 - 00:02:21] Esse é o nosso primeiro seminário, depois de nossa qualificação.
+[00:02:22 - 00:02:24] E eu dividi em duas partes.
+[00:02:24 - 00:02:29] Primeiro eu vou mostrar rapidamente como as recomendações da banca foram incorporadas ao texto.
+[00:02:29 - 00:02:32] E depois eu vou apresentar o que é de novo, né?
+[00:02:32 - 00:02:37] E como que é o caso estudo, a criação de dados sintéticos e o nosso modelo canônico.
+[00:02:38 - 00:02:39] O roteiro vai ter...
+[00:02:39 - 00:02:40] Tem cinco partes, né?
+[00:02:40 - 00:02:44] Então a primeira é curta, temos dois slides com as considerações da qualificação
+[00:02:44 - 00:02:46] e onde cada uma foi atendida.
+[00:02:47 - 00:02:51] Em seguida, situo o caso dentro da nossa proposição de pesquisa,
+[00:02:52 - 00:02:55] apresento o cenário e as fontes das sintéticas e no bloco principal,
+[00:02:55 - 00:02:57] que é o que está destacado em dourado, né?
+[00:02:57 - 00:02:59] O nosso modelo canônico.
+[00:02:59 - 00:03:02] E vou fechar com os próximos passos até defesa.
+[00:03:02 - 00:03:07] Então, começo então com as considerações do professor Andrei.
+[00:03:07 - 00:03:09] Então, a primeira foi...
+[00:03:09 - 00:03:12] Sobre o contexto atual do exército em termos de arquitetura para o C2, né?
+[00:03:13 - 00:03:17] Incluindo a justificativa dos sistemas que nós já temos em uso,
+[00:03:17 - 00:03:25] que é o C2 de combate, o pacificador e agora a FAC-2-FTR com seus níveis Alpha, Bravo e Charlie, né?
+[00:03:25 - 00:03:26] Então, são...
+[00:03:26 - 00:03:30] Todas são aplicações finalísticas e cada um produz e guarda os próprios dados
+[00:03:30 - 00:03:32] e não existe uma camada que os consolide.
+[00:03:32 - 00:03:35] E é esse espaço que a nossa arquitetura proposta ocupa, né?
+[00:03:36 - 00:03:39] Sobre o uso do T-MAC e do Prisma,
+[00:03:39 - 00:03:41] a razão é a natureza de cada eixo,
+[00:03:41 - 00:03:44] pois a análise de constatação do T-MAC, né?
+[00:03:44 - 00:03:47] Ela exige uma lista de referências de cada trabalho
+[00:03:47 - 00:03:51] e a literatura de comando e controle é, em grande parte, cinzenta, não indexada,
+[00:03:51 - 00:03:53] não temos um vaso de dados para isso.
+[00:03:54 - 00:03:54] Então, é isso.
+[00:03:55 - 00:03:58] Então, e sobre o descarte do I3-XPOR, que o senhor questionou,
+[00:03:59 - 00:04:05] cruzei as 1.145 fontes recuperadas do I3-E com a fonte oficial das COPOS
+[00:04:05 - 00:04:08] e disso pude perceber que aproximadamente 90%
+[00:04:09 - 00:04:16] já estavam indexadas e entre os periódicos esse número chega a 98%.
+[00:04:16 - 00:04:20] Tem um realmente grande desbalanço entre periódico e esses anais, etc.
+[00:04:20 - 00:04:23] Ou seja, a perda de cobertura parece ser pequena.
+[00:04:23 - 00:04:28] Sobre a zona landing, há três razões para separá-la da bronze.
+[00:04:28 - 00:04:33] Então, temos que a transmissão por janela de oportunidade, ela não se repete.
+[00:04:33 - 00:04:36] Então, o pacote precisa ser guardado exatamente como chegou.
+[00:04:36 - 00:04:37] Assim, os binários ficam preservados, né?
+[00:04:37 - 00:04:38] Assim, os binários ficam preservados, né?
+[00:04:38 - 00:04:39] Assim, os binários ficam preservados, né?
+[00:04:39 - 00:04:42] Mas é uma nova extração quando é ferramenta evoluir e a bronze passa a
+[00:04:42 - 00:04:46] conter apenas o que eu posso consultar desses dados.
+[00:04:48 - 00:04:49] Por fim, né?
+[00:04:49 - 00:04:52] A linhagem para auditoria que o senhor sugeriu para prova de conceito,
+[00:04:53 - 00:04:57] ela ficou registrada em dois níveis, seja entre tabelas e colunas,
+[00:04:58 - 00:05:03] no nosso catálogo, seja registro a registro da Gold, das tabelas da Gold,
+[00:05:03 - 00:05:07] até o arquivo recebido fazendo um rastreio via hash.
+[00:05:08 - 00:05:09] Aí também tem as
+[00:05:09 - 00:05:10] revisões textuais que foram
+[00:05:10 - 00:05:12] devidamente realizadas.
+[00:05:14 - 00:05:15] Agora, as recomendações da professora
+[00:05:15 - 00:05:17] Cláudia. Só um parêntese aqui.
+[00:05:17 - 00:05:19] Foram várias recomendações, eu fiz só,
+[00:05:19 - 00:05:20] eu botei só algumas como exemplo,
+[00:05:21 - 00:05:23] mas eu
+[00:05:23 - 00:05:25] acatei 99%
+[00:05:25 - 00:05:26] delas. Então,
+[00:05:27 - 00:05:28] considerações, né? Primeiro,
+[00:05:29 - 00:05:31] o diferencial sentido. Como eu
+[00:05:31 - 00:05:33] e o professor Márcio já colocamos a qualificação,
+[00:05:33 - 00:05:35] que por se tratar de um mestrado profissional,
+[00:05:35 - 00:05:37] o diferencial está no artefato,
+[00:05:37 - 00:05:39] que é uma arquitetura construída
+[00:05:39 - 00:05:40] a partir de uma necessidade de rado à força,
+[00:05:41 - 00:05:43] fundamentada na pesquisa biográfica
+[00:05:43 - 00:05:44] sobre o tempo. Então,
+[00:05:45 - 00:05:46] sistemas reais e utilidade.
+[00:05:47 - 00:05:49] Os sistemas de uso estão agora caracterizados
+[00:05:49 - 00:05:50] no certificativo, como eu já falei
+[00:05:50 - 00:05:52] com relação ao professor Andrei.
+[00:05:53 - 00:05:55] O que fica de fora é o escopo
+[00:05:55 - 00:05:57] e o que fica de fora
+[00:05:57 - 00:05:59] do escopo é só o acoplamento
+[00:05:59 - 00:06:01] da prova de conceito a esses sistemas.
+[00:06:02 - 00:06:03] Em relação a como mostrar
+[00:06:03 - 00:06:05] a utilidade, a resposta estará
+[00:06:05 - 00:06:07] no capítulo 5. Além disso,
+[00:06:07 - 00:06:09] as fontes sintéticas reproduzem
+[00:06:09 - 00:06:11] a forma dos documentos reais
+[00:06:11 - 00:06:13] e como o cenário é conhecido,
+[00:06:13 - 00:06:15] cada resultado pode ser conferido
+[00:06:15 - 00:06:16] depois.
+[00:06:17 - 00:06:19] Diferença entre zonas e ETL.
+[00:06:19 - 00:06:21] No diferencial, eu estabeleci
+[00:06:21 - 00:06:23] a diferença entre zonas e ETL.
+[00:06:23 - 00:06:25] No ETL, só o resultado final
+[00:06:25 - 00:06:27] é gravado. Já nas zonas,
+[00:06:27 - 00:06:29] cada etapa pode ficar gravada
+[00:06:29 - 00:06:31] e pode ser consultada, o que permite
+[00:06:31 - 00:06:32] reprocessar sem nova ingestão.
+[00:06:34 - 00:06:35] Integração
+[00:06:35 - 00:06:37] e aquela diferença entre
+[00:06:37 - 00:06:38] missão e tarefa.
+[00:06:38 - 00:06:41] No capítulo 4, eu deixei
+[00:06:41 - 00:06:43] explícito que a camada
+[00:06:43 - 00:06:44] Silva faz essa integração.
+[00:06:45 - 00:06:46] Além disso, se eu entendi direito,
+[00:06:46 - 00:06:49] a marcação da professora, o exemplo
+[00:06:49 - 00:06:51] de missão e tarefa, a diferença
+[00:06:51 - 00:06:53] entre os dois, como esse artefato
+[00:06:53 - 00:06:54] ajuda esse tipo de coisa.
+[00:06:54 - 00:06:57] Eu expliquei como esse artefato
+[00:06:57 - 00:06:59] vai conseguir fazer essa distinção.
+[00:07:01 - 00:07:01] Bronze
+[00:07:01 - 00:07:03] preserva
+[00:07:03 - 00:07:04] e converte.
+[00:07:05 - 00:07:07] Esclareci que a bronze
+[00:07:07 - 00:07:09] não interpreta o conteúdo,
+[00:07:09 - 00:07:11] apenas guarda o envelope de proveniência
+[00:07:11 - 00:07:13] e que a evolução
+[00:07:13 - 00:07:15] do esquema vem do próprio formato
+[00:07:15 - 00:07:17] de tabela, que aceita campos novos
+[00:07:17 - 00:07:19] sem precisar reescrever o que já foi gravado.
+[00:07:20 - 00:07:21] Hierarquia
+[00:07:21 - 00:07:22] e responsabilização.
+[00:07:23 - 00:07:25] Também expliquei que a arquitetura respeita
+[00:07:25 - 00:07:27] a hierarquia porque tudo entra por um único
+[00:07:27 - 00:07:29] ponto, que é a nossa lente.
+[00:07:29 - 00:07:31] E o catálogo registra de qual
+[00:07:31 - 00:07:33] batalhão veio cada pacote e quando
+[00:07:33 - 00:07:35] cada chegou. E ele ainda
+[00:07:35 - 00:07:37] contribui para preservar a...
+[00:07:37 - 00:07:39] a responsabilização por três meios.
+[00:07:39 - 00:07:41] Então, um, não há
+[00:07:41 - 00:07:42] automação decisória,
+[00:07:43 - 00:07:45] a linhagem fica registrada no catálogo
+[00:07:45 - 00:07:47] e a proveniência fica registrada
+[00:07:47 - 00:07:49] na landing com seus metadados
+[00:07:49 - 00:07:51] disponíveis no seu sidecar.
+[00:07:51 - 00:07:53] Então, os demais ajustes de justificativa
+[00:07:53 - 00:07:55] e de forma também foram feitos
+[00:07:55 - 00:07:57] e estão indicados no texto.
+[00:07:58 - 00:07:59] E já a pergunta sobre o que
+[00:07:59 - 00:08:01] de fato será implementado é respondida
+[00:08:01 - 00:08:03] pelo restante dessa apresentação.
+[00:08:05 - 00:08:06] Então,
+[00:08:07 - 00:08:08] agora eu entro na parte nova, né?
+[00:08:09 - 00:08:11] Então, eu vou iniciar retomando a proposição
+[00:08:11 - 00:08:13] P1, que está na nossa introdução.
+[00:08:13 - 00:08:15] Então, vamos lá. A arquitetura
+[00:08:15 - 00:08:17] centralizada na brigada
+[00:08:17 - 00:08:19] e construída com tecnologias open source
+[00:08:19 - 00:08:21] é capaz de ingerir, organizar
+[00:08:21 - 00:08:23] e disponibilizar dados heterogêneos
+[00:08:23 - 00:08:25] que chegam dos batalhões.
+[00:08:25 - 00:08:27] Então, cada um desses
+[00:08:27 - 00:08:29] três verbos orienta a produção
+[00:08:29 - 00:08:31] de evidências. Então, ingerir
+[00:08:31 - 00:08:33] é receber os dados de naturezas distintas
+[00:08:33 - 00:08:35] sem exigir que cheguem já
+[00:08:35 - 00:08:37] modelados. Organizar,
+[00:08:37 - 00:08:39] é conformá-los ao modelo canônico
+[00:08:39 - 00:08:41] único. E é isso que esse capítulo
+[00:08:41 - 00:08:43] prepara. Já disponibilizar
+[00:08:43 - 00:08:45] é entregá-los ao Estado-Maior
+[00:08:45 - 00:08:46] para ajudar nas tomadas de decisões.
+[00:08:47 - 00:08:49] As evidências dos três verbos virão
+[00:08:49 - 00:08:51] no próximo capítulo, sendo conferidas
+[00:08:51 - 00:08:53] contra os requisitos do
+[00:08:53 - 00:08:55] capítulo 4, de forma que também
+[00:08:55 - 00:08:57] atinge os objetivos elencados na nossa introdução.
+[00:08:58 - 00:08:59] Em relação
+[00:08:59 - 00:09:00] à metodologia,
+[00:09:01 - 00:09:03] cabe lembrar que a estratégia de pesquisa
+[00:09:03 - 00:09:05] é um estudo de casa e, por isso,
+[00:09:05 - 00:09:07] a prova de conceito não é um experimento
+[00:09:07 - 00:09:09] e não compara a alternativas.
+[00:09:09 - 00:09:11] Ela produz registros observáveis.
+[00:09:11 - 00:09:13] E, como o cenário é
+[00:09:13 - 00:09:15] conhecido de antemão, cada valor
+[00:09:15 - 00:09:17] produzido pela arquitetura pode ser
+[00:09:17 - 00:09:19] conferido com o fato que o
+[00:09:19 - 00:09:20] originou. Então, vamos lá.
+[00:09:22 - 00:09:23] O caso que estamos
+[00:09:23 - 00:09:25] estudando é o fluxo de informações
+[00:09:25 - 00:09:27] que chega no Estado-Maior de uma brigada
+[00:09:27 - 00:09:29] durante a operação. Também como referência
+[00:09:29 - 00:09:30] à Operação Perseu de 24,
+[00:09:31 - 00:09:33] que foi um exercício real e de divulgação
+[00:09:33 - 00:09:34] pública, realizado entre
+[00:09:34 - 00:09:36] 25 de novembro e 5
+[00:09:36 - 00:09:38] de dezembro de 2024
+[00:09:38 - 00:09:40] no Vale do Paraíba.
+[00:09:40 - 00:09:42] Dele, eu vou aproveitar só o nome,
+[00:09:42 - 00:09:45] as datas e região, porque está uma moldura
+[00:09:45 - 00:09:46] mais verossímil, sem expor nada
+[00:09:46 - 00:09:47] que não seja público.
+[00:09:48 - 00:09:51] Depois disso, todo o resto é sintético,
+[00:09:51 - 00:09:53] porque os sistemas
+[00:09:53 - 00:09:55] de C2 e seus dados não são acessíveis
+[00:09:55 - 00:09:56] à pesquisa e são classificados.
+[00:09:57 - 00:09:58] Mas aqui, sintético não
+[00:09:58 - 00:10:00] quer dizer arbitrário. Aqui, cada
+[00:10:00 - 00:10:02] gerador reproduz
+[00:10:02 - 00:10:04] os campos, as abreviaturas e os problemas
+[00:10:04 - 00:10:06] tipos de um documento real.
+[00:10:06 - 00:10:08] A organização militar
+[00:10:08 - 00:10:10] fictícia que conduz a operação do cenário
+[00:10:10 - 00:10:12] é uma brigada, que eu chamei de
+[00:10:12 - 00:10:14] 51 Brigadas de Infantaria Motorizada.
+[00:10:15 - 00:10:16] E ela tem sete organizações
+[00:10:16 - 00:10:18] militares subordinadas, com
+[00:10:18 - 00:10:19] 16 subunidades,
+[00:10:20 - 00:10:22] 53 frações, totalizando
+[00:10:22 - 00:10:24] 77 subunidades.
+[00:10:25 - 00:10:27] Essa estrutura fica guardada
+[00:10:27 - 00:10:30] em uma tabela, que eu chamei
+[00:10:30 - 00:10:31] de refunidade,
+[00:10:31 - 00:10:32] que diz aos geradores
+[00:10:32 - 00:10:34] quem pode relatar e diz
+[00:10:34 - 00:10:36] a arquitetura de quem se espera
+[00:10:36 - 00:10:38] o relatório periódico.
+[00:10:39 - 00:10:41] E é isso que permite detectar, por exemplo,
+[00:10:41 - 00:10:43] se uma subunidade deixou de remeter
+[00:10:43 - 00:10:45] um relatório de algum turno,
+[00:10:45 - 00:10:46] se for por turno.
+[00:10:49 - 00:10:50] Esse cenário,
+[00:10:50 - 00:10:52] ela reúne cinco fontes,
+[00:10:52 - 00:10:54] cada uma no formato que enxergaria na prática.
+[00:10:55 - 00:10:57] Da esquerda para a direita, cresce o esforço
+[00:10:57 - 00:10:59] para transformar o conteúdo em dado
+[00:10:59 - 00:11:01] utilizável. Por exemplo, o C2A
+[00:11:01 - 00:11:03] é um aplicativo que exporta
+[00:11:03 - 00:11:05] em JSON a posição das frações
+[00:11:05 - 00:11:06] e as medidas desenhadas no mapa,
+[00:11:06 - 00:11:08] e é a fonte mais simples.
+[00:11:09 - 00:11:11] Já o C2B também exporta
+[00:11:11 - 00:11:12] em JSON, mas o conteúdo principal
+[00:11:12 - 00:11:15] é um relato em texto livre, às vezes
+[00:11:15 - 00:11:17] com foto. Nesse caso,
+[00:11:17 - 00:11:18] o tipo de fato precisa ser inferido
+[00:11:18 - 00:11:20] do texto, e o local pode vir
+[00:11:20 - 00:11:23] os metadados, por exemplo, da fotografia.
+[00:11:25 - 00:11:26] Já a fonte Helper,
+[00:11:27 - 00:11:28] que é o nome que eu dei para relatório periódico
+[00:11:28 - 00:11:31] pessoal material, é enviado duas vezes por dia
+[00:11:31 - 00:11:33] por cada OM. A dificuldade
+[00:11:33 - 00:11:35] é que cada OM preenche de um jeito
+[00:11:35 - 00:11:36] e algumas mandam planilhas,
+[00:11:36 - 00:11:39] peças, outros escaneados, o que elimina
+[00:11:39 - 00:11:40] a estrutura desses dados.
+[00:11:41 - 00:11:42] Já a fonte Fogos
+[00:11:42 - 00:11:45] segue o relatório de bombardeio, oriundo
+[00:11:45 - 00:11:47] de um manual doutrinário, e chega só
+[00:11:47 - 00:11:48] com uma imagem, cheia de siglas,
+[00:11:49 - 00:11:50] condenadas e outros dados.
+[00:11:51 - 00:11:53] Por fim, a fonte Voz é composta
+[00:11:53 - 00:11:54] por 150 mensagens de rádio
+[00:11:54 - 00:11:57] gravadas que precisam ser transcritas.
+[00:11:57 - 00:11:58] Usam codinomes
+[00:11:58 - 00:12:00] e chegam bem degradadas, tentando
+[00:12:00 - 00:12:02] simular a realidade. Destaco aqui
+[00:12:02 - 00:12:04] não pretendo reproduzir os documentos específicos
+[00:12:04 - 00:12:06] de sistemas de uso. São fontes plausíveis,
+[00:12:06 - 00:12:08] e diferentes entre si, justamente
+[00:12:08 - 00:12:10] para representar essa heterogeneidade.
+[00:12:10 - 00:12:14] E como esse cenário é montado?
+[00:12:14 - 00:12:16] O ponto de partida é uma lista
+[00:12:16 - 00:12:18] de fatos. Um fato é algo que
+[00:12:18 - 00:12:20] acontece no terreno, em um instante
+[00:12:20 - 00:12:22] e em um lugar determinado.
+[00:12:22 - 00:12:24] Por exemplo, uma viatura inimiga
+[00:12:24 - 00:12:26] avistada perto de uma ponte,
+[00:12:26 - 00:12:28] uma cratera que interrompe uma via.
+[00:12:28 - 00:12:30] Cada fato é gerado
+[00:12:30 - 00:12:32] a partir de sequências de sorteios.
+[00:12:32 - 00:12:34] Primeiro, o tipo do fato,
+[00:12:34 - 00:12:36] qual foi o elemento envolvido,
+[00:12:36 - 00:12:38] o lugar dentro da fonte.
+[00:12:38 - 00:12:40] da faixa, da UEM, que é desse
+[00:12:40 - 00:12:42] elemento que aconteceu, e por fim
+[00:12:42 - 00:12:44] o dia, a hora e a prioridade.
+[00:12:45 - 00:12:46] A demonstração só
+[00:12:46 - 00:12:48] existe que todos os tipos ocorram
+[00:12:48 - 00:12:50] e que parte dos fatos
+[00:12:50 - 00:12:51] cheguem por mais de uma fonte.
+[00:12:53 - 00:12:54] No cenário
+[00:12:54 - 00:12:56] padrão, são 60 fatos
+[00:12:56 - 00:12:58] que ocorrem durante os 11 dias da operação,
+[00:12:59 - 00:13:00] de seis tipos ligados
+[00:13:00 - 00:13:01] a três funções de combate.
+[00:13:02 - 00:13:03] O que torna essa lista útil
+[00:13:03 - 00:13:06] é a decisão sobre quem
+[00:13:06 - 00:13:07] relata cada fato.
+[00:13:07 - 00:13:09] Então, a primeira fonte
+[00:13:09 - 00:13:10] vai relatar sempre.
+[00:13:10 - 00:13:13] Se ela caiu para relatar, ela vai relatar.
+[00:13:13 - 00:13:15] As demais, elas
+[00:13:15 - 00:13:17] vão relatar com uma probabilidade.
+[00:13:17 - 00:13:19] Aqui eu escolhi 55%,
+[00:13:19 - 00:13:21] para ser um pouco mais do que uma moedinha
+[00:13:21 - 00:13:23] sendo atirada aqui.
+[00:13:24 - 00:13:25] Assim, então, 31
+[00:13:25 - 00:13:27] fatos chegam por mais de uma fonte.
+[00:13:27 - 00:13:29] São eles que permitem testar a integração,
+[00:13:29 - 00:13:31] porque a arquitetura precisa reconhecer
+[00:13:31 - 00:13:33] que relatos de fontes diferentes
+[00:13:33 - 00:13:35] falam do mesmo acontecimento.
+[00:13:35 - 00:13:37] Se cada fato chegasse por uma única
+[00:13:37 - 00:13:39] fonte, não haveria nada para juntar.
+[00:13:39 - 00:13:40] Por exemplo, esse fato
+[00:13:40 - 00:13:42] F043,
+[00:13:43 - 00:13:45] ele chega pelas três,
+[00:13:45 - 00:13:47] com uma medida no C2A, com um incidente
+[00:13:47 - 00:13:48] com foto no C2B,
+[00:13:49 - 00:13:49] e pelo rádio.
+[00:13:51 - 00:13:53] Mas aqui, nem todo dado nasce de um fato.
+[00:13:54 - 00:13:55] Por exemplo,
+[00:13:55 - 00:13:56] as posições do C2A
+[00:13:56 - 00:13:59] chegam de hora em hora,
+[00:13:59 - 00:14:00] e o réu P,
+[00:14:01 - 00:14:03] que é o nosso relatório, duas vezes por dia.
+[00:14:03 - 00:14:05] E como saber que quando esses dados
+[00:14:05 - 00:14:07] deveriam chegar? Porque os outros,
+[00:14:07 - 00:14:09] você não espera, eles chegam.
+[00:14:09 - 00:14:11] Mas o réu P, você consegue saber,
+[00:14:11 - 00:14:13] porque você já espera que
+[00:14:13 - 00:14:15] chegue duas vezes por dia.
+[00:14:15 - 00:14:17] Então, nesse caso, dá para perceber
+[00:14:17 - 00:14:19] quando algum dado falta.
+[00:14:19 - 00:14:21] Esse slide, ele apresenta
+[00:14:21 - 00:14:23] os três tipos, desculpa,
+[00:14:23 - 00:14:25] os três princípios comuns
+[00:14:25 - 00:14:27] entre todos os geradores.
+[00:14:27 - 00:14:29] O primeiro, o sidecar,
+[00:14:29 - 00:14:31] que é aquele carrinho que fica na motinha.
+[00:14:31 - 00:14:33] Então, todo arquivo binário chega acompanhado
+[00:14:33 - 00:14:35] de um JSON de mesmo nome, com
+[00:14:35 - 00:14:37] operação, o momento de envio,
+[00:14:37 - 00:14:39] e a unidade de origem. Sem ele,
+[00:14:39 - 00:14:41] o áudio ou um PDF clineado
+[00:14:41 - 00:14:43] não diria de onde veio.
+[00:14:43 - 00:14:45] Segundo, a verdade do cenário.
+[00:14:45 - 00:14:47] Os geradores gravam os
+[00:14:47 - 00:14:49] arquivos de fatos, defeitos
+[00:14:49 - 00:14:51] e o nosso gabarito, que servem somente para avaliar
+[00:14:51 - 00:14:53] a prova de conceito. Lembrando que a nossa
+[00:14:53 - 00:14:55] arquitetura nunca vai ler esse gabarito.
+[00:14:55 - 00:14:57] Terceiro,
+[00:14:57 - 00:14:59] a reprodutibilidade.
+[00:14:59 - 00:15:01] Então, aqui a semente é fixa. Então, o mesmo cenário
+[00:15:01 - 00:15:03] é gerado em qualquer execução.
+[00:15:03 - 00:15:05] Além disso, plantei
+[00:15:05 - 00:15:07] 65 defeitos de propósito, para que
+[00:15:07 - 00:15:09] cada camada de governança tenha o que detectar.
+[00:15:09 - 00:15:11] No C2A, por exemplo,
+[00:15:11 - 00:15:13] há um lote truncado por interrupção
+[00:15:13 - 00:15:15] de transmissão. No C2B,
+[00:15:15 - 00:15:17] 21 fotos sem localização.
+[00:15:17 - 00:15:19] E no Helper,
+[00:15:19 - 00:15:21] nesse relatório, 18 turnos
+[00:15:21 - 00:15:23] que não foram remitidos. Então, dessa forma,
+[00:15:23 - 00:15:25] temos tantos problemas relacionados
+[00:15:25 - 00:15:27] ao que chegou à solução, quanto
+[00:15:27 - 00:15:29] remessas que deveriam ter chegado e não chegaram.
+[00:15:29 - 00:15:32] Então, chegamos ao nosso modelo canônico.
+[00:15:34 - 00:15:36] As cinco fontes trazem
+[00:15:36 - 00:15:38] dois problemas diferentes.
+[00:15:38 - 00:15:40] O primeiro é extrair informação de cada uma.
+[00:15:40 - 00:15:42] O segundo é representar
+[00:15:42 - 00:15:44] as fontes distintas, de forma comum.
+[00:15:44 - 00:15:46] Ou seja, o mesmo obstáculo
+[00:15:46 - 00:15:48] pode aparecer com uma medida desenhada no mapa
+[00:15:48 - 00:15:50] ou um incidente com foto
+[00:15:50 - 00:15:52] ou com uma mensagem rádio.
+[00:15:52 - 00:15:54] E para saber que é o mesmo
+[00:15:54 - 00:15:56] fato, o tipo, o estante
+[00:15:56 - 00:15:58] e esse local, precisam estar padronizados.
+[00:16:00 - 00:16:02] Esse segundo problema é clássico na integração
+[00:16:02 - 00:16:04] de dados. No slide,
+[00:16:04 - 00:16:06] na parte da esquerda, está o que acontece
+[00:16:06 - 00:16:08] em um modelo comum. Cada visão precisa
+[00:16:08 - 00:16:10] se ler e interpretar cada fonte.
+[00:16:10 - 00:16:12] Robin Wolf,
+[00:16:12 - 00:16:14] de 2003, propõe um modelo
+[00:16:14 - 00:16:16] canônico, um modelo
+[00:16:16 - 00:16:18] independente para o qual cada
+[00:16:18 - 00:16:20] fonte traduz os seus dados com apenas
+[00:16:20 - 00:16:22] o necessário a integração.
+[00:16:22 - 00:16:24] Além disso, o Dama,
+[00:16:24 - 00:16:26] considera o padrão justificável
+[00:16:26 - 00:16:28] quando mais de três sistemas
+[00:16:28 - 00:16:30] trocam dados.
+[00:16:30 - 00:16:32] Eu adaptei
+[00:16:32 - 00:16:34] o padrão em dois pontos.
+[00:16:34 - 00:16:36] Aqui, as fontes
+[00:16:36 - 00:16:38] não trocam dados entre si.
+[00:16:38 - 00:16:40] Eles convergem para um destino comum.
+[00:16:40 - 00:16:42] E o modelo canônico não é transitório.
+[00:16:42 - 00:16:44] Ele fica gravado na silver,
+[00:16:44 - 00:16:46] na camada silver,
+[00:16:46 - 00:16:48] com o seu bruto preservado na bronze,
+[00:16:48 - 00:16:50] o que permite refazer
+[00:16:50 - 00:16:52] a tradução quantas vezes forem necessárias.
+[00:16:52 - 00:16:54] E a consequência prática é que
+[00:16:54 - 00:16:56] se o formato de uma fonte
+[00:16:56 - 00:16:58] mudar, ajusta-se somente a receita
+[00:16:58 - 00:17:00] dela e as visões continuam iguais.
+[00:17:00 - 00:17:04] Então, para colocar o modelo
+[00:17:04 - 00:17:06] em prática, eu criei um único arquivo,
+[00:17:06 - 00:17:08] que é o nosso modelo canônico
+[00:17:08 - 00:17:10] YALM. E ele
+[00:17:10 - 00:17:12] tem cinco blocos. O primeiro bloco
+[00:17:12 - 00:17:14] são os metadados com a versão
+[00:17:14 - 00:17:16] e as notas de cada exceção de modelagem.
+[00:17:16 - 00:17:18] O segundo são os três
+[00:17:18 - 00:17:20] domínios de valores aceitos.
+[00:17:20 - 00:17:22] O terceiro são as 18 tabelas das três camadas.
+[00:17:22 - 00:17:24] A quarta, as oito
+[00:17:24 - 00:17:26] receitas com as cinco fontes
+[00:17:26 - 00:17:28] e os parâmetros
+[00:17:28 - 00:17:30] das cinco
+[00:17:30 - 00:17:32] visões da GOLD.
+[00:17:32 - 00:17:34] Apesar do nome, o arquivo
+[00:17:34 - 00:17:36] define as tabelas das três camadas.
+[00:17:36 - 00:17:38] O modelo canônico propriamente dito
+[00:17:38 - 00:17:40] são as sete tabelas da minha camada
+[00:17:40 - 00:17:42] da Silvia. Foi realmente onde tudo
+[00:17:42 - 00:17:44] junta. Nesse arquivo,
+[00:17:44 - 00:17:46] que também chamam de artefato
+[00:17:46 - 00:17:48] canônico, é a fonte única
+[00:17:48 - 00:17:50] da verdade. E ele é lido pelos programas
+[00:17:50 - 00:17:52] que criam as tabelas, transformam os dados,
+[00:17:52 - 00:17:54] compõem as visões e montam as instruções
+[00:17:54 - 00:17:56] enviadas ao
+[00:17:56 - 00:17:58] modelo de YALM.
+[00:17:58 - 00:18:00] Com isso, uma fonte nova
+[00:18:00 - 00:18:02] em um formato já conhecido como
+[00:18:02 - 00:18:04] JSON, ele não vai exigir uma nova programação.
+[00:18:04 - 00:18:06] Basta acrescentar uma receita.
+[00:18:06 - 00:18:08] Por fim,
+[00:18:08 - 00:18:10] escolhi esse YALM por três motivos.
+[00:18:10 - 00:18:12] Ele é elegível
+[00:18:12 - 00:18:14] para quem admite os dados, sem precisar
+[00:18:14 - 00:18:16] escrever código.
+[00:18:16 - 00:18:18] Ele aceita comentários de forma nativa
+[00:18:18 - 00:18:20] para que seja possível escrever
+[00:18:20 - 00:18:22] justificativo em cada definição.
+[00:18:22 - 00:18:24] E permite estruturas alinhadas como o JSON
+[00:18:24 - 00:18:26] como um domínio
+[00:18:26 - 00:18:30] com seus valores.
+[00:18:30 - 00:18:32] Agora vou falar sobre as receitas
+[00:18:32 - 00:18:34] que são a tradução propriamente dita.
+[00:18:34 - 00:18:36] Para cada tipo de registro de uma fonte,
+[00:18:36 - 00:18:38] a receita diz de qual campo
+[00:18:38 - 00:18:40] de origem vem cada coluna canônica.
+[00:18:40 - 00:18:42] E como
+[00:18:42 - 00:18:44] e com que transformação.
+[00:18:44 - 00:18:46] Aqui são três tipos.
+[00:18:46 - 00:18:48] O primeiro, o valor copiado direto.
+[00:18:48 - 00:18:50] O segundo, a consulta
+[00:18:50 - 00:18:52] a algum domínio ou uma tabela de referência.
+[00:18:52 - 00:18:54] E terceiro,
+[00:18:54 - 00:18:56] uma necessidade de cálculo.
+[00:18:56 - 00:18:58] Por exemplo, converter datas
+[00:18:58 - 00:19:00] em um único fuso, ou data
+[00:19:00 - 00:19:02] de um formato para um outro formato, etc.
+[00:19:02 - 00:19:04] Com isso, a receita
+[00:19:04 - 00:19:06] atende o que o domain
+[00:19:06 - 00:19:08] bokeh exige em um mapeamento de fontes
+[00:19:08 - 00:19:10] e destinos. Ela informa
+[00:19:10 - 00:19:12] o formato da origem do destino,
+[00:19:12 - 00:19:14] registra as etapas intermediárias
+[00:19:14 - 00:19:16] e mostra como cada atributo
+[00:19:16 - 00:19:18] é preenchido e se o valor
+[00:19:18 - 00:19:20] precisa ser transformado.
+[00:19:20 - 00:19:22] Já o vocabulário controlado
+[00:19:22 - 00:19:24] tem dois instrumentos,
+[00:19:24 - 00:19:26] no próprio artefato YALM
+[00:19:26 - 00:19:28] que ficam os nossos domínios.
+[00:19:28 - 00:19:30] Cada valor tem o seu código,
+[00:19:30 - 00:19:32] o seu rótulo, o seu sinônimo
+[00:19:32 - 00:19:34] e, quando é o caso, o critério de uso.
+[00:19:34 - 00:19:36] E em arquivos CSV
+[00:19:36 - 00:19:38] que ficam as listas mais extensas,
+[00:19:38 - 00:19:40] umas 4.400 abreviaturas
+[00:19:40 - 00:19:42] extraídas do nosso manual de abreviatura
+[00:19:42 - 00:19:44] do Ministério da Defesa.
+[00:19:44 - 00:19:46] E também
+[00:19:46 - 00:19:48] temos um CSV com a estrutura
+[00:19:48 - 00:19:50] da Brigada.
+[00:19:50 - 00:19:52] Os dois arquivos, que é o YALM e o CSV,
+[00:19:52 - 00:19:54] seguem a mesma regra. Ou seja,
+[00:19:54 - 00:19:56] o valor de origem só é aceito
+[00:19:56 - 00:19:58] se corresponder a um código ou
+[00:19:58 - 00:20:00] a um sinônimo. Se não corresponder,
+[00:20:00 - 00:20:02] a coluna fica nula
+[00:20:02 - 00:20:04] e o caso é contado. Nunca vai ser preenchido
+[00:20:04 - 00:20:07] com valor incerto.
+[00:20:07 - 00:20:09] Agora em relação à extração.
+[00:20:09 - 00:20:11] Parte das fontes tem conteúdo
+[00:20:11 - 00:20:13] desestruturado, como o texto livre,
+[00:20:13 - 00:20:15] documentos escaneados e voz.
+[00:20:15 - 00:20:17] E exigem modelos que inferem e, por isso,
+[00:20:17 - 00:20:19] podem errar. O modelo canônico
+[00:20:19 - 00:20:21] participa dessa extração em dois momentos.
+[00:20:21 - 00:20:23] O primeiro, antes da extração
+[00:20:23 - 00:20:25] em si, na parte da preparação
+[00:20:25 - 00:20:27] e depois da extração.
+[00:20:27 - 00:20:29] Antes, ele diz o que
+[00:20:29 - 00:20:31] procurar. Por exemplo, o
+[00:20:31 - 00:20:33] transcritor da voz,
+[00:20:33 - 00:20:35] que usei o FastWhisper,
+[00:20:35 - 00:20:37] recebe os condinomes e os nomes dos lugares
+[00:20:37 - 00:20:39] da operação em seu prompt inicial.
+[00:20:39 - 00:20:41] A IA, no caso que eu usei o
+[00:20:41 - 00:20:43] em, vai receber esses valores possíveis
+[00:20:43 - 00:20:45] de cada campo. E quando precisa
+[00:20:45 - 00:20:47] classificar um relato escrito em
+[00:20:47 - 00:20:49] texto livre, recebe também o critério
+[00:20:49 - 00:20:51] de quando cada
+[00:20:51 - 00:20:53] valor se aplica, porque
+[00:20:53 - 00:20:55] não basta reconhecer somente o
+[00:20:55 - 00:20:57] reconheceu do termo.
+[00:20:57 - 00:20:59] Depois, a resposta
+[00:20:59 - 00:21:01] passa pela mesma receita das outras
+[00:21:01 - 00:21:03] fontes. E o valor fora da lista
+[00:21:03 - 00:21:05] vai ficar nulo e vai ser contado.
+[00:21:05 - 00:21:07] Ou seja, a IA só escolhe
+[00:21:07 - 00:21:09] entre valores já previstos.
+[00:21:09 - 00:21:11] Não vai criar novos.
+[00:21:11 - 00:21:13] Para auditoria, toda a extração
+[00:21:13 - 00:21:15] fica registrada em tabela.
+[00:21:15 - 00:21:17] No caso, eu chamei de extração. E o prompt
+[00:21:17 - 00:21:19] e os seus parâmetros ficam versionados
+[00:21:19 - 00:21:21] em uma outra tabela, que eu chamo de
+[00:21:21 - 00:21:23] ajuste de extração. Além disso,
+[00:21:23 - 00:21:25] eu calculo uma espécie de impressão digital
+[00:21:25 - 00:21:27] do pedido. No caso
+[00:21:27 - 00:21:29] o prompt mudar sem que
+[00:21:29 - 00:21:31] uma nova versão seja declarada,
+[00:21:31 - 00:21:33] a extração vai parar.
+[00:21:33 - 00:21:35] Ele sabe que não otimizou os prompts para acertar
+[00:21:35 - 00:21:37] mais e os erros ficam
+[00:21:37 - 00:21:39] identificados e não entram na silva como
+[00:21:39 - 00:21:41] corretos.
+[00:21:41 - 00:21:43] Para sintetizar, o nosso capítulo 5
+[00:21:43 - 00:21:45] entrega 1. Um cenário
+[00:21:45 - 00:21:47] sintético com a verdade conhecida,
+[00:21:47 - 00:21:49] com os fatos, as fontes e os defeitos
+[00:21:49 - 00:21:51] plantados. 2. Um modelo
+[00:21:51 - 00:21:53] canônico declarado num único
+[00:21:53 - 00:21:55] artefato versionado. 3.
+[00:21:55 - 00:21:57] As receitas e vocabulários que tornam cada
+[00:21:57 - 00:21:59] tradição auditável. 4.
+[00:21:59 - 00:22:01] E o uso da IA
+[00:22:01 - 00:22:03] restrita a escolher valores previstos.
+[00:22:03 - 00:22:05] Então, o próximo passo é a nossa
+[00:22:05 - 00:22:07] prova de conceito.
+[00:22:07 - 00:22:09] Primeiro vou selecionar as tecnologias open source
+[00:22:09 - 00:22:11] para cada camada funcional, de acordo com os
+[00:22:11 - 00:22:13] requisitos e capacidades do capítulo 4.
+[00:22:13 - 00:22:15] Depois vou implementar a ingestão, extração,
+[00:22:15 - 00:22:17] transformação e disponibilização dos dados.
+[00:22:17 - 00:22:19] E por fim, vou demonstrar os três
+[00:22:19 - 00:22:21] verbos da proposição que eu falei
+[00:22:21 - 00:22:23] no início da apresentação.
+[00:22:23 - 00:22:25] Dentro dessa operação percebo
+[00:22:25 - 00:22:27] mostrando a taxa de acertos, extrações
+[00:22:27 - 00:22:29] e como cada
+[00:22:29 - 00:22:31] defeito foi tratado.
+[00:22:31 - 00:22:33] Muito obrigado.
+[00:22:33 - 00:22:41] Estou abrindo aqui, minha rede está lenta
+[00:22:41 - 00:22:43] hoje.
+[00:22:43 - 00:22:45] Vamos lá.
+[00:22:45 - 00:22:47] Eu saí da apresentação sem querer.
+[00:22:47 - 00:22:49] Minha rede está dando pico aqui.
+[00:22:49 - 00:22:51] Estou na UnB, estou com um probleminha aqui.
+[00:22:51 - 00:22:53] Qualquer coisa eu entro pelo celular.
+[00:22:53 - 00:22:55] Se eu cair, podem continuar a reunião.
+[00:22:55 - 00:22:57] Eu entro pelo celular e a gente finaliza.
+[00:22:57 - 00:22:59] Dando continuidade ao
+[00:22:59 - 00:23:01] processo de Seminário 1,
+[00:23:01 - 00:23:03] o Silvio fez a apresentação dele.
+[00:23:03 - 00:23:05] Agora os
+[00:23:05 - 00:23:07] membros da banca foram só as observações.
+[00:23:07 - 00:23:09] Começamos pela professora
+[00:23:09 - 00:23:11] Maria Cláudia, que é a mais externa.
+[00:23:11 - 00:23:13] Vou ter que fechar a minha câmera,
+[00:23:13 - 00:23:15] minha rede está dando pico aqui.
+[00:23:15 - 00:23:17] Estou caindo e voltando.
+[00:23:17 - 00:23:19] Está certo, mas eu estou acompanhando.
+[00:23:19 - 00:23:21] Pode ir, professora.
+[00:23:21 - 00:23:23] Primeiro,
+[00:23:23 - 00:23:25] parabéns pela evolução, Silvio.
+[00:23:25 - 00:23:27] Acho que ficou bem bacana
+[00:23:27 - 00:23:29] todo esse
+[00:23:29 - 00:23:31] estudo de casos que você andou fazendo.
+[00:23:31 - 00:23:33] Muito detalhado.
+[00:23:33 - 00:23:35] Difícil a gente
+[00:23:35 - 00:23:37] acompanhar todos os detalhes, mas
+[00:23:37 - 00:23:39] achei muito interessante, inclusive,
+[00:23:39 - 00:23:41] a questão do registro da proveniência,
+[00:23:41 - 00:23:43] dos promptes e tal,
+[00:23:43 - 00:23:45] que eu ouvi agora mais no final.
+[00:23:45 - 00:23:47] Você pode
+[00:23:47 - 00:23:49] compartilhar
+[00:23:49 - 00:23:51] de novo a sua
+[00:23:51 - 00:23:53] apresentação?
+[00:23:53 - 00:23:55] Eu queria voltar em alguns pontos.
+[00:23:59 - 00:24:01] Enquanto você procura...
+[00:24:01 - 00:24:03] Eu sei que
+[00:24:03 - 00:24:05] eu mencionei ali aquela história de missão
+[00:24:05 - 00:24:07] e tarefa por um motivo
+[00:24:07 - 00:24:09] real, que a gente tem
+[00:24:09 - 00:24:11] trabalhado aqui nessa distinção.
+[00:24:15 - 00:24:17] Dentro do teu trabalho, se você
+[00:24:17 - 00:24:19] puder botar lá nas minhas
+[00:24:19 - 00:24:21] observações primeiro,
+[00:24:21 - 00:24:23] para a gente ir
+[00:24:23 - 00:24:25] na...
+[00:24:25 - 00:24:27] Eu prometo não demorar,
+[00:24:27 - 00:24:29] tá, Andrei?
+[00:24:29 - 00:24:31] Não, tranquilo.
+[00:24:31 - 00:24:33] Está certinho essa aqui, professora?
+[00:24:33 - 00:24:35] Isso aí.
+[00:24:35 - 00:24:37] A primeira observação...
+[00:24:37 - 00:24:39] Deixa eu ver se consigo enxergar aqui.
+[00:24:39 - 00:24:41] Cancela.
+[00:24:41 - 00:24:43] Espera aí.
+[00:24:43 - 00:24:45] Claro.
+[00:24:45 - 00:24:47] Então, tem ali
+[00:24:47 - 00:24:49] zonas versus ETL,
+[00:24:49 - 00:24:51] o ETL...
+[00:24:51 - 00:24:53] Essa coisa que você falou,
+[00:24:53 - 00:24:55] que o ETL só durava no final,
+[00:24:55 - 00:24:57] isso não é exatamente verdade,
+[00:24:57 - 00:24:59] tá?
+[00:24:59 - 00:25:01] A literatura é muito variada
+[00:25:01 - 00:25:03] nesse sentido. Tem algumas arquiteturas
+[00:25:03 - 00:25:05] que falam de um ODS,
+[00:25:05 - 00:25:07] por exemplo. Antigamente,
+[00:25:07 - 00:25:09] o Lake House era muito
+[00:25:09 - 00:25:11] chamado de ODS,
+[00:25:11 - 00:25:13] que era onde você armazenava...
+[00:25:13 - 00:25:15] Claro que o Lake House tem
+[00:25:15 - 00:25:17] mais, vamos dizer assim,
+[00:25:17 - 00:25:19] uma estrutura melhor,
+[00:25:19 - 00:25:21] mais bem pensada nessa questão
+[00:25:21 - 00:25:23] de receber dados de todos os tipos
+[00:25:23 - 00:25:25] e tal, né?
+[00:25:25 - 00:25:27] E essa arquitetura que você
+[00:25:27 - 00:25:29] está usando,
+[00:25:29 - 00:25:31] não sei se é exatamente para onde
+[00:25:31 - 00:25:33] você está usando,
+[00:25:33 - 00:25:35] que é essa
+[00:25:35 - 00:25:37] da silva, bronze
+[00:25:37 - 00:25:39] e gold, né?
+[00:25:39 - 00:25:41] Pode falar, pode
+[00:25:41 - 00:25:43] me interromper, se eu tiver...
+[00:25:43 - 00:25:45] A senhora está falando certinho. Aqui é um bate-papo.
+[00:25:45 - 00:25:47] É isso.
+[00:25:47 - 00:25:49] Então, bom,
+[00:25:49 - 00:25:51] só queria corrigir um pouco
+[00:25:51 - 00:25:53] você, para não cair
+[00:25:53 - 00:25:55] nessa armadilha de algumas publicações
+[00:25:55 - 00:25:57] e tal, que dizem que
+[00:25:57 - 00:25:59] o ETL só grava no final.
+[00:25:59 - 00:26:01] Eu acho que não, acho até que
+[00:26:01 - 00:26:03] tem
+[00:26:03 - 00:26:05] uma correspondência com essa
+[00:26:05 - 00:26:07] arquitetura em três
+[00:26:07 - 00:26:09] camadas, né?
+[00:26:09 - 00:26:11] Que pode ser feita melhor, mas
+[00:26:11 - 00:26:13] assim, eu não acho que você tenha que fazer
+[00:26:13 - 00:26:15] isso a fundo, não, tá? É só
+[00:26:15 - 00:26:17] procurar não se
+[00:26:17 - 00:26:19] apegar
+[00:26:19 - 00:26:21] a essa coisa de que grava
+[00:26:21 - 00:26:23] só no final, tá?
+[00:26:23 - 00:26:25] Bom,
+[00:26:25 - 00:26:27] outra coisa que eu tinha botado
+[00:26:27 - 00:26:29] ali, integração e missão-tarefa,
+[00:26:29 - 00:26:31] né? Aí, assim, o modelo
+[00:26:31 - 00:26:33] canônico no silver,
+[00:26:33 - 00:26:35] né, dá suporte à integração
+[00:26:35 - 00:26:37] e tal, parará. Então, quando
+[00:26:37 - 00:26:39] você fala, né, que você
+[00:26:39 - 00:26:41] criou ali aquelas formas,
+[00:26:41 - 00:26:43] aquelas receitas, né? A gente
+[00:26:43 - 00:26:45] chama de depara também, né? Mas, assim,
+[00:26:45 - 00:26:47] É depara, o famoso depara.
+[00:26:47 - 00:26:49] É, o famoso depara. Então,
+[00:26:49 - 00:26:51] assim, tudo bem, receita de tradição
+[00:26:51 - 00:26:53] para ficar mais elegante,
+[00:26:53 - 00:26:55] então, assim, ficou bacana. Mas, assim,
+[00:26:55 - 00:26:57] é uma visão
+[00:26:57 - 00:26:59] um pouco simplista que eu estou
+[00:26:59 - 00:27:01] querendo dizer, né? Porque para aquele
+[00:27:01 - 00:27:03] estudo de casa, você fez ali
+[00:27:03 - 00:27:05] um conjunto de receitas,
+[00:27:05 - 00:27:07] né? E é legal que você pense nesse
+[00:27:07 - 00:27:09] modelo canônico ao invés de
+[00:27:09 - 00:27:11] par a par, né? Porque
+[00:27:11 - 00:27:13] é isso que você quis argumentar
+[00:27:13 - 00:27:15] ali quando você botou aquelas duas
+[00:27:15 - 00:27:17] coisas, né? Em que, se você
+[00:27:17 - 00:27:19] tem um canônico, a cada
+[00:27:19 - 00:27:21] fonte nova, você vai
+[00:27:21 - 00:27:23] mapear verticalmente, ou seja,
+[00:27:23 - 00:27:25] da fonte para esse
+[00:27:25 - 00:27:27] modelo canônico, né?
+[00:27:27 - 00:27:29] Então, isso é bacana e tal,
+[00:27:29 - 00:27:31] mas, assim, não houve
+[00:27:31 - 00:27:33] exatamente, assim,
+[00:27:33 - 00:27:35] esses deparas, né?
+[00:27:35 - 00:27:37] Para você chegar no modelo
+[00:27:37 - 00:27:39] canônico, no entendimento
+[00:27:39 - 00:27:41] único e tal, entre
+[00:27:41 - 00:27:43] fontes diversas, e aí eu estou
+[00:27:43 - 00:27:45] falando, assim, se fosse mais amplo, né?
+[00:27:45 - 00:27:47] Aí, dentro
+[00:27:47 - 00:27:49] do contexto e do estudo
+[00:27:49 - 00:27:51] de caso, é mais simples
+[00:27:51 - 00:27:53] você chegar nesse modelo canônico,
+[00:27:53 - 00:27:55] né? Mas,
+[00:27:55 - 00:27:57] em situações
+[00:27:57 - 00:27:59] assim, mais complexas, né? A gente
+[00:27:59 - 00:28:01] vê que não é
+[00:28:01 - 00:28:03] assim. E, claro, tem todo um estudo,
+[00:28:03 - 00:28:05] né? E aí eu vou
+[00:28:05 - 00:28:07] puxar a sardinha para o meu lado, né?
+[00:28:07 - 00:28:09] De modelagem conceitual
+[00:28:09 - 00:28:11] e tal, que vai ser
+[00:28:11 - 00:28:13] custoso chegar nesse
+[00:28:13 - 00:28:15] modelo canônico, né?
+[00:28:15 - 00:28:17] Então, só queria ressalvar isso,
+[00:28:17 - 00:28:19] né? Que você
+[00:28:19 - 00:28:21] coloque, né? Talvez
+[00:28:21 - 00:28:23] seja
+[00:28:23 - 00:28:25] esse tipo de
+[00:28:25 - 00:28:27] acordo, né? O de modelo canônico tem
+[00:28:27 - 00:28:29] que ser feito previamente,
+[00:28:29 - 00:28:31] né? Envolvendo todas
+[00:28:31 - 00:28:33] as unidades, vamos dizer,
+[00:28:33 - 00:28:35] envolvidas no...
+[00:28:35 - 00:28:37] Não numa operação, mas
+[00:28:37 - 00:28:39] em termos
+[00:28:39 - 00:28:41] arquiteturais, né? Você não está
+[00:28:41 - 00:28:43] só fazendo arquitetura para uma
+[00:28:43 - 00:28:45] operação, né? Você está
+[00:28:45 - 00:28:47] fazendo arquitetura para outras
+[00:28:47 - 00:28:49] operações, outras interações,
+[00:28:49 - 00:28:51] não é isso? Então, assim,
+[00:28:51 - 00:28:53] ah, de repente eu tenho
+[00:28:53 - 00:28:55] operações conjuntas, por exemplo, eu vou ter que
+[00:28:55 - 00:28:57] alinhar coisas com a marinha,
+[00:28:57 - 00:28:59] né? Vou ter que alinhar coisas com
+[00:28:59 - 00:29:01] a força aérea e tal.
+[00:29:01 - 00:29:03] Então,
+[00:29:03 - 00:29:05] por que que eu estou falando isso? Eu tenho
+[00:29:05 - 00:29:07] um trabalho agora que
+[00:29:07 - 00:29:09] eu já tinha... Não sei se eu já tinha falado
+[00:29:09 - 00:29:11] isso para você, né? Que
+[00:29:11 - 00:29:13] é o
+[00:29:13 - 00:29:15] Tenente Adnet que está fazendo.
+[00:29:15 - 00:29:17] Adnet é Adnet Alves.
+[00:29:17 - 00:29:19] Não sei se... Eu acho que eu cheguei a falar
+[00:29:19 - 00:29:21] isso para você, não falei? Você conhece o
+[00:29:21 - 00:29:23] Alves do CDS
+[00:29:23 - 00:29:25] que trabalha no Rio e tal?
+[00:29:25 - 00:29:27] Não. Não.
+[00:29:27 - 00:29:29] O que eu conheço é
+[00:29:29 - 00:29:31] só o Bredas.
+[00:29:31 - 00:29:33] O Breda, né?
+[00:29:33 - 00:29:35] O Breda trabalha
+[00:29:35 - 00:29:37] com ele. Então,
+[00:29:37 - 00:29:39] trabalha com ele. Só que o
+[00:29:39 - 00:29:41] Adnet Alves, ele...
+[00:29:41 - 00:29:43] Eu estou chamando assim de dois nomes porque ele era
+[00:29:43 - 00:29:45] Tenente Adnet e agora Tenente Alves. Eu não
+[00:29:45 - 00:29:47] consigo passar
+[00:29:47 - 00:29:49] para o Alves mais.
+[00:29:49 - 00:29:51] Então, assim, ele está fazendo mestrado
+[00:29:51 - 00:29:53] lá no IME com a gente, né? Justamente
+[00:29:53 - 00:29:55] no mapeamento de operações,
+[00:29:55 - 00:29:57] né? Ele é de C2,
+[00:29:57 - 00:29:59] né? Ele está na equipe do
+[00:29:59 - 00:30:01] pessoal de comando e controle, tá?
+[00:30:01 - 00:30:03] Só que lá no
+[00:30:03 - 00:30:05] CDS. E ele saiu
+[00:30:05 - 00:30:07] para fazer o mestrado. Então, ele já está terminando
+[00:30:07 - 00:30:09] agora. Ele está no segundo ano, né?
+[00:30:09 - 00:30:11] Então, talvez por isso eu não tenha
+[00:30:11 - 00:30:13] interagido exatamente com ele,
+[00:30:13 - 00:30:15] né? Mas ele tem acesso aos sistemas,
+[00:30:15 - 00:30:17] temas e tal, né?
+[00:30:17 - 00:30:19] E aí, a gente começou a modelar
+[00:30:19 - 00:30:21] essa questão da ordem de operação.
+[00:30:21 - 00:30:23] Então, é um momento prévio
+[00:30:23 - 00:30:25] ao que você está pensando. Você
+[00:30:25 - 00:30:27] entende que você está focando
+[00:30:27 - 00:30:29] na execução da operação.
+[00:30:29 - 00:30:31] Certo?
+[00:30:31 - 00:30:33] Então, assim, todos os dados que estão
+[00:30:33 - 00:30:35] vindo são dados
+[00:30:35 - 00:30:37] que
+[00:30:37 - 00:30:39] alguém falou no...
+[00:30:39 - 00:30:41] Alguém respondeu, fez um relatório,
+[00:30:41 - 00:30:43] alguém falou alguma coisa,
+[00:30:43 - 00:30:45] né? Teve, tem tido
+[00:30:45 - 00:30:47] algumas práticas. Tudo é
+[00:30:47 - 00:30:49] na execução da operação, né?
+[00:30:49 - 00:30:51] Mas o planejamento
+[00:30:51 - 00:30:53] e a
+[00:30:53 - 00:30:55] preparação de uma
+[00:30:55 - 00:30:57] ordem de operação,
+[00:30:57 - 00:30:59] né? Eu estou imaginando
+[00:30:59 - 00:31:01] que você não está cobrindo, é isso?
+[00:31:01 - 00:31:03] Não, não estou.
+[00:31:03 - 00:31:05] Tá, porque seria um documento
+[00:31:05 - 00:31:07] a mais para entrar aí no seu
+[00:31:07 - 00:31:09] lake house, né? Que era interessante
+[00:31:09 - 00:31:11] também distrair e tal.
+[00:31:11 - 00:31:13] Então, assim, eu achei muito interessante
+[00:31:13 - 00:31:15] como a gente está numa coisa complementar.
+[00:31:15 - 00:31:17] Entendeu?
+[00:31:17 - 00:31:19] De trabalho e tal. Aí,
+[00:31:19 - 00:31:21] bom, falando
+[00:31:21 - 00:31:23] sobre isso, né? Uma perspectiva
+[00:31:23 - 00:31:25] futura seria
+[00:31:25 - 00:31:27] isso. Você cobrir com o seu lake house
+[00:31:27 - 00:31:29] também outras fontes, até
+[00:31:29 - 00:31:31] pegando essa parte
+[00:31:31 - 00:31:33] de planejamento
+[00:31:33 - 00:31:35] e
+[00:31:35 - 00:31:37] emissão da ordem de operação.
+[00:31:37 - 00:31:39] Por que que eu fui
+[00:31:39 - 00:31:41] longe assim para buscar? Porque ali
+[00:31:41 - 00:31:43] na ordem de operação você tem a distinção
+[00:31:43 - 00:31:45] entre o que é a missão
+[00:31:45 - 00:31:47] que é uma coisa mais ampla
+[00:31:47 - 00:31:49] e como ela se desdobra em
+[00:31:49 - 00:31:51] tarefas, né?
+[00:31:51 - 00:31:53] E essas tarefas vão virar
+[00:31:53 - 00:31:55] missão para outros,
+[00:31:55 - 00:31:57] né? Certo.
+[00:31:57 - 00:31:59] Então, eu
+[00:31:59 - 00:32:01] estou
+[00:32:01 - 00:32:03] eu estou vendo assim
+[00:32:03 - 00:32:05] uma perspectiva de
+[00:32:05 - 00:32:07] complemento, né? Então, assim que você
+[00:32:07 - 00:32:09] tiver o seu trabalho e tal, eu vou tentar
+[00:32:09 - 00:32:11] passar para o Adnet, né?
+[00:32:11 - 00:32:13] E tal, se a gente puder
+[00:32:13 - 00:32:15] passar alguma coisa,
+[00:32:15 - 00:32:17] né? Se tiver alguma coisa escrita
+[00:32:17 - 00:32:19] que eu possa passar, né? Aí vocês
+[00:32:19 - 00:32:21] me dizem. E a outra coisa
+[00:32:21 - 00:32:23] também que eu queria passar
+[00:32:23 - 00:32:25] para você é o artigo que a gente
+[00:32:25 - 00:32:27] publicou, né?
+[00:32:27 - 00:32:29] Sobre essa distinção de missão
+[00:32:29 - 00:32:31] e tarefa. Ali tem só um núcleozinho
+[00:32:31 - 00:32:33] da ontologia, mas a gente
+[00:32:33 - 00:32:35] chega inclusive na parte de
+[00:32:35 - 00:32:37] delegação e tal. Então,
+[00:32:37 - 00:32:39] eu acho
+[00:32:39 - 00:32:41] que é uma coisa que vale a pena
+[00:32:41 - 00:32:43] dar uma olhada, tá?
+[00:32:43 - 00:32:45] E aí, de repente, você assim, no
+[00:32:45 - 00:32:47] na conclusão do seu trabalho,
+[00:32:47 - 00:32:49] você poder, de repente,
+[00:32:49 - 00:32:51] citar ou mostrar, né?
+[00:32:51 - 00:32:53] Demonstrar, porque dentro do exército
+[00:32:53 - 00:32:55] você está dentro lá, né? E o teu trabalho
+[00:32:55 - 00:32:57] vai ser lido ali. Isso mostra
+[00:32:57 - 00:32:59] uma, uma,
+[00:32:59 - 00:33:01] vamos dizer assim, uma possibilidade
+[00:33:01 - 00:33:03] de interação, de
+[00:33:03 - 00:33:05] para a própria força,
+[00:33:05 - 00:33:07] né? Falar assim, olha, tá vendo? O trabalho
+[00:33:07 - 00:33:09] estava sendo lá na UNB, mas tem aqui
+[00:33:09 - 00:33:11] também no IME, tem, né?
+[00:33:11 - 00:33:13] Um...
+[00:33:13 - 00:33:15] Esse tipo de
+[00:33:15 - 00:33:17] cooperação surgindo,
+[00:33:17 - 00:33:19] possivelmente até
+[00:33:19 - 00:33:21] posteriormente a defesa da
+[00:33:21 - 00:33:23] tese, né? A defesa da dissertação.
+[00:33:23 - 00:33:25] Tá certo? Perfeito, perfeito.
+[00:33:25 - 00:33:27] E aí, pode até motivar
+[00:33:27 - 00:33:29] outros elementos lá da equipe
+[00:33:29 - 00:33:31] a querem fazer outro
+[00:33:31 - 00:33:33] mestrado profissional, ou então
+[00:33:33 - 00:33:35] um mestrado no IME, algo assim
+[00:33:35 - 00:33:37] que pudesse dar continuidade
+[00:33:37 - 00:33:39] a essas ideias, né?
+[00:33:39 - 00:33:41] Então, bom...
+[00:33:41 - 00:33:43] É...
+[00:33:43 - 00:33:45] Eu acho que...
+[00:33:45 - 00:33:47] Vou voltar? Não sei se teve mais alguma
+[00:33:47 - 00:33:49] coisa, deixa eu dar... Ah!
+[00:33:49 - 00:33:51] Espera aí. Ali são as fontes,
+[00:33:51 - 00:33:53] né? Deixa eu voltar aí.
+[00:33:53 - 00:33:55] Onde estavam as fontes
+[00:33:55 - 00:33:57] ali que você tinha botado?
+[00:33:57 - 00:33:59] A fonte. Então, esses dados,
+[00:33:59 - 00:34:01] pois é. Outra coisa que eu queria
+[00:34:01 - 00:34:03] saber é se eu posso usar esses
+[00:34:03 - 00:34:05] seus dados sintéticos.
+[00:34:05 - 00:34:07] Claro que pode, professora.
+[00:34:07 - 00:34:09] Aqui é tudo, tudo nosso.
+[00:34:09 - 00:34:11] Então, eu até
+[00:34:11 - 00:34:13] anotei ali que era a operação
+[00:34:13 - 00:34:15] Perseu, né? Eu dei uma...
+[00:34:15 - 00:34:17] capturada aí dessa...
+[00:34:17 - 00:34:19] Perseu de mentirinha?
+[00:34:19 - 00:34:21] É, Perseu de mentirinha, né?
+[00:34:21 - 00:34:23] A gente chama de alfa nossa.
+[00:34:23 - 00:34:25] Ah, é?
+[00:34:25 - 00:34:27] É, tem...
+[00:34:27 - 00:34:29] Bom, enfim, tinha pássaro
+[00:34:29 - 00:34:31] negro e tal, a gente vai
+[00:34:31 - 00:34:33] tentando. Eu achei que
+[00:34:33 - 00:34:35] essa Perseu, de fato, existiu,
+[00:34:35 - 00:34:37] né? Mas assim, tem um outro nome, é isso?
+[00:34:37 - 00:34:39] Não, ela existiu,
+[00:34:39 - 00:34:41] aconteceu em 2024
+[00:34:41 - 00:34:43] no Vale do Paraíba.
+[00:34:43 - 00:34:45] Isso aí aconteceu, ponto.
+[00:34:45 - 00:34:47] Tá, mas os dados dela
+[00:34:47 - 00:34:49] aqui são todos...
+[00:34:49 - 00:34:51] É, tudo eu inventei, tudo inventado.
+[00:34:51 - 00:34:53] Pois é, eu achei muito
+[00:34:53 - 00:34:55] criativo, assim, muito
+[00:34:55 - 00:34:57] interessante toda essa
+[00:34:57 - 00:34:59] descrição, né? Então,
+[00:34:59 - 00:35:01] isso pra nós ia ser super legal.
+[00:35:01 - 00:35:03] Só pra finalizar,
+[00:35:03 - 00:35:05] né? O nosso estudo de caso tá
+[00:35:05 - 00:35:07] sendo numa interação entre
+[00:35:07 - 00:35:09] o Exército e a PM, tá?
+[00:35:09 - 00:35:11] Ah, que legal. Então, assim,
+[00:35:11 - 00:35:13] é uma operação conjunta, né?
+[00:35:13 - 00:35:15] E a gente precisa, com
+[00:35:15 - 00:35:17] as ordens de operação da PM,
+[00:35:17 - 00:35:19] a ordem de operação do Exército,
+[00:35:19 - 00:35:21] né? Saber, por exemplo,
+[00:35:21 - 00:35:23] quais são as missões e tarefas, e aí
+[00:35:23 - 00:35:25] você poder, numa gestão conjunta,
+[00:35:25 - 00:35:27] né? Observar
+[00:35:27 - 00:35:29] quais são as tarefas,
+[00:35:29 - 00:35:31] responsabilidades de quem e tal. Mas
+[00:35:31 - 00:35:33] a gente para aí, a gente não vai pra execução,
+[00:35:33 - 00:35:35] entendeu?
+[00:35:35 - 00:35:37] Porque seria um passo a mais bem
+[00:35:37 - 00:35:39] complicado. Então, por enquanto,
+[00:35:39 - 00:35:41] né? A gente tá nessa coisa.
+[00:35:41 - 00:35:43] Então, fica aí o
+[00:35:43 - 00:35:45] a expectativa,
+[00:35:45 - 00:35:47] né? De um possível
+[00:35:47 - 00:35:49] desdobramento aí do trabalho.
+[00:35:49 - 00:35:51] E também dar os parabéns, porque eu acho que
+[00:35:51 - 00:35:53] você tá num caminho bom
+[00:35:53 - 00:35:55] e vai tá
+[00:35:55 - 00:35:57] terminando aí com um resultado
+[00:35:57 - 00:35:59] bem interessante, concreto
+[00:35:59 - 00:36:01] e tal. Na verdade, professora,
+[00:36:01 - 00:36:03] eu nem imagino que isso aqui
+[00:36:03 - 00:36:05] seja uma solução
+[00:36:05 - 00:36:07] fechada. Longe, muito longe disso.
+[00:36:07 - 00:36:09] Mas, assim, o que eu puder inspirar,
+[00:36:09 - 00:36:11] tipo assim, o pessoal tá
+[00:36:11 - 00:36:13] construindo um negócio lá no
+[00:36:13 - 00:36:15] DDS3, a parte de C2 lá.
+[00:36:15 - 00:36:17] Poxa, ah, o módulo
+[00:36:17 - 00:36:19] canônico. Eu posso,
+[00:36:19 - 00:36:21] tipo, ó, eu fiz dessa forma. Será que dá pra
+[00:36:21 - 00:36:23] vocês? É nesse sentido.
+[00:36:23 - 00:36:25] Pedacinhos que as pessoas
+[00:36:25 - 00:36:27] consigam tirar da dissertação
+[00:36:27 - 00:36:29] que eles possam tentar encaixar
+[00:36:29 - 00:36:31] e ver se conseguem,
+[00:36:31 - 00:36:33] né? Criar valor sobre aquilo.
+[00:36:33 - 00:36:35] Eu não imagino isso aqui.
+[00:36:35 - 00:36:37] Ah, isso aqui vai ser uma solução fechada.
+[00:36:37 - 00:36:39] Não é bala de prata.
+[00:36:39 - 00:36:41] Longe disso, professora. Longe disso.
+[00:36:41 - 00:36:43] A gente sabe.
+[00:36:43 - 00:36:45] Mas é isso que a gente quer, né?
+[00:36:45 - 00:36:47] A gente quer poder estudar um pouco
+[00:36:47 - 00:36:49] do nosso lado, né? E poder
+[00:36:49 - 00:36:51] contribuir de alguma forma pra
+[00:36:51 - 00:36:53] que a coisa, o produto,
+[00:36:53 - 00:36:55] né, que vai ser desenvolvido
+[00:36:55 - 00:36:57] seja melhorado, seja
+[00:36:57 - 00:36:59] aprimorado, né? Então, é
+[00:36:59 - 00:37:01] muito mesmo nesse sentido, tá?
+[00:37:01 - 00:37:03] Parabéns aí pelo trabalho, tá?
+[00:37:03 - 00:37:05] Eu confesso que eu fiquei curiosa
+[00:37:05 - 00:37:07] pra ver os detalhes, mas
+[00:37:07 - 00:37:09] a gente vai ter que esperar pra leitura, né?
+[00:37:09 - 00:37:11] Tá bom? Sem problema.
+[00:37:11 - 00:37:13] E no dia lá da dissertação,
+[00:37:13 - 00:37:15] eu abro meu VS Code
+[00:37:15 - 00:37:17] e aí eu te mostro também qual é a coisa também.
+[00:37:17 - 00:37:19] Se a senhora quiser, lógico.
+[00:37:19 - 00:37:21] Não, aí tem que passar
+[00:37:21 - 00:37:23] pro meu aluno lá, mas
+[00:37:23 - 00:37:25] vamos devagar, vamos devagar,
+[00:37:25 - 00:37:27] tá bom?
+[00:37:27 - 00:37:29] É isso. Obrigada, Vitorino,
+[00:37:29 - 00:37:31] pela oportunidade, tá?
+[00:37:31 - 00:37:33] Enfim, tá falado.
+[00:37:33 - 00:37:35] Obrigado, professora. Seria interessante
+[00:37:35 - 00:37:37] depois o Silvio vai pegar o contato
+[00:37:37 - 00:37:39] do seu aluno.
+[00:37:39 - 00:37:41] Aí, Silvio, faz uma reunião, nem que seja
+[00:37:41 - 00:37:43] pra entender o escopo do trabalho dele
+[00:37:43 - 00:37:45] mas facilita no corpo do teu trabalho,
+[00:37:45 - 00:37:47] esse trabalho tá lá no IME,
+[00:37:47 - 00:37:49] porque facilita a integração depois.
+[00:37:49 - 00:37:51] Em algum momento a gente tenta citar esse trabalho
+[00:37:51 - 00:37:53] como se fosse, por exemplo, o nosso escopo
+[00:37:53 - 00:37:55] é a execução. No entanto, está sendo desenvolvido
+[00:37:55 - 00:37:57] no IME, no trabalho, sobre o planejamento
+[00:37:57 - 00:37:59] de operações, coisa e tal, entendeu?
+[00:37:59 - 00:38:01] Então, passando essa corrida de final de ano,
+[00:38:01 - 00:38:03] o Silvio entra em contato com teu aluno,
+[00:38:03 - 00:38:05] tenta fazer pelo menos uma videoconferência
+[00:38:05 - 00:38:07] pra saber como é que a gente pode deixar bem claro
+[00:38:07 - 00:38:09] essa potencial integração. É bem interessante fazer essa.
+[00:38:09 - 00:38:11] Tá bom, ótimo.
+[00:38:11 - 00:38:13] Oi?
+[00:38:13 - 00:38:15] Tenente Paes.
+[00:38:15 - 00:38:17] Não, é Adinê, sei lá como é que é.
+[00:38:17 - 00:38:19] Adinê Alves.
+[00:38:19 - 00:38:21] Ah, Tenente Adinê,
+[00:38:21 - 00:38:23] pessoalmente.
+[00:38:23 - 00:38:25] Com E no acento
+[00:38:25 - 00:38:27] no final, e Alves.
+[00:38:27 - 00:38:29] Tá.
+[00:38:29 - 00:38:31] Eu falo com o Breda qualquer coisa também.
+[00:38:31 - 00:38:33] Isso, já tenta uma videoconferência, vê onde é que vocês podem,
+[00:38:33 - 00:38:35] mesmo que não integre,
+[00:38:35 - 00:38:37] porque não vai dar tempo, mas deixa o link
+[00:38:37 - 00:38:39] lá no corpo do trabalho, dizendo
+[00:38:39 - 00:38:41] ó, já tem iniciativa, depois você desce e vê o trabalho.
+[00:38:41 - 00:38:43] Vira uma operação mesmo,
+[00:38:43 - 00:38:45] uma missão lá do CDS.
+[00:38:45 - 00:38:47] Beleza? Top, deixa comigo.
+[00:38:47 - 00:38:49] Falou. Obrigado, professora.
+[00:38:49 - 00:38:51] Vamos lá, Andrei, pode fazer tuas observações.
+[00:38:51 - 00:38:53] Eu vou fechar, pessoal, que tá toda hora aqui.
+[00:38:53 - 00:38:55] Fecha a câmera por causa da rede, coisa e tal.
+[00:38:55 - 00:38:57] Beleza.
+[00:38:57 - 00:38:59] Então, beleza, Silvio.
+[00:38:59 - 00:39:01] Eu gostei da evolução do seu trabalho,
+[00:39:01 - 00:39:03] gostei da forma como que você apresentou.
+[00:39:03 - 00:39:05] Você relembrou a gente
+[00:39:05 - 00:39:07] o que a gente tinha sugerido,
+[00:39:07 - 00:39:09] interessante.
+[00:39:09 - 00:39:11] Eu queria pedir pra você
+[00:39:11 - 00:39:13] colocar lá no final,
+[00:39:13 - 00:39:15] lá no último slide.
+[00:39:15 - 00:39:17] Tá?
+[00:39:17 - 00:39:19] Por favor.
+[00:39:23 - 00:39:25] O que o capítulo 5 entrega.
+[00:39:25 - 00:39:27] Não foi o resumo desse
+[00:39:27 - 00:39:29] Seminário 1, não, né?
+[00:39:29 - 00:39:31] Você colocou um quadrinho lá chamado
+[00:39:31 - 00:39:33] O que o capítulo 5 entrega.
+[00:39:33 - 00:39:35] Aqui?
+[00:39:35 - 00:39:37] Não, não,
+[00:39:37 - 00:39:39] é no último mesmo, só que eu,
+[00:39:39 - 00:39:41] depois eu falo dos próximos passos.
+[00:39:41 - 00:39:43] Mas é melhor a gente começar a falar sobre
+[00:39:43 - 00:39:45] o que foi feito agora no Seminário.
+[00:39:45 - 00:39:47] Tá bom.
+[00:39:47 - 00:39:49] Então, eu tinha pedido pra você,
+[00:39:49 - 00:39:51] acho que o mais importante, né?
+[00:39:51 - 00:39:53] Era contextualizar
+[00:39:53 - 00:39:55] em alguma operação do
+[00:39:55 - 00:39:57] Exército ou
+[00:39:57 - 00:39:59] alguma situação real, né?
+[00:39:59 - 00:40:01] Então, você trouxe uma situação aí que
+[00:40:01 - 00:40:03] apesar dos dados
+[00:40:03 - 00:40:05] não serem públicos,
+[00:40:05 - 00:40:07] é uma situação real
+[00:40:07 - 00:40:09] de utilização do sistema.
+[00:40:09 - 00:40:11] E que deixou mais claro
+[00:40:11 - 00:40:13] como é que esse sistema
+[00:40:13 - 00:40:15] vai ser utilizado, né?
+[00:40:15 - 00:40:17] Então, eu tinha solicitado também que você
+[00:40:17 - 00:40:19] falasse sobre
+[00:40:19 - 00:40:21] a integração desses dados
+[00:40:21 - 00:40:23] heterogêneos, né?
+[00:40:23 - 00:40:25] Então, você mostrou que chegam dados
+[00:40:25 - 00:40:27] JSON, PDFs,
+[00:40:27 - 00:40:29] fotos e
+[00:40:29 - 00:40:31] o que mais?
+[00:40:31 - 00:40:33] Áudio, né?
+[00:40:33 - 00:40:35] Isso aí.
+[00:40:35 - 00:40:37] Esse é o motivo da
+[00:40:37 - 00:40:39] sua proposição de uma
+[00:40:39 - 00:40:41] arquitetura do tipo Data Lake, né?
+[00:40:41 - 00:40:43] Você vai trabalhar com dados heterogêneos, né?
+[00:40:43 - 00:40:45] Então, trazendo esse contexto
+[00:40:45 - 00:40:47] que você trouxe,
+[00:40:47 - 00:40:49] demonstra a real necessidade
+[00:40:49 - 00:40:51] dessa arquitetura Data Lake.
+[00:40:51 - 00:40:53] Tá? Mas,
+[00:40:53 - 00:40:55] a especificação da
+[00:40:55 - 00:40:57] camada que você
+[00:40:57 - 00:40:59] chamou de Lending, né? Que é a primeira camada.
+[00:40:59 - 00:41:01] Isso.
+[00:41:01 - 00:41:03] Beleza. Então,
+[00:41:03 - 00:41:05] faz mais sentido agora pra quem
+[00:41:05 - 00:41:07] vai ler o seu
+[00:41:07 - 00:41:09] trabalho, tá? Ficou bem
+[00:41:09 - 00:41:11] contextualizado. Era nesse
+[00:41:11 - 00:41:13] sentido que as
+[00:41:13 - 00:41:15] sugestões tinham sido dadas, né?
+[00:41:15 - 00:41:17] E você trouxe isso.
+[00:41:17 - 00:41:19] Com relação
+[00:41:19 - 00:41:21] à governança.
+[00:41:21 - 00:41:23] A governança dos
+[00:41:23 - 00:41:25] dados, tá?
+[00:41:25 - 00:41:27] Você citou
+[00:41:27 - 00:41:29] que vai ter
+[00:41:29 - 00:41:31] uma forma de fazer esse
+[00:41:31 - 00:41:33] link do dado bruto
+[00:41:33 - 00:41:35] ao dado final, né?
+[00:41:35 - 00:41:37] Você não chegou a falar da
+[00:41:37 - 00:41:39] última camada, que é a camada Gold.
+[00:41:39 - 00:41:41] Então, a camada Gold
+[00:41:41 - 00:41:43] é só entre a gente aqui,
+[00:41:43 - 00:41:45] é a mais sem graça.
+[00:41:45 - 00:41:47] Porque a parte,
+[00:41:47 - 00:41:49] o grande
+[00:41:49 - 00:41:51] diferencial, tô brincando aqui,
+[00:41:51 - 00:41:53] vai até a Silver, né?
+[00:41:53 - 00:41:55] E agora são só visões.
+[00:41:55 - 00:41:57] São visões que a gente espera
+[00:41:57 - 00:41:59] que possa ajudar
+[00:41:59 - 00:42:01] o Estado maior com
+[00:42:01 - 00:42:03] suas atividades
+[00:42:03 - 00:42:05] militares, né?
+[00:42:05 - 00:42:07] Então, assim, eu propus
+[00:42:07 - 00:42:09] aquelas cinco visões
+[00:42:09 - 00:42:11] de forma a ficar fácil
+[00:42:11 - 00:42:13] para um militar identificar assim,
+[00:42:13 - 00:42:15] poxa, esses dados aqui eu posso
+[00:42:15 - 00:42:17] ajudar a fazer lá
+[00:42:17 - 00:42:19] o processo de integração, etc.
+[00:42:19 - 00:42:21] O que o pessoal chama de PIT-seq, né?
+[00:42:21 - 00:42:23] Ah, esses dados aqui eu já consigo
+[00:42:23 - 00:42:25] me ajudar no PP-Código,
+[00:42:25 - 00:42:27] planejamento de operações.
+[00:42:27 - 00:42:29] Poxa, esses aqui eu já consigo fazer
+[00:42:29 - 00:42:31] uma visão
+[00:42:31 - 00:42:33] do cenário.
+[00:42:33 - 00:42:35] Entende?
+[00:42:35 - 00:42:37] Essa parte de visão é a parte mais doutrinária
+[00:42:37 - 00:42:39] para vender, digamos assim,
+[00:42:39 - 00:42:41] a nossa arquitetura
+[00:42:41 - 00:42:43] para um militar,
+[00:42:43 - 00:42:45] né? Porque, poxa,
+[00:42:45 - 00:42:47] por que é importante isso aqui?
+[00:42:47 - 00:42:49] Olha só, porque de todos esses
+[00:42:49 - 00:42:51] documentos heterogêneos, etc, etc,
+[00:42:51 - 00:42:53] eu consegui criar
+[00:42:53 - 00:42:55] um monte de informação que vai te ajudar
+[00:42:55 - 00:42:57] a fazer o PIT-seq,
+[00:42:57 - 00:42:59] vai te ajudar a fazer o PP-Código.
+[00:42:59 - 00:43:01] Entende? Por isso que eu fico brincando.
+[00:43:01 - 00:43:03] Na vida, a GOLD é a parte mais
+[00:43:03 - 00:43:05] chata, né? Entre a gente
+[00:43:05 - 00:43:07] que é da área de TI. Mas
+[00:43:07 - 00:43:09] é por conta disso. Mas mais legal
+[00:43:09 - 00:43:11] o professor, que eu tentei
+[00:43:11 - 00:43:13] ter o cuidado de falar assim, ó,
+[00:43:13 - 00:43:15] na GOLD tem essa informação. Essa informação
+[00:43:15 - 00:43:17] veio dos arquivos
+[00:43:17 - 00:43:19] tais, tais, tais, tais
+[00:43:19 - 00:43:21] com os hashes. Então eu consigo chegar
+[00:43:21 - 00:43:23] no áudio. Eu vou andando assim,
+[00:43:23 - 00:43:25] esse arquivo aqui é esse áudio.
+[00:43:25 - 00:43:27] Aí dou play no áudio.
+[00:43:27 - 00:43:29] Ciência de operações. Aqui é
+[00:43:29 - 00:43:31] tordilho.
+[00:43:31 - 00:43:33] Cinco cavalos
+[00:43:33 - 00:43:35] passando pela...
+[00:43:35 - 00:43:37] Opa, entendi.
+[00:43:37 - 00:43:39] Ah, eu consigo voltar
+[00:43:39 - 00:43:41] ali falando num relatório de bombardeio.
+[00:43:41 - 00:43:43] Tá aqui o relatório.
+[00:43:43 - 00:43:45] Porque eu vou ter um
+[00:43:45 - 00:43:47] hash de recepção desses arquivos.
+[00:43:47 - 00:43:49] Eu sei qual é o arquivo. Então
+[00:43:49 - 00:43:51] eu tive cuidado de falar assim,
+[00:43:51 - 00:43:53] poxa, apesar de eu ter
+[00:43:53 - 00:43:55] uma IA me ajudando
+[00:43:55 - 00:43:57] a estruturar esses dados no meio do caminho,
+[00:43:57 - 00:43:59] eu consigo confirmar esses dados.
+[00:43:59 - 00:44:01] Um por um.
+[00:44:01 - 00:44:03] Ah, mas
+[00:44:03 - 00:44:05] você fala que consegue confirmar
+[00:44:05 - 00:44:07] e
+[00:44:07 - 00:44:09] escrever o que consegue. Mas
+[00:44:09 - 00:44:11] você vai fazer um POC?
+[00:44:11 - 00:44:13] Vou fazer um POC.
+[00:44:13 - 00:44:15] Vou fazer um POC.
+[00:44:15 - 00:44:17] Porque no momento não tem ainda.
+[00:44:17 - 00:44:19] Ou você já testou as ferramentas?
+[00:44:19 - 00:44:21] Estou testando.
+[00:44:21 - 00:44:23] Já estou testando.
+[00:44:23 - 00:44:25] Mas estou fazendo devagar.
+[00:44:25 - 00:44:27] Mas já estou testando e já está bem interessante.
+[00:44:27 - 00:44:29] Por isso que eu falei com o senhor.
+[00:44:29 - 00:44:31] Eu não decidi tudo, mas eu tenho uma ideia de quais
+[00:44:31 - 00:44:33] ferramentas que eu vou usar já para o próximo capítulo.
+[00:44:33 - 00:44:35] Em relação à governança,
+[00:44:35 - 00:44:37] a gente usa um catálogo de dados
+[00:44:37 - 00:44:39] que ele é muito legal.
+[00:44:39 - 00:44:41] E que tem como mostrar muita coisa.
+[00:44:41 - 00:44:43] Que é o Open Metadata.
+[00:44:43 - 00:44:45] Não sei se o senhor já ouviu falar.
+[00:44:45 - 00:44:47] Ele é sensacional.
+[00:44:47 - 00:44:49] Ele é um catálogo. Eu consigo fazer toda a parte de
+[00:44:49 - 00:44:51] linhagem de colunas e
+[00:44:51 - 00:44:53] tabelas. Ele tem uma ferramenta de linhagem.
+[00:44:53 - 00:44:55] As versões mais novas tem até
+[00:44:55 - 00:44:57] a parte de grafo e conhecimento.
+[00:44:57 - 00:44:59] O senhor vai testar ele. O grafo ele é mais
+[00:44:59 - 00:45:01] para...
+[00:45:01 - 00:45:03] Ele não cuida do
+[00:45:03 - 00:45:05] valor do dado. Ele é mais da estrutura.
+[00:45:05 - 00:45:07] Ele não mexe no dado.
+[00:45:07 - 00:45:09] No...
+[00:45:09 - 00:45:11] Semântica. A semântica do dado.
+[00:45:11 - 00:45:13] Mais da estrutura.
+[00:45:13 - 00:45:15] Essa tabela está ligada a esse esquema.
+[00:45:15 - 00:45:17] Que está ligada a esse não sei o que.
+[00:45:17 - 00:45:19] Ele é mais desse jeito.
+[00:45:19 - 00:45:21] Por isso que eu não quis mexer com ele agora.
+[00:45:21 - 00:45:23] Mas tem. Tem a parte de glossário.
+[00:45:23 - 00:45:25] Tem como fazer...
+[00:45:25 - 00:45:27] Tem a parte de ontologia. Nossa, é bem completo.
+[00:45:27 - 00:45:29] Só que também ele é muito complexo.
+[00:45:29 - 00:45:31] Então aumenta muito a complexidade.
+[00:45:33 - 00:45:35] Beleza, Silvio.
+[00:45:35 - 00:45:37] Então, aproveitando o gap,
+[00:45:37 - 00:45:39] para o seminário 2,
+[00:45:39 - 00:45:41] trazer essa ideia mais materializada
+[00:45:41 - 00:45:43] dessa governança, dessa linhagem
+[00:45:43 - 00:45:45] do dado, do catálogo do dado.
+[00:45:45 - 00:45:47] Saber que você realmente tem
+[00:45:47 - 00:45:49] um domínio sobre esse dado
+[00:45:49 - 00:45:51] em todas as fases que ele passa.
+[00:45:51 - 00:45:53] Da camada
+[00:45:53 - 00:45:55] crua até a camada
+[00:45:55 - 00:45:57] final. Beleza?
+[00:45:57 - 00:45:59] E é como você disse mesmo. A camada
+[00:45:59 - 00:46:01] gold é
+[00:46:01 - 00:46:03] o dado pronto para fazer um relatório,
+[00:46:03 - 00:46:05] para fazer um dashboard, alguma coisa assim.
+[00:46:05 - 00:46:07] E todo o trabalho
+[00:46:07 - 00:46:09] vem nesse processamento dessa...
+[00:46:09 - 00:46:11] Entre as camadas.
+[00:46:11 - 00:46:13] E você trouxe algumas ferramentas
+[00:46:13 - 00:46:15] que você vai possivelmente testar.
+[00:46:15 - 00:46:17] O LLM, o Dockling.
+[00:46:17 - 00:46:19] O modelo
+[00:46:19 - 00:46:21] de tradução
+[00:46:21 - 00:46:23] de áudio para texto.
+[00:46:23 - 00:46:25] Isso, o Test Whisper.
+[00:46:25 - 00:46:27] Eu acho que essa parte técnica
+[00:46:27 - 00:46:30] seria muito interessante
+[00:46:30 - 00:46:32] você pensar em uma publicação
+[00:46:32 - 00:46:34] nessa parte.
+[00:46:34 - 00:46:36] De como fazer essa transformação
+[00:46:36 - 00:46:38] desses dados até uma camada prata
+[00:46:38 - 00:46:40] ou até a camada gold.
+[00:46:40 - 00:46:42] Utilizando esse ferramental.
+[00:46:42 - 00:46:44] Seria bem interessante, talvez, se você pudesse
+[00:46:44 - 00:46:46] pensar nisso.
+[00:46:46 - 00:46:48] E aproveitando também
+[00:46:48 - 00:46:50] o que a professora Maria Cláudia
+[00:46:50 - 00:46:52] comentou.
+[00:46:52 - 00:46:54] Como é que a gente faz para utilizar...
+[00:46:54 - 00:46:56] Você tem uma resposta que
+[00:46:56 - 00:46:58] eu queria ajustar um pouco a sua resposta.
+[00:46:58 - 00:47:00] Porque me pareceu
+[00:47:00 - 00:47:02] que você está tentando resolver um problema
+[00:47:02 - 00:47:04] do Exército, que não é um problema pequeno.
+[00:47:04 - 00:47:06] Mas a gente tem que pensar um pouco mais
+[00:47:06 - 00:47:08] no trabalho como algo que possa ser utilizado
+[00:47:08 - 00:47:10] por outras áreas.
+[00:47:10 - 00:47:12] Nem que seja
+[00:47:12 - 00:47:14] marinha aeronáutica.
+[00:47:14 - 00:47:16] Ou uma forma de estender
+[00:47:16 - 00:47:18] as suas ideias, a sua arquitetura.
+[00:47:18 - 00:47:20] Nem que seja uma parte
+[00:47:20 - 00:47:22] de toda essa arquitetura.
+[00:47:22 - 00:47:24] Que você possa estender, que possa ser extensível
+[00:47:24 - 00:47:26] para outro tipo de uso.
+[00:47:26 - 00:47:28] Não só para o trabalho
+[00:47:28 - 00:47:30] em si do Exército e o trabalho
+[00:47:30 - 00:47:32] que você quer resolver.
+[00:47:32 - 00:47:34] Mas que a gente pense em expandir
+[00:47:34 - 00:47:36] essa ideia.
+[00:47:36 - 00:47:38] Uma pequena ideia em algum
+[00:47:38 - 00:47:40] ponto do seu trabalho, você tem que
+[00:47:40 - 00:47:42] expandir.
+[00:47:42 - 00:47:44] Isso pode ser utilizado não só
+[00:47:44 - 00:47:46] para o Exército, mas para a Aeronáutica.
+[00:47:46 - 00:47:48] Não só para a Aeronáutica, mas para o Governo Federal.
+[00:47:48 - 00:47:50] Entende?
+[00:47:50 - 00:47:52] Algo que possa ser utilizado.
+[00:47:52 - 00:47:54] Só para você colocar
+[00:47:54 - 00:47:56] um pouco...
+[00:47:56 - 00:47:58] Assim, você tendo essa
+[00:47:58 - 00:48:00] ideia de expandir mais o seu trabalho,
+[00:48:00 - 00:48:02] ele dá mais volume ao seu trabalho
+[00:48:02 - 00:48:04] e mais importância para ele.
+[00:48:04 - 00:48:06] Mais ou menos essa ideia.
+[00:48:06 - 00:48:08] Perfeito.
+[00:48:08 - 00:48:10] Eram essas ponderações
+[00:48:10 - 00:48:12] e a gente fica na expectativa do
+[00:48:12 - 00:48:14] Seminário 2.
+[00:48:14 - 00:48:16] Parabéns pelo trabalho
+[00:48:16 - 00:48:18] feito até agora.
+[00:48:18 - 00:48:20] Muito obrigado aí pela colaboração.
+[00:48:20 - 00:48:22] Então, Silvio, anota as demandas
+[00:48:22 - 00:48:24] já para o Seminário 2.
+[00:48:24 - 00:48:26] Professor,
+[00:48:26 - 00:48:28] desculpa, eu não consegui
+[00:48:28 - 00:48:30] pegar...
+[00:48:30 - 00:48:32] Eu parti do princípio, então eu até peço desculpas
+[00:48:32 - 00:48:34] de antemão.
+[00:48:34 - 00:48:36] O senhor vai gravar esse...
+[00:48:36 - 00:48:38] Está sendo gravado. Depois eu te faço.
+[00:48:38 - 00:48:40] Isso, por gentileza.
+[00:48:40 - 00:48:42] Depois eu te passo o vídeo.
+[00:48:42 - 00:48:44] Eu vou fechar agora.
+[00:48:44 - 00:48:46] Mas aí a gente já sabe as demandas
+[00:48:46 - 00:48:48] para o Seminário 2.
+[00:48:48 - 00:48:50] Depois a gente vai tentar arranjar uma data.
+[00:48:50 - 00:48:52] Então, Silvio, muito obrigado aos professores.
+[00:48:52 - 00:48:54] Silvio, você retira aí e acompanha no WhatsApp aí.
+[00:48:54 - 00:48:56] Eu estou aqui já entrando. Assim que a gente terminar
+[00:48:56 - 00:48:58] a conversa, eu te chamo. Aí tudo bem rápido.
+[00:48:58 - 00:49:00] Tá bom, então. Valeu.
+[00:49:00 - 00:49:04] Pode sair.
+[00:49:04 - 00:49:06] Então, senhores, é só um praxe,
+[00:49:06 - 00:49:08] a gente dá continuidade ao trabalho,
+[00:49:08 - 00:49:10] tudo certo, os senhores concordam.
+[00:49:10 - 00:49:12] Tudo certo.
+[00:49:12 - 00:49:14] Deixa eu só compartilhar aqui rapidamente.
+[00:49:14 - 00:49:16] Acho que ele já ia defender
+[00:49:16 - 00:49:18] em pouco tempo.
+[00:49:18 - 00:49:20] Ainda tem um outro seminário.
+[00:49:20 - 00:49:22] Tem um em dezembro.
+[00:49:22 - 00:49:24] São dois seminários.
+[00:49:24 - 00:49:26] O Andrei também orienta o pessoal lá do PPC.
+[00:49:26 - 00:49:28] Uma celuladeira inventou isso.
+[00:49:28 - 00:49:30] Aí está dando mais trabalho
+[00:49:30 - 00:49:32] que qualquer outra coisa.
+[00:49:32 - 00:49:34] Só uma dúvida.
+[00:49:34 - 00:49:36] A gente faz seminário também,
+[00:49:36 - 00:49:38] mas a gente faz seminário interno.
+[00:49:38 - 00:49:40] Interno.
+[00:49:40 - 00:49:42] Primeiro era assim,
+[00:49:42 - 00:49:44] todo mundo apresentava os trabalhos.
+[00:49:44 - 00:49:46] Eu acho que um seminário era suficiente
+[00:49:46 - 00:49:48] entre a qualificação e a defesa.
+[00:49:48 - 00:49:50] Só que são dois.
+[00:49:50 - 00:49:52] Aí fica pesado.
+[00:49:52 - 00:49:54] Andrei, deixa eu te passar
+[00:49:54 - 00:49:56] o número do processo aqui rapidinho.
+[00:49:56 - 00:49:58] Deixa eu ver aqui.
+[00:49:58 - 00:50:00] Eu acho que eu tenho ele aqui, Márcio.
+[00:50:00 - 00:50:02] Eu só vou adicionar
+[00:50:02 - 00:50:04] assim que você fizer as coisas aí,
+[00:50:04 - 00:50:06] eu adiciono ele na minha.
+[00:50:06 - 00:50:08] Para assinar.
+[00:50:08 - 00:50:10] Deixa eu aqui.
+[00:50:10 - 00:50:12] Professor, para você,
+[00:50:12 - 00:50:14] eu já mando só um minuto
+[00:50:14 - 00:50:16] pela aprovação, então.
+[00:50:16 - 00:50:18] Só para ter continuidade,
+[00:50:18 - 00:50:20] na verdade, porque ainda tem
+[00:50:20 - 00:50:22] outros passos.
+[00:50:22 - 00:50:24] Deixa eu assinar aqui.
+[00:50:24 - 00:50:26] Mas ele é muito bom aluno.
+[00:50:26 - 00:50:28] Não, ele é desenrolado.
+[00:50:28 - 00:50:30] Ele só
+[00:50:30 - 00:50:32] é um pouco ansioso.
+[00:50:32 - 00:50:34] Mas é toda universidade.
+[00:50:34 - 00:50:36] Então qualquer coisa
+[00:50:36 - 00:50:38] ele já quer adiantar.
+[00:50:38 - 00:50:40] Então,
+[00:50:40 - 00:50:42] é, só uma dúvida.
+[00:50:42 - 00:50:44] Professor e Andrei,
+[00:50:44 - 00:50:46] de 14 a 18 dezembro, vocês estão disponíveis
+[00:50:46 - 00:50:48] ou já estão desligados?
+[00:50:48 - 00:50:50] Olha...
+[00:50:50 - 00:50:52] Dezembro?
+[00:50:52 - 00:50:54] É dezembro.
+[00:50:54 - 00:50:56] Ah não, vamos...
+[00:50:56 - 00:50:58] Daqui a um mês.
+[00:50:58 - 00:51:00] Eu tenho algumas bancas, mas
+[00:51:00 - 00:51:02] a gente pode mandar.
+[00:51:02 - 00:51:04] A professora ainda está ativa ou já está recolhida?
+[00:51:04 - 00:51:06] É.
+[00:51:06 - 00:51:08] Bom, eu tenho duas possibilidades.
+[00:51:08 - 00:51:10] Uma,
+[00:51:10 - 00:51:12] é que eu tenho umas provas
+[00:51:12 - 00:51:14] que a minha filha está fazendo, que são para São Paulo.
+[00:51:14 - 00:51:16] Então eu posso ter que fazer
+[00:51:16 - 00:51:18] remotamente de São Paulo.
+[00:51:18 - 00:51:20] Então eu não sei ainda.
+[00:51:20 - 00:51:22] E a outra coisa
+[00:51:22 - 00:51:24] é que
+[00:51:24 - 00:51:26] também estou em processo de
+[00:51:26 - 00:51:28] aposentadoria. Ainda não sei quando é que vai
+[00:51:28 - 00:51:30] sair, né?
+[00:51:30 - 00:51:32] Mas eu não vou parar, então também não é
+[00:51:32 - 00:51:34] um...
+[00:51:34 - 00:51:36] Não é um problema. É só assim que
+[00:51:36 - 00:51:38] provavelmente eu posso...
+[00:51:38 - 00:51:40] Posso ter que estar em viagem.
+[00:51:40 - 00:51:42] Não, tudo bem. É só para ser uma reunião
+[00:51:42 - 00:51:44] como essa.
+[00:51:44 - 00:51:46] Ainda é Seminário 2, né? Não é Defesa Final não.
+[00:51:46 - 00:51:48] É só para mostrar mais uma evolução
+[00:51:48 - 00:51:50] e o que fica pendente para a Defesa.
+[00:51:50 - 00:51:52] Acho que tranquilo.
+[00:51:52 - 00:51:54] Eu mando um e-mail para os senhores, aí vocês
+[00:51:54 - 00:51:56] veem as datas. A gente tenta conciliar uma data entre
+[00:51:56 - 00:51:58] 14 e 18. É só para mostrar mais um passo
+[00:51:58 - 00:52:00] de evolução e o trabalho final
+[00:52:00 - 00:52:02] para a Defesa. Aí a Defesa a gente vê uma data mais apropriada
+[00:52:02 - 00:52:04] mesmo. Aí eu não tenho pressa não. É só para
+[00:52:04 - 00:52:06] já fechar tudo e ficar faltando só a Defesa para o ano que vem.
+[00:52:06 - 00:52:08] Aí a gente vê a melhor data ano que vem. Beleza?
+[00:52:08 - 00:52:10] Depois eu mando um e-mail. De 14 a 18 eu mando um e-mail.
+[00:52:10 - 00:52:12] Beleza, André? Aí também tu responde lá e a gente vê.
+[00:52:12 - 00:52:14] Beleza. Tá certo.
+[00:52:14 - 00:52:16] Então eu vou chamar ele de volta aqui. Deixa eu chamar ele de volta.
+[00:52:16 - 00:52:25] Deixa eu mandar o joinha meu para a professora
+[00:52:25 - 00:52:27] aqui. Só para...
+[00:52:27 - 00:52:29] Formulário
+[00:52:29 - 00:52:31] e tal. Eu mandei um e-mail para vocês.
+[00:52:31 - 00:52:33] Deixa eu ver
+[00:52:33 - 00:52:35] aqui.
+[00:52:35 - 00:52:37] Aqui eu acho que já tem o seu cadastro. Deixa eu ver aqui.
+[00:52:37 - 00:52:39] Deixa eu chamar ele aqui de volta.
+[00:52:39 - 00:52:41] Eu vi meu nome aí no cisterninho.
+[00:52:41 - 00:52:43] É, não tem. Já tem aqui
+[00:52:43 - 00:52:45] da outra vez eu mandei. Deixa eu ver
+[00:52:45 - 00:52:47] aqui. Já vai ter meu e-mail direto.
+[00:52:47 - 00:52:49] É...
+[00:52:49 - 00:52:51] Deixa eu fechar aqui.
+[00:52:51 - 00:52:53] Ó, gerenciar a administração
+[00:52:53 - 00:52:55] estrutural externa. Tá aqui.
+[00:52:55 - 00:52:57] Da unidade...
+[00:52:57 - 00:53:01] É...
+[00:53:01 - 00:53:03] Maria...
+[00:53:03 - 00:53:05] Cláudia, né?
+[00:53:05 - 00:53:07] Isso.
+[00:53:07 - 00:53:09] Maria Cláudia...
+[00:53:09 - 00:53:11] Silvio, tudo aprovado, tá, Silvio?
+[00:53:11 - 00:53:13] Oba!
+[00:53:13 - 00:53:15] É, foi...
+[00:53:15 - 00:53:17] Tem chance.
+[00:53:17 - 00:53:19] Deixa eu só fechar aqui.
+[00:53:19 - 00:53:21] É Reis Cavalcante daqui.
+[00:53:21 - 00:53:23] É Maria...
+[00:53:23 - 00:53:25] Cláudia...
+[00:53:25 - 00:53:27] Reis...
+[00:53:27 - 00:53:31] Cavalcante.
+[00:53:31 - 00:53:33] É, não tá aparecendo aqui.
+[00:53:33 - 00:53:35] Maria Cláudia... Deixa eu ver se tá Cavalcante
+[00:53:35 - 00:53:37] direto.
+[00:53:37 - 00:53:39] O que eu mandei da outra vez?
+[00:53:39 - 00:53:41] Ó, tá. Maria Cláudia Cavalcante.
+[00:53:41 - 00:53:43] Ah, eu recebi aqui o primeiro chefe.
+[00:53:43 - 00:53:45] É... Marioco, né?
+[00:53:45 - 00:53:47] gmail.com, né? Não, isso é outra coisa.
+[00:53:47 - 00:53:49] Isso. Isso aqui é...
+[00:53:49 - 00:53:51] É porque tá...
+[00:53:51 - 00:53:53] O e-mail. Tá certo.
+[00:53:53 - 00:53:55] É que tá Maria Cláudia Cavalcante só.
+[00:53:55 - 00:53:57] Ah, tá.
+[00:53:57 - 00:53:59] O Reis não tá.
+[00:53:59 - 00:54:01] Tá certo. Tranquilo.
+[00:54:01 - 00:54:03] Tá aqui. Deixa eu ver aqui.
+[00:54:03 - 00:54:05] Aí, você deve receber um e-mail.
+[00:54:05 - 00:54:07] Aí é só assinar.
+[00:54:07 - 00:54:09] Aí, depois eu mando e-mail pra todo mundo
+[00:54:09 - 00:54:11] pra gente tentar acertar uma data.
+[00:54:11 - 00:54:13] Hein, Silvio?
+[00:54:13 - 00:54:15] Tu vai correr aí com a demanda do André e da professora.
+[00:54:15 - 00:54:17] Já tenta ver se consegue. Pelo menos, o André...
+[00:54:17 - 00:54:19] Eu mando um contato inicial com o aluno dela
+[00:54:19 - 00:54:21] pra já dar pra ela, assim, o que que você
+[00:54:21 - 00:54:23] consegue fazer de deixar...
+[00:54:23 - 00:54:25] Se não integrar, pelo menos deixar explícito
+[00:54:25 - 00:54:27] o que que seria o trabalho lá de integração, beleza?
+[00:54:27 - 00:54:29] Aí, então, tu tem um mês aí pra trabalhar.
+[00:54:29 - 00:54:31] Eu vou mandar e-mail e a próxima reunião vai ser de 14 a 18 dezembro.
+[00:54:31 - 00:54:33] A gente vai procurar melhor data
+[00:54:33 - 00:54:35] que concilie os quatro.
+[00:54:35 - 00:54:37] Mas aí, a gente já tem a demanda do André, né? Que ele já te passou aí.
+[00:54:37 - 00:54:39] E a professora Maria Cláudia, o principal seria
+[00:54:39 - 00:54:41] essa integração aí, pra gente ver como é que a gente consegue
+[00:54:41 - 00:54:43] fazer um trabalho mais...
+[00:54:43 - 00:54:45] integrado, beleza?
+[00:54:45 - 00:54:47] E continuaremos aí na briga, beleza?
+[00:54:47 - 00:54:49] A gente tem um processo, né?
+[00:54:49 - 00:54:51] Pode, pode.
+[00:54:51 - 00:54:53] Professor, quando o senhor puder,
+[00:54:53 - 00:54:55] o mais rápido possível,
+[00:54:55 - 00:54:57] o vídeo, a transcrição do vídeo...
+[00:54:57 - 00:54:59] Pode ser só a transcrição mesmo?
+[00:54:59 - 00:55:01] Tá, não. Ele vai salvar aqui no final do dia.
+[00:55:01 - 00:55:03] Me manda o e-mail, que no final do dia a gente manda aqui.
+[00:55:03 - 00:55:05] É só o tempo da Microsoft salvar.
+[00:55:05 - 00:55:07] Deixa comigo. Perfeito.
+[00:55:07 - 00:55:09] Sem erro, não. Tá certo?
+[00:55:09 - 00:55:11] Certo. Muito obrigado, professores.
+[00:55:11 - 00:55:13] Obrigado pela gentileza e pela...
+[00:55:13 - 00:55:15] Obrigado.
